@@ -14,8 +14,12 @@ class ilKitchenSinkException extends ilException
 {
     const UNKNONW_EXCEPTION = -1;
 
-    const INVALID_NODE_ID   = 1001;
-
+    const EMPTY_ENTRY   = 1001;
+    const INVALID_MANDATORY_ENTRY_ATTRIBUTE   = 1002;
+    const DUPLICATE_ENTRY  = 1003;
+    const DUPLICATE_ROOT_ENTRY   = 1004;
+    const INVALID_ID   = 1005;
+    const INVALID_FILE_PATH = 1006;
 
     /**
      * @var string
@@ -53,8 +57,23 @@ class ilKitchenSinkException extends ilException
         global $lng;
         switch ($this->code)
         {
-            case self::INVALID_NODE_ID:
-                $this->message = "Invalid Node ID" . " " . $this->add_info;
+            case self::EMPTY_ENTRY:
+                $this->message = "Empty Entry" . " " . $this->add_info;
+                break;
+            case self::INVALID_MANDATORY_ENTRY_ATTRIBUTE:
+                $this->message = "Invalid mandatory entry Attribute:". " " . $this->add_info;
+                break;
+            case self::DUPLICATE_ENTRY:
+                $this->message = "There are entries with the same ID. Duplicate:". " " . $this->add_info;
+                break;
+            case self::DUPLICATE_ROOT_ENTRY:
+                $this->message = "There are multiple root entry. Duplicate:". " " . $this->add_info;
+                break;
+            case self::INVALID_ID:
+                $this->message = "No such ID in tree: ". " " . $this->add_info;
+                break;
+            case self::INVALID_FILE_PATH:
+                $this->message = "Invalid file path or file not readable: ". " " . $this->add_info;
                 break;
             default:
                 $this->message = "Unknonw Exception". " " . $this->add_info;

@@ -1,164 +1,251 @@
 <?php
+include_once("./Services/UIComponent/Panel/classes/class.ilPanelGUI.php");
+include_once("class.ilKitchenSinkEntryStatusBlockGUI.php");
+
 /**
- * Class to display messages
  *
  * @author            Timon Amstutz <timon.amstutz@ilub.unibe.ch>
  * @version           $Id$*
- * @ilCtrl_isCalledBy ilKitchenSinkEntryGUI: ilUIPluginRouterGUI
  */
 class ilKitchenSinkEntryGUI
 {
     /**
-     * @var ilTemplate
+     * @var KitchenSinkEntry
      */
-    protected $tpl;
+    protected $entry = null;
+
+    /**
+     * @var KitchenSinkTree
+     */
+    protected $tree = null;
+
     /**
      * @var ilCtrl $ctrl
      */
     protected $ctrl;
-    /**
-     * @var ilTabsGUI
-     */
-    protected $tabs_gui;
-    /**
-     * @var xbgLngVarPrefixer
-     */
-    protected $lng_xbg;
 
     /**
-     * @var ilKitchenSinkEntryExplorerGUI
+     * @var ilKitchenSinkMainGUI
      */
-    protected $tree = null;
+    protected $parent;
 
-    const KS_DATA_PATH = "./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/data";
-    const KS_DATA_FILE = "data.json";
+    /**
+     * ilKitchenSinkEntryGUI constructor.
+     * @param KitchenSinkEntry $entry
+     * @param KitchenSinkTree $tree
+     * @param ilKitchenSinkMainGUI $parent
+     */
+    public function __construct(KitchenSinkEntry $entry, KitchenSinkTree $tree, ilKitchenSinkMainGUI $parent) {
+        global $ilCtrl;
 
-    public function __construct() {
-        global $ilCtrl, $tpl, $ilTabs;
+        $this->setEntry($entry);
+        $this->setTree($tree);
+        $this->setParent($parent);
         $this->ctrl = $ilCtrl;
-
-        $this->tpl = $tpl;
-        $tpl->getStandardTemplate();
-
-        $this->tabs_gui = &$ilTabs;
-
-        $this->tpl->setTitle('Kitchen Sink');
     }
-
 
     /**
-     * @return bool
+     * @return html
      */
-    public function executeCommand() {
+    public function renderEntryCenter(){
+        /**
+         * @var ilTemplate $tpl
+         */
+        global $tpl;
+        $tpl->addJavaScript("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/libs/highlight/highlight.pack.js");
+        $tpl->addOnLoadCode("hljs.initHighlightingOnLoad();");
+        $tpl->addCss("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/libs/highlight/styles/default.css");
 
-        $this->setTabs();
-
-        // determine next class in the call structure
-        $next_class = $this->ctrl->getNextClass($this);
-        switch ($next_class) {
-            default:
-                $cmd = ($this->ctrl->getCmd()) ? $this->ctrl->getCmd() : $this->getStandardCommand();
-
-                switch ($cmd) {
-                    case 'entries':
-                    case 'reloadJson':
-                        $this->tabs_gui->activateTab('entries');
-                        $this->$cmd();
-
-                        //$this->ctrl->forwardCommand(new xbgStdMessageGUI($this));
-                        break;
-                    case 'visualizations':
-                        $this->tabs_gui->activateTab('visualizations');
-                        $this->visualisations();
-
-                        //$this->ctrl->forwardCommand(new xbgStdMessageGUI($this));
-                        break;
-                    case 'less':
-                        $this->tabs_gui->activateTab('less');
-                        $this->less();
-                        //$this->ctrl->forwardCommand(new xbgStdMessageGUI($this));
-                        break;
-                }
-        }
-        return TRUE;
-    }
-
-    protected function setTabs() {
-        $this->tabs_gui->addTab('entries', 'Entries', $this->ctrl->getLinkTarget($this, 'entries'));
-
-        $this->tabs_gui->addTab('visualizations', 'Visualizations',
-            $this->ctrl->getLinkTarget($this, 'visualizations'));
-        $this->tabs_gui->addTab('less', 'Less',
-            $this->ctrl->getLinkTarget($this, 'less'));
+        return $this->getDescriptionBlock().$this->getExampleBlock().$this->getRulesBlock().$this->getCodeBlock('html').$this->getCodeBlock('php');
     }
 
     /**
      * @return string
      */
-    protected function getStandardCommand() {
-        return 'entries';
-    }
+    protected function getDescriptionBlock(){
+        $description_block = ilPanelGUI::getInstance();
+        $description_block->setHeading($this->getEntry()->getTitle());
 
-    protected function entries(){
-
-        $this->createTree();
-        $this->showTree();
-        if($_GET["entry_id"]){
-            $node = $this->tree->getNodeById($_GET["entry_id"]);
-        }else{
-            $node = $this->tree->getRootNode();
+        $description_tpl = (new ilKitchenSinkPlugin())->getTemplate('entry/tpl.entry_description.html', true, true);
+        $description_tpl->touchBlock("description");
+        $description_tpl->setVariable("PURPOSE", $this->getEntry()->getDescription()->purpose);
+        $description_tpl->setVariable("COMPOSITION", $this->getEntry()->getDescription()->composition);
+        $description_tpl->setVariable("EFFECT", $this->getEntry()->getDescription()->effect);
+        if($this->getEntry()->getExternalClass()){
+            $description_tpl->setVariable("LIBRARY_HREF", $this->getEntry()->getExternalClass()->href);
+            $description_tpl->setVariable("LIBRARY_NAME", $this->getEntry()->getExternalClass()->name);
         }
-
-        $this->tpl->setContent($node["content"]." <a href=".$this->ctrl->getLinkTarget($this, 'reloadJson').">Reload Entries</a>");
-        $this->tpl->show();
+        $description_block->setBody($description_tpl->get());
+        $description_block->setHeadingStyle(ilPanelGUI::HEADING_STYLE_SUBHEADING);
+        $description_block->setPanelStyle(ilPanelGUI::PANEL_STYLE_PRIMARY);
+        return $description_block->getHTML();
     }
 
-    protected function reloadJson(){
-        $directory = new RecursiveDirectoryIterator(self::KS_DATA_PATH."/uiComponents");
-        $iterator = new RecursiveIteratorIterator($directory);
-        $regexIterator = new RegexIterator($iterator, '/^.+\.json$/i', RecursiveRegexIterator::GET_MATCH);
-
-        $pre = "{\"uiComponent\":[";
-        $post = "]}";
-        $data = $pre;
-        foreach ($regexIterator as $info) {
-            if($data != $pre){
-                $data .= ",";
+    /**
+     * @return string
+     */
+    protected function getRulesBlock(){
+        if($this->getEntry()->getRules()){
+            $rule_block = ilPanelGUI::getInstance();
+            $rule_block->setHeading("Rules");
+            $html = "<ul>";
+            foreach($this->getEntry()->getRules() as $rule){
+                $html .= "<li>".$rule."</li>";
             }
-            $data .= file_get_contents($info[0] );
+            $html .= "</ul>";
+            $rule_block->setBody($html);
+            $rule_block->setHeadingStyle(ilPanelGUI::HEADING_STYLE_SUBHEADING);
+            $rule_block->setPanelStyle(ilPanelGUI::PANEL_STYLE_PRIMARY);
+            return $rule_block->getHTML();
         }
-        $data .= $post;
-        file_put_contents(self::KS_DATA_PATH."/".self::KS_DATA_FILE, $data);
+        return "";
+    }
 
-        ilUtil::sendSuccess("All Entries have been reloaded",true);
-        $this->ctrl->redirect($this,"entries");
+    /**
+     * @return string
+     */
+    protected function getExampleBlock(){
+        if($this->getEntry()->getHtml()){
+            $example_block = ilPanelGUI::getInstance();
+            $example_block->setHeading("Example");
+            $example_block->setBody($this->getEntry()->getHtml());
+            $example_block->setHeadingStyle(ilPanelGUI::HEADING_STYLE_SUBHEADING);
+            $example_block->setPanelStyle(ilPanelGUI::PANEL_STYLE_PRIMARY);
+            return $example_block->getHTML();
+        }
+        return "";
+    }
 
+    /**
+     * @return string
+     */
+    protected function getCodeBlock($type){
+
+        if($this->getEntry()->getHtml()){
+            $example_block = ilPanelGUI::getInstance();
+            $example_block->setHeading("Code ".$type);
+            $code_tpl = (new ilKitchenSinkPlugin())->getTemplate('entry/tpl.entry_code.html', true, true);
+            $code_tpl->touchBlock("code");
+            $example_block->setHeadingStyle(ilPanelGUI::HEADING_STYLE_SUBHEADING);
+            $example_block->setPanelStyle(ilPanelGUI::PANEL_STYLE_PRIMARY);
+
+            if($type == 'html'){
+                $code_tpl->setVariable("CODE",htmlentities($this->getEntry()->getHtml()) );
+                $example_block->setBody($code_tpl->get());
+            }else{
+                $code_tpl->setVariable("CODE",htmlentities($this->getEntry()->getPHP()));
+
+                if($this->testPHPExample()){
+                    $label = "<div class=\"label label-success\">Test Passed</div>";
+                    $example_block->setBody($code_tpl->get().$label);
+
+                }else{
+                    $label = "<div class=\"label label-danger\">Test Failed</div>";
+                    $failure_code_tpl = (new ilKitchenSinkPlugin())->getTemplate('entry/tpl.entry_code.html', true, true);
+                    $failure_code_tpl->touchBlock("code");
+                    $failure_code_tpl->setVariable("CODE",htmlentities($this->getEntry()->getPhpClassInstance()->render()));
+                    $example_block->setBody($code_tpl->get().$label."<p>Failed PHP-Output: </p>".$failure_code_tpl->get());
+
+                }
+
+            }
+            return $example_block->getHTML();
+        }
+
+    }
+
+    protected function testPHPExample(){
+        $output_php = preg_replace('/\s+/', '',$this->getEntry()->getPhpClassInstance()->render());
+        $output_html = preg_replace('/\s+/', '',$this->entry->getHtml());
+
+        if(strcmp($output_php, $output_html) === 0){
+            return true;
+        }
+        return false;
     }
     /**
-     * Show Tree
+     * @return html
      */
-    function createTree()
-    {
-        include_once("class.ilKitchenSinkEntryExplorerGUI.php");
-        $this->tree = new ilKitchenSinkEntryExplorerGUI("kitchenSinkEntries", $this, "entries");
+    public function renderEntryRight(){
+        $block = new ilKitchenSinkEntryStatusBlockGUI($this->getEntry());
+        return $block->render().$this->getRelationsBlock();
+    }
+
+    protected function getRelationsBlock(){
+        $this->panel = ilPanelGUI::getInstance();
+        $this->panel->setHeadingStyle(ilPanelGUI::HEADING_STYLE_BLOCK);
+        $this->panel->setPanelStyle(ilPanelGUI::PANEL_STYLE_PRIMARY);
+        $relations_tpl = (new ilKitchenSinkPlugin())->getTemplate('entry/tpl.entry_relations.html', true, true);
+        $relations_tpl->setVariable("IS_A_LINK",$this->getHtmlLinkFromEntryId($this->getEntry()->isA));
+
+        if($this->getEntry()->getRelations()->mustUse){
+            $relations_tpl->setCurrentBlock("mustUse");
+            $relations_tpl->setVariable("MUST_USE_LINKS",$this->getHtmlLinkFromEntryId($this->getEntry()->isA));
+        }
+        $this->panel->setBody($relations_tpl->get());
+        return $this->panel->getHTML();
+    }
+
+    /**
+     * @param $id
+     * @return stdClass
+     * @throws ilKitchenSinkException
+     */
+    public function getHtmlLinkFromEntryId($id){
+        $link_tpl = (new ilKitchenSinkPlugin())->getTemplate('entry/tpl.entry_relations_link.html', true, true);
+        $link_tpl->setVariable("HREF",  $this->ctrl->getLinkTarget($this->getParent(),"entries")."&node_id=".$this->getEntry()->getRelations()->isA);
+        $link_tpl->setVariable("CAPTION", $this->getTree()->getEntryById($this->getEntry()->getRelations()->isA)->getTitle());
+        return $link_tpl->get();
     }
     /**
-     * Show Tree
+     * @return KitchenSinkEntry
      */
-    function showTree()
+    public function getEntry()
     {
-
-
-        $this->tpl->setLeftNavContent($this->tree->getHTML());
+        return $this->entry;
     }
 
-    protected function visualisations(){
-        $this->tpl->setContent("visualisations");
-        $this->tpl->show();
+    /**
+     * @param KitchenSinkEntry $entry
+     */
+    public function setEntry($entry)
+    {
+        $this->entry = $entry;
     }
-    protected function less(){
-        $this->tpl->setContent("less");
-        $this->tpl->show();
+
+    /**
+     * @return KitchenSinkTree
+     */
+    public function getTree()
+    {
+        return $this->tree;
     }
+
+    /**
+     * @param KitchenSinkTree $tree
+     */
+    public function setTree($tree)
+    {
+        $this->tree = $tree;
+    }
+
+    /**
+     * @return ilKitchenSinkMainGUI
+     */
+    public function getParent()
+    {
+        return $this->parent;
+    }
+
+    /**
+     * @param ilKitchenSinkMainGUI $parent
+     */
+    public function setParent($parent)
+    {
+        $this->parent = $parent;
+    }
+
+
+
 }
 ?>

@@ -1,6 +1,6 @@
 {
-  "id": "element",
-  "title": "Element",
+  "id": "interactive",
+  "title": "Interactive",
   "type": "concrete",
   "phpClass": "none",
   "externalLibrary": {
@@ -35,7 +35,7 @@
     "MAY be used together with the Status Counter."
   ],
   "relations": {
-    "isA": "root",
+    "isA": "element",
     "mustUse": [
     ],
     "mayUse":[

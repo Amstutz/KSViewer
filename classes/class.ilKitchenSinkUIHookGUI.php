@@ -41,7 +41,7 @@ class ilKitchenSinkUIHookGUI extends ilUIHookPluginGUI {
             $hook = $a_comp . '/' . $a_part;
 
             if ($hook == '/template_get' AND $a_par['tpl_id'] == 'Services/MainMenu/tpl.main_menu.html') {
-                $html = "Kitchen Sink asd sd as DDDDDDDASDASDSADAS";
+                $html = "";
                 $mode = ilUIHookPluginGUI::PREPEND;
 
                 return array('mode' => $mode, 'html' => $html);
