@@ -168,33 +168,84 @@ class ilKitchenSinkEntryGUI
      */
     public function renderEntryRight(){
         $block = new ilKitchenSinkEntryStatusBlockGUI($this->getEntry());
-        return $block->render().$this->getRelationsBlock();
+        return $block->render().$this->getRelationsBlock().$this->getLessBlock();
     }
+    protected function getLessBlock(){
+        $this->panel = ilPanelGUI::getInstance();
+        $this->panel->setHeading("Less");
+        $this->panel->setHeadingStyle(ilPanelGUI::HEADING_STYLE_BLOCK);
+        $this->panel->setPanelStyle(ilPanelGUI::PANEL_STYLE_PRIMARY);
+        $less_tpl = (new ilKitchenSinkPlugin())->getTemplate('entry/tpl.entry_less.html', true, true);
 
+        if($this->getEntry()->getLessVariables()){
+            $less_links = "";
+            foreach($this->getEntry()->getLessVariables() as $variable){
+                $less_links .= $variable."; ";
+            }
+            $less_tpl->setVariable("LESS_VARIABLES",$less_links);
+        }
+        $this->panel->setBody($less_links);
+        return $this->panel->getHTML();
+    }
     protected function getRelationsBlock(){
         $this->panel = ilPanelGUI::getInstance();
+        $this->panel->setHeading("Relations");
         $this->panel->setHeadingStyle(ilPanelGUI::HEADING_STYLE_BLOCK);
         $this->panel->setPanelStyle(ilPanelGUI::PANEL_STYLE_PRIMARY);
         $relations_tpl = (new ilKitchenSinkPlugin())->getTemplate('entry/tpl.entry_relations.html', true, true);
-        $relations_tpl->setVariable("IS_A_LINK",$this->getHtmlLinkFromEntryId($this->getEntry()->isA));
+
+        $relations_tpl->setVariable("IS_A_LINKS",$this->getHtmlLinksFromEntryIds($this->getTree()->getParentsOfEntry($this->getEntry()->getId())));
 
         if($this->getEntry()->getRelations()->mustUse){
             $relations_tpl->setCurrentBlock("mustUse");
-            $relations_tpl->setVariable("MUST_USE_LINKS",$this->getHtmlLinkFromEntryId($this->getEntry()->isA));
+            $relations_tpl->setVariable("MUST_USE_LINKS",$this->getHtmlLinksFromEntryIds($this->getEntry()->getRelations()->mustUse));
         }
+        if($this->getEntry()->getRelations()->mayUse){
+            $relations_tpl->setCurrentBlock("mustUse");
+            $relations_tpl->setVariable("MAY_USE_LINKS",$this->getHtmlLinksFromEntryIds($this->getEntry()->getRelations()->mayUse));
+        }
+
+        if($this->getEntry()->getChildrenIds()){
+            $relations_tpl->setCurrentBlock("children");
+            $relations_tpl->setVariable("CHILDREN_LINKS",$this->getHtmlLinksFromEntryIds($this->getEntry()->getChildrenIds()));
+        }
+
+        if($this->getEntry()->getMustBeUsedBy()){
+            $relations_tpl->setCurrentBlock("children");
+            $relations_tpl->setVariable("MUST_BE_USED_BY_LINKS",$this->getHtmlLinksFromEntryIds($this->getEntry()->getMustBeUsedBy()));
+        }
+
+        if($this->getEntry()->getMayBeUsedBy()){
+            $relations_tpl->setCurrentBlock("children");
+            $relations_tpl->setVariable("MAY_BE_USED_BY_LINKS",$this->getHtmlLinksFromEntryIds($this->getEntry()->getMayBeUsedBy()));
+        }
+
         $this->panel->setBody($relations_tpl->get());
+
+
         return $this->panel->getHTML();
     }
 
+    /**
+     * @param array $ids
+     * @return string
+     */
+    protected function getHtmlLinksFromEntryIds(array $ids){
+        $html = "";
+        foreach($ids as $id){
+            $html .= $this->getHtmlLinkFromEntryId($id)."; ";
+        }
+        return $html;
+    }
     /**
      * @param $id
      * @return stdClass
      * @throws ilKitchenSinkException
      */
-    public function getHtmlLinkFromEntryId($id){
+    protected function getHtmlLinkFromEntryId($id){
         $link_tpl = (new ilKitchenSinkPlugin())->getTemplate('entry/tpl.entry_relations_link.html', true, true);
-        $link_tpl->setVariable("HREF",  $this->ctrl->getLinkTarget($this->getParent(),"entries")."&node_id=".$this->getEntry()->getRelations()->isA);
-        $link_tpl->setVariable("CAPTION", $this->getTree()->getEntryById($this->getEntry()->getRelations()->isA)->getTitle());
+        $link_tpl->setVariable("HREF",  $this->ctrl->getLinkTarget($this->getParent(),"entries")."&node_id=".$this->getTree()->getEntryById($id)->getId());
+        $link_tpl->setVariable("CAPTION", $this->getTree()->getEntryById($id)->getTitle());
         return $link_tpl->get();
     }
     /**

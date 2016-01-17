@@ -33,6 +33,8 @@ class KitchenSinkTree
         if($this->id_to_entry_map[$entry->getId()]){
             if($this->id_to_entry_map[$entry->getId()]->isDummy()){
                 $entry->setChildrenIds($this->id_to_entry_map[$entry->getId()]->getChildrenIds());
+                $entry->setMustBeUsedBy($this->id_to_entry_map[$entry->getId()]->getMustBeUsedBy());
+                $entry->setMayBeUsedBy($this->id_to_entry_map[$entry->getId()]->getMayBeUsedBy());
                 $this->id_to_entry_map[$entry->getId()] = $entry;
             }else{
                 throw new ilKitchenSinkException(ilKitchenSinkException::DUPLICATE_ENTRY, $entry->getId());
@@ -53,8 +55,28 @@ class KitchenSinkTree
                 $this->id_to_entry_map[$entry->getRelations()->isA] = new KitchenSinkEntry(false, $entry->getRelations()->isA);
             }
 
-            $this->id_to_entry_map[$entry->getRelations()->isA]->addChild($entry->getId());
+            $this->id_to_entry_map[$entry->getRelations()->isA]->addChildId($entry->getId());
 
+        }
+
+        if($entry->getRelations()->mustUse){
+            foreach($entry->getRelations()->mustUse as $must_id){
+                if(!$this->id_to_entry_map[$must_id]){
+                    $this->id_to_entry_map[$must_id] = new KitchenSinkEntry(false, $must_id);
+                }
+
+                $this->id_to_entry_map[$must_id]->addMustBeUsedBy($entry->getId());
+            }
+        }
+
+        if($entry->getRelations()->mayUse){
+            foreach($entry->getRelations()->mayUse as $may_id){
+                if(!$this->id_to_entry_map[$may_id]){
+                    $this->id_to_entry_map[$may_id] = new KitchenSinkEntry(false, $may_id);
+                }
+
+                $this->id_to_entry_map[$may_id]->addMayBeUsedBy($entry->getId());
+            }
         }
     }
 
@@ -93,6 +115,25 @@ class KitchenSinkTree
         }
         throw new ilKitchenSinkException(ilKitchenSinkException::INVALID_ID,$id);
 
+    }
+
+    /**
+     * @param $id
+     * @return array
+     * @throws ilKitchenSinkException
+     */
+    public function getParentsOfEntry($id){
+        $entry = $this->getEntryById($id);
+
+        if($entry->getRelations()->isA=="root"){
+            return array("root");
+        }
+        else{
+
+            $parents = $this->getParentsOfEntry($entry->getRelations()->isA);
+            $parents[] = $entry->getRelations()->isA;
+            return $parents;
+        }
     }
 
 

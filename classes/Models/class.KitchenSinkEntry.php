@@ -82,6 +82,21 @@ class KitchenSinkEntry
     protected $children = array();
 
     /**
+     * @var array
+     */
+    protected $must_be_used_by = array();
+
+    /**
+     * @var array
+     */
+    protected $may_be_used_by = array();
+
+    /**
+     * @var array
+     */
+    protected $less_variables = array();
+
+    /**
      * @var bool
      */
     protected $is_dummy = false;
@@ -126,6 +141,7 @@ class KitchenSinkEntry
             $this->setFeatureWikiReferences($json->featureWikiReferences);
             $this->setRules($json->rules);
             $this->setRelations($json->relations);
+            $this->setLessVariables($json->lessVariables);
             if($json->html != ""){
                 $this->setHtmlByPath($json->html);
             }
@@ -145,12 +161,6 @@ class KitchenSinkEntry
         }
     }
 
-    /**
-     * @param string $entry_id
-     */
-    public function addChild($entry_id = ""){
-        $this->children[] = $entry_id;
-    }
 
     /**
      * @return string
@@ -404,6 +414,13 @@ class KitchenSinkEntry
     }
 
     /**
+     * @param string $child_id
+     */
+    public function addChildId($child_id = ""){
+        $this->children[] = $child_id;
+    }
+
+    /**
      * @return string
      */
     public function getHtml()
@@ -475,6 +492,67 @@ class KitchenSinkEntry
         return new $class_name();
     }
 
+    /**
+     * @return array
+     */
+    public function getMustBeUsedBy()
+    {
+        return $this->must_be_used_by;
+    }
+
+    /**
+     * @param array $must_be_used_by
+     */
+    public function setMustBeUsedBy($must_be_used_by)
+    {
+        $this->must_be_used_by = $must_be_used_by;
+    }
+
+    /**
+     * @param string $id
+     */
+    public function addMustBeUsedBy($id=""){
+        $this->must_be_used_by[] = $id;
+    }
+    /**
+     * @return array
+     */
+    public function getMayBeUsedBy()
+    {
+        return $this->may_be_used_by;
+    }
+
+    /**
+     * @param array $may_be_used_by
+     */
+    public function setMayBeUsedBy($may_be_used_by)
+    {
+        $this->may_be_used_by = $may_be_used_by;
+    }
+
+    /**
+     * @param string $id
+     */
+    public function addMayBeUsedBy($id = ""){
+        $this->may_be_used_by[] = $id;
+    }
+
+    /**
+     * @return array
+     */
+    public function getLessVariables()
+    {
+        return $this->less_variables;
+    }
+
+    /**
+     * @param array $less_variables
+     */
+    public function setLessVariables($less_variables)
+    {
+        $this->less_variables = $less_variables;
+    }
+
 
     /**
      * @return boolean
@@ -512,7 +590,6 @@ class KitchenSinkEntry
                 return "danger";
         }
     }
-
 
 }
 ?>

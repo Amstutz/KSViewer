@@ -4,6 +4,8 @@
 include_once("./Services/UIComponent/Explorer2/classes/class.ilExplorerBaseGUI.php");
 include_once("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/classes/Models/class.KitchenSinkEntry.php");
 include_once("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/classes/Models/class.KitchenSinkTree.php");
+include_once("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/classes/class.ilKitchenSinkPlugin.php");
+
 include_once("./Services/UIComponent/Panel/classes/class.ilPanelGUI.php");
 
 /**

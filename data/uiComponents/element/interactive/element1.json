@@ -36,9 +36,7 @@
   ],
   "relations": {
     "isA": "element",
-    "mustUse": [
-    ],
-    "mayUse":[
-    ]
+    "mustUse": ["collection","interactive"],
+    "mayUse":["element","collection"]
   }
 }

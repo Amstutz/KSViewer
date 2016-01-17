@@ -44,6 +44,8 @@ class ilKitchenSinkEntryStatusBlockGUI
             $entry_tpl->setVariable("LIBRARY_NAME", $this->getEntry()->getExternalClass()->name);
         }
         $this->panel->setBody($entry_tpl->get());
+
+
         return $this->panel->getHTML();
     }
 

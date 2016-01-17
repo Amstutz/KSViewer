@@ -9,6 +9,7 @@
     "name": "Bootstrap Badge",
     "href": "http://getbootstrap.com/components/#badges"
   },
+  "lessVariables": [ "Variable1","Variable2", "Variable3"],
   "statusEntry": "Accepted by JF",
   "statusImplementation": "To be implemented",
   "description": {

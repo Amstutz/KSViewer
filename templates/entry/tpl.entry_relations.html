@@ -1,26 +1,24 @@
-<div class="alert alert-{ALERT_TYPE}" role="alert">
-        <dl>
-                <dt>Is A</dt>
-                {IS_A_LINK}
-                <!-- BEGIN mustUse -->
-                <dt>Must Use</dt>
-                {MUST_USE_LINKS}
-                <!-- END mustUse -->
-                <!-- BEGIN mayUse -->
-                <dt>May Use</dt>
-                {MAY_USE_LINKS}
-                <!-- END mayUse -->
-                <!-- BEGIN children -->
-                <dt>Children</dt>
-                {CHILDREN_LINKS}
-                <!-- END children -->
-                <!-- BEGIN mustBeUsedBy -->
-                <dt>Must be used by</dt>
-                {MUST_BE_USED_BY_LINKS}
-                <!-- END mustBeUsedBy -->
-                <!-- BEGIN mayBeUsedBy -->
-                <dt>May be used by</dt>
-                {MAY_BE_USED_BY_LINKS}
-                <!-- END mayBeUsedBy -->
-        </dl>
-</div>
+<dl>
+    <dt>Is A</dt>
+    {IS_A_LINKS}
+    <!-- BEGIN mustUse -->
+    <dt>Must Use</dt>
+    <dd>{MUST_USE_LINKS}</dd>
+    <!-- END mustUse -->
+    <!-- BEGIN mayUse -->
+    <dt>May Use</dt>
+    <dd>{MAY_USE_LINKS}</dd>
+    <!-- END mayUse -->
+    <!-- BEGIN children -->
+    <dt>Children</dt>
+    <dd>{CHILDREN_LINKS}</dd>
+    <!-- END children -->
+    <!-- BEGIN mustBeUsedBy -->
+    <dt>Must be used by</dt>
+    <dd>{MUST_BE_USED_BY_LINKS}</dd>
+    <!-- END mustBeUsedBy -->
+    <!-- BEGIN mayBeUsedBy -->
+    <dt>May be used by</dt>
+    <dd>{MAY_BE_USED_BY_LINKS}</dd>
+    <!-- END mayBeUsedBy -->
+</dl>
