@@ -6,7 +6,6 @@ require_once(ILIAS_ABSOLUTE_PATH."/Customizing/global/plugins/Services/UICompone
  *
  * @author            Timon Amstutz <timon.amstutz@ilub.unibe.ch>
  * @version           $Id$
- * @ingroup           ServicesUIComponent
  *
  */
 class KitchenSinkEntry

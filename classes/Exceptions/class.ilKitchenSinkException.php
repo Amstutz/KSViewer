@@ -24,6 +24,10 @@ class ilKitchenSinkException extends ilException
 
     const FILE_CREATION_FAILED   = 2001;
     const FOLDER_CREATION_FAILED = 2002;
+    const FILE_OPENING_FAILED = 2003;
+    const LESS_COMPILE_FAILED = 2004;
+
+
     /**
      * @var string
      */
@@ -83,6 +87,12 @@ class ilKitchenSinkException extends ilException
                 break;
             case self::FOLDER_CREATION_FAILED:
                 $this->message = "Folder creation failed, path: ". " " . $this->add_info;
+                break;
+            case self::LESS_COMPILE_FAILED:
+                $this->message = "Compilation of less failed: ". " " . $this->add_info;
+                break;
+            case self::FILE_OPENING_FAILED:
+                $this->message = "Failed to open file: ". " " . $this->add_info;
                 break;
             default:
                 $this->message = "Unknonw Exception". " " . $this->add_info;
