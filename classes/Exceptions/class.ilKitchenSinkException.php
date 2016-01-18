@@ -21,6 +21,9 @@ class ilKitchenSinkException extends ilException
     const INVALID_ID   = 1005;
     const INVALID_FILE_PATH = 1006;
 
+
+    const FILE_CREATION_FAILED   = 2001;
+    const FOLDER_CREATION_FAILED = 2002;
     /**
      * @var string
      */
@@ -74,6 +77,12 @@ class ilKitchenSinkException extends ilException
                 break;
             case self::INVALID_FILE_PATH:
                 $this->message = "Invalid file path or file not readable: ". " " . $this->add_info;
+                break;
+            case self::FILE_CREATION_FAILED:
+                $this->message = "File creation failed, path: ". " " . $this->add_info;
+                break;
+            case self::FOLDER_CREATION_FAILED:
+                $this->message = "Folder creation failed, path: ". " " . $this->add_info;
                 break;
             default:
                 $this->message = "Unknonw Exception". " " . $this->add_info;

@@ -2,6 +2,8 @@
 include_once("./Services/UIComponent/Panel/classes/class.ilPanelGUI.php");
 include_once("class.ilKitchenSinkEntryExplorerGUI.php");
 include_once("class.ilKitchenSinkEntryGUI.php");
+include_once("class.ilKitchenSinkLessGUI.php");
+
 /**
  *
  * @author            Timon Amstutz <timon.amstutz@ilub.unibe.ch>
@@ -151,7 +153,8 @@ class ilKitchenSinkMainGUI
         $this->tpl->show();
     }
     protected function less(){
-        $this->tpl->setContent("less");
+        $less = new ilKitchenSinkLessGUI($this);
+        $this->tpl->setContent($less->renderLess());
         $this->tpl->show();
     }
 }
