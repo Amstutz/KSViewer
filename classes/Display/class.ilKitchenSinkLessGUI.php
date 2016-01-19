@@ -107,10 +107,10 @@ class ilKitchenSinkLessGUI
 
     protected function createSkin(){
         if(!file_exists (  $this->getSkinDir() )){
-            if(! mkdir($this->getSkinDir() , 0770 ,  $recursive = true ) ){
+            if(! mkdir($this->getSkinDir() , 0774 ,  $recursive = true ) ){
                 throw new ilKitchenSinkException(ilKitchenSinkException::FOLDER_CREATION_FAILED, $this->getSkinDir());
             }
-            if(! mkdir($this->getSkinImagesFolder(), 0770 ,  $recursive = true ) ){
+            if(! mkdir($this->getSkinImagesFolder(), 0774 ,  $recursive = true ) ){
                 throw new ilKitchenSinkException(ilKitchenSinkException::FOLDER_CREATION_FAILED, $this->getSkinDir()."/images");
             }
         }
