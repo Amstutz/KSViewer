@@ -1,6 +1,7 @@
 <?php
 include_once("./Services/UIComponent/Panel/classes/class.ilPanelGUI.php");
 include_once("class.ilKitchenSinkEntryStatusBlockGUI.php");
+include_once("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/classes/Models/class.KitchenSinkLessFile.php");
 
 /**
  *
@@ -178,15 +179,35 @@ class ilKitchenSinkEntryGUI
         $less_tpl = (new ilKitchenSinkPlugin())->getTemplate('entry/tpl.entry_less.html', true, true);
 
         if($this->getEntry()->getLessVariables()){
+            $less_file = new KitchenSinkLessFile(ilKitchenSinkLessGUI::getDefaultLessVariables());
+            $less_file->read();
+
             $less_links = "";
-            foreach($this->getEntry()->getLessVariables() as $variable){
-                $less_links .= $variable."; ";
+            foreach($this->getEntry()->getLessVariables() as $variable_name){
+                $variable = $less_file->getVariableByName($variable_name);
+                if($variable){
+                    $less_links .=  $this->getHtmlLinkForVariable($variable)."; ";
+                }else{
+                    $less_links .= $variable_name." (Not found in variables.less); ";
+                }
             }
             $less_tpl->setVariable("LESS_VARIABLES",$less_links);
         }
         $this->panel->setBody($less_links);
         return $this->panel->getHTML();
     }
+
+    /**
+     * @param KitchenSinkLessVariable $variable
+     * @return string
+     */
+    protected function getHtmlLinkForVariable(KitchenSinkLessVariable $variable){
+        $link_tpl = (new ilKitchenSinkPlugin())->getTemplate('entry/tpl.entry_link.html', true, true);
+        $link_tpl->setVariable("HREF",  $this->ctrl->getLinkTarget($this->getParent(),"less")."&variable=".$variable->getName()."#".$variable->getCategoryName());
+        $link_tpl->setVariable("CAPTION", $variable->getName());
+        return $link_tpl->get();
+    }
+
     protected function getRelationsBlock(){
         $this->panel = ilPanelGUI::getInstance();
         $this->panel->setHeading("Relations");
@@ -243,7 +264,7 @@ class ilKitchenSinkEntryGUI
      * @throws ilKitchenSinkException
      */
     protected function getHtmlLinkFromEntryId($id){
-        $link_tpl = (new ilKitchenSinkPlugin())->getTemplate('entry/tpl.entry_relations_link.html', true, true);
+        $link_tpl = (new ilKitchenSinkPlugin())->getTemplate('entry/tpl.entry_link.html', true, true);
         $link_tpl->setVariable("HREF",  $this->ctrl->getLinkTarget($this->getParent(),"entries")."&node_id=".$this->getTree()->getEntryById($id)->getId());
         $link_tpl->setVariable("CAPTION", $this->getTree()->getEntryById($id)->getTitle());
         return $link_tpl->get();

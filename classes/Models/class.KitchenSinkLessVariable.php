@@ -6,7 +6,7 @@ require_once("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHoo
  * @version           $Id$
  *
  */
-class KitchenSinkLessVariables extends KitchenSinkLessItem
+class KitchenSinkLessVariable extends KitchenSinkLessItem
 {
     const TYPE_STRING = 1;
     const TYPE_NUMERIC = 2;
@@ -38,18 +38,23 @@ class KitchenSinkLessVariables extends KitchenSinkLessItem
     protected $category_name = "";
 
     /**
+     * @var array
+     */
+    protected $references = array();
+    /**
      * KitchenSinkLessVariables constructor.
      * @param string $name
      * @param string $value
      * @param int $type
      * @param string $comment
      */
-    public function __construct($name, $value, $comment,$category_name)
+    public function __construct($name, $value, $comment,$category_name, $references)
     {
         $this->name = $name;
         $this->value = $value;
         $this->category_name = $category_name;
         $this->comment = $comment;
+        $this->references = $references;
     }
 
     /**
@@ -118,7 +123,7 @@ class KitchenSinkLessVariables extends KitchenSinkLessItem
 
     public function __toString()
     {
-       return $this->getName()." ". $this->getValue();// TODO: Implement __toString() method.
+       return "@".$this->getName().":\t\t". $this->getValue().";\n";
     }
 
     /**
@@ -136,6 +141,23 @@ class KitchenSinkLessVariables extends KitchenSinkLessItem
     {
         $this->category_name = $category_name;
     }
+
+    /**
+     * @return array
+     */
+    public function getReferences()
+    {
+        return $this->references;
+    }
+
+    /**
+     * @param array $references
+     */
+    public function setReferences($references)
+    {
+        $this->references = $references;
+    }
+
 
 }
 ?>

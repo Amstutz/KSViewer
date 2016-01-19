@@ -92,7 +92,7 @@ class ilKitchenSinkException extends ilException
                 $this->message = "Compilation of less failed: ". " " . $this->add_info;
                 break;
             case self::FILE_OPENING_FAILED:
-                $this->message = "Failed to open file: ". " " . $this->add_info;
+                $this->message = "Failed to open file   : ". " " . $this->add_info;
                 break;
             default:
                 $this->message = "Unknonw Exception". " " . $this->add_info;

@@ -1,8 +1,11 @@
 <?php
-require_once("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/classes/Models/class.KitchenSinkLessFile.php");
-require_once("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/classes/Models/class.KitchenSinkLessCategory.php");
-require_once("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/classes/Models/class.KitchenSinkLessComment.php");
-require_once("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/classes/Models/class.KitchenSinkLessVariable.php");
+include_once("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/classes/Models/class.KitchenSinkLessFile.php");
+include_once("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/classes/Models/class.KitchenSinkLessCategory.php");
+include_once("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/classes/Models/class.KitchenSinkLessComment.php");
+include_once("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/classes/Models/class.KitchenSinkLessVariable.php");
+include_once("./Services/Xml/classes/class.ilXmlWriter.php");
+include_once("./Services/Form/classes/class.ilPropertyFormGUI.php");
+
 /**
  *
  * @author            Timon Amstutz <timon.amstutz@ilub.unibe.ch>
@@ -10,6 +13,10 @@ require_once("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHoo
  */
 class ilKitchenSinkLessGUI
 {
+    /**
+     * @var ilTemplate
+     */
+    protected $tpl;
 
     /**
      * @var ilCtrl $ctrl
@@ -22,9 +29,28 @@ class ilKitchenSinkLessGUI
     protected $parent;
 
     /**
+     * @var ilObjUser $user;
+     */
+    protected $user;
+    /**
      * @var string
      */
-    protected $skin_name = "";
+    static $default_less_file = '../../../../templates/default/delos.less';
+
+    /**
+     * @var string
+     */
+    static $default_less_variables = "./templates/default/less/variables.less";
+
+    /**
+     * @var string
+     */
+    protected $default_images_folders = "./templates/default/images";
+
+    /**
+     * @var string
+     */
+    static $skin_name = "";
 
     /**
      * @var string
@@ -34,13 +60,27 @@ class ilKitchenSinkLessGUI
     /**
      * @var string
      */
-    protected $less_file = "";
+    protected $skin_images_folder = "";
 
     /**
      * @var string
      */
-    protected $ilias_less_variables_file = "";
+    protected $skin_variables_file = "variables.less";
 
+    /**
+     * @var string
+     */
+    protected $skin_less_file = "";
+
+    /**
+     * @var KitchenSinkLessFile
+     */
+    protected $less_file = null;
+
+    /**
+     * @var string
+     */
+    protected $form_elements_prefix = "ks-";
     /**
      * ilKitchenSinkEntryGUI constructor.
      * @param KitchenSinkEntry $entry
@@ -51,121 +91,170 @@ class ilKitchenSinkLessGUI
         /**
          * @var ilObjUser $ilUser
          */
-        global $ilCtrl, $ilUser;
+        global $ilCtrl, $ilUser, $tpl;
 
+        $this->user = $ilUser;
         $this->setParent($parent);
         $this->ctrl = $ilCtrl;
+        $this->tpl = $tpl;
 
-        $this->setSkinName("ksSkinOf".$ilUser->getLogin());
-        $this->setSkinDir("./Customizing/global/skin/".$skin_name);
+        $this->setSkinName("ksSkinOf".$this->user->getLogin());
+        $this->setSkinDir("./Customizing/global/skin/".$this->getSkinName());
+        $this->setSkinImagesFolder($this->getSkinDir()."/images");
+        $this->setSkinLessFile(ILIAS_ABSOLUTE_PATH."/Customizing/global/skin/ksSkinOfroot/".$this->getSkinName().".less");
+
     }
 
     protected function createSkin(){
-
-        $skin_name = ;
-        $skin_dir = ;
-
-        if(!file_exists (  $skin_dir )){
-            if(! mkdir($skin_dir, 0770 ,  $recursive = true ) ){
-                throw new ilKitchenSinkException(ilKitchenSinkException::FOLDER_CREATION_FAILED, $skin_dir);
+        if(!file_exists (  $this->getSkinDir() )){
+            if(! mkdir($this->getSkinDir() , 0770 ,  $recursive = true ) ){
+                throw new ilKitchenSinkException(ilKitchenSinkException::FOLDER_CREATION_FAILED, $this->getSkinDir());
             }
-            if(! mkdir($skin_dir."/images", 0770 ,  $recursive = true ) ){
-                throw new ilKitchenSinkException(ilKitchenSinkException::FOLDER_CREATION_FAILED, $skin_dir."/images");
+            if(! mkdir($this->getSkinImagesFolder(), 0770 ,  $recursive = true ) ){
+                throw new ilKitchenSinkException(ilKitchenSinkException::FOLDER_CREATION_FAILED, $this->getSkinDir()."/images");
             }
         }
 
-        $less_name = $skin_dir."/".$skin_name.".less" ;
-        file_put_contents( $less_name, "@import '../../../../templates/default/delos';@import 'variables';");
-        file_put_contents( $skin_dir."/variables.less" , "@brand-primary: rgb(214, 0, 43);");
+        $less_name = $this->getSkinDir()."/".$this->getSkinName().".less" ;
+        file_put_contents( $less_name, "@import '".self::getDefaultLessFile()."';@import '".$this->getSkinVariablesFile()."';");
 
-        include_once("./Services/Xml/classes/class.ilXmlWriter.php");
+        file_put_contents( $this->getSkinDir()."/".$this->getSkinVariablesFile(),$this->less_file->write());
+
 
         $xml_writer = new ilXmlWriter();
         $xml_writer->xmlHeader();
         $xml_writer->xmlStartTag("template",array(
             "xmlns"=>"http://www.w3.org",
             "version"=>"1",
-            "name"=>$skin_name));
+            "name"=>$this->getSkinName()));
         $xml_writer->xmlStartTag("style",array(
-            "name"=>"Kitchen Sink Style of ".$ilUser->getLogin(),
-            "id"=>$skin_name,
+            "name"=>"Kitchen Sink Style of ".$this->user->getLogin(),
+            "id"=>$this->getSkinName(),
             "image_directory"=>"images"));
 
         $xml_writer->xmlEndTag("style");
         $xml_writer->xmlEndTag("template");
-        file_put_contents($skin_dir."/template.xml",$xml_writer->xmlDumpMem(true));
+        file_put_contents($this->getSkinDir()."/template.xml",$xml_writer->xmlDumpMem(true));
     }
 
     protected function compileLess(){
-        $output = shell_exec("lessc ".ILIAS_ABSOLUTE_PATH."/Customizing/global/skin/ksSkinOfroot/ksSkinOfroot.less");
+        $output = shell_exec("lessc ".$this->getSkinLessFile());
         if(!$output){
-            $less_error = shell_exec("lessc ".ILIAS_ABSOLUTE_PATH."/Customizing/global/skin/ksSkinOfroot/ksSkinOfroot.less 2>&1");
+            $less_error = shell_exec("lessc ".$this->getSkinLessFile()." 2>&1");
             if(!$less_error){
                 throw new ilKitchenSinkException(ilKitchenSinkException::LESS_COMPILE_FAILED, "Empty css output, unknown error.");
             }
             throw new ilKitchenSinkException(ilKitchenSinkException::LESS_COMPILE_FAILED, $less_error);
         }
-        file_put_contents( $skin_dir."/".$skin_name.".css",shell_exec("lessc ".ILIAS_ABSOLUTE_PATH."/Customizing/global/skin/ksSkinOfroot/ksSkinOfroot.less"));
+        file_put_contents( $this->getSkinDir()."/".$this->getSkinName().".css",$output);
 
     }
 
-    protected function readLessVariables(){
-        $less_output = new KitchenSinkLessFile();
-        $last_variable_comment = null;
-        $last_category_id = null;
-        $last_category_name = null;
+    protected function selectSkin(){
+        $this->user->writePref("skin",$this->getSkinName());
+        $this->user->writePref("style",$this->getSkinName());
+    }
 
-        if ($handle) {
-            $line_number = 1;
-            while (($line = fgets($handle)) !== false) {
+    /**
+     * @param bool|false $force_delos
+     * @throws ilKitchenSinkException
+     */
+    protected function readLessVariables($force_delos = false){
 
-                if(preg_match('/\/\/==\s(.*)/', $line, $out)){
-                    //Check Category
-                    $last_category_id = $less_output->addItem(new KitchenSinkLessCategory($out[1]));
-                    $last_category_name = $out[1];
-                } else if(preg_match('/\/\/##\s(.*)/', $line, $out)){
-                    //Check Comment Category
-                    $last_category = $less_output->getItemById($last_category_id);
-                    $last_category->setComment($out[1]);
-                } else if(preg_match('/\/\/\*\*\s(.*)/', $line, $out)){
-                    //Check Variables Comment
-                    $last_variable_comment = $out[1];
-                } else if(preg_match('/@(.*)/', $line, $out)){
-                    //Check Variables
-                    preg_match('/(?:@)(.*)(?:\:)/', $out[0], $variable);
-                    preg_match('/(?::)(.*)(?:;)/', $line, $value);
-                    $less_output->addItem(new KitchenSinkLessVariables($variable[1],ltrim ( $value[1] ," \t\n\r\0\x0B" ),$last_variable_comment,$last_category_name));
-                    $last_variable_comment = 0;
-                }else{
-                    $less_output->addItem(new KitchenSinkLessComment($line));
+        if($force_delos || !file_exists (  $this->getSkinDir())){
+            $variable_file = $this->getDefaultLessVariables();
+        } else{
+            $variable_file = $this->getSkinDir()."/".$this->getSkinVariablesFile();
+        }
+        $this->less_file = new KitchenSinkLessFile($variable_file);
+        $this->less_file->read();
+    }
+
+
+
+    public function initLessVariablesForm()
+    {
+        $this->form = new ilPropertyFormGUI();
+
+        $this->form->setTitle("Adapt Less Variables");
+
+        $focus_variable = $_GET['variable'];
+        if($focus_variable){
+            $this->tpl->addOnLoadCode("setTimeout(function() { $('#".$this->form_elements_prefix.$focus_variable."').focus();}, 100);");
+        }
+
+        foreach($this->less_file->getCategories() as $category){
+            $section = new ilFormSectionHeaderGUI();
+            $section->setTitle($category->getName());
+            $section->setInfo($category->getComment());
+            $section->setSectionAnchor($category->getName());
+            $this->form->addItem($section);
+            foreach($this->less_file->getVariablesPerCategory($category->getName()) as $variable){
+                $input = new ilTextInputGUI($variable->getName(), $this->form_elements_prefix.$variable->getName());
+                $input->setRequired(true);
+                $input->setInfo($variable->getComment());
+                $this->form->addItem($input);
+
+            }
+        }
+
+        $this->form->addCommandButton("lessResetVariables", "Reset Variables");
+        $this->form->addCommandButton("lessUpdatedVariables", "Update Variables");
+
+        $this->form->setFormAction($this->ctrl->getFormAction($this->getParent()));
+    }
+
+
+    function getLessValues()
+    {
+        $values = array();
+        foreach($this->less_file->getCategories() as $category){
+            foreach($this->less_file->getVariablesPerCategory($category->getName()) as $variable){
+                $values[$this->form_elements_prefix.$variable->getName()] = $variable->getValue();
+            }
+        }
+
+        $this->form->setValuesByArray($values);
+    }
+    public function resetLess()
+    {
+        $this->readLessVariables(true);
+        $this->initLessVariablesForm();
+        $this->createSkin();
+        $this->compileLess();
+        $this->ctrl->redirect($this->getParent(), "less");
+    }
+
+    public function updateLess()
+    {
+        $this->readLessVariables();
+        $this->initLessVariablesForm();
+        if ($this->form->checkInput())
+        {
+            foreach($this->less_file->getCategories() as $category){
+                foreach($this->less_file->getVariablesPerCategory($category->getName()) as $variable){
+                    $variable->setValue($this->form->getInput($this->form_elements_prefix.$variable->getName()));
                 }
-
-
-                $line_number++;
             }
 
-            var_dump($less_output);
-            exit;
+            $this->createSkin();
+            $this->compileLess();
+            $this->selectSkin();
+            $this->ctrl->redirect($this->getParent(), "less");
+        }
+
+        $this->form->setValuesByPost();
+        return $this->form->getHtml();
     }
+
     /**
      * @return html
      */
     public function renderLess(){
-        $less_variables_file = "./templates/default/less/variables.less";
-        $handle = fopen($less_variables_file, "r");
-
-
-
-
-            fclose($handle);
-        } else {
-            throw new ilKitchenSinkException(ilKitchenSinkException::FILE_OPENING_FAILED);
-        }
-
-        exit;
-        $ilUser->writePref("style",$skin_name);
-        $ilUser->writePref("skin",$skin_name);
-        return "Hello World";
+        $this->readLessVariables();
+        $this->initLessVariablesForm();
+        $this->getLessValues();
+        return $this->form->getHtml();
     }
 
     /**
@@ -187,17 +276,65 @@ class ilKitchenSinkLessGUI
     /**
      * @return string
      */
-    public function getSkinName()
+    static function getDefaultLessFile()
     {
-        return $this->skin_name;
+        return self::$default_less_file;
+    }
+
+    /**
+     * @param $default_less_file
+     */
+    static function setDefaultLessFile($default_less_file)
+    {
+        self::$default_less_file = $default_less_file;
+    }
+
+    /**
+     * @return string
+     */
+    static function getDefaultLessVariables()
+    {
+        return self::$default_less_variables;
+    }
+
+    /**
+     * @param string $default_less_variables
+     */
+    static function setDefaultLessVariables($default_less_variables)
+    {
+        self::$default_less_variables = $default_less_variables;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDefaultImagesFolders()
+    {
+        return $this->default_images_folders;
+    }
+
+    /**
+     * @param string $default_images_folders
+     */
+    public function setDefaultImagesFolders($default_images_folders)
+    {
+        $this->default_images_folders = $default_images_folders;
+    }
+
+    /**
+     * @return string
+     */
+    public static function getSkinName()
+    {
+        return self::$skin_name;
     }
 
     /**
      * @param string $skin_name
      */
-    public function setSkinName($skin_name)
+    public static function setSkinName($skin_name)
     {
-        $this->skin_name = $skin_name;
+        self::$skin_name = $skin_name;
     }
 
     /**
@@ -219,35 +356,50 @@ class ilKitchenSinkLessGUI
     /**
      * @return string
      */
-    public function getLessFile()
+    public function getSkinImagesFolder()
     {
-        return $this->less_file;
+        return $this->skin_images_folder;
     }
 
     /**
-     * @param string $less_file
+     * @param string $skin_images_folder
      */
-    public function setLessFile($less_file)
+    public function setSkinImagesFolder($skin_images_folder)
     {
-        $this->less_file = $less_file;
+        $this->skin_images_folder = $skin_images_folder;
     }
 
     /**
      * @return string
      */
-    public function getIliasLessVariablesFile()
+    public function getSkinVariablesFile()
     {
-        return $this->ilias_less_variables_file;
+        return $this->skin_variables_file;
     }
 
     /**
-     * @param string $ilias_less_variables_file
+     * @param string $skin_variables_file
      */
-    public function setIliasLessVariablesFile($ilias_less_variables_file)
+    public function setSkinVariablesFile($skin_variables_file)
     {
-        $this->ilias_less_variables_file = $ilias_less_variables_file;
+        $this->skin_variables_file = $skin_variables_file;
     }
 
+    /**
+     * @return string
+     */
+    public function getSkinLessFile()
+    {
+        return $this->skin_less_file;
+    }
+
+    /**
+     * @param string $skin_less_file
+     */
+    public function setSkinLessFile($skin_less_file)
+    {
+        $this->skin_less_file = $skin_less_file;
+    }
 
 
 }

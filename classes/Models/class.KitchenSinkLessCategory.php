@@ -65,7 +65,7 @@ class KitchenSinkLessCategory extends KitchenSinkLessItem
 
     public function __toString()
     {
-        return $this->getName();
+        return "//== ".$this->getName()."\n//\n//##".$this->getComment();
     }
 }
 ?>

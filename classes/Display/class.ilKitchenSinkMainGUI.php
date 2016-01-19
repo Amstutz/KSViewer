@@ -87,6 +87,16 @@ class ilKitchenSinkMainGUI
                         $this->less();
                         //$this->ctrl->forwardCommand(new xbgStdMessageGUI($this));
                         break;
+                    case 'lessUpdatedVariables':
+                        $this->tabs_gui->activateTab('less');
+                        $this->updateLess();
+                        //$this->ctrl->forwardCommand(new xbgStdMessageGUI($this));
+                        break;
+                    case 'lessResetVariables':
+                        $this->tabs_gui->activateTab('less');
+                        $this->resetLess();
+                        //$this->ctrl->forwardCommand(new xbgStdMessageGUI($this));
+                        break;
                 }
         }
         return TRUE;
@@ -114,7 +124,6 @@ class ilKitchenSinkMainGUI
         $this->entryGUI = new ilKitchenSinkEntryGUI($this->explorer->getCurrentOpenedNode(), $this->explorer->getTree(),$this);
         $this->tpl->setContent($this->entryGUI->renderEntryCenter());
         $this->tpl->setRightContent($this->entryGUI->renderEntryRight());
-
         $this->tpl->show();
     }
 
@@ -155,6 +164,16 @@ class ilKitchenSinkMainGUI
     protected function less(){
         $less = new ilKitchenSinkLessGUI($this);
         $this->tpl->setContent($less->renderLess());
+        $this->tpl->show();
+    }
+    protected function updateLess(){
+        $less = new ilKitchenSinkLessGUI($this);
+        $this->tpl->setContent($less->updateLess());
+        $this->tpl->show();
+    }
+    protected function resetLess(){
+        $less = new ilKitchenSinkLessGUI($this);
+        $this->tpl->setContent($less->resetLess());
         $this->tpl->show();
     }
 }
