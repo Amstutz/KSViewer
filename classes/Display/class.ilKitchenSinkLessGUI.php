@@ -101,7 +101,7 @@ class ilKitchenSinkLessGUI
         $this->setSkinName("ksSkinOf".$this->user->getLogin());
         $this->setSkinDir("./Customizing/global/skin/".$this->getSkinName());
         $this->setSkinImagesFolder($this->getSkinDir()."/images");
-        $this->setSkinLessFile(ILIAS_ABSOLUTE_PATH."/Customizing/global/skin/ksSkinOfroot/".$this->getSkinName().".less");
+        $this->setSkinLessFile(ILIAS_ABSOLUTE_PATH."/Customizing/global/skin/".$this->getSkinName().".less");
 
     }
 
