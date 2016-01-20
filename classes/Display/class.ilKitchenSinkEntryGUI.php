@@ -89,12 +89,29 @@ class ilKitchenSinkEntryGUI
         if($this->getEntry()->getRules()){
             $rule_block = ilPanelGUI::getInstance();
             $rule_block->setHeading("Rules");
-            $html = "<ul>";
-            foreach($this->getEntry()->getRules() as $rule){
-                $html .= "<li>".$rule."</li>";
+            $rules_tpl = (new ilKitchenSinkPlugin())->getTemplate('entry/tpl.entry_rules.html', true, true);
+            $rules_tpl->setCurrentBlock("ruleCategory");
+            if(is_array($this->getEntry()->getRules())){
+                foreach($this->getEntry()->getRules() as $rule_category){
+                    $rules_tpl->setVariable("RULE_CATEGORY", $rule_category->id);
+                    if(is_array($rule_category->rules)){
+                        $rules_html = "";
+                        foreach($rule_category->rules as $rule){
+                            $rules_html .= "<li>".$rule."</li>";
+                        }
+                    }
+
+                    $rules_tpl->setVariable("RULES", $rules_html);
+
+                    $rules_tpl->parseCurrentBlock();
+
+                }
+                $rule_block->setBody($rules_tpl->get());
+
+            }else{
+                $rule_block->setBody("No rules defined");
             }
-            $html .= "</ul>";
-            $rule_block->setBody($html);
+
             $rule_block->setHeadingStyle(ilPanelGUI::HEADING_STYLE_SUBHEADING);
             $rule_block->setPanelStyle(ilPanelGUI::PANEL_STYLE_PRIMARY);
             return $rule_block->getHTML();
@@ -134,7 +151,7 @@ class ilKitchenSinkEntryGUI
                 $code_tpl->setVariable("CODE",htmlentities($this->getEntry()->getHtml()) );
                 $example_block->setBody($code_tpl->get());
             }else{
-                $code_tpl->setVariable("CODE",htmlentities($this->getEntry()->getPHP()));
+                $code_tpl->setVariable("CODE",htmlentities($this->getEntry()->getPhpClassInstance()->render()));
 
                 if($this->testPHPExample()){
                     $label = "<div class=\"label label-success\">Test Passed</div>";
@@ -142,10 +159,10 @@ class ilKitchenSinkEntryGUI
 
                 }else{
                     $label = "<div class=\"label label-danger\">Test Failed</div>";
-                    $failure_code_tpl = (new ilKitchenSinkPlugin())->getTemplate('entry/tpl.entry_code.html', true, true);
-                    $failure_code_tpl->touchBlock("code");
-                    $failure_code_tpl->setVariable("CODE",htmlentities($this->getEntry()->getPhpClassInstance()->render()));
-                    $example_block->setBody($code_tpl->get().$label."<p>Failed PHP-Output: </p>".$failure_code_tpl->get());
+                    //$failure_code_tpl = (new ilKitchenSinkPlugin())->getTemplate('entry/tpl.entry_code.html', true, true);
+                    //$failure_code_tpl->touchBlock("code");
+                    //$failure_code_tpl->setVariable("CODE",htmlentities($this->getEntry()->getPhpClassInstance()->render()));
+                    $example_block->setBody($code_tpl->get().$label);//."<p>Failed PHP-Output: </p>".$failure_code_tpl->get());
 
                 }
 

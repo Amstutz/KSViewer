@@ -14,20 +14,23 @@ class ilKitchenSinkException extends ilException
 {
     const UNKNONW_EXCEPTION = -1;
 
+    const PARSING_JSON_FAILED = 1;
+
     const EMPTY_ENTRY   = 1001;
     const INVALID_MANDATORY_ENTRY_ATTRIBUTE   = 1002;
     const DUPLICATE_ENTRY  = 1003;
     const DUPLICATE_ROOT_ENTRY   = 1004;
     const INVALID_ID   = 1005;
     const INVALID_FILE_PATH = 1006;
-
+    const INVALID_RULES_ENTRY = 1007;
 
     const FILE_CREATION_FAILED   = 2001;
     const FOLDER_CREATION_FAILED = 2002;
     const FILE_OPENING_FAILED = 2003;
     const LESS_COMPILE_FAILED = 2004;
 
-
+    const SKIN_FOLDER_DOES_NOT_EXIST = 3001;
+    const SKIN_CSS_DOES_NOT_EXIST = 3002;
     /**
      * @var string
      */
@@ -65,7 +68,10 @@ class ilKitchenSinkException extends ilException
         switch ($this->code)
         {
             case self::EMPTY_ENTRY:
-                $this->message = "Empty Entry" . " " . $this->add_info;
+                $this->message = "Empty Entry " . $this->add_info;
+                break;
+            case self::PARSING_JSON_FAILED:
+                $this->message = "Parsing JSON Failed " . $this->add_info;
                 break;
             case self::INVALID_MANDATORY_ENTRY_ATTRIBUTE:
                 $this->message = "Invalid mandatory entry Attribute:". " " . $this->add_info;
@@ -93,6 +99,15 @@ class ilKitchenSinkException extends ilException
                 break;
             case self::FILE_OPENING_FAILED:
                 $this->message = "Failed to open file   : ". " " . $this->add_info;
+                break;
+            case self::SKIN_CSS_DOES_NOT_EXIST:
+                $this->message = "Skin CSS does not exist: ". " " . $this->add_info;
+                break;
+            case self::SKIN_FOLDER_DOES_NOT_EXIST:
+                $this->message = "Skin folder does not exist: ". " " . $this->add_info;
+                break;
+            case self::INVALID_RULES_ENTRY:
+                $this->message = "Invalid rules entry: ". " " . $this->add_info;
                 break;
             default:
                 $this->message = "Unknonw Exception". " " . $this->add_info;

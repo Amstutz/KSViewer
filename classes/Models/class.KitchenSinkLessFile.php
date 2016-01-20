@@ -51,7 +51,12 @@ class KitchenSinkLessFile
         $last_category_id = null;
         $last_category_name = null;
 
-        $handle = fopen($this->getLessVariablesFile(), "r");
+        try{
+            $handle = fopen($this->getLessVariablesFile(), "r");
+        }catch(Exception $e){
+            throw new ilKitchenSinkException(ilKitchenSinkException::FILE_OPENING_FAILED, $this->getLessVariablesFile());
+        }
+
 
         if ($handle) {
             $line_number = 1;

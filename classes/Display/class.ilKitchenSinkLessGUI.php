@@ -50,6 +50,10 @@ class ilKitchenSinkLessGUI
     /**
      * @var string
      */
+    protected $default_font_folders = "./templates/default/fonts";
+    /**
+     * @var string
+     */
     static $skin_name = "";
 
     /**
@@ -71,6 +75,11 @@ class ilKitchenSinkLessGUI
      * @var string
      */
     protected $skin_less_file = "";
+
+    /**
+     * @var string
+     */
+    protected $skin_font_folder = "";
 
     /**
      * @var KitchenSinkLessFile
@@ -98,11 +107,64 @@ class ilKitchenSinkLessGUI
         $this->ctrl = $ilCtrl;
         $this->tpl = $tpl;
 
+
         $this->setSkinName("ksSkinOf".$this->user->getLogin());
         $this->setSkinDir("./Customizing/global/skin/".$this->getSkinName());
         $this->setSkinImagesFolder($this->getSkinDir()."/images");
         $this->setSkinLessFile(ILIAS_ABSOLUTE_PATH."/Customizing/global/skin/".$this->getSkinName()."/".$this->getSkinName().".less");
+        $this->setSkinFontFolder("./Customizing/global/skin/".$this->getSkinName()."/fonts");
 
+    }
+
+    static function xCopy($src, $dest)
+    {
+        foreach (scandir($src) as $file) {
+            $src_file = rtrim($src, '/') . '/' . $file;
+            $dest_file = rtrim($dest, '/') . '/' . $file;
+            if (!is_readable($src_file)) {
+                throw new ilKitchenSinkException(ilKitchenSinkException::FILE_OPENING_FAILED, $src_file);
+            }
+            if (substr($file, 0, 1) != ".") {
+                if (is_dir($src_file)) {
+                    if (!file_exists($dest_file)) {
+                        try {
+                            mkdir($dest_file);
+                        } catch (Exception $e) {
+                            throw new ilKitchenSinkException(ilKitchenSinkException::FOLDER_CREATION_FAILED, "Copy " . $src_file . " to " . $dest_file . " Error: " . $e);
+                        }
+                    }
+                    self::xCopy($src_file, $dest_file);
+                } else {
+                    try {
+                        copy($src_file,$dest_file);
+                    } catch (Exception $e) {
+                        throw new ilKitchenSinkException(ilKitchenSinkException::FILE_CREATION_FAILED, "Copy " . $src_file . " to " . $dest_file . " Error: " . $e);
+                    }
+
+                }
+
+            }
+        }
+    }
+
+    protected function copyImagesFolderRecursively(){
+        try {
+            mkdir($this->getSkinImagesFolder(), 0775, $recursive = true);
+        }catch(Exception $e)
+        {
+            throw new ilKitchenSinkException(ilKitchenSinkException::FOLDER_CREATION_FAILED, $this->getSkinImagesFolder()." ".$e->getMessage());
+        }
+        self::xCopy($this->getDefaultImagesFolders(),$this->getSkinImagesFolder());
+    }
+
+    protected function copyFontsFolderRecursively(){
+        try {
+            mkdir($this->getSkinFontFolder() , 0775 ,  $recursive = true );
+        }catch(Exception $e)
+        {
+            throw new ilKitchenSinkException(ilKitchenSinkException::FOLDER_CREATION_FAILED, $this->getSkinFontFolder()." ".$e->getMessage());
+        }
+        self::xCopy($this->getDefaultFontFolders(),$this->getSkinFontFolder());
     }
 
     protected function createSkin(){
@@ -110,9 +172,12 @@ class ilKitchenSinkLessGUI
             if(! mkdir($this->getSkinDir() , 0775 ,  $recursive = true ) ){
                 throw new ilKitchenSinkException(ilKitchenSinkException::FOLDER_CREATION_FAILED, $this->getSkinDir());
             }
-            if(! mkdir($this->getSkinImagesFolder(), 0775 ,  $recursive = true ) ){
-                throw new ilKitchenSinkException(ilKitchenSinkException::FOLDER_CREATION_FAILED, $this->getSkinDir()."/images");
-            }
+        }
+        if(!file_exists (  $this->getSkinImagesFolder() )){
+            $this->copyImagesFolderRecursively();
+        }
+        if(!file_exists (  $this->getSkinFontFolder() )){
+            $this->copyFontsFolderRecursively();
         }
 
         $less_name = $this->getSkinDir()."/".$this->getSkinName().".less" ;
@@ -151,8 +216,16 @@ class ilKitchenSinkLessGUI
     }
 
     protected function selectSkin(){
-        $this->user->writePref("skin",$this->getSkinName());
-        $this->user->writePref("style",$this->getSkinName());
+        if(!file_exists (  $this->getSkinDir() )){
+            throw new ilKitchenSinkException(ilKitchenSinkException::SKIN_FOLDER_DOES_NOT_EXIST,$this->getSkinDir());
+
+        }else if(!file_exists($this->getSkinDir()."/".$this->getSkinName().".css")) {
+            throw new ilKitchenSinkException(ilKitchenSinkException::SKIN_CSS_DOES_NOT_EXIST,$this->getSkinDir()."/".$this->getSkinName().".css");
+        } else {
+            $this->user->writePref("skin",$this->getSkinName());
+            $this->user->writePref("style",$this->getSkinName());
+        }
+
     }
 
     /**
@@ -222,6 +295,7 @@ class ilKitchenSinkLessGUI
         $this->initLessVariablesForm();
         $this->createSkin();
         $this->compileLess();
+        $this->selectSkin();
         $this->ctrl->redirect($this->getParent(), "less");
     }
 
@@ -400,6 +474,39 @@ class ilKitchenSinkLessGUI
     {
         $this->skin_less_file = $skin_less_file;
     }
+
+    /**
+     * @return string
+     */
+    public function getDefaultFontFolders()
+    {
+        return $this->default_font_folders;
+    }
+
+    /**
+     * @param string $default_font_folders
+     */
+    public function setDefaultFontFolders($default_font_folders)
+    {
+        $this->default_font_folders = $default_font_folders;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSkinFontFolder()
+    {
+        return $this->skin_font_folder;
+    }
+
+    /**
+     * @param string $skin_font_folder
+     */
+    public function setSkinFontFolder($skin_font_folder)
+    {
+        $this->skin_font_folder = $skin_font_folder;
+    }
+
 
 
 }
