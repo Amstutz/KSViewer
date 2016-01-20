@@ -1,12 +1,12 @@
 <?php
-
+require_once "Services/UIComponent/Button/classes/class.ilSubmitButton.php";
 class KitchenSinkExampleRoot{
     public function render(){
-        return "<p class=\"bg-primary\">Fansdfcy Example</p>
-                <p class=\"bg-success\">Fancy Example</p>
-                <p class=\"bg-info\">Fancy Example</p>
-                <p class=\"bg-warning\">Fancy Example</p>
-                <p class=\"bg-danger\">Fancy Example</p>";
+        $primary_button = ilSubmitButton::getInstance();
+        $primary_button->setCaption("Basic Example",false);
+        $primary_button->setPrimary(true);
+        $primary_button->setCommand("someComand");
+        return $primary_button->render();
     }
 }
 ?>

@@ -1,6 +1,6 @@
 {
   "id": "root",
-  "title": "UI Component",
+  "title": "KS-Entry",
   "type": "",
   "html": "root.html",
   "php": "class.KitchenSinkExampleRoot.php",
@@ -9,25 +9,22 @@
     "name": "Bootstrap Badge",
     "href": "http://getbootstrap.com/components/#badges"
   },
-  "lessVariables": [ "padding-small-vertical","brand-primary", "font-size-base"],
+  "lessVariables": ["brand-secondary", "font-size-base"],
   "statusEntry": "Accepted by JF",
   "statusImplementation": "To be implemented",
   "description": {
-    "purpose": "Novelty counters inform users about the arrival or creation of new items of the kind indicated by the accompanying glyph.",
-    "composition": "The Novelty Counter is an obtrusive counter.",
-    "effect": "They count down  / disappear as soon as the change has been consulted by the user.",
+    "purpose": "what is to be done by this control",
+    "composition": "what happens if the control is operated",
+    "effect": "what happens if the control is operated",
     "rivals": [
         {
           "name":"Rival 1",
-          "description": "Rival 1 description"
-        },{
-          "name":"",
-          "description": ""
+          "description": "what other controls are similar, what is their distinction"
         }
       ]
     },
-  "background": "",
-  "context": "",
+  "background": "Relevant academic information",
+  "context": "The context states: where this control is used specifically (this list might not be complete) and how common is this control used",
   "featureWikiReferences":[
 
   ],
@@ -35,39 +32,37 @@
     {
       "id":"Usage",
       "rules":  [
-        "Usage Rule 1",
-        "Usage Rule 2"
+        "Where and when an element is to be used or not"
       ]},
     {
       "id":"Interaction",
       "rules":  [
-        "Interaction Rule 1",
-        "Interaction Rule 2"
+        "How the interaction with this object takes place"
       ]},
     {
       "id":"Wording",
       "rules":  [
-        ""
+        "How the wording of labels or captions must be"
       ]},
     {
       "id":"Style",
       "rules":  [
-        ""
+        "How this element should look like"
       ]},
     {
       "id":"Ordering",
       "rules":  [
-        ""
+        "How different elements of this instance are to be ordered"
       ]},
     {
       "id":"Responsiveness",
       "rules":  [
-        ""
+        "How this element behaves on changing screen sizes"
       ]},
     {
       "id":"Accessibility",
       "rules":  [
-        ""
+        "How this element is made accessible"
       ]}
   ],
   "relations": {
@@ -79,7 +74,7 @@
   },
   "relations": {
     "isA": "root",
-    "mustUse": ["collection","interactive"],
-    "mayUse":["element","interactive2"]
+    "mustUse": ["text"],
+    "mayUse":[]
   }
 }

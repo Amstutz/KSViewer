@@ -1,5 +1,5 @@
 {
-  "id": "inputPopover",
+  "id": "accessoryPopover",
   "title": "Input Popover",
   "type": "concrete",
   "phpClass": "none",

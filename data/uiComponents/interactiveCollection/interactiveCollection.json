@@ -1,6 +1,6 @@
 {
-  "id": "nonInteractive",
-  "title": "Non Interactive",
+  "id": "interactiveCollection",
+  "title": "Interactive Collection",
   "type": "concrete",
   "phpClass": "none",
   "externalLibrary": {
@@ -51,7 +51,7 @@
       ""
     ]}],
   "relations": {
-    "isA": "element",
+    "isA": "root",
     "mustUse": [
     ],
     "mayUse":[
