@@ -119,6 +119,7 @@ class ilKitchenSinkMainGUI
     }
 
     protected function entries(){
+        $this->reloadJson();
         $this->createExplorer();
         $this->tpl->setLeftContent($this->explorer->getHTML());
         $this->entryGUI = new ilKitchenSinkEntryGUI($this->explorer->getCurrentOpenedNode(), $this->explorer->getTree(),$this);
@@ -146,7 +147,7 @@ class ilKitchenSinkMainGUI
         file_put_contents(self::KS_DATA_PATH."/".self::KS_DATA_FILE, $data);
 
         ilUtil::sendSuccess("All Entries have been reloaded",true);
-        $this->ctrl->redirect($this,"entries");
+        //$this->ctrl->redirect($this,"entries");
 
     }
 

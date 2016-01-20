@@ -1,0 +1,60 @@
+{
+  "id": "byLines",
+  "title": "By Lines",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "text",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+}

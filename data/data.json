@@ -41,7 +41,4373 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "7bb875cfdec8d975c9b50b015c0f812cd61baa22", "abbreviated_commit": "7bb875c",  "subject": "Automated testing added",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Fri, 15 Jan 2016 12:41:08 +0100"  }},{  "commit": "503479482eba700c2b69fc0e1a45342bb008ac81", "abbreviated_commit": "5034794",  "subject": "Initial Commit",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 13 Jan 2016 19:37:51 +0100"  }}]},{
+},{
+  "id": "accordion",
+  "title": "Accordion",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "containerCollection",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "block",
+  "title": "Block",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "containerCollection",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "containerCollection",
+  "title": "Container Collection",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "interactiveCollection",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "list",
+  "title": "List",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "containerCollection",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "repositoryList",
+  "title": "Repository List",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "list",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "thumbnails",
+  "title": "Thumbnails",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "list",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "offCanvas",
+  "title": "Off-Canvas",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "containerCollection",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "dropdown",
+  "title": "Dropdown",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "overlay",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "interruptiveModal",
+  "title": "Interruptive Modal",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "modal",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "lightboxModal",
+  "title": "Lightbox Modal",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "modal",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "modal",
+  "title": "Modal",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "overlay",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "roundTripModal",
+  "title": "Round Trip Modal",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "modal",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "overlay",
+  "title": "Overlay",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "containerCollection",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "inputPopover",
+  "title": "Input Popover",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "popover",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "popover",
+  "title": "Popover",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "overlay",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "previewPopover",
+  "title": "Preview Popover",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "popover",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "toast",
+  "title": "Toast",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "overlay",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "genericTooltip",
+  "title": "Generic Tooltip",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "tooltip",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "helpTooltip",
+  "title": "Help Tooltip",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "tooltip",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "tooltip",
+  "title": "Tooltip",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "overlay",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "applicationBranding",
+  "title": "Application Branding",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "pageSection",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "centerContent",
+  "title": "Center Content",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "pageSection",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "footer",
+  "title": "Footer",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "pageSection",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "header",
+  "title": "Header",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "pageSection",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "mainContent",
+  "title": "Main Content",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "pageSection",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "pageSection",
+  "title": "Page Section",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "containerCollection",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "sidebar",
+  "title": "Sidebar",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "pageSection",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "topNavigation",
+  "title": "Top Navigation",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "pageSection",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "table",
+  "title": "Table",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "containerCollection",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "thumbnail",
+  "title": "Thumbnail",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "containerCollection",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "toolbar",
+  "title": "Toolbar",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "containerCollection",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "autocomplete",
+  "title": "Autocomplete",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "complexInputField",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "complexInputField",
+  "title": "Complex Input Field",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "inputCollection",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "rangeInputs",
+  "title": "Range Inputs",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "complexInputField",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "ratingIndicator",
+  "title": "Rating Indicator",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "complexInputField",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "filter",
+  "title": "Filter",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "inputCollection",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "formPart",
+  "title": "Form Part",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "inputCollection",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "formSettings",
+  "title": "Form Settings",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "formPart",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "formSubsettings",
+  "title": "Form Subsettings",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "formPart",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "titleFromSection",
+  "title": "Title From Section",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "formPart",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "inlineEditing",
+  "title": "Inline Editing",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "inputCollection",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "inputCollection",
+  "title": "Input Collection",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "interactiveCollection",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "overlayForm",
+  "title": "Overlay Form",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "inputCollection",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "multipleChoicePicker",
+  "title": "Multiple Choice Picker",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "picker",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "multiSingleChoicePicker",
+  "title": "Multi Single Choice Picker",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "picker",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "picker",
+  "title": "Picker",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "popoverInputs",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "colorPicker",
+  "title": "Color Picker",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "singleChoicePicker",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "dateTimePicker",
+  "title": "Date Time Picker",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "singleChoicePicker",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "linkPicker",
+  "title": "Link Picker",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "singleChoicePicker",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "ratingPicker",
+  "title": "Rating Picker",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "singleChoicePicker",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "repositoryPicker",
+  "title": "Repository Picker",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "singleChoicePicker",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "singleChoicePicker",
+  "title": "Single Choice Picker",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "picker",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "taxonomyPicker",
+  "title": "Taxonomy Picker",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "singleChoicePicker",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "popoverInputs",
+  "title": "Popover Inputs",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "overlayForm",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "standardForm",
+  "title": "Standard Form",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "inputCollection",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "interactiveCollection",
+  "title": "Display Element",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "collection",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "breadcrumb",
+  "title": "Breadcrumb",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "navigationalCollection",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "drilldownMenu",
+  "title": "Drilldown Menu",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "menu",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "blockActions",
+  "title": "Block Actions",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "dropdownMenu",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "contentTopActions",
+  "title": "Content Top Actions",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "dropdownMenu",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "dropdownMenu",
+  "title": "Dropdown Menu",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "menu",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "mainMenu",
+  "title": "Main Menu",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "dropdownMenu",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "objectListDropdown",
+  "title": "Object List Dropdown",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "dropdownMenu",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "pageEditorActions",
+  "title": "Page Editor Actions",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "dropdownMenu",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "tableActions",
+  "title": "Table Actions",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "dropdownMenu",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "menu",
+  "title": "Menu",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "navigationalCollection",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "contentSubtabs",
+  "title": "Content Subtabs",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "tabs",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "contentTabs",
+  "title": "Content Tabs",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "tabs",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "tabs",
+  "title": "Tabs",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "menu",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "navigationalCollection",
+  "title": "Navigational Collection",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "interactiveCollection",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "pagination",
+  "title": "Pagination",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "navigationalCollection",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "metadataTree",
+  "title": "Metadata Tree",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "tree",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "repositoryTree",
+  "title": "Repository Tree",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "tree",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "tree",
+  "title": "Tree",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "navigationalCollection",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
   "id": "element",
   "title": "Element",
   "type": "concrete",
@@ -100,9 +4466,1130 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "0e7145ea1cb27741877f0a51317bdeb9579bff3b", "abbreviated_commit": "0e7145e",  "subject": "Dataformat changed, parsing stabalized",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 09:11:50 +0100"  }},{  "commit": "7bb875cfdec8d975c9b50b015c0f812cd61baa22", "abbreviated_commit": "7bb875c",  "subject": "Automated testing added",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Fri, 15 Jan 2016 12:41:08 +0100"  }},{  "commit": "503479482eba700c2b69fc0e1a45342bb008ac81", "abbreviated_commit": "5034794",  "subject": "Initial Commit",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 13 Jan 2016 19:37:51 +0100"  }}]},{
-  "id": "interactive",
-  "title": "Interactive",
+},{
+  "id": "inputElement",
+  "title": "Input Element",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "Bootstrap Badge",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "Accepted by JF",
+  "statusImplementation": "To be implemented",
+  "description": {
+    "purpose": "Novelty counters inform users about the arrival or creation of new items of the kind indicated by the accompanying glyph.",
+    "composition": "The Novelty Counter is an obtrusive counter.",
+    "effect": "They count down  / disappear as soon as the change has been consulted by the user.",
+    "rivals": [
+      {
+        "name":"Rival 1",
+        "description": "Rival 1 description"
+      },{
+        "name":"Rival 2",
+        "description": "Rival 2 description"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "interactive",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "checkboxGroup",
+  "title": "Checkbox Group",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "multipleChoiceSelection",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "multipleChoiceSelection",
+  "title": "Multiple Choice Selection",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "selectionControl",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "multiSelect",
+  "title": "Multi Select",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "multipleChoiceSelection",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "selectionControl",
+  "title": "Selection Control",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "inputElement",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "checkbox",
+  "title": "Checkbox",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "singleChoiceSelection",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "radioGroup",
+  "title": "Radio Group",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "singleChoiceSelection",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "selectInput",
+  "title": "Select Input",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "singleChoiceSelection",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "singleChoiceSelection",
+  "title": "Single Choice Selection",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "selectionControl",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "alphabetInput",
+  "title": "Alphabet Input",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "textInputField",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "emailInput",
+  "title": "Email Input",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "textInputField",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "formularInput",
+  "title": "Formular Input",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "textInputField",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "password",
+  "title": "Password",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "textInputField",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "regularExpressionInput",
+  "title": "Regular Expression Input",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "textInputField",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "textAreaInput",
+  "title": "Text Area Input",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "textInputField",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "textInput",
+  "title": "Text Input",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "textInputField",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "textInputField",
+  "title": "Text Input Field",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "inputElement",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "urlInput",
+  "title": "URL Input",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "textInputField",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "userLoginInput",
+  "title": "User Login Input",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "textInputField",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "interactiveElement",
+  "title": "Interactive Element",
   "type": "concrete",
   "phpClass": "none",
   "externalLibrary": {
@@ -143,48 +5630,2131 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "7bb875cfdec8d975c9b50b015c0f812cd61baa22", "abbreviated_commit": "7bb875c",  "subject": "Automated testing added",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Fri, 15 Jan 2016 12:41:08 +0100"  }}]},{
-  "id": "interactive2",
-  "title": "Interactive 2",
+},{
+  "id": "button",
+  "title": "Button",
   "type": "concrete",
   "phpClass": "none",
   "externalLibrary": {
-    "name": "Bootstrap Badge",
+    "name": "default",
     "href": "http://getbootstrap.com/components/#badges"
   },
-  "statusEntry": "Accepted by JF",
-  "statusImplementation": "To be implemented",
-  "description": [
-    {
-      "id": "purpose",
-      "content": "Novelty counters inform users about the arrival or creation of new items of the kind indicated by the accompanying glyph."
-    },
-    {
-      "id": "composition",
-      "content": "The Novelty Counter is an obtrusive counter."
-    },
-    {
-      "id": "effect",
-      "content": "They count down  / disappear as soon as the change has been consulted by the user."
-    }
-  ],
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
   "background": "",
   "context": "",
   "featureWikiReferences":[
 
   ],
   "rules":[
-    "There MUST be a way for the user to consult the changes indicated by the Counter. After the consultation, the Novelty Counter SHOULD disappear or the number it contains is reduced by one. Depending on the content, the reduced number might be added in an additional Status Counter.",
-    "The Novelty Counter MUST be displayed on the top at the ‘end of the line’ in reading direction of the item it accompanies. This would be top right for latin script and top left for arabic script.",
-    "The Novelty Counter SHOULD have an obtrusive background color such as red or orange.",
-    "MAY be used together with the Status Counter."
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "triggerElement",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "closeButton",
+  "title": "Close Button",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
   ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "button",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "defaultButton",
+  "title": "Default Button",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "button",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "primaryButton",
+  "title": "Primary Button",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "button",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "shyButton",
+  "title": "Shy Button",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "button",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "addRemoveGlyph",
+  "title": "Add/Remove Glyph",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "glyph",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "caret",
+  "title": "Caret",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "glyph",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "cogGlyph",
+  "title": "Cog Glyph",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "glyph",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "glyph",
+  "title": "Glyph",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "triggerElement",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "mailGlyph",
+  "title": "Mail Glyph",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "glyph",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "notificationGlyph",
+  "title": "Notification Glyph",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "glyph",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "previewGlyph",
+  "title": "Preview Glyph",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "glyph",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "previousNextGlyph",
+  "title": "Previous/Next Glyph",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "glyph",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "ratingGlyph",
+  "title": "Rating Glyph",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "glyph",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "sortGlyph",
+  "title": "Sort Glyph",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "glyph",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "statsGlyph",
+  "title": "Stats Glyph",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "glyph",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "upDownGlyph",
+  "title": "Up/Down Glyph",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "glyph",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "userGlyph",
+  "title": "User Glyph",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "glyph",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "link",
+  "title": "Link",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "triggerElement",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "tag",
+  "title": "Tag",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "triggerElement",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "triggerElement",
+  "title": "Trigger Element",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "interactiveElement",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "counter",
+  "title": "Counter",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "displayElement",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "noveltyCounter",
+  "title": "Novelty Counter",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "counter",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "statusCounter",
+  "title": "Status Counter",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "counter",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "displayElement",
+  "title": "Display Element",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "nonInteractive",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "feedback",
+  "title": "Feedback",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "displayElement",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "progressBar",
+  "title": "Progress Bar",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "feedback",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "systemMessage",
+  "title": "System Message",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "feedback",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "validationErrors",
+  "title": "Validation Errors",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "systemMessage",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "icon",
+  "title": "Icon",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "displayElement",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "image",
+  "title": "Image",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "displayElement",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "byLines",
+  "title": "By Lines",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "text",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "contentTitle",
+  "title": "Content Title",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "headings",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "heading",
+  "title": "Heading",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "text",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "test",
+  "title": "Text",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
+  "relations": {
+    "isA": "displayElement",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  }
+},{
+  "id": "nonInteractive",
+  "title": "Non Interactive",
+  "type": "concrete",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "statusEntry": "default",
+  "statusImplementation": "default",
+  "description": {
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
+    "rivals": [
+      {
+        "name":"default",
+        "description": "default"
+      },{
+        "name":"default",
+        "description": "default"
+      }
+    ]
+  },
+  "background": "",
+  "context": "",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {"Usage":  [
+      ""
+    ]},
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    {"Style":  [
+      ""
+    ]},
+    {"Ordering":  [
+      ""
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
   "relations": {
     "isA": "element",
-    "mustUse": ["collection","interactive"],
-    "mayUse":["element","collection"]
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
   }
-,"log":[{  "commit": "306601c267ad34390093fe77eddcba837ab16313", "abbreviated_commit": "306601c",  "subject": "Finished Relations",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Sun, 17 Jan 2016 23:33:33 +0100"  }},{  "commit": "7bb875cfdec8d975c9b50b015c0f812cd61baa22", "abbreviated_commit": "7bb875c",  "subject": "Automated testing added",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Fri, 15 Jan 2016 12:41:08 +0100"  }}]},{
+},{
   "id": "root",
   "title": "UI Component",
   "type": "",
@@ -268,4 +7838,4 @@
     "mustUse": ["collection","interactive"],
     "mayUse":["element","interactive2"]
   }
-,"log":[{  "commit": "0e7145ea1cb27741877f0a51317bdeb9579bff3b", "abbreviated_commit": "0e7145e",  "subject": "Dataformat changed, parsing stabalized",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 09:11:50 +0100"  }},{  "commit": "4fa9bea7b7de1757234a633af821991f1791fa04", "abbreviated_commit": "4fa9bea",  "subject": "Less changes",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Tue, 19 Jan 2016 10:54:11 +0100"  }},{  "commit": "306601c267ad34390093fe77eddcba837ab16313", "abbreviated_commit": "306601c",  "subject": "Finished Relations",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Sun, 17 Jan 2016 23:33:33 +0100"  }},{  "commit": "7bb875cfdec8d975c9b50b015c0f812cd61baa22", "abbreviated_commit": "7bb875c",  "subject": "Automated testing added",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Fri, 15 Jan 2016 12:41:08 +0100"  }},{  "commit": "503479482eba700c2b69fc0e1a45342bb008ac81", "abbreviated_commit": "5034794",  "subject": "Initial Commit",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 13 Jan 2016 19:37:51 +0100"  }}]}]}
+}]}
