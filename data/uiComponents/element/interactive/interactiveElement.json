@@ -1,6 +1,6 @@
 {
-  "id": "interactive2",
-  "title": "Interactive 2",
+  "id": "interactiveElement",
+  "title": "Interactive Element",
   "type": "concrete",
   "phpClass": "none",
   "externalLibrary": {
@@ -9,20 +9,20 @@
   },
   "statusEntry": "Accepted by JF",
   "statusImplementation": "To be implemented",
-  "description": [
-    {
-      "id": "purpose",
-      "content": "Novelty counters inform users about the arrival or creation of new items of the kind indicated by the accompanying glyph."
-    },
-    {
-      "id": "composition",
-      "content": "The Novelty Counter is an obtrusive counter."
-    },
-    {
-      "id": "effect",
-      "content": "They count down  / disappear as soon as the change has been consulted by the user."
-    }
-  ],
+  "description": {
+    "purpose": "Novelty counters inform users about the arrival or creation of new items of the kind indicated by the accompanying glyph.",
+    "composition": "The Novelty Counter is an obtrusive counter.",
+    "effect": "They count down  / disappear as soon as the change has been consulted by the user.",
+    "rivals": [
+      {
+        "name":"Rival 1",
+        "description": "Rival 1 description"
+      },{
+        "name":"Rival 2",
+        "description": "Rival 2 description"
+      }
+    ]
+  },
   "background": "",
   "context": "",
   "featureWikiReferences":[
@@ -36,7 +36,9 @@
   ],
   "relations": {
     "isA": "element",
-    "mustUse": ["collection","interactive"],
-    "mayUse":["element","collection"]
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
   }
 }
