@@ -31,6 +31,8 @@ class ilKitchenSinkException extends ilException
 
     const SKIN_FOLDER_DOES_NOT_EXIST = 3001;
     const SKIN_CSS_DOES_NOT_EXIST = 3002;
+
+    const GIT_LOG_FAILED = 4001;
     /**
      * @var string
      */
@@ -74,43 +76,46 @@ class ilKitchenSinkException extends ilException
                 $this->message = "Parsing JSON Failed " . $this->add_info;
                 break;
             case self::INVALID_MANDATORY_ENTRY_ATTRIBUTE:
-                $this->message = "Invalid mandatory entry Attribute:". " " . $this->add_info;
+                $this->message = "Invalid mandatory entry Attribute: " . $this->add_info;
                 break;
             case self::DUPLICATE_ENTRY:
-                $this->message = "There are entries with the same ID. Duplicate:". " " . $this->add_info;
+                $this->message = "There are entries with the same ID. Duplicate: " . $this->add_info;
                 break;
             case self::DUPLICATE_ROOT_ENTRY:
-                $this->message = "There are multiple root entry. Duplicate:". " " . $this->add_info;
+                $this->message = "There are multiple root entry. Duplicate: " . $this->add_info;
                 break;
             case self::INVALID_ID:
-                $this->message = "No such ID in tree: ". " " . $this->add_info;
+                $this->message = "No such ID in tree: " . $this->add_info;
                 break;
             case self::INVALID_FILE_PATH:
-                $this->message = "Invalid file path or file not readable: ". " " . $this->add_info;
+                $this->message = "Invalid file path or file not readable: " . $this->add_info;
                 break;
             case self::FILE_CREATION_FAILED:
-                $this->message = "File creation failed, path: ". " " . $this->add_info;
+                $this->message = "File creation failed, path: " . $this->add_info;
                 break;
             case self::FOLDER_CREATION_FAILED:
-                $this->message = "Folder creation failed, path: ". " " . $this->add_info;
+                $this->message = "Folder creation failed, path: " . $this->add_info;
                 break;
             case self::LESS_COMPILE_FAILED:
-                $this->message = "Compilation of less failed: ". " " . $this->add_info;
+                $this->message = "Compilation of less failed: " . $this->add_info;
                 break;
             case self::FILE_OPENING_FAILED:
-                $this->message = "Failed to open file   : ". " " . $this->add_info;
+                $this->message = "Failed to open file  : " . $this->add_info;
                 break;
             case self::SKIN_CSS_DOES_NOT_EXIST:
-                $this->message = "Skin CSS does not exist: ". " " . $this->add_info;
+                $this->message = "Skin CSS does not exist: " . $this->add_info;
                 break;
             case self::SKIN_FOLDER_DOES_NOT_EXIST:
-                $this->message = "Skin folder does not exist: ". " " . $this->add_info;
+                $this->message = "Skin folder does not exist: " . $this->add_info;
                 break;
             case self::INVALID_RULES_ENTRY:
-                $this->message = "Invalid rules entry: ". " " . $this->add_info;
+                $this->message = "Invalid rules entry: " . $this->add_info;
+                break;
+            case self::GIT_LOG_FAILED:
+                $this->message = "Parsing git log failed: " . $this->add_info;
                 break;
             default:
-                $this->message = "Unknonw Exception". " " . $this->add_info;
+                $this->message = "Unknonw Exception " . $this->add_info;
                 break;
         }
     }

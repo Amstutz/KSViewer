@@ -45,13 +45,12 @@ class ilKitchenSinkEntryExplorerGUI extends ilExplorerBaseGUI
         parent::__construct($a_expl_id, $a_parent_obj, $a_parent_cmd);
 
         $this->setParentLink($this->ctrl->getLinkTarget($this->parent_obj, $this->parent_cmd));
-
         $data = json_decode(file_get_contents($a_parent_obj::KS_DATA_PATH."/".$a_parent_obj::KS_DATA_FILE));
 
         if(!$data){
             throw new ilKitchenSinkException(ilKitchenSinkException::PARSING_JSON_FAILED, $a_parent_obj::KS_DATA_PATH."/".$a_parent_obj::KS_DATA_FILE);
         }
-         $this->setTree(new KitchenSinkTree());
+        $this->setTree(new KitchenSinkTree());
 
         foreach($data->uiComponent as $entry){
             $this->getTree()->addEntry(new KitchenSinkEntry($entry));

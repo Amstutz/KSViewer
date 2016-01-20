@@ -139,7 +139,8 @@ class ilKitchenSinkMainGUI
             if($data != $pre){
                 $data .= ",";
             }
-            $data .= file_get_contents($info[0] );
+            $data .= rtrim(file_get_contents($info[0] ),"}").",";
+            $data .= $this->addLog(ILIAS_ABSOLUTE_PATH.ltrim(self::KS_DATA_PATH,"."), ".".substr($info[0],strlen(self::KS_DATA_PATH)))."}";
         }
         $data .= $post;
         file_put_contents(self::KS_DATA_PATH."/".self::KS_DATA_FILE, $data);
@@ -147,6 +148,18 @@ class ilKitchenSinkMainGUI
         ilUtil::sendSuccess("All Entries have been reloaded",true);
         $this->ctrl->redirect($this,"entries");
 
+    }
+
+    protected function addLog($exe_path,$rel_file_path){
+        $git_pretty_format = "'{%n  \"commit\": \"%H\",%n \"abbreviated_commit\": \"%h\",%n  \"subject\": \"%s\",%n  \"body\": \"%b\",%n  \"author\": {%n    \"name\": \"%aN\",%n    \"email\": \"%aE\",%n    \"date\": \"%aD\"%n  }},'";
+        $command = "cd ".$exe_path."; git log --pretty=format:".$git_pretty_format." '".$rel_file_path."'";
+        $log = array();
+        exec ($command,$log );
+        if(!$log){
+            throw new ilKitchenSinkException(ilKitchenSinkException::GIT_LOG_FAILED,$rel_file_path);
+        }
+        $log = "\"log\":[".rtrim(implode($log),',')."]";
+        return $log;
     }
 
     /**

@@ -186,7 +186,22 @@ class ilKitchenSinkEntryGUI
      */
     public function renderEntryRight(){
         $block = new ilKitchenSinkEntryStatusBlockGUI($this->getEntry());
-        return $block->render().$this->getRelationsBlock().$this->getLessBlock();
+        return $block->render().$this->getRelationsBlock().$this->getLessBlock().$this->getLogBlock();
+    }
+
+    public function getLogBlock(){
+
+        $this->panel = ilPanelGUI::getInstance();
+        $this->panel->setHeading("Change Log");
+        $this->panel->setHeadingStyle(ilPanelGUI::HEADING_STYLE_BLOCK);
+        $this->panel->setPanelStyle(ilPanelGUI::PANEL_STYLE_PRIMARY);
+        $log_html = "";
+        foreach($this->entry->getLog() as $log_entry){
+
+            $log_html .= "<p>".$log_entry->author->date.": ".$log_entry->subject." by ".$log_entry->author->name."</p>";
+        }
+        $this->panel->setBody($log_html);
+        return $this->panel->getHTML();
     }
     protected function getLessBlock(){
         $this->panel = ilPanelGUI::getInstance();
@@ -200,6 +215,7 @@ class ilKitchenSinkEntryGUI
             $less_file->read();
 
             $less_links = "";
+
             foreach($this->getEntry()->getLessVariables() as $variable_name){
                 $variable = $less_file->getVariableByName($variable_name);
                 if($variable){
@@ -207,6 +223,7 @@ class ilKitchenSinkEntryGUI
                 }else{
                     $less_links .= $variable_name." (Not found in variables.less); ";
                 }
+
             }
             $less_tpl->setVariable("LESS_VARIABLES",$less_links);
         }

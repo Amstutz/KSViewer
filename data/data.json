@@ -41,7 +41,7 @@
     "mayUse":[
     ]
   }
-},{
+,"log":[{  "commit": "7bb875cfdec8d975c9b50b015c0f812cd61baa22", "abbreviated_commit": "7bb875c",  "subject": "Automated testing added",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Fri, 15 Jan 2016 12:41:08 +0100"  }},{  "commit": "503479482eba700c2b69fc0e1a45342bb008ac81", "abbreviated_commit": "5034794",  "subject": "Initial Commit",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 13 Jan 2016 19:37:51 +0100"  }}]},{
   "id": "element",
   "title": "Element",
   "type": "concrete",
@@ -100,7 +100,7 @@
     "mayUse":[
     ]
   }
-},{
+,"log":[{  "commit": "0e7145ea1cb27741877f0a51317bdeb9579bff3b", "abbreviated_commit": "0e7145e",  "subject": "Dataformat changed, parsing stabalized",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 09:11:50 +0100"  }},{  "commit": "7bb875cfdec8d975c9b50b015c0f812cd61baa22", "abbreviated_commit": "7bb875c",  "subject": "Automated testing added",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Fri, 15 Jan 2016 12:41:08 +0100"  }},{  "commit": "503479482eba700c2b69fc0e1a45342bb008ac81", "abbreviated_commit": "5034794",  "subject": "Initial Commit",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 13 Jan 2016 19:37:51 +0100"  }}]},{
   "id": "interactive",
   "title": "Interactive",
   "type": "concrete",
@@ -143,7 +143,7 @@
     "mayUse":[
     ]
   }
-},{
+,"log":[{  "commit": "7bb875cfdec8d975c9b50b015c0f812cd61baa22", "abbreviated_commit": "7bb875c",  "subject": "Automated testing added",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Fri, 15 Jan 2016 12:41:08 +0100"  }}]},{
   "id": "interactive2",
   "title": "Interactive 2",
   "type": "concrete",
@@ -184,7 +184,7 @@
     "mustUse": ["collection","interactive"],
     "mayUse":["element","collection"]
   }
-},{
+,"log":[{  "commit": "306601c267ad34390093fe77eddcba837ab16313", "abbreviated_commit": "306601c",  "subject": "Finished Relations",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Sun, 17 Jan 2016 23:33:33 +0100"  }},{  "commit": "7bb875cfdec8d975c9b50b015c0f812cd61baa22", "abbreviated_commit": "7bb875c",  "subject": "Automated testing added",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Fri, 15 Jan 2016 12:41:08 +0100"  }}]},{
   "id": "root",
   "title": "UI Component",
   "type": "",
@@ -268,4 +268,4 @@
     "mustUse": ["collection","interactive"],
     "mayUse":["element","interactive2"]
   }
-}]}
+,"log":[{  "commit": "0e7145ea1cb27741877f0a51317bdeb9579bff3b", "abbreviated_commit": "0e7145e",  "subject": "Dataformat changed, parsing stabalized",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 09:11:50 +0100"  }},{  "commit": "4fa9bea7b7de1757234a633af821991f1791fa04", "abbreviated_commit": "4fa9bea",  "subject": "Less changes",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Tue, 19 Jan 2016 10:54:11 +0100"  }},{  "commit": "306601c267ad34390093fe77eddcba837ab16313", "abbreviated_commit": "306601c",  "subject": "Finished Relations",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Sun, 17 Jan 2016 23:33:33 +0100"  }},{  "commit": "7bb875cfdec8d975c9b50b015c0f812cd61baa22", "abbreviated_commit": "7bb875c",  "subject": "Automated testing added",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Fri, 15 Jan 2016 12:41:08 +0100"  }},{  "commit": "503479482eba700c2b69fc0e1a45342bb008ac81", "abbreviated_commit": "5034794",  "subject": "Initial Commit",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 13 Jan 2016 19:37:51 +0100"  }}]}]}

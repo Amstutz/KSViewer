@@ -116,6 +116,11 @@ class KitchenSinkEntry
     protected $php_path = "";
 
     /**
+     * @var array
+     */
+    protected $log = array();
+
+    /**
      * KitchenSinkEntry constructor.
      * @param bool|false $json
      * @param string $dummyId
@@ -141,6 +146,7 @@ class KitchenSinkEntry
             $this->setRules($json->rules);
             $this->setRelations($json->relations);
             $this->setLessVariables($json->lessVariables);
+            $this->setLog($json->log);
             if($json->html != ""){
                 $this->setHtmlByPath($json->html);
             }
@@ -567,6 +573,22 @@ class KitchenSinkEntry
     public function setIsDummy($is_dummy)
     {
         $this->is_dummy = $is_dummy;
+    }
+
+    /**
+     * @return array
+     */
+    public function getLog()
+    {
+        return $this->log;
+    }
+
+    /**
+     * @param array $log
+     */
+    public function setLog($log)
+    {
+        $this->log = $log;
     }
 
     public function getStatusType(){
