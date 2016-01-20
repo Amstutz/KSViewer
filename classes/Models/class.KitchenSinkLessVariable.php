@@ -86,7 +86,15 @@ class KitchenSinkLessVariable extends KitchenSinkLessItem
      */
     public function setValue($value)
     {
-        $this->value = $value;
+        /**
+         * @Todo: Fix this nasty hack to correct th icon-font-path
+         */
+        if($value == "\"../../Services/UICore/lib/bootstrap-3.2.0/fonts/\""){
+            $this->value = "\"../../../../Services/UICore/lib/bootstrap-3.2.0/fonts/\"";
+        }else{
+            $this->value = $value;
+
+        }
     }
 
     /**
