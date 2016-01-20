@@ -151,7 +151,7 @@ class ilKitchenSinkEntryGUI
                 $code_tpl->setVariable("CODE",htmlentities($this->getEntry()->getHtml()) );
                 $example_block->setBody($code_tpl->get());
             }else{
-                $code_tpl->setVariable("CODE",htmlentities($this->getEntry()->getPhpClassInstance()->render()));
+                $code_tpl->setVariable("CODE",htmlentities($this->getEntry()->getPhp()));
 
                 if($this->testPHPExample()){
                     $label = "<div class=\"label label-success\">Test Passed</div>";
