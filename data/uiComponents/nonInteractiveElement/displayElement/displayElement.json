@@ -51,7 +51,7 @@
       ""
     ]}],
   "relations": {
-    "isA": "nonInteractive",
+    "isA": "nonInteractiveElement",
     "mustUse": [
     ],
     "mayUse":[

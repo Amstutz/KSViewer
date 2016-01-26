@@ -1,47 +1,4 @@
 {"uiComponent":[{
-  "id": "collection",
-  "title": "Collection",
-  "type": "concrete",
-  "phpClass": "none",
-  "externalLibrary": {
-    "name": "Bootstrap Badge",
-    "href": "http://getbootstrap.com/components/#badges"
-  },
-  "statusEntry": "Accepted by JF",
-  "statusImplementation": "To be implemented",
-  "description": {
-    "purpose": "Novelty counters inform users about the arrival or creation of new items of the kind indicated by the accompanying glyph.",
-    "composition": "The Novelty Counter is an obtrusive counter.",
-    "effect": "They count down  / disappear as soon as the change has been consulted by the user.",
-    "rivals": [
-      {
-        "name":"Rival 1",
-        "description": "Rival 1 description"
-      },{
-        "name":"Rival 2",
-        "description": "Rival 2 description"
-      }
-    ]
-  },
-  "background": "",
-  "context": "",
-  "featureWikiReferences":[
-
-  ],
-  "rules":[
-    "There MUST be a way for the user to consult the changes indicated by the Counter. After the consultation, the Novelty Counter SHOULD disappear or the number it contains is reduced by one. Depending on the content, the reduced number might be added in an additional Status Counter.",
-    "The Novelty Counter MUST be displayed on the top at the ‘end of the line’ in reading direction of the item it accompanies. This would be top right for latin script and top left for arabic script.",
-    "The Novelty Counter SHOULD have an obtrusive background color such as red or orange.",
-    "MAY be used together with the Status Counter."
-  ],
-  "relations": {
-    "isA": "root",
-    "mustUse": [
-    ],
-    "mayUse":[
-    ]
-  }
-,"log":[{  "commit": "7bb875cfdec8d975c9b50b015c0f812cd61baa22", "abbreviated_commit": "7bb875c",  "subject": "Automated testing added",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Fri, 15 Jan 2016 12:41:08 +0100"  }},{  "commit": "503479482eba700c2b69fc0e1a45342bb008ac81", "abbreviated_commit": "5034794",  "subject": "Initial Commit",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 13 Jan 2016 19:37:51 +0100"  }}]},{
   "id": "accordion",
   "title": "Accordion",
   "type": "concrete",
@@ -100,7 +57,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "block",
   "title": "Block",
   "type": "concrete",
@@ -159,7 +116,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "containerCollection",
   "title": "Container Collection",
   "type": "concrete",
@@ -218,7 +175,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "list",
   "title": "List",
   "type": "concrete",
@@ -277,7 +234,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "repositoryList",
   "title": "Repository List",
   "type": "concrete",
@@ -336,7 +293,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "thumbnails",
   "title": "Thumbnails",
   "type": "concrete",
@@ -395,7 +352,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "offCanvas",
   "title": "Off-Canvas",
   "type": "concrete",
@@ -454,7 +411,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "dropdown",
   "title": "Dropdown",
   "type": "concrete",
@@ -513,7 +470,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "interruptiveModal",
   "title": "Interruptive Modal",
   "type": "concrete",
@@ -572,7 +529,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "lightboxModal",
   "title": "Lightbox Modal",
   "type": "concrete",
@@ -631,7 +588,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "modal",
   "title": "Modal",
   "type": "concrete",
@@ -690,7 +647,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "roundTripModal",
   "title": "Round Trip Modal",
   "type": "concrete",
@@ -749,7 +706,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "overlay",
   "title": "Overlay",
   "type": "concrete",
@@ -808,8 +765,8 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
-  "id": "inputPopover",
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
+  "id": "accessoryPopover",
   "title": "Input Popover",
   "type": "concrete",
   "phpClass": "none",
@@ -867,7 +824,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "popover",
   "title": "Popover",
   "type": "concrete",
@@ -926,7 +883,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "previewPopover",
   "title": "Preview Popover",
   "type": "concrete",
@@ -985,7 +942,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "toast",
   "title": "Toast",
   "type": "concrete",
@@ -1044,7 +1001,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "genericTooltip",
   "title": "Generic Tooltip",
   "type": "concrete",
@@ -1103,7 +1060,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "helpTooltip",
   "title": "Help Tooltip",
   "type": "concrete",
@@ -1162,7 +1119,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "tooltip",
   "title": "Tooltip",
   "type": "concrete",
@@ -1221,7 +1178,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "applicationBranding",
   "title": "Application Branding",
   "type": "concrete",
@@ -1280,7 +1237,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "centerContent",
   "title": "Center Content",
   "type": "concrete",
@@ -1339,7 +1296,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "footer",
   "title": "Footer",
   "type": "concrete",
@@ -1398,7 +1355,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "header",
   "title": "Header",
   "type": "concrete",
@@ -1457,7 +1414,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "mainContent",
   "title": "Main Content",
   "type": "concrete",
@@ -1516,7 +1473,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "pageSection",
   "title": "Page Section",
   "type": "concrete",
@@ -1575,7 +1532,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "sidebar",
   "title": "Sidebar",
   "type": "concrete",
@@ -1634,7 +1591,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "topNavigation",
   "title": "Top Navigation",
   "type": "concrete",
@@ -1693,7 +1650,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "table",
   "title": "Table",
   "type": "concrete",
@@ -1752,7 +1709,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "thumbnail",
   "title": "Thumbnail",
   "type": "concrete",
@@ -1811,7 +1768,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "toolbar",
   "title": "Toolbar",
   "type": "concrete",
@@ -1870,7 +1827,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "autocomplete",
   "title": "Autocomplete",
   "type": "concrete",
@@ -1929,7 +1886,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "complexInputField",
   "title": "Complex Input Field",
   "type": "concrete",
@@ -1988,7 +1945,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "rangeInputs",
   "title": "Range Inputs",
   "type": "concrete",
@@ -2047,7 +2004,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "ratingIndicator",
   "title": "Rating Indicator",
   "type": "concrete",
@@ -2106,7 +2063,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "filter",
   "title": "Filter",
   "type": "concrete",
@@ -2165,7 +2122,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "formPart",
   "title": "Form Part",
   "type": "concrete",
@@ -2224,7 +2181,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "formSettings",
   "title": "Form Settings",
   "type": "concrete",
@@ -2283,7 +2240,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "formSubsettings",
   "title": "Form Subsettings",
   "type": "concrete",
@@ -2342,7 +2299,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "titleFromSection",
   "title": "Title From Section",
   "type": "concrete",
@@ -2401,7 +2358,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "inlineEditing",
   "title": "Inline Editing",
   "type": "concrete",
@@ -2460,7 +2417,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "inputCollection",
   "title": "Input Collection",
   "type": "concrete",
@@ -2519,7 +2476,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "overlayForm",
   "title": "Overlay Form",
   "type": "concrete",
@@ -2578,7 +2535,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "multipleChoicePicker",
   "title": "Multiple Choice Picker",
   "type": "concrete",
@@ -2637,7 +2594,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "multiSingleChoicePicker",
   "title": "Multi Single Choice Picker",
   "type": "concrete",
@@ -2696,7 +2653,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "picker",
   "title": "Picker",
   "type": "concrete",
@@ -2755,7 +2712,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "colorPicker",
   "title": "Color Picker",
   "type": "concrete",
@@ -2814,7 +2771,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "dateTimePicker",
   "title": "Date Time Picker",
   "type": "concrete",
@@ -2873,7 +2830,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "linkPicker",
   "title": "Link Picker",
   "type": "concrete",
@@ -2932,7 +2889,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "ratingPicker",
   "title": "Rating Picker",
   "type": "concrete",
@@ -2991,7 +2948,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "repositoryPicker",
   "title": "Repository Picker",
   "type": "concrete",
@@ -3050,7 +3007,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "singleChoicePicker",
   "title": "Single Choice Picker",
   "type": "concrete",
@@ -3109,7 +3066,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "taxonomyPicker",
   "title": "Taxonomy Picker",
   "type": "concrete",
@@ -3168,7 +3125,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "popoverInputs",
   "title": "Popover Inputs",
   "type": "concrete",
@@ -3227,7 +3184,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "standardForm",
   "title": "Standard Form",
   "type": "concrete",
@@ -3286,7 +3243,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "interactiveCollection",
   "title": "Interactive Collection",
   "type": "concrete",
@@ -3339,13 +3296,13 @@
       ""
     ]}],
   "relations": {
-    "isA": "collection",
+    "isA": "root",
     "mustUse": [
     ],
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "breadcrumb",
   "title": "Breadcrumb",
   "type": "concrete",
@@ -3404,7 +3361,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "drilldownMenu",
   "title": "Drilldown Menu",
   "type": "concrete",
@@ -3463,7 +3420,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "blockActions",
   "title": "Block Actions",
   "type": "concrete",
@@ -3522,7 +3479,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "contentTopActions",
   "title": "Content Top Actions",
   "type": "concrete",
@@ -3581,7 +3538,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "dropdownMenu",
   "title": "Dropdown Menu",
   "type": "concrete",
@@ -3640,7 +3597,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "mainMenu",
   "title": "Main Menu",
   "type": "concrete",
@@ -3699,7 +3656,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "objectListDropdown",
   "title": "Object List Dropdown",
   "type": "concrete",
@@ -3758,7 +3715,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "pageEditorActions",
   "title": "Page Editor Actions",
   "type": "concrete",
@@ -3817,7 +3774,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "tableActions",
   "title": "Table Actions",
   "type": "concrete",
@@ -3876,7 +3833,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "menu",
   "title": "Menu",
   "type": "concrete",
@@ -3935,7 +3892,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "contentSubtabs",
   "title": "Content Subtabs",
   "type": "concrete",
@@ -3994,7 +3951,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "contentTabs",
   "title": "Content Tabs",
   "type": "concrete",
@@ -4053,7 +4010,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "tabs",
   "title": "Tabs",
   "type": "concrete",
@@ -4112,7 +4069,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "navigationalCollection",
   "title": "Navigational Collection",
   "type": "concrete",
@@ -4171,7 +4128,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "pagination",
   "title": "Pagination",
   "type": "concrete",
@@ -4230,7 +4187,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "metadataTree",
   "title": "Metadata Tree",
   "type": "concrete",
@@ -4289,7 +4246,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "repositoryTree",
   "title": "Repository Tree",
   "type": "concrete",
@@ -4348,7 +4305,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "tree",
   "title": "Tree",
   "type": "concrete",
@@ -4407,66 +4364,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
-  "id": "element",
-  "title": "Element",
-  "type": "concrete",
-  "phpClass": "none",
-  "externalLibrary": {
-    "name": "Bootstrap Badge",
-    "href": "http://getbootstrap.com/components/#badges"
-  },
-  "statusEntry": "Accepted by JF",
-  "statusImplementation": "To be implemented",
-  "description": {
-    "purpose": "Novelty counters inform users about the arrival or creation of new items of the kind indicated by the accompanying glyph.",
-    "composition": "The Novelty Counter is an obtrusive counter.",
-    "effect": "They count down  / disappear as soon as the change has been consulted by the user.",
-    "rivals": [
-      {
-        "name":"Rival 1",
-        "description": "Rival 1 description"
-      },{
-        "name":"Rival 2",
-        "description": "Rival 2 description"
-      }
-    ]
-  },
-  "background": "",
-  "context": "",
-  "featureWikiReferences":[
-
-  ],
-  "rules":[
-    {"Usage":  [
-      ""
-    ]},
-    {"Interaction":  [
-      ""
-    ]},
-    {"Wording":  [
-      ""
-    ]},
-    {"Style":  [
-      ""
-    ]},
-    {"Ordering":  [
-      ""
-    ]},
-    {"Responsiveness":  [
-      ""
-    ]},
-    {"Accessibility":  [
-      ""
-    ]}],
-  "relations": {
-    "isA": "root",
-    "mustUse": [
-    ],
-    "mayUse":[
-    ]
-  }
-,"log":[{  "commit": "0e7145ea1cb27741877f0a51317bdeb9579bff3b", "abbreviated_commit": "0e7145e",  "subject": "Dataformat changed, parsing stabalized",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 09:11:50 +0100"  }},{  "commit": "7bb875cfdec8d975c9b50b015c0f812cd61baa22", "abbreviated_commit": "7bb875c",  "subject": "Automated testing added",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Fri, 15 Jan 2016 12:41:08 +0100"  }},{  "commit": "503479482eba700c2b69fc0e1a45342bb008ac81", "abbreviated_commit": "5034794",  "subject": "Initial Commit",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 13 Jan 2016 19:37:51 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "inputElement",
   "title": "Input Element",
   "type": "concrete",
@@ -4525,7 +4423,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "checkboxGroup",
   "title": "Checkbox Group",
   "type": "concrete",
@@ -4584,7 +4482,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "multipleChoiceSelection",
   "title": "Multiple Choice Selection",
   "type": "concrete",
@@ -4643,7 +4541,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "multiSelect",
   "title": "Multi Select",
   "type": "concrete",
@@ -4702,7 +4600,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "selectionControl",
   "title": "Selection Control",
   "type": "concrete",
@@ -4761,7 +4659,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "checkbox",
   "title": "Checkbox",
   "type": "concrete",
@@ -4820,7 +4718,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "radioGroup",
   "title": "Radio Group",
   "type": "concrete",
@@ -4879,7 +4777,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "selectInput",
   "title": "Select Input",
   "type": "concrete",
@@ -4938,7 +4836,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "singleChoiceSelection",
   "title": "Single Choice Selection",
   "type": "concrete",
@@ -4997,7 +4895,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "alphabetInput",
   "title": "Alphabet Input",
   "type": "concrete",
@@ -5056,7 +4954,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "emailInput",
   "title": "Email Input",
   "type": "concrete",
@@ -5115,7 +5013,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "formularInput",
   "title": "Formular Input",
   "type": "concrete",
@@ -5174,7 +5072,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "password",
   "title": "Password",
   "type": "concrete",
@@ -5233,7 +5131,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "regularExpressionInput",
   "title": "Regular Expression Input",
   "type": "concrete",
@@ -5292,7 +5190,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "textAreaInput",
   "title": "Text Area Input",
   "type": "concrete",
@@ -5351,7 +5249,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "textInput",
   "title": "Text Input",
   "type": "concrete",
@@ -5410,7 +5308,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "textInputField",
   "title": "Text Input Field",
   "type": "concrete",
@@ -5469,7 +5367,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "urlInput",
   "title": "URL Input",
   "type": "concrete",
@@ -5528,7 +5426,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "userLoginInput",
   "title": "User Login Input",
   "type": "concrete",
@@ -5587,7 +5485,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "interactiveElement",
   "title": "Interactive Element",
   "type": "concrete",
@@ -5624,13 +5522,13 @@
     "MAY be used together with the Status Counter."
   ],
   "relations": {
-    "isA": "element",
+    "isA": "root",
     "mustUse": [
     ],
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "button",
   "title": "Button",
   "type": "concrete",
@@ -5689,7 +5587,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "closeButton",
   "title": "Close Button",
   "type": "concrete",
@@ -5748,7 +5646,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "defaultButton",
   "title": "Default Button",
   "type": "concrete",
@@ -5807,7 +5705,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "primaryButton",
   "title": "Primary Button",
   "type": "concrete",
@@ -5866,7 +5764,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "shyButton",
   "title": "Shy Button",
   "type": "concrete",
@@ -5925,7 +5823,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "addRemoveGlyph",
   "title": "Add/Remove Glyph",
   "type": "concrete",
@@ -5984,7 +5882,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "caret",
   "title": "Caret",
   "type": "concrete",
@@ -6043,7 +5941,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "cogGlyph",
   "title": "Cog Glyph",
   "type": "concrete",
@@ -6102,7 +6000,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "glyph",
   "title": "Glyph",
   "type": "concrete",
@@ -6161,7 +6059,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "mailGlyph",
   "title": "Mail Glyph",
   "type": "concrete",
@@ -6220,7 +6118,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "notificationGlyph",
   "title": "Notification Glyph",
   "type": "concrete",
@@ -6279,7 +6177,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "previewGlyph",
   "title": "Preview Glyph",
   "type": "concrete",
@@ -6338,7 +6236,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "previousNextGlyph",
   "title": "Previous/Next Glyph",
   "type": "concrete",
@@ -6397,7 +6295,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "ratingGlyph",
   "title": "Rating Glyph",
   "type": "concrete",
@@ -6456,7 +6354,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "sortGlyph",
   "title": "Sort Glyph",
   "type": "concrete",
@@ -6515,7 +6413,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "statsGlyph",
   "title": "Stats Glyph",
   "type": "concrete",
@@ -6574,7 +6472,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "upDownGlyph",
   "title": "Up/Down Glyph",
   "type": "concrete",
@@ -6633,7 +6531,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "userGlyph",
   "title": "User Glyph",
   "type": "concrete",
@@ -6692,7 +6590,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "link",
   "title": "Link",
   "type": "concrete",
@@ -6751,7 +6649,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "tag",
   "title": "Tag",
   "type": "concrete",
@@ -6810,7 +6708,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "triggerElement",
   "title": "Trigger Element",
   "type": "concrete",
@@ -6869,7 +6767,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "counter",
   "title": "Counter",
   "type": "concrete",
@@ -6928,7 +6826,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "noveltyCounter",
   "title": "Novelty Counter",
   "type": "concrete",
@@ -6987,7 +6885,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "statusCounter",
   "title": "Status Counter",
   "type": "concrete",
@@ -7046,7 +6944,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "displayElement",
   "title": "Display Element",
   "type": "concrete",
@@ -7099,13 +6997,13 @@
       ""
     ]}],
   "relations": {
-    "isA": "nonInteractive",
+    "isA": "nonInteractiveElement",
     "mustUse": [
     ],
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "feedback",
   "title": "Feedback",
   "type": "concrete",
@@ -7164,7 +7062,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "progressBar",
   "title": "Progress Bar",
   "type": "concrete",
@@ -7223,7 +7121,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "systemMessage",
   "title": "System Message",
   "type": "concrete",
@@ -7282,7 +7180,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "validationErrors",
   "title": "Validation Errors",
   "type": "concrete",
@@ -7341,7 +7239,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "icon",
   "title": "Icon",
   "type": "concrete",
@@ -7400,7 +7298,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "image",
   "title": "Image",
   "type": "concrete",
@@ -7459,7 +7357,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "byLines",
   "title": "By Lines",
   "type": "concrete",
@@ -7518,7 +7416,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "contentTitle",
   "title": "Content Title",
   "type": "concrete",
@@ -7577,7 +7475,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "heading",
   "title": "Heading",
   "type": "concrete",
@@ -7636,7 +7534,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "test",
   "title": "Text",
   "type": "concrete",
@@ -7695,9 +7593,9 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
-  "id": "nonInteractive",
-  "title": "Non Interactive",
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
+  "id": "nonInteractiveElement",
+  "title": "Non Interactive Element",
   "type": "concrete",
   "phpClass": "none",
   "externalLibrary": {
@@ -7748,13 +7646,13 @@
       ""
     ]}],
   "relations": {
-    "isA": "element",
+    "isA": "root",
     "mustUse": [
     ],
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "75632e4846b5ac60cb7c3425b1e7e1f27e5986ef", "abbreviated_commit": "75632e4",  "subject": "added full kitchensink skeleton according to gliffy sheet",  "body": "",  "author": {    "name": "Tomasz Kolonko",    "email": "thomas.kolonko@ilub.unibe.ch",    "date": "Wed, 20 Jan 2016 18:46:22 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "root",
   "title": "KS-Entry",
   "type": "",
@@ -7833,4 +7731,4 @@
     "mustUse": ["text"],
     "mayUse":[]
   }
-,"log":[{  "commit": "0e7145ea1cb27741877f0a51317bdeb9579bff3b", "abbreviated_commit": "0e7145e",  "subject": "Dataformat changed, parsing stabalized",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 09:11:50 +0100"  }},{  "commit": "4fa9bea7b7de1757234a633af821991f1791fa04", "abbreviated_commit": "4fa9bea",  "subject": "Less changes",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Tue, 19 Jan 2016 10:54:11 +0100"  }},{  "commit": "306601c267ad34390093fe77eddcba837ab16313", "abbreviated_commit": "306601c",  "subject": "Finished Relations",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Sun, 17 Jan 2016 23:33:33 +0100"  }},{  "commit": "7bb875cfdec8d975c9b50b015c0f812cd61baa22", "abbreviated_commit": "7bb875c",  "subject": "Automated testing added",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Fri, 15 Jan 2016 12:41:08 +0100"  }},{  "commit": "503479482eba700c2b69fc0e1a45342bb008ac81", "abbreviated_commit": "5034794",  "subject": "Initial Commit",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 13 Jan 2016 19:37:51 +0100"  }}]}]}
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }},{  "commit": "0e7145ea1cb27741877f0a51317bdeb9579bff3b", "abbreviated_commit": "0e7145e",  "subject": "Dataformat changed, parsing stabalized",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 09:11:50 +0100"  }},{  "commit": "4fa9bea7b7de1757234a633af821991f1791fa04", "abbreviated_commit": "4fa9bea",  "subject": "Less changes",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Tue, 19 Jan 2016 10:54:11 +0100"  }},{  "commit": "306601c267ad34390093fe77eddcba837ab16313", "abbreviated_commit": "306601c",  "subject": "Finished Relations",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Sun, 17 Jan 2016 23:33:33 +0100"  }},{  "commit": "7bb875cfdec8d975c9b50b015c0f812cd61baa22", "abbreviated_commit": "7bb875c",  "subject": "Automated testing added",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Fri, 15 Jan 2016 12:41:08 +0100"  }},{  "commit": "503479482eba700c2b69fc0e1a45342bb008ac81", "abbreviated_commit": "5034794",  "subject": "Initial Commit",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 13 Jan 2016 19:37:51 +0100"  }}]}]}
