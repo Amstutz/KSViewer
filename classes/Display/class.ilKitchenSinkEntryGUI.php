@@ -95,10 +95,11 @@ class ilKitchenSinkEntryGUI
                 foreach($this->getEntry()->getRules() as $rule_category){
                     $rules_tpl->setVariable("RULE_CATEGORY", $rule_category->id);
                     if(is_array($rule_category->rules)){
-                        $rules_html = "";
+                        $rules_html = "<ul>";
                         foreach($rule_category->rules as $rule){
                             $rules_html .= "<li>".$rule."</li>";
                         }
+                        $rules_html .= "</ul>";
                     }
 
                     $rules_tpl->setVariable("RULES", $rules_html);
