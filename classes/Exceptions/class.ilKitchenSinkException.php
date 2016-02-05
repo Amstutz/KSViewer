@@ -28,6 +28,8 @@ class ilKitchenSinkException extends ilException
     const FOLDER_CREATION_FAILED = 2002;
     const FILE_OPENING_FAILED = 2003;
     const LESS_COMPILE_FAILED = 2004;
+    const FOLDER_DELETION_FAILED = 2005;
+    const FILE_DELETION_FAILED = 2005;
 
     const SKIN_FOLDER_DOES_NOT_EXIST = 3001;
     const SKIN_CSS_DOES_NOT_EXIST = 3002;
@@ -95,6 +97,12 @@ class ilKitchenSinkException extends ilException
                 break;
             case self::FOLDER_CREATION_FAILED:
                 $this->message = "Folder creation failed, path: " . $this->add_info;
+                break;
+            case self::FOLDER_DELETION_FAILED:
+                $this->message = "Folder delation failed, path: " . $this->add_info;
+                break;
+            case self::FILE_DELETION_FAILED:
+                $this->message = "File delation failed, path: " . $this->add_info;
                 break;
             case self::LESS_COMPILE_FAILED:
                 $this->message = "Compilation of less failed: " . $this->add_info;

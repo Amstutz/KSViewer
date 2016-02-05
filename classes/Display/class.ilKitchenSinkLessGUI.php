@@ -29,74 +29,21 @@ class ilKitchenSinkLessGUI
     protected $parent;
 
     /**
-     * @var ilObjUser $user;
+     * @var KitchenSinkSkin
      */
-    protected $user;
-    /**
-     * @var string
-     */
-    static $default_less_file = '../../../../templates/default/delos.less';
-
-    /**
-     * @var string
-     */
-    static $default_less_variables = "./templates/default/less/variables.less";
-
-    /**
-     * @var string
-     */
-    protected $default_images_folders = "./templates/default/images";
-
-    /**
-     * @var string
-     */
-    protected $default_font_folders = "./templates/default/fonts";
-    /**
-     * @var string
-     */
-    static $skin_name = "";
-
-    /**
-     * @var string
-     */
-    protected $skin_dir = "";
-
-    /**
-     * @var string
-     */
-    protected $skin_images_folder = "";
-
-    /**
-     * @var string
-     */
-    protected $skin_variables_file = "variables.less";
-
-    /**
-     * @var string
-     */
-    protected $skin_less_file = "";
-
-    /**
-     * @var string
-     */
-    protected $skin_font_folder = "";
-
-    /**
-     * @var KitchenSinkLessFile
-     */
-    protected $less_file = null;
+    protected $skin;
 
     /**
      * @var string
      */
     protected $form_elements_prefix = "ks-";
+
     /**
-     * ilKitchenSinkEntryGUI constructor.
-     * @param KitchenSinkEntry $entry
-     * @param KitchenSinkTree $tree
+     * ilKitchenSinkLessGUI constructor.
      * @param ilKitchenSinkMainGUI $parent
+     * @param ilKitchenSinkSkin $skin
      */
-    public function __construct(ilKitchenSinkMainGUI $parent) {
+    public function __construct(ilKitchenSinkMainGUI $parent, KitchenSinkSkin $skin) {
         /**
          * @var ilObjUser $ilUser
          */
@@ -106,143 +53,8 @@ class ilKitchenSinkLessGUI
         $this->setParent($parent);
         $this->ctrl = $ilCtrl;
         $this->tpl = $tpl;
-
-
-        $this->setSkinName("ksSkinOf".$this->user->getLogin());
-        $this->setSkinDir("./Customizing/global/skin/".$this->getSkinName());
-        $this->setSkinImagesFolder($this->getSkinDir()."/images");
-        $this->setSkinLessFile(ILIAS_ABSOLUTE_PATH."/Customizing/global/skin/".$this->getSkinName()."/".$this->getSkinName().".less");
-        $this->setSkinFontFolder("./Customizing/global/skin/".$this->getSkinName()."/fonts");
-
+        $this->setSkin($skin);
     }
-
-    static function xCopy($src, $dest)
-    {
-        foreach (scandir($src) as $file) {
-            $src_file = rtrim($src, '/') . '/' . $file;
-            $dest_file = rtrim($dest, '/') . '/' . $file;
-            if (!is_readable($src_file)) {
-                throw new ilKitchenSinkException(ilKitchenSinkException::FILE_OPENING_FAILED, $src_file);
-            }
-            if (substr($file, 0, 1) != ".") {
-                if (is_dir($src_file)) {
-                    if (!file_exists($dest_file)) {
-                        try {
-                            mkdir($dest_file);
-                        } catch (Exception $e) {
-                            throw new ilKitchenSinkException(ilKitchenSinkException::FOLDER_CREATION_FAILED, "Copy " . $src_file . " to " . $dest_file . " Error: " . $e);
-                        }
-                    }
-                    self::xCopy($src_file, $dest_file);
-                } else {
-                    try {
-                        copy($src_file,$dest_file);
-                    } catch (Exception $e) {
-                        throw new ilKitchenSinkException(ilKitchenSinkException::FILE_CREATION_FAILED, "Copy " . $src_file . " to " . $dest_file . " Error: " . $e);
-                    }
-
-                }
-
-            }
-        }
-    }
-
-    protected function copyImagesFolderRecursively(){
-        try {
-            mkdir($this->getSkinImagesFolder(), 0775, $recursive = true);
-        }catch(Exception $e)
-        {
-            throw new ilKitchenSinkException(ilKitchenSinkException::FOLDER_CREATION_FAILED, $this->getSkinImagesFolder()." ".$e->getMessage());
-        }
-        self::xCopy($this->getDefaultImagesFolders(),$this->getSkinImagesFolder());
-    }
-
-    protected function copyFontsFolderRecursively(){
-        try {
-            mkdir($this->getSkinFontFolder() , 0775 ,  $recursive = true );
-        }catch(Exception $e)
-        {
-            throw new ilKitchenSinkException(ilKitchenSinkException::FOLDER_CREATION_FAILED, $this->getSkinFontFolder()." ".$e->getMessage());
-        }
-        self::xCopy($this->getDefaultFontFolders(),$this->getSkinFontFolder());
-    }
-
-    protected function createSkin(){
-        if(!file_exists (  $this->getSkinDir() )){
-            if(! mkdir($this->getSkinDir() , 0775 ,  $recursive = true ) ){
-                throw new ilKitchenSinkException(ilKitchenSinkException::FOLDER_CREATION_FAILED, $this->getSkinDir());
-            }
-        }
-        if(!file_exists (  $this->getSkinImagesFolder() )){
-            $this->copyImagesFolderRecursively();
-        }
-        if(!file_exists (  $this->getSkinFontFolder() )){
-            $this->copyFontsFolderRecursively();
-        }
-
-        $less_name = $this->getSkinDir()."/".$this->getSkinName().".less" ;
-        file_put_contents( $less_name, "@import '".self::getDefaultLessFile()."';@import '".$this->getSkinVariablesFile()."';");
-
-        file_put_contents( $this->getSkinDir()."/".$this->getSkinVariablesFile(),$this->less_file->write());
-
-
-        $xml_writer = new ilXmlWriter();
-        $xml_writer->xmlHeader();
-        $xml_writer->xmlStartTag("template",array(
-            "xmlns"=>"http://www.w3.org",
-            "version"=>"1",
-            "name"=>$this->getSkinName()));
-        $xml_writer->xmlStartTag("style",array(
-            "name"=>"Kitchen Sink Style of ".$this->user->getLogin(),
-            "id"=>$this->getSkinName(),
-            "image_directory"=>"images"));
-
-        $xml_writer->xmlEndTag("style");
-        $xml_writer->xmlEndTag("template");
-        file_put_contents($this->getSkinDir()."/template.xml",$xml_writer->xmlDumpMem(true));
-    }
-
-    protected function compileLess(){
-        $output = shell_exec("lessc ".$this->getSkinLessFile());
-        if(!$output){
-            $less_error = shell_exec("lessc ".$this->getSkinLessFile()." 2>&1");
-            if(!$less_error){
-                throw new ilKitchenSinkException(ilKitchenSinkException::LESS_COMPILE_FAILED, "Empty css output, unknown error.");
-            }
-            throw new ilKitchenSinkException(ilKitchenSinkException::LESS_COMPILE_FAILED, $less_error);
-        }
-        file_put_contents( $this->getSkinDir()."/".$this->getSkinName().".css",$output);
-
-    }
-
-    protected function selectSkin(){
-        if(!file_exists (  $this->getSkinDir() )){
-            throw new ilKitchenSinkException(ilKitchenSinkException::SKIN_FOLDER_DOES_NOT_EXIST,$this->getSkinDir());
-
-        }else if(!file_exists($this->getSkinDir()."/".$this->getSkinName().".css")) {
-            throw new ilKitchenSinkException(ilKitchenSinkException::SKIN_CSS_DOES_NOT_EXIST,$this->getSkinDir()."/".$this->getSkinName().".css");
-        } else {
-            $this->user->writePref("skin",$this->getSkinName());
-            $this->user->writePref("style",$this->getSkinName());
-        }
-
-    }
-
-    /**
-     * @param bool|false $force_delos
-     * @throws ilKitchenSinkException
-     */
-    protected function readLessVariables($force_delos = false){
-
-        if($force_delos || !file_exists (  $this->getSkinDir())){
-            $variable_file = $this->getDefaultLessVariables();
-        } else{
-            $variable_file = $this->getSkinDir()."/".$this->getSkinVariablesFile();
-        }
-        $this->less_file = new KitchenSinkLessFile($variable_file);
-        $this->less_file->read();
-    }
-
 
 
     public function initLessVariablesForm()
@@ -253,17 +65,17 @@ class ilKitchenSinkLessGUI
 
         $focus_variable = $_GET['variable'];
         if($focus_variable){
-            $this->tpl->addOnLoadCode("setTimeout(function() { $('#".$this->form_elements_prefix.$focus_variable."').focus();}, 100);");
+            $this->tpl->addOnLoadCode("setTimeout(function() { $('#".$this->getFormElementsPrefix().$focus_variable."').focus();}, 100);");
         }
 
-        foreach($this->less_file->getCategories() as $category){
+        foreach($this->getSkin()->getLessFile()->getCategories() as $category){
             $section = new ilFormSectionHeaderGUI();
             $section->setTitle($category->getName());
             $section->setInfo($category->getComment());
             $section->setSectionAnchor($category->getName());
             $this->form->addItem($section);
-            foreach($this->less_file->getVariablesPerCategory($category->getName()) as $variable){
-                $input = new ilTextInputGUI($variable->getName(), $this->form_elements_prefix.$variable->getName());
+            foreach($this->getSkin()->getLessFile()->getVariablesPerCategory($category->getName()) as $variable){
+                $input = new ilTextInputGUI($variable->getName(), $this->getFormElementsPrefix().$variable->getName());
                 $input->setRequired(true);
                 $input->setInfo($variable->getComment());
                 $this->form->addItem($input);
@@ -281,8 +93,8 @@ class ilKitchenSinkLessGUI
     function getLessValues()
     {
         $values = array();
-        foreach($this->less_file->getCategories() as $category){
-            foreach($this->less_file->getVariablesPerCategory($category->getName()) as $variable){
+        foreach($this->getSkin()->getLessFile()->getCategories() as $category){
+            foreach($this->getSkin()->getLessFile()->getVariablesPerCategory($category->getName()) as $variable){
                 $values[$this->form_elements_prefix.$variable->getName()] = $variable->getValue();
             }
         }
@@ -291,29 +103,23 @@ class ilKitchenSinkLessGUI
     }
     public function resetLess()
     {
-        $this->readLessVariables(true);
+        $this->getSkin()->resetLess();
         $this->initLessVariablesForm();
-        $this->createSkin();
-        $this->compileLess();
-        $this->selectSkin();
         $this->ctrl->redirect($this->getParent(), "less");
     }
 
     public function updateLess()
     {
-        $this->readLessVariables();
+        $this->skin->readLessVariables();
         $this->initLessVariablesForm();
         if ($this->form->checkInput())
         {
-            foreach($this->less_file->getCategories() as $category){
-                foreach($this->less_file->getVariablesPerCategory($category->getName()) as $variable){
+            foreach($this->getSkin()->getLessFile()->getCategories() as $category){
+                foreach($this->getSkin()->getLessFile()->getVariablesPerCategory($category->getName()) as $variable){
                     $variable->setValue($this->form->getInput($this->form_elements_prefix.$variable->getName()));
                 }
             }
-
-            $this->createSkin();
-            $this->compileLess();
-            $this->selectSkin();
+            $this->skin->updateLess();
             $this->ctrl->redirect($this->getParent(), "less");
         }
 
@@ -325,10 +131,42 @@ class ilKitchenSinkLessGUI
      * @return html
      */
     public function renderLess(){
-        $this->readLessVariables();
+        $this->skin->readLessVariables();
         $this->initLessVariablesForm();
         $this->getLessValues();
         return $this->form->getHtml();
+    }
+
+    /**
+     * @return ilTemplate
+     */
+    public function getTpl()
+    {
+        return $this->tpl;
+    }
+
+    /**
+     * @param ilTemplate $tpl
+     */
+    public function setTpl($tpl)
+    {
+        $this->tpl = $tpl;
+    }
+
+    /**
+     * @return ilCtrl
+     */
+    public function getCtrl()
+    {
+        return $this->ctrl;
+    }
+
+    /**
+     * @param ilCtrl $ctrl
+     */
+    public function setCtrl($ctrl)
+    {
+        $this->ctrl = $ctrl;
     }
 
     /**
@@ -348,165 +186,36 @@ class ilKitchenSinkLessGUI
     }
 
     /**
-     * @return string
+     * @return KitchenSinkSkin
      */
-    static function getDefaultLessFile()
+    public function getSkin()
     {
-        return self::$default_less_file;
+        return $this->skin;
     }
 
     /**
-     * @param $default_less_file
+     * @param KitchenSinkSkin $skin
      */
-    static function setDefaultLessFile($default_less_file)
+    public function setSkin($skin)
     {
-        self::$default_less_file = $default_less_file;
-    }
-
-    /**
-     * @return string
-     */
-    static function getDefaultLessVariables()
-    {
-        return self::$default_less_variables;
-    }
-
-    /**
-     * @param string $default_less_variables
-     */
-    static function setDefaultLessVariables($default_less_variables)
-    {
-        self::$default_less_variables = $default_less_variables;
+        $this->skin = $skin;
     }
 
     /**
      * @return string
      */
-    public function getDefaultImagesFolders()
+    public function getFormElementsPrefix()
     {
-        return $this->default_images_folders;
+        return $this->form_elements_prefix;
     }
 
     /**
-     * @param string $default_images_folders
+     * @param string $form_elements_prefix
      */
-    public function setDefaultImagesFolders($default_images_folders)
+    public function setFormElementsPrefix($form_elements_prefix)
     {
-        $this->default_images_folders = $default_images_folders;
+        $this->form_elements_prefix = $form_elements_prefix;
     }
-
-    /**
-     * @return string
-     */
-    public static function getSkinName()
-    {
-        return self::$skin_name;
-    }
-
-    /**
-     * @param string $skin_name
-     */
-    public static function setSkinName($skin_name)
-    {
-        self::$skin_name = $skin_name;
-    }
-
-    /**
-     * @return string
-     */
-    public function getSkinDir()
-    {
-        return $this->skin_dir;
-    }
-
-    /**
-     * @param string $skin_dir
-     */
-    public function setSkinDir($skin_dir)
-    {
-        $this->skin_dir = $skin_dir;
-    }
-
-    /**
-     * @return string
-     */
-    public function getSkinImagesFolder()
-    {
-        return $this->skin_images_folder;
-    }
-
-    /**
-     * @param string $skin_images_folder
-     */
-    public function setSkinImagesFolder($skin_images_folder)
-    {
-        $this->skin_images_folder = $skin_images_folder;
-    }
-
-    /**
-     * @return string
-     */
-    public function getSkinVariablesFile()
-    {
-        return $this->skin_variables_file;
-    }
-
-    /**
-     * @param string $skin_variables_file
-     */
-    public function setSkinVariablesFile($skin_variables_file)
-    {
-        $this->skin_variables_file = $skin_variables_file;
-    }
-
-    /**
-     * @return string
-     */
-    public function getSkinLessFile()
-    {
-        return $this->skin_less_file;
-    }
-
-    /**
-     * @param string $skin_less_file
-     */
-    public function setSkinLessFile($skin_less_file)
-    {
-        $this->skin_less_file = $skin_less_file;
-    }
-
-    /**
-     * @return string
-     */
-    public function getDefaultFontFolders()
-    {
-        return $this->default_font_folders;
-    }
-
-    /**
-     * @param string $default_font_folders
-     */
-    public function setDefaultFontFolders($default_font_folders)
-    {
-        $this->default_font_folders = $default_font_folders;
-    }
-
-    /**
-     * @return string
-     */
-    public function getSkinFontFolder()
-    {
-        return $this->skin_font_folder;
-    }
-
-    /**
-     * @param string $skin_font_folder
-     */
-    public function setSkinFontFolder($skin_font_folder)
-    {
-        $this->skin_font_folder = $skin_font_folder;
-    }
-
 
 
 }

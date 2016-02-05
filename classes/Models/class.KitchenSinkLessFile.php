@@ -32,7 +32,7 @@ class KitchenSinkLessFile
     /**
      * @var string
      */
-    protected $less_variables_file = "";
+    protected $less_variables_file_path = "";
 
     /**
      * KitchenSinkLessFile constructor.

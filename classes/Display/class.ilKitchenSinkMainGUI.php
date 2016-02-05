@@ -3,7 +3,8 @@ include_once("./Services/UIComponent/Panel/classes/class.ilPanelGUI.php");
 include_once("class.ilKitchenSinkEntryExplorerGUI.php");
 include_once("class.ilKitchenSinkEntryGUI.php");
 include_once("class.ilKitchenSinkLessGUI.php");
-
+include_once("class.ilKitchenSinkIconsGUI.php");
+include_once("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/classes/Models/class.KitchenSinkSkin.php");
 /**
  *
  * @author            Timon Amstutz <timon.amstutz@ilub.unibe.ch>
@@ -76,10 +77,20 @@ class ilKitchenSinkMainGUI
 
                         //$this->ctrl->forwardCommand(new xbgStdMessageGUI($this));
                         break;
-                    case 'visualizations':
-                        $this->tabs_gui->activateTab('visualizations');
-                        $this->visualisations();
+                    case 'icons':
+                        $this->tabs_gui->activateTab('icons');
+                        $this->icons();
 
+                        //$this->ctrl->forwardCommand(new xbgStdMessageGUI($this));
+                        break;
+                    case 'updateIcons':
+                        $this->tabs_gui->activateTab('icons');
+                        $this->updateIcons();
+                        //$this->ctrl->forwardCommand(new xbgStdMessageGUI($this));
+                        break;
+                    case 'resetIcons':
+                        $this->tabs_gui->activateTab('icons');
+                        $this->resetIcons();
                         //$this->ctrl->forwardCommand(new xbgStdMessageGUI($this));
                         break;
                     case 'less':
@@ -104,11 +115,8 @@ class ilKitchenSinkMainGUI
 
     protected function setTabs() {
         $this->tabs_gui->addTab('entries', 'Entries', $this->ctrl->getLinkTarget($this, 'entries'));
-
-        $this->tabs_gui->addTab('visualizations', 'Visualizations',
-            $this->ctrl->getLinkTarget($this, 'visualizations'));
-        $this->tabs_gui->addTab('less', 'Less',
-            $this->ctrl->getLinkTarget($this, 'less'));
+        $this->tabs_gui->addTab('less', 'Less', $this->ctrl->getLinkTarget($this, 'less'));
+        $this->tabs_gui->addTab('icons', 'Icons', $this->ctrl->getLinkTarget($this, 'icons'));
     }
 
     /**
@@ -171,23 +179,35 @@ class ilKitchenSinkMainGUI
         $this->explorer = new ilKitchenSinkEntryExplorerGUI("kitchenSinkEntries", $this, "entries", $_GET["node_id"]);
     }
 
-    protected function visualisations(){
-        $this->tpl->setContent("visualisations");
-        $this->tpl->show();
-    }
+
     protected function less(){
-        $less = new ilKitchenSinkLessGUI($this);
+        $less = new ilKitchenSinkLessGUI($this,new KitchenSinkSkin());
         $this->tpl->setContent($less->renderLess());
         $this->tpl->show();
     }
     protected function updateLess(){
-        $less = new ilKitchenSinkLessGUI($this);
+        $less = new ilKitchenSinkLessGUI($this,new KitchenSinkSkin());
         $this->tpl->setContent($less->updateLess());
         $this->tpl->show();
     }
     protected function resetLess(){
-        $less = new ilKitchenSinkLessGUI($this);
-        $this->tpl->setContent($less->resetLess());
+        $less = new ilKitchenSinkLessGUI($this,new KitchenSinkSkin());
+        $less->resetLess();
+    }
+
+    protected function icons(){
+        $icons = new ilKitchenSinkIconsGUI($this,new KitchenSinkSkin());
+        $this->tpl->setContent($icons->renderIcons());
+        $this->tpl->show();
+    }
+    protected function updateIcons(){
+        $icons = new ilKitchenSinkIconsGUI($this,new KitchenSinkSkin());
+        $this->tpl->setContent($icons->updateIcons());
+        $this->tpl->show();
+    }
+    protected function resetIcons(){
+        $icons = new ilKitchenSinkIconsGUI($this,new KitchenSinkSkin());
+        $this->tpl->setContent($icons->resetIcons());
         $this->tpl->show();
     }
 }
