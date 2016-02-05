@@ -2,7 +2,9 @@
 include_once("./Services/UIComponent/Panel/classes/class.ilPanelGUI.php");
 include_once("class.ilKitchenSinkEntryStatusBlockGUI.php");
 include_once("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/classes/Models/class.KitchenSinkLessFile.php");
+include_once("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/classes/Models/class.KitchenSinkSkin.php");
 
+include_once ("Services/Form/classes/class.ilPropertyFormGUI.php");
 /**
  *
  * @author            Timon Amstutz <timon.amstutz@ilub.unibe.ch>
@@ -212,7 +214,7 @@ class ilKitchenSinkEntryGUI
         $less_tpl = (new ilKitchenSinkPlugin())->getTemplate('entry/tpl.entry_less.html', true, true);
 
         if($this->getEntry()->getLessVariables()){
-            $less_file = new KitchenSinkLessFile(ilKitchenSinkLessGUI::getDefaultLessVariables());
+            $less_file = new KitchenSinkLessFile(KitchenSinkSkin::getDefaultLessFile());
             $less_file->read();
 
             $less_links = "";

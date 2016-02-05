@@ -31,12 +31,12 @@ class KitchenSinkSkin
     /**
      * @var string
      */
-    static $default_less_file_dir = '../../../../templates/default/delos.less';
+    static $default_less_file = './templates/default/delos.less';
 
     /**
      * @var string
      */
-    static $default_less_variables_dir = "./templates/default/less/variables.less";
+    static $default_less_variables_file = "./templates/default/less/variables.less";
 
     /**
      * @var string
@@ -300,7 +300,7 @@ class KitchenSinkSkin
     public function readLessVariables($force_delos = false){
 
         if($force_delos || !file_exists (  $this->getSkinDir()."/".$this->getSkinVariablesFileName())){
-            $variable_file = $this->getDefaultLessVariablesDir();
+            $variable_file = $this->getDefaultLessVariablesFile();
         } else{
             $variable_file = $this->getSkinDir()."/".$this->getSkinVariablesFileName();
         }
@@ -327,7 +327,7 @@ class KitchenSinkSkin
      */
     public static function getDefaultLessFileDir()
     {
-        return self::$default_less_file_dir;
+        return self::$default_less_file;
     }
 
     /**
@@ -335,24 +335,58 @@ class KitchenSinkSkin
      */
     public static function setDefaultLessFileDir($default_less_file_dir)
     {
-        self::$default_less_file_dir = $default_less_file_dir;
+        self::$default_less_file = $default_less_file_dir;
     }
 
     /**
      * @return string
      */
-    public static function getDefaultLessVariablesDir()
+    public static function getDefaultLessFile()
     {
-        return self::$default_less_variables_dir;
+        return self::$default_less_file;
     }
 
     /**
-     * @param string $default_less_variables_dir
+     * @param string $default_less_file
      */
-    public static function setDefaultLessVariablesDir($default_less_variables_dir)
+    public static function setDefaultLessFile($default_less_file)
     {
-        self::$default_less_variables_dir = $default_less_variables_dir;
+        self::$default_less_file = $default_less_file;
     }
+
+    /**
+     * @return string
+     */
+    public static function getDefaultLessVariablesFile()
+    {
+        return self::$default_less_variables_file;
+    }
+
+    /**
+     * @param string $default_less_variables_file
+     */
+    public static function setDefaultLessVariablesFile($default_less_variables_file)
+    {
+        self::$default_less_variables_file = $default_less_variables_file;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSkinLessFileDir()
+    {
+        return $this->skin_less_file_dir;
+    }
+
+    /**
+     * @param string $skin_less_file_dir
+     */
+    public function setSkinLessFileDir($skin_less_file_dir)
+    {
+        $this->skin_less_file_dir = $skin_less_file_dir;
+    }
+
+
 
     /**
      * @return string
@@ -450,21 +484,7 @@ class KitchenSinkSkin
         $this->skin_variables_file_name = $skin_variables_file_name;
     }
 
-    /**
-     * @return string
-     */
-    public function getSkinLessFileDir()
-    {
-        return $this->skin_less_file_dir;
-    }
 
-    /**
-     * @param string $skin_less_file_dir
-     */
-    public function setSkinLessFileDir($skin_less_file_dir)
-    {
-        $this->skin_less_file_dir = $skin_less_file_dir;
-    }
 
     /**
      * @return string
