@@ -20,7 +20,11 @@
         {
           "name":"Rival 1",
           "description": "what other controls are similar, what is their distinction"
-        }
+        },
+      {
+        "name":"Rival 2",
+        "description": "what other controls are similar, what is their distinction"
+      }
       ]
     },
   "background": "Relevant academic information",

@@ -7003,7 +7003,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
+,"log":[{  "commit": "d22ccbbfdbeba28a7ccff93e2465088a32377c40", "abbreviated_commit": "d22ccbb",  "subject": "Element isA fixed",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Tue, 26 Jan 2016 16:29:00 +0100"  }},{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "feedback",
   "title": "Feedback",
   "type": "concrete",
@@ -7674,7 +7674,11 @@
         {
           "name":"Rival 1",
           "description": "what other controls are similar, what is their distinction"
-        }
+        },
+      {
+        "name":"Rival 2",
+        "description": "what other controls are similar, what is their distinction"
+      }
       ]
     },
   "background": "Relevant academic information",
