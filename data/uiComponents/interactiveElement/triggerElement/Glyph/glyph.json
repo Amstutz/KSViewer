@@ -52,7 +52,7 @@
     ]}],
   "relations": {
     "isA": "triggerElement",
-    "mustUse": [
+    "mustUse": ["root"
     ],
     "mayUse":[
     ]

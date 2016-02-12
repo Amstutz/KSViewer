@@ -54,7 +54,7 @@
     "isA": "inputCollection",
     "mustUse": [
     ],
-    "mayUse":[
+    "mayUse":["root"
     ]
   }
 }

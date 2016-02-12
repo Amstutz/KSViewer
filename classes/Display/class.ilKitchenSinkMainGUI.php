@@ -1,10 +1,20 @@
 <?php
+// Simple auto loader translate \rooms\classname() to ./rooms/classname.php
+spl_autoload_register(function($class) {
+    $class = str_replace('\\', '/', $class);
+    $class = str_replace('ILIAS/UI/', '', $class);
+    require_once('./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/interfaces/' . $class . '.php');
+});
+
+
 include_once("./Services/UIComponent/Panel/classes/class.ilPanelGUI.php");
 include_once("class.ilKitchenSinkEntryExplorerGUI.php");
 include_once("class.ilKitchenSinkEntryGUI.php");
 include_once("class.ilKitchenSinkLessGUI.php");
 include_once("class.ilKitchenSinkIconsGUI.php");
 include_once("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/classes/Models/class.KitchenSinkSkin.php");
+include_once("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/classes/UI/Factories/class.KSFactory.php");
+
 /**
  *
  * @author            Timon Amstutz <timon.amstutz@ilub.unibe.ch>
@@ -36,6 +46,11 @@ class ilKitchenSinkMainGUI
     protected $explorer = null;
 
     /**
+     * @var ILIAS\UI\Factory
+     */
+    protected $ui_factory = null;
+
+    /**
      * @var ilKitchenSinkEntryGUI
      */
     protected $entryGUI = null;
@@ -53,6 +68,7 @@ class ilKitchenSinkMainGUI
         $this->tabs_gui = &$ilTabs;
 
         $this->tpl->setTitle('Kitchen Sink');
+        $this->setUiFactory(new KSFactory());
     }
 
 
@@ -127,12 +143,15 @@ class ilKitchenSinkMainGUI
     }
 
     protected function entries(){
-        //$this->reloadJson();
+        $toolbar = new ilToolbarGUI();
+        $reload_btn = ilLinkButton::getInstance();
+        $reload_btn->setCaption('Refresh Entries',false);
+        $reload_btn->setUrl($this->ctrl->getLinkTarget($this, 'reloadJson'));
+        $toolbar->addButtonInstance($reload_btn);
         $this->createExplorer();
-        $this->tpl->setLeftContent($this->explorer->getHTML());
-        $this->entryGUI = new ilKitchenSinkEntryGUI($this->explorer->getCurrentOpenedNode(), $this->explorer->getTree(),$this);
-        $this->tpl->setContent($this->entryGUI->renderEntryCenter());
-        $this->tpl->setRightContent($this->entryGUI->renderEntryRight());
+        $this->tpl->setLeftNavContent($this->explorer->getHTML());
+        $this->entryGUI = new ilKitchenSinkEntryGUI($this->explorer->getCurrentOpenedNode(), $this->explorer->getTree(),$this, $this->getUiFactory());
+        $this->tpl->setContent($toolbar->getHTML().$this->entryGUI->renderEntry());
         $this->tpl->show();
     }
 
@@ -196,19 +215,37 @@ class ilKitchenSinkMainGUI
     }
 
     protected function icons(){
-        $icons = new ilKitchenSinkIconsGUI($this,new KitchenSinkSkin());
+        $icons = new ilKitchenSinkIconsGUI($this,new KitchenSinkSkin(), $this->getUiFactory());
         $this->tpl->setContent($icons->renderIcons());
         $this->tpl->show();
     }
     protected function updateIcons(){
-        $icons = new ilKitchenSinkIconsGUI($this,new KitchenSinkSkin());
+        $icons = new ilKitchenSinkIconsGUI($this,new KitchenSinkSkin(), $this->getUiFactory());
         $this->tpl->setContent($icons->updateIcons());
         $this->tpl->show();
     }
     protected function resetIcons(){
-        $icons = new ilKitchenSinkIconsGUI($this,new KitchenSinkSkin());
+        $icons = new ilKitchenSinkIconsGUI($this,new KitchenSinkSkin(), $this->getUiFactory());
         $this->tpl->setContent($icons->resetIcons());
         $this->tpl->show();
     }
+
+    /**
+     * @return \ILIAS\UI\Factory
+     */
+    public function getUiFactory()
+    {
+        return $this->ui_factory;
+    }
+
+    /**
+     * @param \ILIAS\UI\Factory $ui_factory
+     */
+    public function setUiFactory($ui_factory)
+    {
+        $this->ui_factory = $ui_factory;
+    }
+
+
 }
 ?>

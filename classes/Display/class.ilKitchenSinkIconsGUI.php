@@ -41,12 +41,20 @@ class ilKitchenSinkIconsGUI
      * @var ilPropertyFormGUI
      */
     protected $form = null;
+
     /**
-     * ilKitchenSinkLessGUI constructor.
-     * @param ilKitchenSinkMainGUI $parent
-     * @param ilKitchenSinkSkin $skin
+     * @var ILIAS\UI\Factory
      */
-    public function __construct(ilKitchenSinkMainGUI $parent, KitchenSinkSkin $skin) {
+    protected $ui_factory = null;
+
+
+    /**
+     * ilKitchenSinkIconsGUI constructor.
+     * @param ilKitchenSinkMainGUI $parent
+     * @param KitchenSinkSkin $skin
+     * @param \ILIAS\UI\Factory $ui_factory
+     */
+    public function __construct(ilKitchenSinkMainGUI $parent, KitchenSinkSkin $skin, ILIAS\UI\Factory $ui_factory) {
         /**
          * @var ilObjUser $ilUser
          */
@@ -57,6 +65,7 @@ class ilKitchenSinkIconsGUI
         $this->ctrl = $ilCtrl;
         $this->tpl = $tpl;
         $this->setSkin($skin);
+        $this->setUiFactory($ui_factory);
     }
 
 
@@ -134,28 +143,29 @@ class ilKitchenSinkIconsGUI
     protected function renderIconsPreviews(){
         $icons_per_row = 6;
         $i=1;
-        $row_start = "<div class='row'>";
-        $row_end = "</div>";
-        $html = $row_start;
+
+
+        $html = "";
+        $row = $this->getUiFactory()->GridRow();
         foreach($this->getSkin()->getIconFolder()->getIcons() as $icon){
             if(($i % $icons_per_row ) == 0){
-                $html .= $row_end;
-                $html .= $row_start;
+                $html .= $row->to_html_string();
+                $row->setColumns(null);
             }
             $i++;
-            $icon_tpl = (new ilKitchenSinkPlugin())->getTemplate('entry/tpl.icon.html', true, true);
-            $icon_tpl->setVariable("ICON_SPACE", 12/$icons_per_row);
-            $icon_tpl->setVariable("ICON_SRC", $icon->getSkinPath());
-            $icon_tpl->setVariable("ICON_ALT", $icon->getName());
-            $icon_tpl->setVariable("ICON_NAME", $icon->getName());
+            $thumbnail = $this->getUiFactory()->Thumbnail()
+                ->setImagePath($icon->getSkinPath())
+                ->setImageAlt($icon->getName())
+                ->setContent($icon->getName());
+
+
             if($icon->getType()!= "svg"){
-                $icon_tpl->touchBlock("iconAlert");
-                $icon_tpl->setVariable("ICON_ALERT","File type is ".$icon->getType());
+                $thumbnail
+                    ->setContent("File type is ".$icon->getType().": ".$icon->getName())
+                    ->setType("danger");
             }
-            //$link_tpl->setVariable("ICON_PATH", $icon->getPath());
-            $html .= $icon_tpl->get();
+            $row->addColumn($thumbnail->to_html_string(),12/$icons_per_row);
         }
-        $html .= $row_end;
         return $html;
     }
 
@@ -256,6 +266,20 @@ class ilKitchenSinkIconsGUI
     }
 
 
+    /**
+     * @return \ILIAS\UI\Factory
+     */
+    public function getUiFactory()
+    {
+        return $this->ui_factory;
+    }
 
+    /**
+     * @param \ILIAS\UI\Factory $ui_factory
+     */
+    public function setUiFactory($ui_factory)
+    {
+        $this->ui_factory = $ui_factory;
+    }
 }
 ?>

@@ -1,5 +1,6 @@
 <?php
 require_once(ILIAS_ABSOLUTE_PATH."/Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/classes/Exceptions/class.ilKitchenSinkException.php");
+require_once("class.KitchenSinkEntryDescription.php");
 
 /**
  * Class to display Kitchen Sink Entries
@@ -46,9 +47,9 @@ class KitchenSinkEntry
     protected $status_implementation = array();
 
     /**
-     * @var array
+     * @var KitchenSinkEntryDescription
      */
-    protected $description = array();
+    protected $description = null;
 
     /**
      * @var string
@@ -138,7 +139,7 @@ class KitchenSinkEntry
             $this->setExternalClass($json->externalLibrary);
             $this->setStatusEntry($json->statusEntry);
             $this->setStatusImplementation($json->statusImplementation);
-            $this->setDescription($json->description);
+            $this->setDescription(new KitchenSinkEntryDescription($json->description));
             $this->setRules($json->rules);
             $this->setBackground($json->background);
             $this->setContext($json->context);
@@ -158,7 +159,7 @@ class KitchenSinkEntry
             $this->setTitle($dummyId);
             $this->setStatusEntry("dummy");
             $this->setStatusImplementation("dummy");
-            $this->setDescription("dummy");
+            $this->setDescription(new KitchenSinkEntryDescription());
             $this->setIsDummy(true);
             $dummy_relations = new stdClass();
             $dummy_relations->isA = "undefined";
@@ -296,7 +297,7 @@ class KitchenSinkEntry
     }
 
     /**
-     * @return array
+     * @return KitchenSinkEntryDescription
      */
     public function getDescription()
     {
@@ -304,9 +305,9 @@ class KitchenSinkEntry
     }
 
     /**
-     * @param array $description
+     *
      */
-    public function setDescription($description)
+    public function setDescription(KitchenSinkEntryDescription $description)
     {
         if($description){
             $this->description = $description;
