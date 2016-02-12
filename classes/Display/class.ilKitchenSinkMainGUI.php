@@ -14,6 +14,7 @@ include_once("class.ilKitchenSinkLessGUI.php");
 include_once("class.ilKitchenSinkIconsGUI.php");
 include_once("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/classes/Models/class.KitchenSinkSkin.php");
 include_once("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/classes/UI/Factories/class.KSFactory.php");
+require_once "Services/UIComponent/Button/classes/class.ilLinkButton.php";
 
 /**
  *
