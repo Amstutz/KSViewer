@@ -2,24 +2,25 @@
   "id": "button",
   "title": "Button",
   "type": "concrete",
-  "phpClass": "none",
+  "phpClass": "ilLinkButton (ilButton), ilSubmitButton (ilButton)",
   "externalLibrary": {
-    "name": "default",
-    "href": "http://getbootstrap.com/components/#badges"
+    "name": "Bootstrap Button",
+    "href": "http://getbootstrap.com/css/#buttons"
   },
-  "statusEntry": "default",
-  "statusImplementation": "default",
+  "lessVariables": ["il-btn-disabled-color", "il-btn-disabled-background","il-btn-disabled-border"],
+  "statusEntry": "To be revised",
+  "statusImplementation": "To be implemented ",
   "description": {
-    "purpose": "default",
-    "composition": "default",
-    "effect": "default",
+    "purpose": "Buttons are used to trigger interactions that change the system’s status. Usually Buttons are contained inside an Input Collection. The Toolbar is the one main exception to this rule, since buttons in the Toolbar might also perform view changes.",
+    "composition": "A Button is a clickable, graphically obtrusive control element. It can bear Text, a Glyph or both as caption.",
+    "effect": "On click, the action indicated by the button is carried out.",
     "rivals": [
       {
-        "name":"default",
-        "description": "default"
+        "name":"Glyphs",
+        "description": "Are used if the enclosing Container Collection can not provide enough space for textual information or if such an information would clutter the screen."
       },{
-        "name":"default",
-        "description": "default"
+        "name":"Links",
+        "description": "Links are used to trigger Interactions that do not change the system’s status. They are usually contained inside a Navigational Collection."
       }
     ]
   },
@@ -28,28 +29,51 @@
   "featureWikiReferences":[
 
   ],
+  "selector":".btn.btn-default",
   "rules":[
-    {"Usage":  [
+    {
+      "Interaction":  [
       ""
-    ]},
-    {"Interaction":  [
+    ]
+    },
+    {
+      "id":"Wording",
+      "rules":  [{
+        "description": "The caption of button SHOULD contain no more than two words.",
+        "level": "MUST",
+        "tests":[
+          {
+            "description": "Max 2 Words",
+            "type":"contains",
+            "subtype":"text",
+            "amount":"1",
+            "selector":"",
+            "content": "Refresh Entries Tessdft",
+            "not":""
+          }]
+      }
+      ]
+    },
+    {
+      "Style":  [
       ""
-    ]},
-    {"Wording":  [
+    ]
+    },
+    {
+      "Ordering":  [
       ""
-    ]},
-    {"Style":  [
+    ]
+    },
+    {
+      "Responsiveness":  [
       ""
-    ]},
-    {"Ordering":  [
+    ]
+    },
+    {
+      "Accessibility":  [
       ""
-    ]},
-    {"Responsiveness":  [
-      ""
-    ]},
-    {"Accessibility":  [
-      ""
-    ]}],
+    ]}
+  ],
   "relations": {
     "isA": "triggerElement",
     "mustUse": [

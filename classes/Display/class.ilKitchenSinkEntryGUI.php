@@ -155,7 +155,7 @@ class ilKitchenSinkEntryGUI
                     if(is_array($rule_category->rules)){
                         $rules = $this->getUiFactory()->listing()->ordered();
                         foreach($rule_category->rules as $id => $rule){
-                            $rules->setElementByKey($id,$rule);
+                            $rules->setElementByKey($id,$rule->description);
                         }
                         $rules_categories->setElementByKey($rule_category->id,$rules->to_html_string());
                     }

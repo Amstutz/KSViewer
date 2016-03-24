@@ -82,6 +82,9 @@ class ilKitchenSinkMainGUI
      */
     public function executeCommand() {
 
+
+
+
         $this->setTabs();
 
         // determine next class in the call structure
@@ -150,7 +153,7 @@ class ilKitchenSinkMainGUI
     protected function entries(){
         $toolbar = new ilToolbarGUI();
         $reload_btn = ilLinkButton::getInstance();
-        $reload_btn->setCaption('Refresh Entries',false);
+        $reload_btn->setCaption('Refresh Entries Test',false);
         $reload_btn->setUrl($this->ctrl->getLinkTarget($this, 'reloadJson'));
         $toolbar->addButtonInstance($reload_btn);
         $this->createExplorer();
@@ -205,6 +208,20 @@ class ilKitchenSinkMainGUI
 
 
     protected function less(){
+        require "./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/libs/lessphp/Less.php";
+
+        /**
+         *         $less = new lessc;
+        echo $less->compileFile("./Customizing/global/skin/ksSkinOfroot/ksSkinOfroot.less");
+        exit;
+         */
+
+
+        $parser = new Less_Parser();
+        $parser->parseFile( './Customizing/global/skin/ksSkinOfroot/ksSkinOfroot.less' );
+        echo $parser->getCss();
+        exit;
+
         $less = new ilKitchenSinkLessGUI($this,new KitchenSinkSkin());
         $this->tpl->setContent($less->renderLess());
         $this->tpl->show();

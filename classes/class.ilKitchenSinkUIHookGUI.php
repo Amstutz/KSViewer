@@ -4,12 +4,15 @@
 
 include_once('./Services/UIComponent/classes/class.ilUIHookPluginGUI.php');
 include_once('./Services/UIComponent/Tabs/classes/class.ilTabsGUI.php');
+include_once("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/classes/Display/class.ilKitchenSinkMainGUI.php");
+
+
 
 /**
  * User interface hook class for Kitchen Sink Plugin
  *
  * @author  Timon Amstutz <timon.amstutz@ilub.unibe.ch>
- *-
+ *
  *
  * @version $Id$
  * @ingroup ServicesUIComponent
@@ -41,8 +44,19 @@ class ilKitchenSinkUIHookGUI extends ilUIHookPluginGUI {
             $hook = $a_comp . '/' . $a_part;
 
             if ($hook == '/template_get' AND $a_par['tpl_id'] == 'Services/MainMenu/tpl.main_menu.html') {
+                $tpl->addJavaScript("Services/UIComponent/Modal/js/Modal.js",true);
+
+                $tpl->addJavaScript("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/templates/js/clientTests/helper/ruleReport.js",true);
+                $tpl->addJavaScript("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/templates/js/clientTests/helper/ruleDisplay.js",true);
+                $tpl->addJavaScript("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/templates/js/clientTests/helper/reportsDisplay.js",true);
+                $tpl->addJavaScript("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/templates/js/clientTests/helper/reportsSummary.js",true);
+
+                $tpl->addJavaScript("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/templates/js/clientTests/tests/content/containTest.js",true);
+                $tpl->addJavaScript("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/templates/js/clientTests/runUITests.js",true);
+
+                $tpl->addOnLoadCode("uiTestRunner = new runUITests(".json_encode(file_get_contents(ilKitchenSinkMainGUI::KS_DATA_PATH."/".ilKitchenSinkMainGUI::KS_DATA_FILE)).");");
                 $html = "";
-                $mode = ilUIHookPluginGUI::PREPEND;
+                $mode = ilUIHookPluginGUI::APPEND;
 
                 return array('mode' => $mode, 'html' => $html);
             }
@@ -50,7 +64,7 @@ class ilKitchenSinkUIHookGUI extends ilUIHookPluginGUI {
 
             return array(
                 'mode' => ilUIHookPluginGUI::KEEP,
-                'html' => ''
+                'html' => 'Testing'
             );
         }
     }

@@ -28,13 +28,88 @@
   "featureWikiReferences":[
 
   ],
+  "selector": ".btn.btn-default",
   "rules":[
-    {"Usage":  [
-      ""
-    ]},
-    {"Interaction":  [
-      ""
-    ]},
+    {
+      "id":"Usage",
+      "rules":  [{
+        "description": "Accordion Usage",
+        "level": "MUST",
+        "tests":[
+          {
+            "description": "Test 1.1.1",
+            "type":"contains",
+            "subtype":"text",
+            "amount":"1",
+            "contentSelector":"",
+            "content": "Testing rolf",
+            "not":""
+          },
+          {
+            "description": "Test 1.1.2",
+            "type":"contains",
+            "subtype":"text",
+            "amount":"1",
+            "contentSelector":"",
+            "content": "Testing rolf",
+            "not":""
+          }
+        ]
+      },
+        {
+          "description": "Accordion Usage 2",
+          "level": "MUST",
+          "tests":[
+            {
+              "description": "Test 1.1.1",
+              "type":"contains",
+              "subtype":"text",
+              "amount":"1",
+              "contentSelector":"",
+              "content": "Testing rolf",
+              "not":""
+            },
+            {
+              "description": "Test 1.1.2",
+              "type":"contains",
+              "subtype":"text",
+              "amount":"1",
+              "contentSelector":"",
+              "content": "Testing rolf",
+              "not":""
+            }
+          ]
+        }
+      ]},
+    {
+      "id":"Interaction",
+      "rules":  [{
+        "description": "Accordion Interaction",
+        "level": "MUST",
+        "selector": ".btn.btn-default",
+        "tests":[
+          {
+            "description": "Test 1.2.1",
+            "type":"contains",
+            "subtype":"text",
+            "amount":"1",
+            "contentSelector":"",
+            "content": "Testing rolf",
+            "not":""
+          },
+          {
+            "description": "Test 1.2.2",
+            "type":"contains",
+            "subtype":"text",
+            "amount":"1",
+            "contentSelector":"",
+            "content": "Testing rolf",
+            "not":""
+          }
+
+        ]
+      }
+      ]},
     {"Wording":  [
       ""
     ]},
@@ -87,13 +162,87 @@
   "featureWikiReferences":[
 
   ],
+  "selector": ".btn.btn-default:not(dropdown-toggle)",
+
   "rules":[
-    {"Usage":  [
-      ""
-    ]},
-    {"Interaction":  [
-      ""
-    ]},
+    {
+      "id":"Usage",
+      "rules":  [{
+        "description": "Block Usage",
+        "level": "MUST",
+        "tests":[
+          {
+            "description": "Test 2.1.1",
+            "type":"contains",
+            "subtype":"text",
+            "amount":"1",
+            "contentSelector":"",
+            "content": "Testing rolf",
+            "not":""
+          },
+          {
+            "description": "Test 2.1.2",
+            "type":"contains",
+            "subtype":"text",
+            "amount":"1",
+            "contentSelector":"",
+            "content": "Testing rolf",
+            "not":""
+          }
+        ]
+      },{
+        "description": "Block Usage 2",
+        "level": "MUST",
+        "tests":[
+        {
+        "description": "Test 2.1.1",
+        "type":"contains",
+        "subtype":"text",
+        "amount":"1",
+        "contentSelector":"",
+        "content": "Testing rolf",
+        "not":""
+        },
+        {
+        "description": "Test 2.1.2",
+        "type":"contains",
+        "subtype":"text",
+        "amount":"1",
+        "contentSelector":"",
+        "content": "Testing rolf",
+        "not":""
+        }
+        ]
+      }
+      ]},
+    {
+      "id":"Interaction",
+      "rules":  [{
+        "description": "Block Interaction",
+        "level": "MUST",
+        "tests":[
+          {
+            "description": "Test 2.2.1",
+            "type":"contains",
+            "subtype":"text",
+            "amount":"1",
+            "contentSelector":"",
+            "content": "Testing rolf",
+            "not":""
+          },
+          {
+            "description": "Test 2.2.2",
+            "type":"contains",
+            "subtype":"text",
+            "amount":"1",
+            "contentSelector":"",
+            "content": "Testing rolf",
+            "not":""
+          }
+
+        ]
+      }
+      ]},
     {"Wording":  [
       ""
     ]},
@@ -2122,7 +2271,7 @@
     "mayUse":["root"
     ]
   }
-,"log":[{  "commit": "d96875c6edf44bec9c40ca77dbcaea341128034a", "abbreviated_commit": "d96875c",  "subject": "Added UI-Factory => major refactoring",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Fri, 12 Feb 2016 19:02:38 +0100"  }},{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "formPart",
   "title": "Form Part",
   "type": "concrete",
@@ -5532,25 +5681,24 @@
   "id": "button",
   "title": "Button",
   "type": "concrete",
-  "phpClass": "ilLinkButton (ilButton), ilSubmitButton (ilButton)",
+  "phpClass": "none",
   "externalLibrary": {
-    "name": "Bootstrap Button",
-    "href": "http://getbootstrap.com/css/#buttons"
+    "name": "default",
+    "href": "http://getbootstrap.com/components/#badges"
   },
-  "lessVariables": ["il-btn-disabled-color", "il-btn-disabled-background","il-btn-disabled-border"],
-  "statusEntry": "To be revised",
-  "statusImplementation": "To be implemented ",
+  "statusEntry": "default",
+  "statusImplementation": "default",
   "description": {
-    "purpose": "Buttons are used to trigger interactions that change the system’s status. Usually Buttons are contained inside an Input Collection. The Toolbar is the one main exception to this rule, since buttons in the Toolbar might also perform view changes.",
-    "composition": "A Button is a clickable, graphically obtrusive control element. It can bear Text, a Glyph or both as caption.",
-    "effect": "On click, the action indicated by the button is carried out.",
+    "purpose": "default",
+    "composition": "default",
+    "effect": "default",
     "rivals": [
       {
-        "name":"Glyphs",
-        "description": "Are used if the enclosing Container Collection can not provide enough space for textual information or if such an information would clutter the screen."
+        "name":"default",
+        "description": "default"
       },{
-        "name":"Links",
-        "description": "Links are used to trigger Interactions that do not change the system’s status. They are usually contained inside a Navigational Collection."
+        "name":"default",
+        "description": "default"
       }
     ]
   },
@@ -5559,51 +5707,28 @@
   "featureWikiReferences":[
 
   ],
-  "selector":".btn.btn-default",
   "rules":[
-    {
-      "Interaction":  [
+    {"Usage":  [
       ""
-    ]
-    },
-    {
-      "id":"Wording",
-      "rules":  [{
-        "description": "The caption of button SHOULD contain no more than two words.",
-        "level": "MUST",
-        "tests":[
-          {
-            "description": "Max 2 Words",
-            "type":"wording",
-            "subtype":"maxWords",
-            "amount":"2",
-            "selector":"",
-            "content": "Refresh Entries Tessdft",
-            "not":""
-          }]
-      }
-      ]
-    },
-    {
-      "Style":  [
+    ]},
+    {"Interaction":  [
       ""
-    ]
-    },
-    {
-      "Ordering":  [
+    ]},
+    {"Wording":  [
       ""
-    ]
-    },
-    {
-      "Responsiveness":  [
+    ]},
+    {"Style":  [
       ""
-    ]
-    },
-    {
-      "Accessibility":  [
+    ]},
+    {"Ordering":  [
       ""
-    ]}
-  ],
+    ]},
+    {"Responsiveness":  [
+      ""
+    ]},
+    {"Accessibility":  [
+      ""
+    ]}],
   "relations": {
     "isA": "triggerElement",
     "mustUse": [
@@ -6083,7 +6208,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "d96875c6edf44bec9c40ca77dbcaea341128034a", "abbreviated_commit": "d96875c",  "subject": "Added UI-Factory => major refactoring",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Fri, 12 Feb 2016 19:02:38 +0100"  }},{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
+,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "mailGlyph",
   "title": "Mail Glyph",
   "type": "concrete",
@@ -7755,4 +7880,4 @@
     "mustUse": [],
     "mayUse":[]
   }
-,"log":[{  "commit": "d96875c6edf44bec9c40ca77dbcaea341128034a", "abbreviated_commit": "d96875c",  "subject": "Added UI-Factory => major refactoring",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Fri, 12 Feb 2016 19:02:38 +0100"  }},{  "commit": "19708eb50940a8aef03c4554d151a460f5b42696", "abbreviated_commit": "19708eb",  "subject": "Data changed",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Fri, 5 Feb 2016 19:14:00 +0100"  }},{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }},{  "commit": "0e7145ea1cb27741877f0a51317bdeb9579bff3b", "abbreviated_commit": "0e7145e",  "subject": "Dataformat changed, parsing stabalized",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 09:11:50 +0100"  }},{  "commit": "4fa9bea7b7de1757234a633af821991f1791fa04", "abbreviated_commit": "4fa9bea",  "subject": "Less changes",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Tue, 19 Jan 2016 10:54:11 +0100"  }},{  "commit": "306601c267ad34390093fe77eddcba837ab16313", "abbreviated_commit": "306601c",  "subject": "Finished Relations",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Sun, 17 Jan 2016 23:33:33 +0100"  }},{  "commit": "7bb875cfdec8d975c9b50b015c0f812cd61baa22", "abbreviated_commit": "7bb875c",  "subject": "Automated testing added",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Fri, 15 Jan 2016 12:41:08 +0100"  }},{  "commit": "503479482eba700c2b69fc0e1a45342bb008ac81", "abbreviated_commit": "5034794",  "subject": "Initial Commit",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 13 Jan 2016 19:37:51 +0100"  }}]}]}
+,"log":[{  "commit": "19708eb50940a8aef03c4554d151a460f5b42696", "abbreviated_commit": "19708eb",  "subject": "Data changed",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Fri, 5 Feb 2016 19:14:00 +0100"  }},{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }},{  "commit": "0e7145ea1cb27741877f0a51317bdeb9579bff3b", "abbreviated_commit": "0e7145e",  "subject": "Dataformat changed, parsing stabalized",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 09:11:50 +0100"  }},{  "commit": "4fa9bea7b7de1757234a633af821991f1791fa04", "abbreviated_commit": "4fa9bea",  "subject": "Less changes",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Tue, 19 Jan 2016 10:54:11 +0100"  }},{  "commit": "306601c267ad34390093fe77eddcba837ab16313", "abbreviated_commit": "306601c",  "subject": "Finished Relations",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Sun, 17 Jan 2016 23:33:33 +0100"  }},{  "commit": "7bb875cfdec8d975c9b50b015c0f812cd61baa22", "abbreviated_commit": "7bb875c",  "subject": "Automated testing added",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Fri, 15 Jan 2016 12:41:08 +0100"  }},{  "commit": "503479482eba700c2b69fc0e1a45342bb008ac81", "abbreviated_commit": "5034794",  "subject": "Initial Commit",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 13 Jan 2016 19:37:51 +0100"  }}]}]}
