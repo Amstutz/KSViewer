@@ -1,4 +1,6 @@
+var il = {};
 (function (root, scope, factory) {
+
     scope.uiTests = factory(root.jQuery);
 }(window, il, function init($) {
     var tests = function(){
