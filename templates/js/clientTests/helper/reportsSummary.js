@@ -25,8 +25,16 @@ var reportsSummary = function(reports){
             }
 
             self.summary.nrReports++;
-            console.log(currentItemTitle,report.itemTitle,currentItemId );
-            console.log(self.summary.blocks);
+
+            il.uiTests.log.message({"Current title":currentItemTitle,
+                "Report Title":report.itemTitle,"Current Item id":currentItemId },
+                "reportsSummary",il.uiTests.log.levels.info);
+
+
+
+            il.uiTests.log.message(self.summary.blocks,"reportsSummary",il.uiTests.log.levels.info);
+
+
             self.summary.blocks[currentItemId-1].nrReports++;
 
             if(!report.passed){
@@ -37,7 +45,7 @@ var reportsSummary = function(reports){
         });
 
 
-        console.log(summary);
+        il.uiTests.log.message(summary,"reportsSummary",il.uiTests.log.levels.info);
     }
     this.parseReports();
 

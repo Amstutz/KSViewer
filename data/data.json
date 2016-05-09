@@ -5573,13 +5573,19 @@
         "level": "MUST",
         "tests":[
           {
-            "description": "Max 2 Words",
+            "description": "Test 1.1.1",
             "type":"wording",
-            "subtype":"maxWords",
-            "amount":"2",
-            "selector":"",
-            "content": "Refresh Entries Tessdft",
-            "not":""
+            "subtype":"amount",
+            "options":{
+              "ruleSelectors":{
+                "attribute":"value",
+                "selector": ""
+              },
+              "operator":">",
+              "amount":"1",
+              "regex": "",
+              "not":""
+            }
           }]
       }
       ]

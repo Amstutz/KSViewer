@@ -1,26 +1,26 @@
-var maxWords = function(element, entry,ruleType,rule,test){
-    test.amount +=1;
-    test.not = true;
-    return minWords(element, entry,ruleType,rule,test);
-};
+il.uiTests.wording = function(element, entry,ruleType,rule,test){
 
-var minWords = function(element, entry,ruleType,rule,test){
-    var regexWord = " [A-Za-z0-9][A-Za-z0-9_]*";
-    var regex = "[A-Za-z0-9][A-Za-z0-9_]* [A-Za-z0-9][A-Za-z0-9_]* [A-Za-z0-9_].*";
+    var amount = function(element, entry,ruleType,rule,test){
+        il.uiTests.log.message(test.options,"wording",il.uiTests.log.levels.info);
+        il.uiTests.log.message(element,"wording",il.uiTests.log.levels.info);
 
-    test.content = regex;
-    test.amount =1;
-    return regexTest(element, entry,ruleType,rule,test);
-};
+        il.uiTests.log.message(element.children,"wording",il.uiTests.log.levels.info);
+        var text = "";
 
-var wordingTest = function(element, entry,ruleType,rule,test){
+        if(test.options.ruleSelectors.attribute){
+            text = element.attributes.value.textContent;
+            il.uiTests.log.message(element.attributes.value.textContent.match(/\S+/g),"wording",il.uiTests.log.levels.info);
+        }
+        var length = text.match(/\S+/g).length;
+        console.log(length,text);
+        return false;
+    };
+
     switch(test.subtype){
-        case "maxWords":
-            return maxWords(element, entry,ruleType,rule,test);
-        case "minWords":
-            return maxWords(element, entry,ruleType,rule,test);
-        default:
-            return containTextTest(element, entry,ruleType,rule,test);
-
+        case "amount":
+            return amount(element, entry,ruleType,rule,test);
     }
-};
+}
+
+
+

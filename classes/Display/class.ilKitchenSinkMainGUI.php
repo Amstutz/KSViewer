@@ -208,19 +208,6 @@ class ilKitchenSinkMainGUI
 
 
     protected function less(){
-        require "./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/libs/lessphp/Less.php";
-
-        /**
-         *         $less = new lessc;
-        echo $less->compileFile("./Customizing/global/skin/ksSkinOfroot/ksSkinOfroot.less");
-        exit;
-         */
-
-
-        $parser = new Less_Parser();
-        $parser->parseFile( './Customizing/global/skin/ksSkinOfroot/ksSkinOfroot.less' );
-        echo $parser->getCss();
-        exit;
 
         $less = new ilKitchenSinkLessGUI($this,new KitchenSinkSkin());
         $this->tpl->setContent($less->renderLess());

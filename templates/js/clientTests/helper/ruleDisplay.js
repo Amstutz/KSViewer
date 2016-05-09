@@ -1,4 +1,5 @@
-var ruleDisplay = function(element, report){
+var ruleDisplay = function(element, report,uiTests){
+    this.log = uiTests.log;
     this.element = $(element);
     this.previousBackground = this.element.css("background-color");
     this.previousBorder = this.element.css("border");
@@ -7,14 +8,13 @@ var ruleDisplay = function(element, report){
     this.popover = null;
     var self = this;
 
-    this.continueButton = "<div class='col-md-6'><a onclick='uiTestRunner.continue();' class='btn btn-default ui-test-next' href='#' role='button'>Next</a></div>";
-    this.skipRuleButton = "<div class='col-md-6'><a onclick='uiTestRunner.skipRule();' class='btn btn-default ui-test-skip-rule' href='#' role='button'>Skip Rule</a></div>";
+    this.continueButton = "<div class='col-md-6'><a onclick='il.uiTests.continue();' class='btn btn-default ui-test-next' href='#' role='button'>Next</a></div>";
+    this.skipRuleButton = "<div class='col-md-6'><a onclick='il.uiTests.skipRule();' class='btn btn-default ui-test-skip-rule' href='#' role='button'>Skip Rule</a></div>";
 
     this.buttons = "<div class='row'>"+this.continueButton+"" +this.skipRuleButton+"</div>";
 
     this.show = function(){
-
-        console.log("ruleDisplay.show");
+        self.log.message("ruleDisplay.show","ruleDisplay",self.log.levels.info);
 
         if(this.element.length){
             this.popover = this.element.first().popover();
@@ -35,12 +35,13 @@ var ruleDisplay = function(element, report){
             this.element.css("border","5px solid blue", "!important");
         }
         else{
-            console.error("Failed rule has no valid selector!");
+            self.log.error("Failed rule has no valid selector!");
         }
 
     };
     this.hide = function(callback){
-        console.log("ruleDisplay.hide");
+        self.log.message("ruleDisplay.hide","ruleDisplay",self.log.levels.info);
+
         this.element.css("border", this.previousBorder);
         this.element.css("background-color", this.previousBackground);
 

@@ -50,11 +50,14 @@ class ilKitchenSinkUIHookGUI extends ilUIHookPluginGUI {
                 $tpl->addJavaScript("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/templates/js/clientTests/helper/ruleDisplay.js",true);
                 $tpl->addJavaScript("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/templates/js/clientTests/helper/reportsDisplay.js",true);
                 $tpl->addJavaScript("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/templates/js/clientTests/helper/reportsSummary.js",true);
+                $tpl->addJavaScript("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/templates/js/clientTests/uiTests.js",true);
+                $tpl->addJavaScript("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/templates/js/clientTests/helper/log.js",true);
 
-                $tpl->addJavaScript("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/templates/js/clientTests/tests/content/containTest.js",true);
-                $tpl->addJavaScript("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/templates/js/clientTests/runUITests.js",true);
+                $tpl->addJavaScript("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/templates/js/clientTests/tests/content/wording.js",true);
+                $tpl->addJavaScript("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/templates/js/clientTests/tests/content/regex.js",true);
 
-                $tpl->addOnLoadCode("uiTestRunner = new runUITests(".json_encode(file_get_contents(ilKitchenSinkMainGUI::KS_DATA_PATH."/".ilKitchenSinkMainGUI::KS_DATA_FILE)).");");
+
+                $tpl->addOnLoadCode("il.uiTests.setEntries(".json_encode(file_get_contents(ilKitchenSinkMainGUI::KS_DATA_PATH."/".ilKitchenSinkMainGUI::KS_DATA_FILE)).");");
                 $html = "";
                 $mode = ilUIHookPluginGUI::APPEND;
 

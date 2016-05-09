@@ -2,7 +2,7 @@ var reportsDisplay = function(reportsSummary){
 
     this.summary = reportsSummary.summary;
 
-    console.log(this.reports );
+    il.uiTests.log.message(this.reports ,"reportsDisplay",il.uiTests.log.levels.info);
 
     this.generateContent = function(){
         var html = "";
@@ -42,12 +42,13 @@ var reportsDisplay = function(reportsSummary){
     }
 
     this.show = function(){
+        il.uiTests.log.message("reportsDisplay.show","reportsDisplay",il.uiTests.log.levels.info);
         il.Modal.dialogue(this.settings);
 
     };
 
     this.hide = function(callback){
-        console.log("ruleDisplay.hide");
+        il.uiTests.log.message("reportsDisplay.hide","reportsDisplay",il.uiTests.log.levels.info);
         this.element.css("border", this.previousBorder);
         this.element.css("background-color", this.previousBackground);
 

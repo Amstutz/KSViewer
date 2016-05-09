@@ -38,12 +38,15 @@
         "tests":[
           {
             "description": "Test 1.1.1",
-            "type":"contains",
-            "subtype":"text",
-            "amount":"1",
-            "contentSelector":"",
-            "content": "Testing rolf",
-            "not":""
+            "type":"wording",
+            "subtype":"amount",
+            "options":{
+              "operator":">",
+              "amount":"1",
+              "regex": "",
+              "not":""
+            }
+
           },
           {
             "description": "Test 1.1.2",
