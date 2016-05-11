@@ -5559,7 +5559,7 @@
   "featureWikiReferences":[
 
   ],
-  "selector":".btn.btn-default",
+  "selector":".btn",
   "rules":[
     {
       "Interaction":  [
@@ -5573,20 +5573,33 @@
         "level": "MUST",
         "tests":[
           {
-            "description": "Test 1.1.1",
-            "type":"wording",
-            "subtype":"amount",
-            "options":{
-              "ruleSelectors":{
-                "attribute":"value",
-                "selector": ""
-              },
-              "operator":">",
-              "amount":"1",
-              "regex": "",
-              "not":""
+            "description": "No more than 2 words",
+            "not": "",
+            "variants":
+              [
+                {
+                  "type":"wording",
+                  "subtype":"amount",
+                  "selectorType": "attribute",
+                  "selector": "value",
+                  "operator":"<=",
+                  "amount":"2",
+                  "regex": "",
+                  "not":""
+                },
+                {
+                  "type":"wording",
+                  "subtype":"amount",
+                  "selectorType": "selector",
+                  "selector": ".btn",
+                  "operator":"<=",
+                  "amount":"2",
+                  "regex": "",
+                  "not":""
+                }
+            ]
             }
-          }]
+          ]
       }
       ]
     },

@@ -10,6 +10,12 @@ il.uiTests.log = {
         uiTests: {
             level: 30
         },
+        testRule: {
+            level: 10
+        },
+        testVariant: {
+            level: 10
+        },
         reportsDisplay: {
             level: 30
         },
@@ -20,6 +26,9 @@ il.uiTests.log = {
             level: 30
         },
         wording: {
+            level: 0
+        },
+        compareValues: {
             level: 0
         }
     },

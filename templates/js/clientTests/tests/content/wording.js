@@ -1,26 +1,38 @@
-il.uiTests.wording = function(element, entry,ruleType,rule,test){
+il.uiTests.wording = function(element,selector,testVariant){
 
-    var amount = function(element, entry,ruleType,rule,test){
-        il.uiTests.log.message(test.options,"wording",il.uiTests.log.levels.info);
-        il.uiTests.log.message(element,"wording",il.uiTests.log.levels.info);
+    this.amount = function(text, regex, operator, amount){
+        il.uiTests.log.message(["wording.amount params",text, regex, operator, amount],"wording",this.log.levels.debug);
 
-        il.uiTests.log.message(element.children,"wording",il.uiTests.log.levels.info);
-        var text = "";
+        var nrWords = il.uiTests.countWords(text, regex);
 
-        if(test.options.ruleSelectors.attribute){
-            text = element.attributes.value.textContent;
-            il.uiTests.log.message(element.attributes.value.textContent.match(/\S+/g),"wording",il.uiTests.log.levels.info);
+        il.uiTests.log.message(["wording.amount nr words",nrWords],"wording",this.log.levels.debug);
+
+        if(!operator){
+            operator = "=";
         }
-        var length = text.match(/\S+/g).length;
-        console.log(length,text);
-        return false;
+        if(!amount){
+            amount = 1;
+        }
+        return il.uiTests.compareValues(operator,nrWords,amount,true);
     };
 
-    switch(test.subtype){
+    il.uiTests.log.message(["wording params to get Content",element,testVariant.selectorType,testVariant.selector],"wording",this.log.levels.debug);
+
+    var content = il.uiTests.getContent(element,testVariant.selectorType,testVariant.selector);
+
+    if(content == undefined || content == ""){
+        return false;
+    }
+    //content = il.uiTests.contentSanitize(content);
+    var text = il.uiTests.getText(content);
+
+    il.uiTests.log.message(["wording content",content],"wording",this.log.levels.debug);
+    il.uiTests.log.message(["wording text",text],"wording",this.log.levels.debug);
+
+    switch(testVariant.subtype){
         case "amount":
-            return amount(element, entry,ruleType,rule,test);
+            return this.amount(text, testVariant.regex, testVariant.operator,testVariant.amount);
     }
 }
-
 
 

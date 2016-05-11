@@ -1,4 +1,4 @@
-var il = {};
+//var il = {};
 (function (root, scope, factory) {
 
     scope.uiTests = factory(root.jQuery);
@@ -6,8 +6,8 @@ var il = {};
     var tests = function(){
 
         this.setEntries = function(entries){
+            this.log.message("this.setEntries","uiTests",this.log.levels.debug);
             this.entries = JSON.parse(entries);
-            this.log.message(entries,"uiTests",this.log.levels.info);
         }
 
         var self = this;
@@ -29,7 +29,7 @@ var il = {};
         this.init();
 
         this.skipRule = function(){
-            //console.log("skipRule");
+            this.log.message("this.skipRule","uiTests",this.log.levels.debug);
             this.ruleIndex++;
             this.testIndex= -1;
             this.elementIndex = -1;
@@ -38,13 +38,13 @@ var il = {};
 
 
         this.continue = function(){
-            //console.log("continue");
+            this.log.message("this.continue","uiTests",this.log.levels.debug);
             this.currentDisplay.hide(this.processEntries);
         };
 
         this.processTest = function(entry,ruleType,rule,test){
-            //console.log("processTest", entry.title, ruleType.id, rule.description,test.description);
-            //console.log(this.entryIndex,this.ruleTypeIndex ,this.ruleIndex,this.testIndex,this.elementIndex);
+            this.log.message(["this.processTest",entry,ruleType,rule,test],"uiTests",this.log.levels.debug);
+            this.log.message(["this.processTest",entry,ruleType,rule,test],"uiTests",this.log.levels.info);
 
             var allPassed = true;
 
@@ -57,16 +57,7 @@ var il = {};
                         self.log.message(elementIndex,"uiTests",self.log.levels.info);
 
                         self.elementIndex = elementIndex;
-                        switch(test.type){
-                            case "contains":
-                                //passed = this.wording.minWords(this,entry,ruleType,rule,test);
-                                break;
-                            case "wording":
-                                passed = self.wording(this,entry,ruleType,rule,test);
-                                break;
-                            default:
-                                console.log("Unknown Type");
-                        }
+                        passed = il.uiTests.testRule(this, entry.selector,test);
                         var report = new ruleReport(this,entry,ruleType,rule,test,passed);
                         self.ruleReports.push(report);
 
@@ -88,17 +79,19 @@ var il = {};
         };
 
         this.processEntries = function(){
-            //console.log("processEntries",this);
+            self.log.message("this.processEntries","uiTests",self.log.levels.debug);
 
             if(self.entries.uiComponent.every(function(entry,entryIndex){
+                    self.log.message(["this.processEntries Entry: "+entry.id,entry],"uiTests",self.log.levels.debug);
                     if(self.entryIndex < entryIndex && $.isArray(entry.rules)) {
                         complete = entry.rules.every(function (ruleType,ruleTypeIndex) {
                             if (self.ruleTypeIndex < ruleTypeIndex && $.isArray(ruleType.rules)) {
                                 complete = ruleType.rules.every(function (rule,ruleIndex) {
+                                    self.log.message(["this.processEntries Rule: "+rule.description,rule],"uiTests",self.log.levels.debug);
                                     if (self.ruleIndex < ruleIndex && $.isArray(rule.tests)) {
-
                                         var complete = rule.tests.every(function (test,testIndex) {
-                                            if (self.testIndex < testIndex && test.type) {
+                                            self.log.message(["this.processEntries Test: "+test.description,test],"uiTests",self.log.levels.debug);
+                                            if (self.testIndex < testIndex) {
                                                 if(!self.processTest(entry, ruleType, rule, test)){
                                                     return false;
                                                 }
