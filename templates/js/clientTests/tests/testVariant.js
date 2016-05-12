@@ -3,8 +3,8 @@ il.uiTests.testVariant = function(element,selector,testVariant){
 
     var passed = false;
     switch(testVariant.type){
-        case "contains":
-            //passed = this.wording.minWords(this,entry,ruleType,rule,test);
+        case "structure":
+            passed = il.uiTests.structure(element,selector,testVariant);
             break;
         case "wording":
             passed = il.uiTests.wording(element,selector,testVariant);

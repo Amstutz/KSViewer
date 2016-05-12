@@ -62,6 +62,12 @@ class KitchenSinkEntry
     protected $context = "";
 
     /**
+     * @var string
+     */
+    protected $selector = "";
+
+
+    /**
      * @var array
      */
     protected $feature_wiki_references = array();
@@ -140,6 +146,7 @@ class KitchenSinkEntry
             $this->setStatusEntry($json->statusEntry);
             $this->setStatusImplementation($json->statusImplementation);
             $this->setDescription(new KitchenSinkEntryDescription($json->description));
+            $this->setSelector($json->selector);
             $this->setRules($json->rules);
             $this->setBackground($json->background);
             $this->setContext($json->context);
@@ -380,6 +387,23 @@ class KitchenSinkEntry
     {
         $this->rules = $rules;
     }
+
+    /**
+     * @return string
+     */
+    public function getSelector()
+    {
+        return $this->selector;
+    }
+
+    /**
+     * @param string $selector
+     */
+    public function setSelector($selector)
+    {
+        $this->selector = $selector;
+    }
+
 
     /**
      * @return array

@@ -28,16 +28,77 @@
   "featureWikiReferences":[
 
   ],
+  "selector":".badge",
   "rules":[
-    {"Usage":  [
-      ""
-    ]},
+    {
+      "id":"Usage",
+      "rules":  [{
+        "description": "A Counter MUST only be used in combination with a glyph.",
+        "level": "MUST",
+        "tests":[
+          {
+            "description": "Combination with Glyph",
+            "not": "",
+            "variants":
+            [
+              {
+                "type":"structure",
+                "subtype":"amount",
+                "selectors": [
+                  {
+                    "type": "parents",
+                    "selector": "a"
+                  },
+                  {
+                    "type": "children",
+                    "selector": ".glyphicon"
+                  }
+                ],
+                "operator":"=",
+                "amount":"1",
+                "not":""
+              }
+            ]
+          }
+        ]
+      }
+      ]
+    }
+  ,
+
     {"Interaction":  [
       ""
     ]},
-    {"Wording":  [
-      ""
-    ]},
+    {
+      "id":"Composition",
+      "rules":  [{
+        "description": "A Counter MUST contain exactly one number greater than zero and no other characters.",
+        "level": "MUST",
+        "tests":[
+          {
+            "description": "Only Numbers",
+            "not": "",
+            "variants":
+            [
+              {
+                "type":"wording",
+                "subtype":"amount",
+                "selectorType": "selector",
+                "selector": ".badge",
+                "operator":"=",
+                "amount":"1",
+                "regex": {
+                  "term":"^(?!0)(\\d+)$",
+                  "modifier": "g"
+                },
+                "not":""
+              }
+            ]
+          }
+        ]
+      }
+      ]
+    },
     {"Style":  [
       ""
     ]},

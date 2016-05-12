@@ -1,4 +1,9 @@
-//var il = {};
+var ilback = il;
+var il = {};
+if(ilback){
+    il = ilback;
+}
+
 (function (root, scope, factory) {
 
     scope.uiTests = factory(root.jQuery);
@@ -49,8 +54,8 @@
             var allPassed = true;
 
             $(entry.selector).each(function (elementIndex) {
-                if($(this).is(":visible")){
-
+                var element = $(this);
+                if(il.uiTests.checkVisible(element)){
                     passed = false;
                     if(self.elementIndex < elementIndex){
                         self.log.message(self.elementIndex,"uiTests",self.log.levels.info);
