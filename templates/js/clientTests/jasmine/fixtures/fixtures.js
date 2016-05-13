@@ -38,6 +38,31 @@ il.uiTests.fixtures = function(){
         "not":""
     };
 
+    fixtures.badge.glyphPositionVariant = {
+        "type":"css",
+        "subtype":"positioning",
+        "selectors": [
+            {
+                "type": "parents",
+                "selector": "a"
+            },
+            {
+                "type": "children",
+                "selector": ".glyphicon"
+            }
+        ],
+        "positioning":[
+            {
+                "type": "collide",
+            },
+            {
+                "type": "isAbove",
+                "not": true
+            }
+        ],
+        "not":""
+    };
+
     fixtures.badge.neighbourHtml1 = $("<a><span class='glyphicon glyphicon-envelope'></span> <span class='badge'>1</span><span class='ilBadgeSpacer'>1</span></a>");
     fixtures.badge.neighbourHtml2 = $("<a><span class='glyphicon glyphicon-user'></span> <span> " +
         "<span><span class='badge'>0</span><span class='ilBadgeSpacer'>1</span></span>" +

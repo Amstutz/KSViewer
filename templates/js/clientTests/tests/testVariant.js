@@ -9,6 +9,10 @@ il.uiTests.testVariant = function(element,selector,testVariant){
         case "wording":
             passed = il.uiTests.wording(element,selector,testVariant);
             break;
+            break;
+        case "css":
+            passed = il.uiTests.css(element,selector,testVariant);
+            break;
         default:
             console.log("Unknown Type");
     }

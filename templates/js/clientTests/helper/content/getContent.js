@@ -1,5 +1,4 @@
 il.uiTests.getContent = function(element, type, identifier){
-
     var getOwnContent = function(element){
         return $(element).html();
     };
@@ -11,7 +10,6 @@ il.uiTests.getContent = function(element, type, identifier){
     var getContentByAttribute = function(element, attribute){
         return $(element).attr( attribute );
     };
-
     switch(type){
         case "selector":
             return getContentBySelector(element, identifier);
@@ -21,5 +19,4 @@ il.uiTests.getContent = function(element, type, identifier){
             return getOwnContent(element);
     }
 }
-
 

@@ -25,15 +25,10 @@ il.uiTests.getRelatives = function(element,type,selector){
     };
 
     var getParents = function(element,selector){
-        console.log(element);
-
-        console.log($(element).parents(selector));
         return $(element).parents(selector);
     };
 
     var getChildren = function(element,selector){
-        console.log(element);
-        console.log($(element).parents(selector));
         return $(element).children(selector);
     };
 
