@@ -5568,40 +5568,90 @@
     },
     {
       "id":"Wording",
-      "rules":  [{
-        "description": "The caption of Buttons SHOULD contain no more than two words.",
-        "level": "MUST",
-        "tests":[
+      "rules":
+        [
           {
-            "description": "No more than 2 words",
-            "not": "",
-            "variants":
+            "description": "The caption of Buttons SHOULD contain no more than two words.",
+            "level": "MUST",
+            "tests":
             [
               {
-                "type":"wording",
-                "subtype":"amount",
-                "selectorType": "attribute",
-                "selector": "value",
-                "operator":"<=",
-                "amount":"2",
-                "regex": "",
-                "not":""
-              },
-              {
-                "type":"wording",
-                "subtype":"amount",
-                "selectorType": "selector",
-                "selector": ".btn",
-                "operator":"<=",
-                "amount":"2",
-                "regex": "",
-                "not":""
+                "description": "No more than 2 words",
+                "not": "",
+                "variants":
+                [
+                  {
+                    "type":"wording",
+                    "subtype":"amount",
+                    "selectorType": "attribute",
+                    "selector": "value",
+                    "operator":"<=",
+                    "amount":"2",
+                    "regex": "",
+                    "not":""
+                  },
+                  {
+                    "type":"wording",
+                    "subtype":"amount",
+                    "selectorType": "selector",
+                    "selector": ".btn",
+                    "operator":"<=",
+                    "amount":"2",
+                    "regex": "",
+                    "not":""
+                  }
+                ]
               }
+
             ]
+          },
+          {
+            "description": "Every word except articles, coordinating conjunctions and prepositions of four or fewer letters MUST be capitalized.",
+            "level": "MUST",
+            "tests":
+            [
+              {
+                "description": "Capitalize words",
+                "not": "",
+                "variants":
+                [
+                  {
+                    "type":"wording",
+                    "subtype":"amount",
+                    "selectorType": "selector",
+                    "selector": ".btn",
+                    "operator":"=",
+                    "amount":"0",
+                    "regex": "( |\\(|^)[a-z][a-zA-Z0-9]*",
+                    "ignore":{
+                      "list": ["&nbsp;"],
+                      "ignoreConjunctions":true,
+                      "ignorePrepositions":true
+                    },
+                    "not":""
+                  },
+                  {
+                    "type":"wording",
+                    "subtype":"amount",
+                    "selectorType": "attribute",
+                    "selector": "value",
+                    "operator":"=",
+                    "amount":"0",
+                    "regex": "( |\\(|^)[a-z][a-zA-Z0-9]*",
+                    "ignore":{
+                      "list": ["&nbsp;"],
+                      "ignoreConjunctions":true,
+                      "ignorePrepositions":true
+                    },
+                    "not":""
+                  }
+                ]
+              }
+
+            ]
+
           }
         ]
-      }
-      ]
     },
     {
       "Style":  [
@@ -5630,7 +5680,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "32ccc7ae85f406cb7d1b10171f38dac85fbd9c14", "abbreviated_commit": "32ccc7a",  "subject": "Auto Testing added",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Thu, 24 Mar 2016 19:44:40 +0100"  }},{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
+,"log":[{  "commit": "756e958b73c748f6256b702bf0b89b30abdfc21d", "abbreviated_commit": "756e958",  "subject": "Structure Tests",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Thu, 12 May 2016 20:38:59 +0200"  }},{  "commit": "32ccc7ae85f406cb7d1b10171f38dac85fbd9c14", "abbreviated_commit": "32ccc7a",  "subject": "Auto Testing added",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Thu, 24 Mar 2016 19:44:40 +0100"  }},{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "closeButton",
   "title": "Close Button",
   "type": "concrete",
@@ -6930,7 +6980,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
+,"log":[{  "commit": "756e958b73c748f6256b702bf0b89b30abdfc21d", "abbreviated_commit": "756e958",  "subject": "Structure Tests",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Thu, 12 May 2016 20:38:59 +0200"  }},{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "noveltyCounter",
   "title": "Novelty Counter",
   "type": "concrete",
@@ -7019,10 +7069,43 @@
   "featureWikiReferences":[
 
   ],
+  "selector":".badge",
   "rules":[
-    {"Usage":  [
-      ""
-    ]},
+    {
+      "id":"Usage",
+      "rules":  [{
+        "description": "A Counter MUST only be used in combination with a glyph.",
+        "level": "MUST",
+        "tests":[
+          {
+            "description": "Combination with Glyph",
+            "not": "",
+            "variants":
+            [
+              {
+                "type":"structure",
+                "subtype":"amount",
+                "selectors": [
+                  {
+                    "type": "parents",
+                    "selector": "a"
+                  },
+                  {
+                    "type": "children",
+                    "selector": ".glyphicon"
+                  }
+                ],
+                "operator":"=",
+                "amount":"1",
+                "not":""
+              }
+            ]
+          }
+        ]
+      }
+      ]
+    }
+  ,
     {"Interaction":  [
       ""
     ]},

@@ -28,10 +28,43 @@
   "featureWikiReferences":[
 
   ],
+  "selector":".badge",
   "rules":[
-    {"Usage":  [
-      ""
-    ]},
+    {
+      "id":"Usage",
+      "rules":  [{
+        "description": "A Counter MUST only be used in combination with a glyph.",
+        "level": "MUST",
+        "tests":[
+          {
+            "description": "Combination with Glyph",
+            "not": "",
+            "variants":
+            [
+              {
+                "type":"structure",
+                "subtype":"amount",
+                "selectors": [
+                  {
+                    "type": "parents",
+                    "selector": "a"
+                  },
+                  {
+                    "type": "children",
+                    "selector": ".glyphicon"
+                  }
+                ],
+                "operator":"=",
+                "amount":"1",
+                "not":""
+              }
+            ]
+          }
+        ]
+      }
+      ]
+    }
+  ,
     {"Interaction":  [
       ""
     ]},

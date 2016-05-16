@@ -1,9 +1,9 @@
 il.uiTests.wording = function(element,selector,testVariant){
 
-    this.amount = function(text, regex, operator, amount){
-        il.uiTests.log.message(["wording.amount params",text, regex, operator, amount],"wording",this.log.levels.debug);
+    this.amount = function(text, regex, operator, amount, ignore){
+        il.uiTests.log.message(["wording.amount params",text, regex, operator, amount,ignore],"wording",this.log.levels.debug);
 
-        var nrWords = il.uiTests.countWords(text, regex);
+        var nrWords = il.uiTests.countWords(text, regex,ignore);
 
         il.uiTests.log.message(["wording.amount nr words",nrWords],"wording",this.log.levels.debug);
 
@@ -31,7 +31,7 @@ il.uiTests.wording = function(element,selector,testVariant){
 
     switch(testVariant.subtype){
         case "amount":
-            return this.amount(text, testVariant.regex, testVariant.operator,testVariant.amount);
+            return this.amount(text, testVariant.regex, testVariant.operator,testVariant.amount,testVariant.ignore);
     }
 }
 

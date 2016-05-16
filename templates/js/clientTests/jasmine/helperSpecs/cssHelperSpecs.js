@@ -4,44 +4,44 @@ describe("Helper CSS Suite", function() {
     describe("Collision Checks", function() {
         beforeEach(function() {
             fixtures.rect1 = {
-                x: 0,
-                y: 0,
+                left: 0,
+                top: 0,
                 width: 100,
                 height: 100
             };
             fixtures.rect2 = {
-                x: 50,
-                y: 50,
+                left: 50,
+                top: 50,
                 width: 50,
                 height: 50
             };
             fixtures.rect3 = {
-                x: 10,
-                y: 10,
+                left: 10,
+                top: 10,
                 width: 10,
                 height: 10
             };
             fixtures.rect4 = {
-                x: 25,
-                y: 25,
+                left: 25,
+                top: 25,
                 width: 50,
                 height: 50
             };
             fixtures.rect5 = {
-                x: 90,
-                y: 10,
+                left: 90,
+                top: 10,
                 width: 5,
                 height: 5
             };
             fixtures.rect6 = {
-                x: 10,
-                y: 90,
+                left: 10,
+                top: 90,
                 width: 5,
                 height: 5
             };
             fixtures.rect7 = {
-                x: 10,
-                y: 90,
+                left: 10,
+                top: 90,
                 width: 5,
                 height: 5
             };

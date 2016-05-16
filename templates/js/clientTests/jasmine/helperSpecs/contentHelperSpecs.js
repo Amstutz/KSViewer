@@ -93,8 +93,6 @@ describe("Helper Content Suite", function() {
         });
 
         it("Text Cases", function() {
-
-
             expect(il.uiTests.countWords("word1")).toBe(1);
             expect(il.uiTests.countWords("word1 word2 word3")).toBe(3);
         });
@@ -119,6 +117,12 @@ describe("Helper Content Suite", function() {
 
         });
 
+        it("Regex Cases 2", function() {
+            //expect( function(){il.uiTests.countWords("Nothing","no regex")}).toThrow(new Error("No RegExp"));
+            expect(il.uiTests.countWords(" word 1     word 2  word3 word ",{"term":"word( |$)","modifier":"g"})).toBe(3);
+            expect(il.uiTests.countWords(" word 1     word 2  word",{"term":"word( |$)","modifier":"g"})).toBe(3);
+            expect(il.uiTests.countWords("ofword 1     1word 2  word",{"term":"( |^)word( |$)","modifier":"g"})).toBe(1);
+        });
 
         it("Only one positive Integer", function() {
             expect(il.uiTests.countWords("A",/^\d+$/g)).toBe(0);
@@ -159,6 +163,53 @@ describe("Helper Content Suite", function() {
             expect(il.uiTests.countWords(" 1 012 3",/^-?\d+\.?\d*$/g)).toBe(0);
         });
 
+        it("Ignore words", function() {
+            expect(il.uiTests.countWords("word1","","word1")).toBe(0);
+            expect(il.uiTests.countWords("word2","","word1")).toBe(1);
+            expect(il.uiTests.countWords("word1","",["word1"])).toBe(0);
+            expect(il.uiTests.countWords("word2","",["word1"])).toBe(1);
+            expect(il.uiTests.countWords("word1 word2 word3","","word1")).toBe(2);
+            expect(il.uiTests.countWords("word2 word1 word3","","word1")).toBe(2);
+            expect(il.uiTests.countWords("word1 word2 word3","",["word1","word2","noword"])).toBe(1);
+            expect(il.uiTests.countWords("word2 word1 word3","",["word1","word2","noword"])).toBe(1);
+            expect(il.uiTests.countWords(" word 1     word 2  word3 word ",/word( |$)/g, "word1")).toBe(3);
+            expect(il.uiTests.countWords(" word 1     word 2  word3 word ",/word( |$)/g, "word")).toBe(0);
+
+            expect(il.uiTests.countWords(" word 1     word 2  word",/word( |$)/g,"word")).toBe(0);
+        });
+        it("Ignore regex", function() {
+            expect(il.uiTests.countWords("word1","",{term:"word( |$)",modifier:"g"})).toBe(1);
+            expect(il.uiTests.countWords("word1","",{term:"word1( |$)",modifier:"g"})).toBe(0);
+
+            expect(il.uiTests.countWords("word1","",[{term:"word( |$)",modifier:"g"}])).toBe(1);
+            expect(il.uiTests.countWords("word1","",[{term:"word1( |$)",modifier:"g"}])).toBe(0);
+
+            expect(il.uiTests.countWords("ofword1","of$","word1")).toBe(0);
+            expect(il.uiTests.countWords("ofword1","of$",[{term:"( |^)word1( |$)",modifier:"g"}])).toBe(0);
+            expect(il.uiTests.countWords("ofword1","of$",[{term:"word1( |$)",modifier:"g"}])).toBe(1);
+
+            expect(il.uiTests.countWords(" word 1     word 2  word3 word ",/word( |$)/g, [{term:"word",modifier:"g"}])).toBe(0);
+
+            expect(il.uiTests.countWords(" word1     word2  word word1word2word",/word( |$)/g,
+                [{term:"word1",modifier:"g"},{term:"word2",modifier:"g"}])).toBe(2);
+        });
+        it("Conjunctions", function() {
+            expect(il.uiTests.countWords("Although as far as word1 word2 and before word3","",{list:[],"ignoreConjunctions":true})).toBe(3);
+            expect(il.uiTests.countWords("Although as far as word1 word2 and before word3","",{list:[]})).toBe(9);
+
+        });
+        it("Prepositons", function() {
+            expect(il.uiTests.countWords("For word1 to word2 in addition to word3","",{list:[],"ignorePrepositions":true})).toBe(3);
+            expect(il.uiTests.countWords("For word1 to word2 in addition to word3","",{list:[]})).toBe(8);
+
+        });
+        it("Prepositons and Conjunctions", function() {
+            expect(il.uiTests.countWords("Although as far as word1 word2 and before word3 For word1 to word2 in addition to word3","",
+                {list:[],"ignorePrepositions":true,"ignoreConjunctions":true})).toBe(6);
+            expect(il.uiTests.countWords("Although as far as word1 word2 and before word3 For word1 to word2 in addition to word3","",
+                {list:[]})).toBe(17);
+
+        });
     });
 
 });

@@ -1,19 +1,19 @@
 il.uiTests.collisionCheck = function(type,rect1,rect2){
-
+    il.uiTests.log.message(["Collision Check Params: ",type,rect1,rect2],"collisionCheck",this.log.levels.debug);
     var  equalLeft = function(rect1, rect2){
-        return rect1.x == rect2.x;
+        return rect1.left == rect2.left;
     };
 
     var  equalRight = function(rect1, rect2){
-        return rect1.x + rect1.width == rect2.x + rect2.width;
+        return rect1.left + rect1.width == rect2.left + rect2.width;
     };
 
     var  equalTop = function(rect1, rect2){
-        return rect1.y == rect2.y;
+        return rect1.top == rect2.top;
     };
 
     var  equalBottom = function(rect1, rect2){
-        return rect1.y + rect1.height == rect2.y+rect2.height;
+        return rect1.top + rect1.height == rect2.top+rect2.height;
     };
 
     var  equalHorizontal = function(rect1, rect2){
@@ -30,32 +30,33 @@ il.uiTests.collisionCheck = function(type,rect1,rect2){
 
 
     var  isLeft = function(rect1, rect2){
-        return rect1.x < rect2.x;
+        return rect1.left < rect2.left;
     };
 
     var  isLeftOut = function(rect1, rect2){
-        return rect1.x + rect1.width < rect2.x;
+        return rect1.left + rect1.width < rect2.left;
     };
 
     var  isRight = function(rect1, rect2){
-        return rect1.x > rect2.x+rect2.width;
+        return rect1.left > rect2.left+rect2.width;
     };
 
     var  isAbove = function(rect1, rect2){
-        return rect1.y < rect2.y;
+        return rect1.top < rect2.top;
     };
 
     var  isAboveOut = function(rect1, rect2){
-        return rect1.y + rect1.height < rect2.y;
+        return rect1.top + rect1.height < rect2.top;
     };
 
     var  isBellow = function(rect1, rect2){
-        return rect1.y > rect2.y + rect2.height;
+        return rect1.top > rect2.top + rect2.height;
     };
 
     var  collide = function(rect1, rect2){
         return ! (isAboveOut(rect1,rect2) || isBellow(rect1,rect2) || isLeftOut(rect1,rect2) || isRight(rect1,rect2));
     };
+
 
     switch(type) {
         case "equalLeft":

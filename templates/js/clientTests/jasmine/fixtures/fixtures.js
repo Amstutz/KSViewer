@@ -38,7 +38,7 @@ il.uiTests.fixtures = function(){
         "not":""
     };
 
-    fixtures.badge.glyphPositionVariant = {
+    fixtures.badge.glyphPositionVariantTop= {
         "type":"css",
         "subtype":"positioning",
         "selectors": [
@@ -53,17 +53,76 @@ il.uiTests.fixtures = function(){
         ],
         "positioning":[
             {
-                "type": "collide",
+                "type": "collide"
             },
             {
-                "type": "isAbove",
-                "not": true
+                "type": "isAbove"
+            },
+            {
+                "type": "isLeft",
+                "not": "true"
             }
         ],
         "not":""
     };
-
-    fixtures.badge.neighbourHtml1 = $("<a><span class='glyphicon glyphicon-envelope'></span> <span class='badge'>1</span><span class='ilBadgeSpacer'>1</span></a>");
+    fixtures.badge.glyphPositionVariantBottom= {
+        "type":"css",
+        "subtype":"positioning",
+        "selectors": [
+            {
+                "type": "parents",
+                "selector": "a"
+            },
+            {
+                "type": "children",
+                "selector": ".glyphicon"
+            }
+        ],
+        "positioning":[
+            {
+                "type": "collide"
+            },
+            {
+                "type": "isAbove",
+                "not": "true"
+            },
+            {
+                "type": "isLeft",
+                "not": "true"
+            }
+        ],
+        "not":""
+    };
+    fixtures.badge.neighbourHtml1 = {};
+    fixtures.badge.neighbourHtml1.id = "neighbourHtml1";
+    fixtures.badge.glyphPosition = {
+        "left": 50,
+        "top": 50,
+        "width": 25,
+        "height": 25
+    };
+    fixtures.badge.badgePositionTop = {
+        "left": 60,
+        "top": 40,
+        "width": 25,
+        "height": 25
+    };
+    fixtures.badge.badgePositionBottom = {
+        "left": 60,
+        "top": 60,
+        "width": 25,
+        "height": 25
+    };
+    fixtures.badge.badgePositionWrong = {
+        "left": 10,
+        "top": 50,
+        "width": 50,
+        "height": 50
+    };
+    fixtures.badge.neighbourHtml1.html = $("<a id="+fixtures.badge.neighbourHtml1.id+">" +
+        "<span class='glyphicon glyphicon-envelope'></span> " +
+        "<span class='badge'>1</span><span class='ilBadgeSpacer'>1</span>" +
+    "</a>");
     fixtures.badge.neighbourHtml2 = $("<a><span class='glyphicon glyphicon-user'></span> <span> " +
         "<span><span class='badge'>0</span><span class='ilBadgeSpacer'>1</span></span>" +
         "<span><span class='badge'>1</span><span class='ilBadgeSpacer'>1</span></span>" +
@@ -146,6 +205,26 @@ il.uiTests.fixtures = function(){
                 ]
             }
         ]
+    };
+
+    fixtures.button3 = {};
+    fixtures.button3.value = "Not Start nor Survey";
+    fixtures.button3.html = $("<input class='btn btn-default btn-primary' type='submit' name='cmd[start]' value='"+fixtures.button3.value+"'>");
+
+    fixtures.buttonRules.variant5 = {
+        "type":"wording",
+        "subtype":"amount",
+        "selectorType": "attribute",
+        "selector": "value",
+        "operator":"=",
+        "amount":"0",
+        "regex": "( |\\(|^)[a-z][a-zA-Z0-9]*",
+        "ignore":{
+          "list": ["&nbsp;"],
+            "ignoreConjunctions":true,
+            "ignorePrepositions":true
+        },
+        "not":""
     };
 
     fixtures.structure = $("" +

@@ -1,7 +1,7 @@
 il.uiTests.css = function(element,selector,testVariant){
 
     this.positioning = function(element, selectors,positioning){
-        il.uiTests.log.message(["structure.amount params",element, selectors, operator, amount],"structure",this.log.levels.debug);
+        il.uiTests.log.message(["css.positioning params",element, selectors, positioning],"css",il.uiTests.log.levels.debug);
 
         var elements = il.uiTests.getRelativesByChain(element, selectors);
 
@@ -14,13 +14,13 @@ il.uiTests.css = function(element,selector,testVariant){
 
         return  positioning.every(function(position){
             var passed = il.uiTests.collisionCheck(position.type,rectElement,rectForeignElement);
-            if(positioning.not){
+            if(position.not){
                 passed = !passed;
             }
+            il.uiTests.log.message(["css.collision return",passed,"not: "+position.not],"css",il.uiTests.log.levels.debug);
             return passed;
         });
 
-        return il.uiTests.compareValues(operator,nrElements,amount,true);
     };
 
 
