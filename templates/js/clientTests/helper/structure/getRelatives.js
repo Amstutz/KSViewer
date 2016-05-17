@@ -1,5 +1,9 @@
 il.uiTests.getRelatives = function(element,type,selector){
 
+    var getSelf = function(element){
+        return $(element);
+    };
+
     var getSiblings = function(element,selector){
         return $(element).siblings(selector);
     };
@@ -42,6 +46,8 @@ il.uiTests.getRelatives = function(element,type,selector){
     };
 
     switch(type){
+        case "self":
+            return getSelf(element);
         case "siblings":
             return getSiblings(element,selector);
         case "prev":

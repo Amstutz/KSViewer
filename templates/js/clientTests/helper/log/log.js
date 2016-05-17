@@ -27,7 +27,7 @@ il.uiTests.log = {
             level: 300
         },
         wording: {
-            level: 0
+            level: 300
         },
         compareValues: {
             level: 300
@@ -36,7 +36,7 @@ il.uiTests.log = {
             level:300
         },
         countWords: {
-            level: 0
+            level: 300
         },
         countRelatives: {
             level: 300
@@ -46,6 +46,9 @@ il.uiTests.log = {
         },
         collisionCheck: {
             level: 300
+        },
+        colorCheck: {
+            level: 0
         }
     },
 

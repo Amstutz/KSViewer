@@ -30,10 +30,15 @@
   ],
   "selector":".badge",
   "rules":[
-    {
-      "id":"Usage",
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    { "id":"style",
       "rules":  [{
-        "description": "A Counter MUST only be used in combination with a glyph.",
+        "description": "The Status Counter MUST be displayed on the lower right of the item it accompanies.",
         "level": "MUST",
         "tests":[
           {
@@ -42,8 +47,8 @@
             "variants":
             [
               {
-                "type":"structure",
-                "subtype":"amount",
+                "type":"css",
+                "subtype":"positioning",
                 "selectors": [
                   {
                     "type": "parents",
@@ -54,26 +59,55 @@
                     "selector": ".glyphicon"
                   }
                 ],
-                "operator":"=",
-                "amount":"1",
+                "positioning":[
+                  {
+                    "type": "collide"
+                  },
+                  {
+                    "type": "isAbove",
+                    "not": "true"
+                  },
+                  {
+                    "type": "isLeft",
+                    "not": "true"
+                  }
+                ],
                 "not":""
               }
             ]
           }
         ]
-      }
-      ]
-    }
-  ,
-    {"Interaction":  [
-      ""
-    ]},
-    {"Wording":  [
-      ""
-    ]},
-    {"Style":  [
-      ""
-    ]},
+      },
+        {
+          "description": "The Status Counter SHOULD have an non-obtrusive background color such as grey.",
+          "level": "MUST",
+          "tests":[
+            {
+              "description": "Grey Background-Color",
+              "not": "",
+              "variants":
+              [
+                {
+                  "type":"css",
+                  "subtype":"backgroundColoring",
+                  "selectors": [
+                    {
+                      "type": "self"
+                    }
+                  ],
+                  "coloring":[
+                    {
+                      "type": "isGrey"
+                    }
+                  ],
+                  "not":""
+                }
+              ]
+            }
+          ]
+        }
+
+      ]},
     {"Ordering":  [
       ""
     ]},

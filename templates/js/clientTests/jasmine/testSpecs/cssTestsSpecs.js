@@ -47,8 +47,6 @@ describe("CSS Suite", function() {
 
                 expect(il.uiTests.css(badge,".badge",fixtures.badge.glyphPositionVariantTop)).toBe(false);
                 expect(il.uiTests.css(badge,".badge",fixtures.badge.glyphPositionVariantBottom)).toBe(false);
-
-
             });
 
             beforeEach(function() {
@@ -56,6 +54,21 @@ describe("CSS Suite", function() {
             });
         });
     });
+    describe("backgroundColoring", function() {
+        describe("Badge Test", function() {
 
+            it("Badge Grey Test", function() {
+                expect(il.uiTests.css(fixtures.badge.html,".badge",fixtures.badge.coloringGrey)).toBe(true);
+                expect(il.uiTests.css(fixtures.badge.htmlGrey,".badge",fixtures.badge.coloringGrey)).toBe(true);
+                expect(il.uiTests.css(fixtures.badge.htmlRed,".badge",fixtures.badge.coloringGrey)).toBe(false);
+            });
+
+            it("Badge Red Test", function() {
+                expect(il.uiTests.css(fixtures.badge.html,".badge",fixtures.badge.coloringRed)).toBe(false);
+                expect(il.uiTests.css(fixtures.badge.htmlGrey,".badge",fixtures.badge.coloringRed)).toBe(false);
+                expect(il.uiTests.css(fixtures.badge.htmlRed,".badge",fixtures.badge.coloringRed)).toBe(true);
+            });
+        });
+    });
 
 });

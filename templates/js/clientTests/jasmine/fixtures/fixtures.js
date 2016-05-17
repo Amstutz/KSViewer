@@ -3,6 +3,9 @@ il.uiTests.fixtures = function(){
 
     fixtures.badge = {};
     fixtures.badge.html = $("<span class='badge'>1</span>");
+    fixtures.badge.htmlGrey = $("<span class='badge' style='background-color:rgb(1,1,1)'>1</span>");
+    fixtures.badge.htmlRed = $("<span class='badge' style='background-color:rgb(3,1,1)'>1</span>");
+
     fixtures.badge.wrongHtml = $("<span class='badge'>-1</span>");
     fixtures.badge.content = "1";
     fixtures.badge.selector = ".badge";
@@ -90,6 +93,41 @@ il.uiTests.fixtures = function(){
                 "type": "isLeft",
                 "not": "true"
             }
+        ],
+        "not":""
+    };
+    fixtures.badge.coloringGrey= {
+        "type":"css",
+        "subtype":"backgroundColoring",
+        "selectors": [
+            {
+                "type": "self"
+            }
+        ],
+        "coloring":[
+            {
+                "type": "isGrey"
+            }
+        ],
+        "not":""
+    };
+    fixtures.badge.coloringRed= {
+        "type":"css",
+        "subtype":"backgroundColoring",
+        "selectors": [
+            {
+                "type": "self"
+            }
+        ],
+        "coloring":[
+            {
+                "type": "isGrey",
+                "not": "true"
+            },
+            {
+                "type": "isRedDominant",
+                "not": ""
+            },
         ],
         "not":""
     };
@@ -226,16 +264,26 @@ il.uiTests.fixtures = function(){
         },
         "not":""
     };
-
     fixtures.structure = $("" +
-        "<div id='root'><span id='parentNeighbour'></span><span id='parent'>" +
+    "<div id='root'><span id='parentNeighbour'></span><span id='parent'>" +
+    "<div id='sibling1' class='siblings'></div>" +
+    "<ul id='element'>" +
+    "<li id='child1' class='children'><a id='grandchild11' class='grandchildren'>Some Text</a><a id='grandchild12' class='grandchildren'>Some Text</a></li>" +
+    "<li id='child2' class='children'><a id='grandchild21' class='grandchildren'>Some Text</a><a id='grandchild22' class='grandchildren'>Some Text</a></li>" +
+    "<li id='child3' class='children'><a id='grandchild31' class='grandchildren'>Some Text</a><a id='grandchild32' class='grandchildren'>Some Text</a></li>" +
+    "</ul>" +
+    "<div id='sibling2' class='siblings'></div><span id='sibling3' class='siblings'></span>" +
+    "</span></div>");
+
+    fixtures.coloredStructure = $("" +
+        "<div id='root' style='background-color:rgb(255,240,0)'><span id='parentNeighbour'></span><span id='parent'>" +
             "<div id='sibling1' class='siblings'></div>" +
             "<ul id='element'>" +
                 "<li id='child1' class='children'><a id='grandchild11' class='grandchildren'>Some Text</a><a id='grandchild12' class='grandchildren'>Some Text</a></li>" +
                 "<li id='child2' class='children'><a id='grandchild21' class='grandchildren'>Some Text</a><a id='grandchild22' class='grandchildren'>Some Text</a></li>" +
-                "<li id='child3' class='children'><a id='grandchild31' class='grandchildren'>Some Text</a><a id='grandchild32' class='grandchildren'>Some Text</a></li>" +
+                "<li id='child3' class='children'><a id='grandchild31' class='grandchildren' style='background-color:rgba(1,1,1,0.6)'>Some Text</a><a id='grandchild32' class='grandchildren'>Some Text</a></li>" +
             "</ul>" +
-            "<div id='sibling2' class='siblings'></div><span id='sibling3' class='siblings'></span>" +
+            "<div id='sibling2' class='siblings'></div><span id='sibling3' class='siblings' style='background-color:rgb(2,1,0)'></span>" +
         "</span></div>");
 
     return fixtures;

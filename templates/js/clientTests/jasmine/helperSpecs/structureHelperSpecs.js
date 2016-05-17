@@ -10,6 +10,9 @@ describe("Helper Structure Suite", function() {
     });
 
     describe("Get Structure", function() {
+        it("Get Self", function () {
+            expect(il.uiTests.getRelatives(element, "self").get()).toContain(dom.find("#element")[0]);
+        });
         it("Get Siblings", function () {
             expect(il.uiTests.getRelatives(element, "siblings").get()).toContain(dom.find(".siblings")[0]);
             expect(il.uiTests.getRelatives(element, "siblings").get()).toContain(dom.find(".siblings")[1]);

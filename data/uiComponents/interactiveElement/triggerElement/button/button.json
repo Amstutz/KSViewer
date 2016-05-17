@@ -29,7 +29,7 @@
   "featureWikiReferences":[
 
   ],
-  "selector":".btn.btn-default",
+  "selector":".btn",
   "rules":[
     {
       "Interaction":  [

@@ -22,10 +22,31 @@ il.uiTests.css = function(element,selector,testVariant){
         });
 
     };
+    this.backgroundColoring = function(element, selectors,coloring){
+        il.uiTests.log.message(["css.backgroundColoring params",element, selectors, coloring],"css",il.uiTests.log.levels.debug);
 
+        var elements = il.uiTests.getRelativesByChain(element, selectors);
+
+        if(!elements){
+            return false;
+        }
+
+        var color = il.uiTests.getBackgroundColor(element);
+
+        return  coloring.every(function(colorRule){
+            var passed = il.uiTests.colorCheck(colorRule.type,color);
+            if(colorRule.not){
+                passed = !passed;
+            }
+            il.uiTests.log.message(["css.backgroundColoring return",passed,"not: "+colorRule.not],"css",il.uiTests.log.levels.debug);
+            return passed;
+        });
+    };
 
     switch(testVariant.subtype){
         case "positioning":
             return this.positioning(element, testVariant.selectors, testVariant.positioning);
+        case "backgroundColoring":
+            return this.backgroundColoring(element, testVariant.selectors, testVariant.coloring);
     }
 };

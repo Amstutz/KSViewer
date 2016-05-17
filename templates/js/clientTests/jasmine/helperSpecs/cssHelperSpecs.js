@@ -141,4 +141,150 @@ describe("Helper CSS Suite", function() {
         });
 
     });
+
+
+
+
+
+    describe("Color Checks", function() {
+        it("Empty Color From String", function () {
+            expect(il.uiTests.getColorFromString("")).toEqual({"red":0,"green":0,"blue":0,"alpha":0});
+        });
+
+        it("get Color From String without alpha", function () {
+            expect(il.uiTests.getColorFromString("rgb(0,0,0)")).toEqual({"red":0,"green":0,"blue":0,"alpha":1});
+            expect(il.uiTests.getColorFromString("rgb(0, 0, 0)")).toEqual({"red":0,"green":0,"blue":0,"alpha":1});
+            expect(il.uiTests.getColorFromString("rgb(252, 248, 227)")).toEqual({"red":252,"green":248,"blue":227,"alpha":1});
+        });
+        it("get Color From String without alpha", function () {
+            expect(il.uiTests.getColorFromString("rgba(0, 0, 0, 0)")).toEqual({"red":0,"green":0,"blue":0,"alpha":0});
+            expect(il.uiTests.getColorFromString("rgb(1, 11, 111, 0.5)")).toEqual({"red":1,"green":11,"blue":111,"alpha":0.5});
+            expect(il.uiTests.getColorFromString("rgb(1, 11, 111, 0.111)")).toEqual({"red":1,"green":11,"blue":111,"alpha":0.111});
+            expect(il.uiTests.getColorFromString("rgb(1, 11, 111, 1.0)")).toEqual({"red":1,"green":11,"blue":111,"alpha":1});
+        });
+
+
+
+        it("Check color white", function () {
+            expect(il.uiTests.colorCheck("isWhite",il.uiTests.getColorFromString("rgb(0,0,0)")))
+                .toBe(false);
+            expect(il.uiTests.colorCheck("isWhite",il.uiTests.getColorFromString("rgb(0,0,0,1)")))
+                .toBe(false);
+            expect(il.uiTests.colorCheck("isWhite",il.uiTests.getColorFromString("rgb(255,255,255)")))
+                .toBe(true);
+            expect(il.uiTests.colorCheck("isWhite",il.uiTests.getColorFromString("rgb(255,255,255,1)")))
+                .toBe(true);
+            expect(il.uiTests.colorCheck("isWhite",il.uiTests.getColorFromString("rgb(1,2,3)")))
+                .toBe(false);
+            expect(il.uiTests.colorCheck("isWhite",il.uiTests.getColorFromString("rgb(1,1,1)")))
+                .toBe(false);
+        });
+        it("Check color black", function () {
+            expect(il.uiTests.colorCheck("isBlack",il.uiTests.getColorFromString("rgb(0,0,0)")))
+                .toBe(true);
+            expect(il.uiTests.colorCheck("isBlack",il.uiTests.getColorFromString("rgb(0,0,0,1)")))
+                .toBe(true);
+            expect(il.uiTests.colorCheck("isBlack",il.uiTests.getColorFromString("rgb(255,255,255)")))
+                .toBe(false);
+            expect(il.uiTests.colorCheck("isBlack",il.uiTests.getColorFromString("rgb(255,255,255,1)")))
+                .toBe(false);
+            expect(il.uiTests.colorCheck("isBlack",il.uiTests.getColorFromString("rgb(1,2,3)")))
+                .toBe(false);
+            expect(il.uiTests.colorCheck("isBlack",il.uiTests.getColorFromString("rgb(1,1,1)")))
+                .toBe(false);
+        });
+        it("Check color grey", function () {
+            expect(il.uiTests.colorCheck("isGrey",il.uiTests.getColorFromString("rgb(0,0,0)")))
+                .toBe(true);
+            expect(il.uiTests.colorCheck("isGrey",il.uiTests.getColorFromString("rgb(0,0,0,1)")))
+                .toBe(true);
+            expect(il.uiTests.colorCheck("isGrey",il.uiTests.getColorFromString("rgb(255,255,255)")))
+                .toBe(true);
+            expect(il.uiTests.colorCheck("isGrey",il.uiTests.getColorFromString("rgb(255,255,255,1)")))
+                .toBe(true);
+            expect(il.uiTests.colorCheck("isGrey",il.uiTests.getColorFromString("rgb(1,2,3)")))
+                .toBe(false);
+            expect(il.uiTests.colorCheck("isGrey",il.uiTests.getColorFromString("rgb(1,1,1)")))
+                .toBe(true);
+        });
+        it("Check color transparent", function () {
+            expect(il.uiTests.colorCheck("isTransparent",il.uiTests.getColorFromString("rgb(0,0,0)")))
+                .toBe(false);
+            expect(il.uiTests.colorCheck("isTransparent",il.uiTests.getColorFromString("rgb(0,0,0)")))
+                .toBe(false);
+            expect(il.uiTests.colorCheck("isTransparent",il.uiTests.getColorFromString("rgb(0,0,0,1)")))
+                .toBe(false);
+            expect(il.uiTests.colorCheck("isTransparent",il.uiTests.getColorFromString("rgb(255,255,255)")))
+                .toBe(false);
+            expect(il.uiTests.colorCheck("isTransparent",il.uiTests.getColorFromString("rgb(255,255,255,1)")))
+                .toBe(false);
+            expect(il.uiTests.colorCheck("isTransparent",il.uiTests.getColorFromString("rgb(1,2,3,0)")))
+                .toBe(true);
+        });
+
+        it("Check color isOpaque", function () {
+            expect(il.uiTests.colorCheck("isOpaque",il.uiTests.getColorFromString("rgb(0,0,0)")))
+                .toBe(true);
+            expect(il.uiTests.colorCheck("isOpaque",il.uiTests.getColorFromString("rgb(0,0,0)")))
+                .toBe(true);
+            expect(il.uiTests.colorCheck("isOpaque",il.uiTests.getColorFromString("rgb(0,0,0,1)")))
+                .toBe(true);
+            expect(il.uiTests.colorCheck("isOpaque",il.uiTests.getColorFromString("rgb(255,255,255)")))
+                .toBe(true);
+            expect(il.uiTests.colorCheck("isOpaque",il.uiTests.getColorFromString("rgb(255,255,255,1)")))
+                .toBe(true);
+            expect(il.uiTests.colorCheck("isOpaque",il.uiTests.getColorFromString("rgb(1,2,3,0)")))
+                .toBe(false);
+        });
+
+        it("Check color isRedDominant", function () {
+            expect(il.uiTests.colorCheck("isRedDominant",il.uiTests.getColorFromString("rgb(0,0,0)")))
+                .toBe(false);
+            expect(il.uiTests.colorCheck("isRedDominant",il.uiTests.getColorFromString("rgb(3,2,1)")))
+                .toBe(true);
+            expect(il.uiTests.colorCheck("isRedDominant",il.uiTests.getColorFromString("rgb(2,3,1)")))
+                .toBe(false);
+            expect(il.uiTests.colorCheck("isRedDominant",il.uiTests.getColorFromString("rgb(2,1,3)")))
+                .toBe(false);
+        });
+
+        it("Check color isGreenDominant", function () {
+            expect(il.uiTests.colorCheck("isGreenDominant",il.uiTests.getColorFromString("rgb(0,0,0)")))
+                .toBe(false);
+            expect(il.uiTests.colorCheck("isGreenDominant",il.uiTests.getColorFromString("rgb(3,2,1)")))
+                .toBe(false);
+            expect(il.uiTests.colorCheck("isGreenDominant",il.uiTests.getColorFromString("rgb(2,3,1)")))
+                .toBe(true);
+            expect(il.uiTests.colorCheck("isGreenDominant",il.uiTests.getColorFromString("rgb(2,1,3)")))
+                .toBe(false);
+        });
+
+        it("Check color isBlueDominant", function () {
+            expect(il.uiTests.colorCheck("isBlueDominant",il.uiTests.getColorFromString("rgb(0,0,0)")))
+                .toBe(false);
+            expect(il.uiTests.colorCheck("isBlueDominant",il.uiTests.getColorFromString("rgb(3,2,1)")))
+                .toBe(false);
+            expect(il.uiTests.colorCheck("isBlueDominant",il.uiTests.getColorFromString("rgb(2,3,1)")))
+                .toBe(false);
+            expect(il.uiTests.colorCheck("isBlueDominant",il.uiTests.getColorFromString("rgb(2,1,3)")))
+                .toBe(true);
+        });
+
+        it("get Color From DOM", function () {
+            expect(il.uiTests.getBackgroundColor(fixtures.coloredStructure)).toEqual({"red":255,"green":240,"blue":0,"alpha":1});
+            var sibling3 = fixtures.coloredStructure.find("#sibling3");
+            expect(il.uiTests.getBackgroundColor(sibling3)).toEqual({"red":2,"green":1,"blue":0,"alpha":1});
+            var grandchild31 = fixtures.coloredStructure.find("#grandchild31");
+            expect(il.uiTests.getBackgroundColor(grandchild31)).toEqual({"red":1,"green":1,"blue":1,"alpha":0.6});
+        });
+
+        it("get Color From DOM Parents", function () {
+            var parent = fixtures.coloredStructure.find("#parent");
+            expect(il.uiTests.getBackgroundColor(parent)).toEqual({"red":255,"green":240,"blue":0,"alpha":1});
+            var element = fixtures.coloredStructure.find("#element");
+            expect(il.uiTests.getBackgroundColor(element)).toEqual({"red":255,"green":240,"blue":0,"alpha":1});
+            var grandchild11 = fixtures.coloredStructure.find("#grandchild11");
+            expect(il.uiTests.getBackgroundColor(grandchild11)).toEqual({"red":255,"green":240,"blue":0,"alpha":1});
+        });
+    });
 });

@@ -14,8 +14,11 @@ var reportsDisplay = function(reportsSummary){
         this.summary.blocks.forEach(function(block){
             html += "<dl>";
             html += "<dt>"+block.title+"</dt>";
+            if(block.failedReports.length == 0){
+                html += "<dd>"+"All rules passed"+"</dd>";
+            }
             block.failedReports.forEach(function(report){
-                html += "<dd>"+report.message+": "+report.level+"</dd>";
+                html += "<dd>"+report.message+"</dd>";//: "+report.level+"</dd>";
             });
             html += "</dl>";
         });

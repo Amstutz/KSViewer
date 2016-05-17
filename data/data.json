@@ -5559,7 +5559,7 @@
   "featureWikiReferences":[
 
   ],
-  "selector":".btn.btn-default",
+  "selector":".btn",
   "rules":[
     {
       "Interaction":  [
@@ -5680,7 +5680,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "756e958b73c748f6256b702bf0b89b30abdfc21d", "abbreviated_commit": "756e958",  "subject": "Structure Tests",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Thu, 12 May 2016 20:38:59 +0200"  }},{  "commit": "32ccc7ae85f406cb7d1b10171f38dac85fbd9c14", "abbreviated_commit": "32ccc7a",  "subject": "Auto Testing added",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Thu, 24 Mar 2016 19:44:40 +0100"  }},{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
+,"log":[{  "commit": "4640c829386e1e9e737419c25b7ac4f85b9a5284", "abbreviated_commit": "4640c82",  "subject": "More Wording rules",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Mon, 16 May 2016 22:17:54 +0200"  }},{  "commit": "756e958b73c748f6256b702bf0b89b30abdfc21d", "abbreviated_commit": "756e958",  "subject": "Structure Tests",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Thu, 12 May 2016 20:38:59 +0200"  }},{  "commit": "32ccc7ae85f406cb7d1b10171f38dac85fbd9c14", "abbreviated_commit": "32ccc7a",  "subject": "Auto Testing added",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Thu, 24 Mar 2016 19:44:40 +0100"  }},{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "closeButton",
   "title": "Close Button",
   "type": "concrete",
@@ -7071,10 +7071,15 @@
   ],
   "selector":".badge",
   "rules":[
-    {
-      "id":"Usage",
+    {"Interaction":  [
+      ""
+    ]},
+    {"Wording":  [
+      ""
+    ]},
+    { "id":"style",
       "rules":  [{
-        "description": "A Counter MUST only be used in combination with a glyph.",
+        "description": "The Status Counter MUST be displayed on the lower right of the item it accompanies.",
         "level": "MUST",
         "tests":[
           {
@@ -7083,8 +7088,8 @@
             "variants":
             [
               {
-                "type":"structure",
-                "subtype":"amount",
+                "type":"css",
+                "subtype":"positioning",
                 "selectors": [
                   {
                     "type": "parents",
@@ -7095,26 +7100,55 @@
                     "selector": ".glyphicon"
                   }
                 ],
-                "operator":"=",
-                "amount":"1",
+                "positioning":[
+                  {
+                    "type": "collide"
+                  },
+                  {
+                    "type": "isAbove",
+                    "not": "true"
+                  },
+                  {
+                    "type": "isLeft",
+                    "not": "true"
+                  }
+                ],
                 "not":""
               }
             ]
           }
         ]
-      }
-      ]
-    }
-  ,
-    {"Interaction":  [
-      ""
-    ]},
-    {"Wording":  [
-      ""
-    ]},
-    {"Style":  [
-      ""
-    ]},
+      },
+        {
+          "description": "The Status Counter SHOULD have an non-obtrusive background color such as grey.",
+          "level": "MUST",
+          "tests":[
+            {
+              "description": "Grey Background-Color",
+              "not": "",
+              "variants":
+              [
+                {
+                  "type":"css",
+                  "subtype":"backgroundColoring",
+                  "selectors": [
+                    {
+                      "type": "self"
+                    }
+                  ],
+                  "coloring":[
+                    {
+                      "type": "isGrey"
+                    }
+                  ],
+                  "not":""
+                }
+              ]
+            }
+          ]
+        }
+
+      ]},
     {"Ordering":  [
       ""
     ]},
@@ -7131,7 +7165,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
+,"log":[{  "commit": "4640c829386e1e9e737419c25b7ac4f85b9a5284", "abbreviated_commit": "4640c82",  "subject": "More Wording rules",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Mon, 16 May 2016 22:17:54 +0200"  }},{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "displayElement",
   "title": "Display Element",
   "type": "concrete",
