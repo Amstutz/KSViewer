@@ -28,6 +28,7 @@
   "featureWikiReferences":[
 
   ],
+  "selector": "a",
   "rules":[
     {"Usage":  [
       ""
@@ -38,18 +39,177 @@
     {"Wording":  [
       ""
     ]},
-    {"Style":  [
-      ""
-    ]},
+    {
+      "id":"Style",
+      "rules":  [{
+        "description": "All Triggers MUST indicate hovering by a slight modification of the font color or background color.",
+        "level": "MUST",
+        "tests":[
+          {
+            "description": "Change on Hover",
+            "not": "",
+            "ignore": [[
+              {
+                "type": "parent",
+                "selector": "li.active"
+              }
+            ]],
+            "variants":
+            [
+              {
+                "type":"css",
+                "subtype":"coloring",
+                "selectorsA": [
+                  {
+                    "type": "self"
+                  }
+                ],
+                "selectorsB": [
+                  {
+                    "type": "self"
+                  }
+                ],
+                "coloring":[
+                  {
+                    "simulate":{
+                      "type": "hover",
+                      "point": "between"
+                    },
+                    "whichA": "color",
+                    "whichB":"color",
+                    "type": "isEqual",
+                    "not": true
+                  }
+                ],
+                "not":""
+              },
+              {
+                "type":"css",
+                "subtype":"coloring",
+                "selectorsA": [
+                  {
+                    "type": "self"
+                  }
+                ],
+                "selectorsB": [
+                  {
+                    "type": "self"
+                  }
+                ],
+                "coloring":[
+                  {
+                    "simulate":{
+                      "type": "hover",
+                      "point": "between"
+                    },
+                    "whichA": "background-color",
+                    "whichB":"background-color",
+                    "type": "isEqual",
+                    "not": true
+                  }
+                ],
+                "not":""
+              },
+              {
+                "type":"css",
+                "subtype":"properties",
+                "selectorsA": [
+                  {
+                    "type": "self"
+                  }
+                ],
+                "properties":[
+                  {
+                    "simulate":{
+                      "type": "hover",
+                      "point": "before"
+                    },
+                    "whichA": "text-decoration",
+                    "value": "underline",
+                    "type": "isEqual"
+                  }
+                ],
+                "not":""
+              }
+            ]
+          }
+        ]
+      },{
+        "description": "All Triggers MUST indicate hovering by displaying the cursor as pointer (hand).",
+        "level": "MUST",
+        "tests":[
+          {
+            "description": "Pointer on Hover",
+            "not": "",
+            "ignore": [[
+              {
+                "type": "parent",
+                "selector": "li.active"
+              }
+            ]],
+            "variants":
+            [
+              {
+                "type":"css",
+                "subtype":"properties",
+                "selectorsA": [
+                  {
+                    "type": "self"
+                  }
+                ],
+                "properties":[
+                  {
+                    "simulate":{
+                      "type": "hover",
+                      "point": "before"
+                    },
+                    "whichA": "cursor",
+                    "value":"pointer",
+                    "type": "isEqual"
+                  }
+                ],
+                "not":""
+              }
+
+            ]
+          }
+        ]
+      }
+      ]
+    },
     {"Ordering":  [
       ""
     ]},
     {"Responsiveness":  [
       ""
     ]},
-    {"Accessibility":  [
-      ""
-    ]}],
+    {
+      "id":"Accessibility",
+      "rules":  [{
+        "description": "All Trigger Elements visible in a view MUST be accessible by keyboard by using the ‘Tab’-Key.",
+        "level": "MUST",
+        "tests":[
+          {
+            "description": "Accessible by Tab",
+            "not": "",
+            "variants":
+            [
+              {
+                "type":"accessibility",
+                "subtype":"focusable",
+                "selectors": [
+                  {
+                    "type": "self"
+                  }
+                ],
+                "not":""
+              }
+            ]
+          }
+        ]
+      }
+      ]
+    }],
   "relations": {
     "isA": "interactiveElement",
     "mustUse": [

@@ -13,8 +13,11 @@ il.uiTests.testVariant = function(element,selector,testVariant){
         case "css":
             passed = il.uiTests.css(element,selector,testVariant);
             break;
+        case "accessibility":
+            passed = il.uiTests.accessibility(element,selector,testVariant);
+            break;
         default:
-            console.log("Unknown Type");
+            throw new Error("Unknown variant type: ",testVariant.type);
     }
     if(testVariant.not){
         return !passed;

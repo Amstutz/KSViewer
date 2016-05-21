@@ -5680,7 +5680,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "4640c829386e1e9e737419c25b7ac4f85b9a5284", "abbreviated_commit": "4640c82",  "subject": "More Wording rules",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Mon, 16 May 2016 22:17:54 +0200"  }},{  "commit": "756e958b73c748f6256b702bf0b89b30abdfc21d", "abbreviated_commit": "756e958",  "subject": "Structure Tests",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Thu, 12 May 2016 20:38:59 +0200"  }},{  "commit": "32ccc7ae85f406cb7d1b10171f38dac85fbd9c14", "abbreviated_commit": "32ccc7a",  "subject": "Auto Testing added",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Thu, 24 Mar 2016 19:44:40 +0100"  }},{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
+,"log":[{  "commit": "518c41fb402d7d9bf81297b897033f9bbe27bb95", "abbreviated_commit": "518c41f",  "subject": "Added coloring rules",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 18 May 2016 00:18:40 +0200"  }},{  "commit": "4640c829386e1e9e737419c25b7ac4f85b9a5284", "abbreviated_commit": "4640c82",  "subject": "More Wording rules",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Mon, 16 May 2016 22:17:54 +0200"  }},{  "commit": "756e958b73c748f6256b702bf0b89b30abdfc21d", "abbreviated_commit": "756e958",  "subject": "Structure Tests",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Thu, 12 May 2016 20:38:59 +0200"  }},{  "commit": "32ccc7ae85f406cb7d1b10171f38dac85fbd9c14", "abbreviated_commit": "32ccc7a",  "subject": "Auto Testing added",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Thu, 24 Mar 2016 19:44:40 +0100"  }},{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "closeButton",
   "title": "Close Button",
   "type": "concrete",
@@ -6831,6 +6831,7 @@
   "featureWikiReferences":[
 
   ],
+  "selector": "a",
   "rules":[
     {"Usage":  [
       ""
@@ -6841,18 +6842,177 @@
     {"Wording":  [
       ""
     ]},
-    {"Style":  [
-      ""
-    ]},
+    {
+      "id":"Style",
+      "rules":  [{
+        "description": "All Triggers MUST indicate hovering by a slight modification of the font color or background color.",
+        "level": "MUST",
+        "tests":[
+          {
+            "description": "Change on Hover",
+            "not": "",
+            "ignore": [[
+              {
+                "type": "parent",
+                "selector": "li.active"
+              }
+            ]],
+            "variants":
+            [
+              {
+                "type":"css",
+                "subtype":"coloring",
+                "selectorsA": [
+                  {
+                    "type": "self"
+                  }
+                ],
+                "selectorsB": [
+                  {
+                    "type": "self"
+                  }
+                ],
+                "coloring":[
+                  {
+                    "simulate":{
+                      "type": "hover",
+                      "point": "between"
+                    },
+                    "whichA": "color",
+                    "whichB":"color",
+                    "type": "isEqual",
+                    "not": true
+                  }
+                ],
+                "not":""
+              },
+              {
+                "type":"css",
+                "subtype":"coloring",
+                "selectorsA": [
+                  {
+                    "type": "self"
+                  }
+                ],
+                "selectorsB": [
+                  {
+                    "type": "self"
+                  }
+                ],
+                "coloring":[
+                  {
+                    "simulate":{
+                      "type": "hover",
+                      "point": "between"
+                    },
+                    "whichA": "background-color",
+                    "whichB":"background-color",
+                    "type": "isEqual",
+                    "not": true
+                  }
+                ],
+                "not":""
+              },
+              {
+                "type":"css",
+                "subtype":"properties",
+                "selectorsA": [
+                  {
+                    "type": "self"
+                  }
+                ],
+                "properties":[
+                  {
+                    "simulate":{
+                      "type": "hover",
+                      "point": "before"
+                    },
+                    "whichA": "text-decoration",
+                    "value": "underline",
+                    "type": "isEqual"
+                  }
+                ],
+                "not":""
+              }
+            ]
+          }
+        ]
+      },{
+        "description": "All Triggers MUST indicate hovering by displaying the cursor as pointer (hand).",
+        "level": "MUST",
+        "tests":[
+          {
+            "description": "Pointer on Hover",
+            "not": "",
+            "ignore": [[
+              {
+                "type": "parent",
+                "selector": "li.active"
+              }
+            ]],
+            "variants":
+            [
+              {
+                "type":"css",
+                "subtype":"properties",
+                "selectorsA": [
+                  {
+                    "type": "self"
+                  }
+                ],
+                "properties":[
+                  {
+                    "simulate":{
+                      "type": "hover",
+                      "point": "before"
+                    },
+                    "whichA": "cursor",
+                    "value":"pointer",
+                    "type": "isEqual"
+                  }
+                ],
+                "not":""
+              }
+
+            ]
+          }
+        ]
+      }
+      ]
+    },
     {"Ordering":  [
       ""
     ]},
     {"Responsiveness":  [
       ""
     ]},
-    {"Accessibility":  [
-      ""
-    ]}],
+    {
+      "id":"Accessibility",
+      "rules":  [{
+        "description": "All Trigger Elements visible in a view MUST be accessible by keyboard by using the ‘Tab’-Key.",
+        "level": "MUST",
+        "tests":[
+          {
+            "description": "Accessible by Tab",
+            "not": "",
+            "variants":
+            [
+              {
+                "type":"accessibility",
+                "subtype":"focusable",
+                "selectors": [
+                  {
+                    "type": "self"
+                  }
+                ],
+                "not":""
+              }
+            ]
+          }
+        ]
+      }
+      ]
+    }],
   "relations": {
     "isA": "interactiveElement",
     "mustUse": [
@@ -6906,7 +7066,7 @@
               {
                 "type":"structure",
                 "subtype":"amount",
-                "selectors": [
+                "selectors  ": [
                   {
                     "type": "parents",
                     "selector": "a"
@@ -7090,7 +7250,12 @@
               {
                 "type":"css",
                 "subtype":"positioning",
-                "selectors": [
+                "selectorsA": [
+                  {
+                    "type": "self"
+                  }
+                ],
+                "selectorsB": [
                   {
                     "type": "parents",
                     "selector": "a"
@@ -7130,14 +7295,15 @@
               [
                 {
                   "type":"css",
-                  "subtype":"backgroundColoring",
-                  "selectors": [
+                  "subtype":"coloring",
+                  "selectorsA": [
                     {
                       "type": "self"
                     }
                   ],
                   "coloring":[
                     {
+                      "whichA": "background-color",
                       "type": "isGrey"
                     }
                   ],
@@ -7165,7 +7331,7 @@
     "mayUse":[
     ]
   }
-,"log":[{  "commit": "4640c829386e1e9e737419c25b7ac4f85b9a5284", "abbreviated_commit": "4640c82",  "subject": "More Wording rules",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Mon, 16 May 2016 22:17:54 +0200"  }},{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
+,"log":[{  "commit": "518c41fb402d7d9bf81297b897033f9bbe27bb95", "abbreviated_commit": "518c41f",  "subject": "Added coloring rules",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 18 May 2016 00:18:40 +0200"  }},{  "commit": "4640c829386e1e9e737419c25b7ac4f85b9a5284", "abbreviated_commit": "4640c82",  "subject": "More Wording rules",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Mon, 16 May 2016 22:17:54 +0200"  }},{  "commit": "481052e0bda646781f672bc1c9205480a2ba1119", "abbreviated_commit": "481052e",  "subject": "Several renamings",  "body": "",  "author": {    "name": "Timon Amstutz",    "email": "timon.amstutz@bluewin.ch",    "date": "Wed, 20 Jan 2016 22:15:17 +0100"  }}]},{
   "id": "displayElement",
   "title": "Display Element",
   "type": "concrete",

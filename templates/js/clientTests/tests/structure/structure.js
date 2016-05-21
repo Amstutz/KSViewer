@@ -11,6 +11,7 @@ il.uiTests.structure = function(element,selector,testVariant){
         if(!amount){
             amount = 1;
         }
+        il.uiTests.log.message(["structure.amount comparable",operator,nrElements,amount],"structure",this.log.levels.debug);
         return il.uiTests.compareValues(operator,nrElements,amount,true);
     };
 

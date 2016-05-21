@@ -44,7 +44,7 @@
               {
                 "type":"structure",
                 "subtype":"amount",
-                "selectors": [
+                "selectors  ": [
                   {
                     "type": "parents",
                     "selector": "a"

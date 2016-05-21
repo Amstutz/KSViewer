@@ -1,4 +1,4 @@
-il.uiTests.colorCheck = function(type,color){
+il.uiTests.colorCheck = function(type,colorA,colorB){
     var  isWhite = function(color){
         return (color.red === 255) && isGrey(color);
     };
@@ -31,23 +31,31 @@ il.uiTests.colorCheck = function(type,color){
         return (color.blue > color.green) && (color.blue > color.red);
     };
 
+
+    var  isEqual = function(colorA,colorB){
+        return (colorA.red == colorB.red) && (colorA.green == colorB.green) && (colorA.blue == colorB.blue);
+    };
+
     switch(type) {
         case "isWhite":
-            return isWhite(color);
+            return isWhite(colorA);
         case "isBlack":
-            return isBlack(color);
+            return isBlack(colorA);
         case "isGrey":
-            return isGrey(color);
+            return isGrey(colorA);
         case "isTransparent":
-            return isTransparent(color);
+            return isTransparent(colorA);
         case "isOpaque":
-            return isOpaque(color);
+            return isOpaque(colorA);
         case "isRedDominant":
-            return isRedDominant(color);
+            return isRedDominant(colorA);
         case "isGreenDominant":
-            return isGreenDominant(color);
+            return isGreenDominant(colorA);
         case "isBlueDominant":
-            return isBlueDominant(color);
+            return isBlueDominant(colorA);
+
+        case "isEqual":
+            return isEqual(colorA,colorB);
     }
 
 };

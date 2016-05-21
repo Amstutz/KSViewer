@@ -12,7 +12,11 @@ describe("Helper Structure Suite", function() {
     describe("Get Structure", function() {
         it("Get Self", function () {
             expect(il.uiTests.getRelatives(element, "self").get()).toContain(dom.find("#element")[0]);
+            expect(il.uiTests.getRelatives(element, "self","#element").get()).toContain(dom.find("#element")[0]);
+            expect(il.uiTests.getRelatives(element, "self",".element").get()).not.toContain(dom.find("#element")[0]);
+
         });
+
         it("Get Siblings", function () {
             expect(il.uiTests.getRelatives(element, "siblings").get()).toContain(dom.find(".siblings")[0]);
             expect(il.uiTests.getRelatives(element, "siblings").get()).toContain(dom.find(".siblings")[1]);
@@ -100,6 +104,23 @@ describe("Helper Structure Suite", function() {
         });
         it("Count Root", function () {
             expect(il.uiTests.countRelatives(element, [{type:"root"}])).toBe(1);
+        });
+    });
+    describe("Check Attribute", function() {
+        it("is Defined", function () {
+            expect(il.uiTests.checkAttribute("isDefined", $(fixtures.glyphedButton1HTML).find(".glyphicon"),"aria-label")).toBe(true);
+            expect(il.uiTests.checkAttribute("isDefined", $(fixtures.glyphedButton2HTML).find(".glyphicon"),"aria-label")).toBe(true);
+            expect(il.uiTests.checkAttribute("isDefined", $(fixtures.glyphedButton3HTML).find(".glyphicon"),"aria-label")).toBe(false);
+        });
+        it("is Set", function () {
+            expect(il.uiTests.checkAttribute("isSet", $(fixtures.glyphedButton1HTML).find(".glyphicon"),"aria-label")).toBe(true);
+            expect(il.uiTests.checkAttribute("isSet", $(fixtures.glyphedButton2HTML).find(".glyphicon"),"aria-label")).toBe(false);
+            expect(il.uiTests.checkAttribute("isSet", $(fixtures.glyphedButton3HTML).find(".glyphicon"),"aria-label")).toBe(false);
+        });
+        it("is Equal", function () {
+            expect(il.uiTests.checkAttribute("isEqual", $(fixtures.glyphedButton1HTML).find(".glyphicon"),"aria-label","envelope")).toBe(true);
+            expect(il.uiTests.checkAttribute("isEqual", $(fixtures.glyphedButton2HTML).find(".glyphicon"),"aria-label","envelope")).toBe(false);
+            expect(il.uiTests.checkAttribute("isEqual", $(fixtures.glyphedButton3HTML).find(".glyphicon"),"aria-label","envelope")).toBe(false);
         });
     });
 

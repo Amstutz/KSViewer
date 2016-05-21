@@ -49,8 +49,21 @@ describe("CSS Suite", function() {
                 expect(il.uiTests.css(badge,".badge",fixtures.badge.glyphPositionVariantBottom)).toBe(false);
             });
 
-            beforeEach(function() {
-                $(".badge").remove("#neighbourHtml1");
+            it("Top Right Corner Test pass", function() {
+                glyph.offset({"left": fixtures.badge.glyphPositionTopRightCorner.left,"top": fixtures.badge.glyphPositionTopRightCorner.top});
+                glyph.width(fixtures.badge.glyphPositionTopRightCorner.width);
+                glyph.height(fixtures.badge.glyphPositionTopRightCorner.height);
+
+                badge.offset({"left": fixtures.badge.badgePositionTopRightCorner.left,"top": fixtures.badge.badgePositionTopRightCorner.top});
+                badge.width(fixtures.badge.badgePositionTopRightCorner.width);
+                badge.height(fixtures.badge.badgePositionTopRightCorner.height);
+
+                console.log("lsdkfjlsdfjalskdfjsld lsdkfjsdl f");
+                expect(il.uiTests.css(badge,"",fixtures.badge.glyphPositionVariantTopRight)).toBe(true);
+            });
+
+            afterEach(function() {
+                $("#neighbourHtml1").remove();
             });
         });
     });
@@ -67,7 +80,47 @@ describe("CSS Suite", function() {
                 expect(il.uiTests.css(fixtures.badge.html,".badge",fixtures.badge.coloringRed)).toBe(false);
                 expect(il.uiTests.css(fixtures.badge.htmlGrey,".badge",fixtures.badge.coloringRed)).toBe(false);
                 expect(il.uiTests.css(fixtures.badge.htmlRed,".badge",fixtures.badge.coloringRed)).toBe(true);
+
             });
+        });
+    });
+
+    describe("CSS Events Tests", function() {
+        beforeEach(function() {
+            $('head').append( fixtures.cssEvent.css);
+            $('body').append( fixtures.cssEvent.html);
+        });
+        describe("Simulate Hover", function() {
+            it("On Link Text Color", function() {
+                expect(il.uiTests.css($("#"+fixtures.cssEvent.id+" a.textColor"),"",fixtures.cssEvent.hoverColorTextDiff)).toBe(true);
+                expect(il.uiTests.css($("#"+fixtures.cssEvent.id+" a.noChange"), "",fixtures.cssEvent.hoverColorTextDiff)).toBe(false);
+                expect(il.uiTests.css($("#"+fixtures.cssEvent.id+" a.bgColor"), "",fixtures.cssEvent.hoverColorTextDiff)).toBe(false);
+            });
+
+            it("On Link Bg Color", function() {
+                expect(il.uiTests.css($("#"+fixtures.cssEvent.id+" a.textColor"), "", fixtures.cssEvent.hoverColorBgDiff)).toBe(false);
+                expect(il.uiTests.css($("#"+fixtures.cssEvent.id+" a.noChange") , "", fixtures.cssEvent.hoverColorBgDiff)).toBe(false);
+                expect(il.uiTests.css($("#"+fixtures.cssEvent.id+" a.bgColor") , "", fixtures.cssEvent.hoverColorBgDiff)).toBe(true);
+            });
+
+            it("On Link Pointer Cursor", function() {
+                expect(il.uiTests.css($("#"+fixtures.cssEvent.id+" a.textColor"), "", fixtures.cssEvent.hoverPointer)).toBe(true);
+                expect(il.uiTests.css($("#"+fixtures.cssEvent.id+" a.noChange") , "", fixtures.cssEvent.hoverPointer)).toBe(false);
+                expect(il.uiTests.css($("#"+fixtures.cssEvent.id+" a.bgColor") , "", fixtures.cssEvent.hoverPointer)).toBe(true);
+            });
+
+            it("On Link Underline", function() {
+                expect(il.uiTests.css($("#"+fixtures.cssEvent.id+" a.textColor"), "", fixtures.cssEvent.hoverUnderline)).toBe(false);
+                expect(il.uiTests.css($("#"+fixtures.cssEvent.id+" a.noChange") , "", fixtures.cssEvent.hoverUnderline)).toBe(false);
+                expect(il.uiTests.css($("#"+fixtures.cssEvent.id+" a.bgColor") , "", fixtures.cssEvent.hoverUnderline)).toBe(false);
+                expect(il.uiTests.css($("#"+fixtures.cssEvent.id+" a.underline") , "", fixtures.cssEvent.hoverUnderline)).toBe(true);
+
+            });
+        });
+
+        afterEach(function() {
+            $("#"+fixtures.cssEvent.id).remove( );
+            $("#"+fixtures.cssEvent.id+"Style").remove();
         });
     });
 

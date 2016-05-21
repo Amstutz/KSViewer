@@ -1,45 +1,85 @@
 describe("Helper CSS Suite", function() {
     var fixtures = il.uiTests.fixtures();
 
-    describe("Collision Checks", function() {
+    describe("Stretch Rect", function() {
         beforeEach(function() {
-            fixtures.rect1 = {
+            fixtures.rect = {
                 left: 0,
                 top: 0,
                 width: 100,
                 height: 100
             };
-            fixtures.rect2 = {
+        });
+
+        it("Stretch 0,0", function () {
+            console.log(il.uiTests.stretchRecht(fixtures.rect));
+            expect(il.uiTests.stretchRecht(fixtures.rect)).not.toEqual(il.uiTests.stretchRecht(fixtures.rect,0,0));
+            console.log(il.uiTests.stretchRecht(fixtures.rect));
+
+            expect(il.uiTests.stretchRecht(fixtures.rect,0,0)).not.toEqual({left: 0, top: 0, width: 100, height: 100});
+            expect(il.uiTests.stretchRecht(fixtures.rect,0,0)).toEqual({left: 0, top: 0, width: 0, height: 0});
+        });
+
+        it("Stretch 1,1", function () {
+            expect(il.uiTests.stretchRecht(fixtures.rect)).toEqual({left: 0, top: 0, width: 100, height: 100});
+            expect(il.uiTests.stretchRecht(fixtures.rect, 1)).toEqual({left: 0, top: 0, width: 100, height: 100});
+            expect(il.uiTests.stretchRecht(fixtures.rect,1,1)).toEqual({left: 0, top: 0, width: 100, height: 100});
+            expect(il.uiTests.stretchRecht(fixtures.rect,"1","1")).toEqual({left: 0, top: 0, width: 100, height: 100});
+        });
+        it("Stretch positive", function () {
+            expect(il.uiTests.stretchRecht(fixtures.rect,0.5,0.5)).toEqual({left: 0, top: 0, width: 50, height: 50});
+            expect(il.uiTests.stretchRecht(fixtures.rect,2,2)).toEqual({left: 0, top: 0, width: 200, height: 200});
+            expect(il.uiTests.stretchRecht(fixtures.rect,2,0.5)).toEqual({left: 0, top: 0, width: 200, height: 50});
+            expect(il.uiTests.stretchRecht(fixtures.rect,0.5,2)).toEqual({left: 0, top: 0, width: 50, height: 200});
+        });
+        it("Stretch negative", function () {
+            expect(il.uiTests.stretchRecht(fixtures.rect,-1,-1)).toEqual({left: -100, top: -100, width: 100, height: 100});
+            expect(il.uiTests.stretchRecht(fixtures.rect,-0.5,0.5)).toEqual({left: -50, top: 0, width: 50, height: 50});
+            expect(il.uiTests.stretchRecht(fixtures.rect,2,-2)).toEqual({left: 0, top: -200, width: 200, height: 200});
+        });
+
+    });
+
+
+    describe("Collision Checks", function() {
+        beforeEach(function() {
+             fixtures.rect1 = {
+                left: 0,
+                top: 0,
+                width: 100,
+                height: 100
+            };
+             fixtures.rect2 = {
                 left: 50,
                 top: 50,
                 width: 50,
                 height: 50
             };
-            fixtures.rect3 = {
+             fixtures.rect3 = {
                 left: 10,
                 top: 10,
                 width: 10,
                 height: 10
             };
-            fixtures.rect4 = {
+             fixtures.rect4 = {
                 left: 25,
                 top: 25,
                 width: 50,
                 height: 50
             };
-            fixtures.rect5 = {
+             fixtures.rect5 = {
                 left: 90,
                 top: 10,
                 width: 5,
                 height: 5
             };
-            fixtures.rect6 = {
+             fixtures.rect6 = {
                 left: 10,
                 top: 90,
                 width: 5,
                 height: 5
             };
-            fixtures.rect7 = {
+             fixtures.rect7 = {
                 left: 10,
                 top: 90,
                 width: 5,
@@ -91,7 +131,18 @@ describe("Helper CSS Suite", function() {
             expect(il.uiTests.collisionCheck("isLeftOut", fixtures.rect6,fixtures.rect7)).toBe(false);
             expect(il.uiTests.collisionCheck("isLeftOut", fixtures.rect3,fixtures.rect2)).toBe(true);
         });
+        it("isRight", function () {
+            expect(il.uiTests.collisionCheck("isRight", fixtures.rect1,fixtures.rect2)).toBe(false);
+            expect(il.uiTests.collisionCheck("isRight", fixtures.rect2,fixtures.rect1)).toBe(true);
+            expect(il.uiTests.collisionCheck("isRight", fixtures.rect6,fixtures.rect7)).toBe(false);
+        });
 
+        it("isRightOut", function () {
+            expect(il.uiTests.collisionCheck("isRightOut", fixtures.rect1,fixtures.rect2)).toBe(false);
+            expect(il.uiTests.collisionCheck("isRightOut", fixtures.rect2,fixtures.rect1)).toBe(false);
+            expect(il.uiTests.collisionCheck("isRightOut", fixtures.rect6,fixtures.rect7)).toBe(false);
+            expect(il.uiTests.collisionCheck("isRightOut", fixtures.rect5,fixtures.rect2)).toBe(false);
+        });
         it("isAbove", function () {
             expect(il.uiTests.collisionCheck("isAbove", fixtures.rect1,fixtures.rect2)).toBe(true);
             expect(il.uiTests.collisionCheck("isAbove", fixtures.rect6,fixtures.rect7)).toBe(false);
@@ -108,12 +159,18 @@ describe("Helper CSS Suite", function() {
 
         it("isBellow", function () {
             expect(il.uiTests.collisionCheck("isBellow", fixtures.rect1,fixtures.rect2)).toBe(false);
-            expect(il.uiTests.collisionCheck("isBellow", fixtures.rect2,fixtures.rect1)).toBe(false);
+            expect(il.uiTests.collisionCheck("isBellow", fixtures.rect2,fixtures.rect1)).toBe(true);
             expect(il.uiTests.collisionCheck("isBellow", fixtures.rect6,fixtures.rect7)).toBe(false);
             expect(il.uiTests.collisionCheck("isBellow", fixtures.rect3,fixtures.rect2)).toBe(false);
             expect(il.uiTests.collisionCheck("isBellow", fixtures.rect2,fixtures.rect3)).toBe(true);
         });
-
+        it("isBellowOut", function () {
+            expect(il.uiTests.collisionCheck("isBellowOut", fixtures.rect1,fixtures.rect2)).toBe(false);
+            expect(il.uiTests.collisionCheck("isBellowOut", fixtures.rect2,fixtures.rect1)).toBe(false);
+            expect(il.uiTests.collisionCheck("isBellowOut", fixtures.rect6,fixtures.rect7)).toBe(false);
+            expect(il.uiTests.collisionCheck("isBellowOut", fixtures.rect3,fixtures.rect2)).toBe(false);
+            expect(il.uiTests.collisionCheck("isBellowOut", fixtures.rect2,fixtures.rect3)).toBe(true);
+        });
         it("Collide Set 1", function () {
             expect(il.uiTests.collisionCheck("collide", fixtures.rect1,fixtures.rect2)).toBe(true);
             expect(il.uiTests.collisionCheck("collide", fixtures.rect1,fixtures.rect3)).toBe(true);
@@ -139,12 +196,31 @@ describe("Helper CSS Suite", function() {
             expect(il.uiTests.collisionCheck("collide", fixtures.rect3,fixtures.rect6)).toBe(false);
 
         });
+        it("Contains Set 1", function () {
+            expect(il.uiTests.collisionCheck("isContained", fixtures.rect1,fixtures.rect2)).toBe(false);
+            expect(il.uiTests.collisionCheck("isContained", fixtures.rect1,fixtures.rect3)).toBe(false);
+            expect(il.uiTests.collisionCheck("isContained", fixtures.rect1,fixtures.rect4)).toBe(false);
+            expect(il.uiTests.collisionCheck("isContained", fixtures.rect1,fixtures.rect5)).toBe(false);
+            expect(il.uiTests.collisionCheck("isContained", fixtures.rect1,fixtures.rect6)).toBe(false);
+            expect(il.uiTests.collisionCheck("isContained", fixtures.rect2,fixtures.rect1)).toBe(true);
+            expect(il.uiTests.collisionCheck("isContained", fixtures.rect3,fixtures.rect1)).toBe(true);
+            expect(il.uiTests.collisionCheck("isContained", fixtures.rect4,fixtures.rect1)).toBe(true);
+            expect(il.uiTests.collisionCheck("isContained", fixtures.rect5,fixtures.rect1)).toBe(true);
+            expect(il.uiTests.collisionCheck("isContained", fixtures.rect6,fixtures.rect1)).toBe(true);
+        });
+        it("Contains Set 2", function () {
+            expect(il.uiTests.collisionCheck("isContained", fixtures.rect2,fixtures.rect3)).toBe(false);
+            expect(il.uiTests.collisionCheck("isContained", fixtures.rect3,fixtures.rect2)).toBe(false);
+            expect(il.uiTests.collisionCheck("isContained", fixtures.rect4,fixtures.rect2)).toBe(false);
+            expect(il.uiTests.collisionCheck("isContained", fixtures.rect4,fixtures.rect6)).toBe(false);
+            expect(il.uiTests.collisionCheck("isContained", fixtures.rect4,fixtures.rect5)).toBe(false);
+            expect(il.uiTests.collisionCheck("isContained", fixtures.rect5,fixtures.rect2)).toBe(false);
+            expect(il.uiTests.collisionCheck("isContained", fixtures.rect6,fixtures.rect7)).toBe(true);
+            expect(il.uiTests.collisionCheck("isContained", fixtures.rect5,fixtures.rect6)).toBe(false);
+            expect(il.uiTests.collisionCheck("isContained", fixtures.rect3,fixtures.rect6)).toBe(false);
 
+        });
     });
-
-
-
-
 
     describe("Color Checks", function() {
         it("Empty Color From String", function () {
@@ -270,21 +346,49 @@ describe("Helper CSS Suite", function() {
                 .toBe(true);
         });
 
-        it("get Color From DOM", function () {
-            expect(il.uiTests.getBackgroundColor(fixtures.coloredStructure)).toEqual({"red":255,"green":240,"blue":0,"alpha":1});
+        it("get BgColor From DOM", function () {
+            expect(il.uiTests.getColor(fixtures.coloredStructure)["background-color"]).toEqual({"red":255,"green":240,"blue":0,"alpha":1});
             var sibling3 = fixtures.coloredStructure.find("#sibling3");
-            expect(il.uiTests.getBackgroundColor(sibling3)).toEqual({"red":2,"green":1,"blue":0,"alpha":1});
+            expect(il.uiTests.getColor(sibling3)["background-color"]).toEqual({"red":2,"green":1,"blue":0,"alpha":1});
             var grandchild31 = fixtures.coloredStructure.find("#grandchild31");
-            expect(il.uiTests.getBackgroundColor(grandchild31)).toEqual({"red":1,"green":1,"blue":1,"alpha":0.6});
+            expect(il.uiTests.getColor(grandchild31)["background-color"]).toEqual({"red":1,"green":1,"blue":1,"alpha":0.6});
         });
 
-        it("get Color From DOM Parents", function () {
+        it("get BgColor From DOM Parents", function () {
             var parent = fixtures.coloredStructure.find("#parent");
-            expect(il.uiTests.getBackgroundColor(parent)).toEqual({"red":255,"green":240,"blue":0,"alpha":1});
+            expect(il.uiTests.getColor(parent)["background-color"]).toEqual({"red":255,"green":240,"blue":0,"alpha":1});
             var element = fixtures.coloredStructure.find("#element");
-            expect(il.uiTests.getBackgroundColor(element)).toEqual({"red":255,"green":240,"blue":0,"alpha":1});
+            expect(il.uiTests.getColor(element)["background-color"]).toEqual({"red":255,"green":240,"blue":0,"alpha":1});
             var grandchild11 = fixtures.coloredStructure.find("#grandchild11");
-            expect(il.uiTests.getBackgroundColor(grandchild11)).toEqual({"red":255,"green":240,"blue":0,"alpha":1});
+            expect(il.uiTests.getColor(grandchild11)["background-color"]).toEqual({"red":255,"green":240,"blue":0,"alpha":1});
         });
+
+    });
+
+    describe("Property Checks", function() {
+
+        it("check property is set", function () {
+            expect(il.uiTests.propertyCheck("isSet")).toBe(false);
+            expect(il.uiTests.propertyCheck("isSet",0)).toBe(false);
+            expect(il.uiTests.propertyCheck("isSet","")).toBe(false);
+            expect(il.uiTests.propertyCheck("isSet","","")).toBe(false);
+            expect(il.uiTests.propertyCheck("isSet","","rgb(0,0,0)")).toBe(false);
+            expect(il.uiTests.propertyCheck("isSet","rgb(0,0,0)")).toBe(true);
+            expect(il.uiTests.propertyCheck("isSet","rgb(0,0,0)","")).toBe(true);
+            expect(il.uiTests.propertyCheck("isSet","rgb(0,0,0)","rgb(0,0,0)")).toBe(true);
+
+        });
+
+        it("check property is Equal", function () {
+            expect(il.uiTests.propertyCheck("isEqual")).toBe(true);
+            expect(il.uiTests.propertyCheck("isEqual",0)).toBe(false);
+            expect(il.uiTests.propertyCheck("isEqual","")).toBe(false);
+            expect(il.uiTests.propertyCheck("isEqual","","")).toBe(true);
+            expect(il.uiTests.propertyCheck("isEqual","","rgb(0,0,0)")).toBe(false);
+            expect(il.uiTests.propertyCheck("isEqual","rgb(0,0,0)")).toBe(false);
+            expect(il.uiTests.propertyCheck("isEqual","rgb(0,0,0)","")).toBe(false);
+            expect(il.uiTests.propertyCheck("isEqual","rgb(0,0,0)","rgb(0,0,0)")).toBe(true);
+        });
+
     });
 });

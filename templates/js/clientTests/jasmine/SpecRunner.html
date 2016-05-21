@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="jasmine.css">
 
   <script type="text/javascript" src="/Services/jQuery/js/2_1_4/jquery.js"></script>
-  <script type="text/javascript" src="/Services/jQuery/js/ui_1_11_4/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="/Services/jQuery/js/ui_1_11_4/jquery-ui.js"></script>
 
   <script src="/Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/libs/jasmine-standalone-2.4.1/lib/jasmine-2.4.1/jasmine.js"></script>
   <script src="/Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/libs/jasmine-standalone-2.4.1/lib/jasmine-2.4.1/jasmine-html.js"></script>
@@ -23,6 +23,7 @@
   <script src="../tests/content/wording.js"></script>
   <script src="../tests/structure/structure.js"></script>
   <script src="../tests/css/css.js"></script>
+  <script src="../tests/accessibility/accessibility.js"></script>
 
 
   <script src="../helper/content/compareValues.js"></script>
@@ -37,23 +38,38 @@
   <script src="../helper/structure/getRelatives.js"></script>
   <script src="../helper/structure/getRelativesByChain.js"></script>
   <script src="../helper/structure/countRelatives.js"></script>
+  <script src="../helper/structure/getSelector.js"></script>
+  <script src="../helper/structure/getAttributes.js"></script>
+  <script src="../helper/structure/checkAttribute.js"></script>
 
   <script src="../helper/css/checkVisible.js"></script>
   <script src="../helper/css/getRect.js"></script>
   <script src="../helper/css/collisionCheck.js"></script>
   <script src="../helper/css/getColorFromString.js"></script>
-  <script src="../helper/css/getBackgroundColor.js"></script>
-    <script src="../helper/css/colorCheck.js"></script>
+  <script src="../helper/css/getColor.js"></script>
+  <script src="../helper/css/colorCheck.js"></script>
+  <script src="../helper/css/getCSSProperty.js"></script>
+  <script src="../helper/css/propertyCheck.js"></script>
+  <script src="../helper/css/stretchRect.js"></script>
+
+  <script src="../helper/accessibility/isFocusable.js"></script>
+  <script src="../helper/accessibility/isTabbable.js"></script>
+  <script src="../helper/accessibility/isLabeled.js"></script>
+
+  <script src="../helper/simulate/simulate.js"></script>
 
   <script src="./fixtures/fixtures.js"></script>
 
   <script src="./helperSpecs/contentHelperSpecs.js"></script>
   <script src="./helperSpecs/structureHelperSpecs.js"></script>
   <script src="./helperSpecs/cssHelperSpecs.js"></script>
+  <script src="./helperSpecs/simulateHelperSpecs.js"></script>
+
 
   <script src="./testSpecs/contentTestsSpecs.js"></script>
   <script src="./testSpecs/structureTestsSpecs.js"></script>
   <script src="./testSpecs/cssTestsSpecs.js"></script>
+  <script src="./testSpecs/accessibilityTestsSpecs.js"></script>
 
 </head>
 

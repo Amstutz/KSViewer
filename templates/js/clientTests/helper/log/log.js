@@ -9,10 +9,10 @@ il.uiTests.log = {
     },
     components: {
         uiTests: {
-            level: 30
+            level: 0
         },
         testRule: {
-            level: 100
+            level: 3000
         },
         testVariant: {
             level: 100
@@ -48,7 +48,10 @@ il.uiTests.log = {
             level: 300
         },
         colorCheck: {
-            level: 0
+            level: 300
+        },
+        accessibility: {
+            level: 300
         }
     },
 

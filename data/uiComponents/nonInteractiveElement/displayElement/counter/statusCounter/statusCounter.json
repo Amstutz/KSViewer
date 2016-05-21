@@ -49,7 +49,12 @@
               {
                 "type":"css",
                 "subtype":"positioning",
-                "selectors": [
+                "selectorsA": [
+                  {
+                    "type": "self"
+                  }
+                ],
+                "selectorsB": [
                   {
                     "type": "parents",
                     "selector": "a"
@@ -89,14 +94,15 @@
               [
                 {
                   "type":"css",
-                  "subtype":"backgroundColoring",
-                  "selectors": [
+                  "subtype":"coloring",
+                  "selectorsA": [
                     {
                       "type": "self"
                     }
                   ],
                   "coloring":[
                     {
+                      "whichA": "background-color",
                       "type": "isGrey"
                     }
                   ],

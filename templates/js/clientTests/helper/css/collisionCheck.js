@@ -38,6 +38,14 @@ il.uiTests.collisionCheck = function(type,rect1,rect2){
     };
 
     var  isRight = function(rect1, rect2){
+        return rect1.left > rect2.left;
+    };
+
+    var  isRightSideOut = function(rect1, rect2){
+        return rect1.left+rect1.width > rect2.left+rect2.width;
+    };
+
+    var  isRightOut = function(rect1, rect2){
         return rect1.left > rect2.left+rect2.width;
     };
 
@@ -50,13 +58,37 @@ il.uiTests.collisionCheck = function(type,rect1,rect2){
     };
 
     var  isBellow = function(rect1, rect2){
+        return rect1.top > rect2.top;
+    };
+    var  isBottomSideOut = function(rect1, rect2){
+        return rect1.top+rect1.height > rect2.top+rect2.height;
+    };
+    var  isBellowOut = function(rect1, rect2){
         return rect1.top > rect2.top + rect2.height;
     };
 
-    var  collide = function(rect1, rect2){
-        return ! (isAboveOut(rect1,rect2) || isBellow(rect1,rect2) || isLeftOut(rect1,rect2) || isRight(rect1,rect2));
+    var  collideHorizontal = function(rect1, rect2){
+        return ! (isLeftOut(rect1,rect2) || isRightOut(rect1,rect2));
     };
 
+    var  collideVertical = function(rect1, rect2){
+        return ! (isAboveOut(rect1,rect2) || isBellowOut(rect1,rect2));
+    };
+
+    var  collide = function(rect1, rect2){
+        return collideVertical(rect1,rect2) && collideHorizontal(rect1,rect2);
+    };
+
+
+    var  isContainedVertical = function(rect1, rect2){
+        return !isAbove(rect1, rect2) && !isBottomSideOut(rect1, rect2);
+    };
+    var  isContainedHorizontal = function(rect1, rect2){
+        return !isLeft(rect1, rect2) && !isRightSideOut(rect1, rect2);
+    };
+    var  isContained = function(rect1, rect2){
+        return isContainedVertical(rect1, rect2)  && isContainedHorizontal(rect1, rect2);
+    };
 
     switch(type) {
         case "equalLeft":
@@ -80,14 +112,37 @@ il.uiTests.collisionCheck = function(type,rect1,rect2){
             return isLeftOut(rect1, rect2);
         case "isRight":
             return isRight(rect1, rect2);
+        case "isRightSideOut":
+            return isRight(rect1, rect2);
+        case "isRightOut":
+            return isRightOut(rect1, rect2);
         case "isAbove":
             return isAbove(rect1, rect2);
         case "isAboveOut":
             return isAboveOut(rect1, rect2);
         case "isBellow":
             return isBellow(rect1, rect2);
+        case "isBottomSideOut":
+            return isBottomSideOut(rect1, rect2);
+        case "isBellowOut":
+            return isBellowOut(rect1, rect2);
+
+        case "collideHorizontal":
+            return collideHorizontal(rect1, rect2);
+        case "collideVertical":
+            return collideVertical(rect1, rect2);
         case "collide":
             return collide(rect1, rect2);
+
+        case "isContainedVertical":
+            return isContainedVertical(rect1, rect2);
+        case "isContainedHorizontal":
+            return isContainedHorizontal(rect1, rect2);
+        case "isContained":
+            return isContained(rect1, rect2);
+
+        default:
+            throw new Error("Invalid collision Check Type");
     }
 
 };

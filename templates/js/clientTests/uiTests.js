@@ -49,21 +49,36 @@ if(ilback){
 
         this.processTest = function(entry,ruleType,rule,test){
             this.log.message(["this.processTest",entry,ruleType,rule,test],"uiTests",this.log.levels.debug);
-            this.log.message(["this.processTest",entry,ruleType,rule,test],"uiTests",this.log.levels.info);
 
             var allPassed = true;
 
             $(entry.selector).each(function (elementIndex) {
                 var element = $(this);
-                if(il.uiTests.checkVisible(element)){
+                var ignore = false;
+                if(test.ignore){
+                    il.uiTests.log.message(["this.processTest Ignoring: ",test.ignore],"uiTests",il.uiTests.log.levels.info);
+                    ignore = test.ignore.some(function(selector){
+
+                        il.uiTests.log.message(["this.processTest test Ignore: ",selector],"uiTests",il.uiTests.log.levels.info);
+                        return il.uiTests.countRelatives(element,selector) > 0;
+                    });
+                }
+                if(il.uiTests.checkVisible(element) && !ignore){
                     passed = false;
                     if(self.elementIndex < elementIndex){
                         self.log.message(self.elementIndex,"uiTests",self.log.levels.info);
                         self.log.message(elementIndex,"uiTests",self.log.levels.info);
 
                         self.elementIndex = elementIndex;
-                        passed = il.uiTests.testRule(this, entry.selector,test);
-                        var report = new ruleReport(this,entry,ruleType,rule,test,passed);
+                        try{
+                            passed = il.uiTests.testRule(this, entry.selector,test);
+                            var report = new ruleReport(this,entry,ruleType,rule,test,passed);
+                        }catch(e){
+                            passed = false;
+                            var report = new ruleReport(this,entry,ruleType,rule,test,passed, e.message);
+                        }
+
+
                         self.ruleReports.push(report);
 
                         if(!report.passed){
