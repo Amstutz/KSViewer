@@ -36,7 +36,7 @@ il.uiTests.log = {
             level:300
         },
         countWords: {
-            level: 300
+            level: 0
         },
         countRelatives: {
             level: 300

@@ -45,6 +45,9 @@ il.uiTests.getRelatives = function(element,type,selector){
 
     var getRoot = function(element){
         var parents = getParents(element);
+        if(!parents.length){
+            return element;
+        }
         return $(parents[parents.length-1]);
     };
 

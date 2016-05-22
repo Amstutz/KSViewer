@@ -13,7 +13,10 @@ il.uiTests.fixtures = function(){
     fixtures.badge.numberRuleVariant = {
         "type":"wording",
         "subtype":"amount",
-        "selectorType": "self",
+        "selectors":[{
+            type: "self"
+        }],
+        "contentType": "content",
         "operator":"=",
         "amount":"1",
         "regex": {
@@ -374,8 +377,11 @@ il.uiTests.fixtures = function(){
     fixtures.buttonRules.variant1 = {
         "type":"wording",
         "subtype":"amount",
-        "selectorType": "selector",
-        "selector": ".btn",
+        "selectors":[{
+            type: "find",
+            selector: ".btn"
+        }],
+        "contentType": "content",
         "operator":"=",
         "amount":"3",
         "regex": "",
@@ -384,8 +390,11 @@ il.uiTests.fixtures = function(){
     fixtures.buttonRules.variant2= {
         "type":"wording",
         "subtype":"amount",
-        "selectorType": "selector",
-        "selector": ".btn",
+        "selectors":[{
+            type: "find",
+            selector: ".btn"
+        }],
+        "contentType": "content",
         "operator":"=",
         "amount":"4",
         "regex": "",
@@ -394,8 +403,11 @@ il.uiTests.fixtures = function(){
     fixtures.buttonRules.variant3 = {
         "type":"wording",
         "subtype":"amount",
-        "selectorType": "attribute",
-        "selector": "value",
+        "selectors":[{
+            type: "self"
+        }],
+        "contentType": "attribute",
+        "contentSelector": "value",
         "operator":"=",
         "amount":"2",
         "regex": "",
@@ -404,8 +416,10 @@ il.uiTests.fixtures = function(){
     fixtures.buttonRules.variant4= {
         "type":"wording",
         "subtype":"amount",
-        "selectorType": "selector",
-        "selector": "value",
+        "selectors":[{
+            type: "self"
+        }],
+        "contentType": "content",
         "operator":"=",
         "amount":"4",
         "regex": "",
@@ -442,8 +456,11 @@ il.uiTests.fixtures = function(){
     fixtures.buttonRules.variant5 = {
         "type":"wording",
         "subtype":"amount",
-        "selectorType": "attribute",
-        "selector": "value",
+        "selectors":[{
+            type: "self"
+        }],
+        "contentType": "attribute",
+        "contentSelector": "value",
         "operator":"=",
         "amount":"0",
         "regex": "( |\\(|^)[a-z][a-zA-Z0-9]*",
@@ -587,5 +604,108 @@ il.uiTests.fixtures = function(){
             }
         ]
     };
+
+    fixtures.binaryCheckboxesRadio = {
+        "description": "A checkbox MUST be used whenever a user has to perform a binary choice",
+        "not": "",
+        "variants": [
+            {
+                "type":"structure",
+                "subtype":"amount",
+                "selectors": [
+                    {
+                        "type": "parents",
+                        "selector": ".radio"
+                    },{
+                        "type": "siblings",
+                        "selector": ".radio"
+                    }
+                ],
+                "operator":">",
+                "amount":"2",
+                "not":""
+            }
+        ]
+    };
+    fixtures.radioButtons1 = $("<div id='mail_type'>" +
+    "<div class='radio'>" +
+    "<label><input type='radio' name='mail_type' id='mail_type_2' value='2'>For Tutors and Administrators only</label>" +
+    "<div class='help-block'>Only administrators</div>" +
+    "</div> " +
+    "</div>");
+
+
+    fixtures.radioButtons2 = $("<div id='mail_type'>" +
+    "<div class='radio'>" +
+        "<label><input type='radio' name='mail_type' id='mail_type_2' value='2'>For Tutors and Administrators only</label>" +
+        "<div class='help-block'>Only administrators</div>" +
+        "</div> " +
+    "<div class='radio'>" +
+        "<label><input type='radio' type' id='mail_type_1' value='1' checked='checked'>For all Participants</label>" +
+        "<div class='help-block'>Members, administrators and tutors can use the feature ‘Mail to Members’ in the ‘Members’ tab.</div> " +
+    "</div></div>");
+
+    fixtures.radioButtons3 = $("<div id='mail_type'>" +
+    "<div class='radio'>" +
+    "<label><input type='radio' name='mail_type' id='mail_type_2' value='2'>For Tutors and Administrators only</label>" +
+    "<div class='help-block'>Only administrators</div>" +
+    "</div> " +
+    "<div class='radio'>" +
+    "<label><input type='radio' type' id='mail_type_1' value='1' checked='checked'>For all Participants</label>" +
+    "<div class='help-block'>Members, administrators and tutors can use the feature ‘Mail to Members’ in the ‘Members’ tab.</div> " +
+    "</div>" +
+    "<div class='radio'>" +
+    "<label><input type='radio' type' id='mail_type_1' value='1' checked='checked'>For all Participants</label>" +
+    "<div class='help-block'>Members, administrators and tutors can use the feature ‘Mail to Members’ in the ‘Members’ tab.</div> " +
+    "</div>" +
+    "</div>");
+
+        fixtures.checkboxPositive = {
+        "type":"wording",
+        "subtype":"amount",
+        "selectors":[{
+            type: "parents",
+            selector: ".form-group"
+        },{
+            type: "children",
+            selector: "label"
+        }],
+        "contentType": "content",
+        "operator":">",
+        "amount":"0",
+        "regex": {
+            "term":"( |^)not(?= |$)",
+            "modifier": "gi"
+        },
+        "not":"not"
+    };
+
+    fixtures.radioCheckboxSectionOke = $("<div class='form-group' id='il_prop_cont_show_members'> " +
+    "<label for='show_members' class='col-sm-3 control-label'>Show Members</label> " +
+    "<div class='col-sm-9'> " +
+    "<div class='checkbox'> " +
+    "<label> " +
+    "<input type='checkbox' id='show_members' name='show_members' value='1' checked='checked'>&nbsp;</label> " +
+    "</div><div class='help-block'>If activated...</div> " +
+    "</div> " +
+    "</div>");
+    fixtures.radioCheckboxSectionNegation1 = $("<div class='form-group' id='il_prop_cont_show_members'> " +
+    "<label for='show_members' class='col-sm-3 control-label'>Not Show Members</label> " +
+    "<div class='col-sm-9'> " +
+    "<div class='checkbox'> " +
+    "<label> " +
+    "<input type='checkbox' id='show_members' name='show_members' value='1' checked='checked'>&nbsp;</label> " +
+    "</div><div class='help-block'>If activated...</div> " +
+    "</div> " +
+    "</div>");
+    fixtures.radioCheckboxSectionNegation2 = $("<div class='form-group' id='il_prop_cont_show_members'> " +
+    "<label for='show_members' class='col-sm-3 control-label'>Show Members not</label> " +
+    "<div class='col-sm-9'> " +
+    "<div class='checkbox'> " +
+    "<label> " +
+    "<input type='checkbox' id='show_members' name='show_members' value='1' checked='checked'>&nbsp;</label> " +
+    "</div><div class='help-block'>If activated...</div> " +
+    "</div> " +
+    "</div>");
     return fixtures;
 }

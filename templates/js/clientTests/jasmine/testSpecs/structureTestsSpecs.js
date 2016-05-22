@@ -24,7 +24,11 @@ describe("Structure Suite", function() {
                 $("#sibling1").append(fixtures.primaryButton);
                 expect(il.uiTests.testRule( $('#sibling1'),"" ,fixtures.onePrimaryButton )).toBe(false);
                 $('#root').remove();
-
+            });
+            it("Binary Radio", function() {
+                expect(il.uiTests.testRule( $(fixtures.radioButtons1.find(":radio")),"" ,fixtures.binaryCheckboxesRadio )).toBe(false);
+                expect(il.uiTests.testRule( $(fixtures.radioButtons2.find(":radio")),"" ,fixtures.binaryCheckboxesRadio )).toBe(false);
+                expect(il.uiTests.testRule( $(fixtures.radioButtons3.find(":radio")),"" ,fixtures.binaryCheckboxesRadio )).toBe(true);
 
             });
         });

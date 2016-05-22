@@ -18,9 +18,13 @@ il.uiTests.wording = function(element,selector,testVariant){
 
     il.uiTests.log.message(["wording params to get Content",element,testVariant.selectorType,testVariant.selector],"wording",this.log.levels.debug);
 
-    var content = il.uiTests.getContent(element,testVariant.selectorType,testVariant.selector);
+    element = il.uiTests.getRelativesByChain(element, testVariant.selectors);
 
-    if(content == undefined || content == ""){
+    var content = il.uiTests.getContent(element,testVariant.contentType,testVariant.contentSelector);
+    if(content == undefined){
+        throw new Error("Invalid wording content, " +testVariant.description)
+    }
+    if( content == ""){
         return false;
     }
     //content = il.uiTests.contentSanitize(content);

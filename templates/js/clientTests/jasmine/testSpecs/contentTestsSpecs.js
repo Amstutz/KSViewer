@@ -30,6 +30,12 @@ describe("Content Suite", function() {
                 expect(il.uiTests.testVariant(fixtures.button1.html,fixtures.buttonEntry.selector,fixtures.buttonRules.variant5)).toBe(true);
 
             });
+            it("The checkbox’s identifier MUST always state something positive.", function() {
+                expect(il.uiTests.testVariant(fixtures.radioCheckboxSectionOke.find(":checkbox"),"",fixtures.checkboxPositive)).toBe(true);
+                expect(il.uiTests.testVariant(fixtures.radioCheckboxSectionNegation1.find(":checkbox"),"",fixtures.checkboxPositive)).toBe(false);
+                expect(il.uiTests.testVariant(fixtures.radioCheckboxSectionNegation2.find(":checkbox"),"",fixtures.checkboxPositive)).toBe(false);
+
+            });
         });
     });
 

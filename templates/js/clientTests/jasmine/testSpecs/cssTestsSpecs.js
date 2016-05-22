@@ -57,8 +57,6 @@ describe("CSS Suite", function() {
                 badge.offset({"left": fixtures.badge.badgePositionTopRightCorner.left,"top": fixtures.badge.badgePositionTopRightCorner.top});
                 badge.width(fixtures.badge.badgePositionTopRightCorner.width);
                 badge.height(fixtures.badge.badgePositionTopRightCorner.height);
-
-                console.log("lsdkfjlsdfjalskdfjsld lsdkfjsdl f");
                 expect(il.uiTests.css(badge,"",fixtures.badge.glyphPositionVariantTopRight)).toBe(true);
             });
 
