@@ -31,7 +31,17 @@ describe("Structure Suite", function() {
                 expect(il.uiTests.testRule( $(fixtures.radioButtons3.find(":radio")),"" ,fixtures.binaryCheckboxesRadio )).toBe(true);
 
             });
+            it("Radio Smaller Than 6", function() {
+                expect(il.uiTests.testRule( $(fixtures.radioButtons1.find(":radio")),"" ,fixtures.radioSmallerThan6 )).toBe(true);
+                expect(il.uiTests.testRule( $(fixtures.radioButtons2.find(":radio")),"" ,fixtures.radioSmallerThan6 )).toBe(true);
+                expect(il.uiTests.testRule( $(fixtures.radioButtons3.find(":radio")),"" ,fixtures.radioSmallerThan6 )).toBe(true);
+                expect(il.uiTests.testRule( $(fixtures.radioButtons6.find(":radio")),"" ,fixtures.radioSmallerThan6 )).toBe(false);
+
+
+            });
         });
+
+
     });
 
 

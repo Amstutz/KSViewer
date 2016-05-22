@@ -627,6 +627,66 @@ il.uiTests.fixtures = function(){
             }
         ]
     };
+    fixtures.radioNot0Words = {
+        "description": "Must be labeled",
+        "not": "",
+        "variants": [
+            {
+                "type":"wording",
+                "subtype":"amount",
+                "selectors": [
+                    {
+                        "type": "parents",
+                        "selector": "label"
+                    }
+                ],
+                "operator":">",
+                "amount":"0",
+                "not":""
+            }
+        ]
+    };
+    fixtures.radioSmallerThan6Words = {
+        "description": "This label SHOULD not consist of more than 5 words. ",
+        "not": "",
+        "variants": [
+            {
+                "type":"wording",
+                "subtype":"amount",
+                "selectors": [
+                    {
+                        "type": "parents",
+                        "selector": "label"
+                    }
+                ],
+                "operator":"<=",
+                "amount":"5",
+                "not":""
+            }
+        ]
+    };
+    fixtures.radioSmallerThan6 = {
+        "description": "Amount must be smaller than 6. ",
+        "not": "",
+        "variants": [
+            {
+                "type":"structure",
+                "subtype":"amount",
+                "selectors": [
+                    {
+                        "type": "parents",
+                        "selector": ".radio"
+                    },{
+                        "type": "siblings",
+                        "selector": ".radio"
+                    }
+                ],
+                "operator":"<=",
+                "amount":"5",
+                "not":""
+            }
+        ]
+    };
     fixtures.radioButtons1 = $("<div id='mail_type'>" +
     "<div class='radio'>" +
     "<label><input type='radio' name='mail_type' id='mail_type_2' value='2'>For Tutors and Administrators only</label>" +
@@ -637,7 +697,7 @@ il.uiTests.fixtures = function(){
 
     fixtures.radioButtons2 = $("<div id='mail_type'>" +
     "<div class='radio'>" +
-        "<label><input type='radio' name='mail_type' id='mail_type_2' value='2'>For Tutors and Administrators only</label>" +
+        "<label><input type='radio' name='mail_type' id='mail_type_2' value='2'>For Tutors and Administrators only Test more than 5</label>" +
         "<div class='help-block'>Only administrators</div>" +
         "</div> " +
     "<div class='radio'>" +
@@ -646,6 +706,20 @@ il.uiTests.fixtures = function(){
     "</div></div>");
 
     fixtures.radioButtons3 = $("<div id='mail_type'>" +
+    "<div class='radio'>" +
+    "<label><input type='radio' name='mail_type' id='mail_type_2' value='2'></label>" +
+    "<div class='help-block'>Only administrators</div>" +
+    "</div> " +
+    "<div class='radio'>" +
+    "<label><input type='radio' type' id='mail_type_1' value='1' checked='checked'></label>" +
+    "<div class='help-block'>No Text Members, administrators and tutors can use the feature ‘Mail to Members’ in the ‘Members’ tab.</div> " +
+    "</div>" +
+    "<div class='radio'>" +
+    "<label><input type='radio' type' id='mail_type_1' value='1' checked='checked'>For all Participants</label>" +
+    "<div class='help-block'>Members, administrators and tutors can use the feature ‘Mail to Members’ in the ‘Members’ tab.</div> " +
+    "</div>" +
+    "</div>");
+    fixtures.radioButtons6 = $("<div id='mail_type'>" +
     "<div class='radio'>" +
     "<label><input type='radio' name='mail_type' id='mail_type_2' value='2'>For Tutors and Administrators only</label>" +
     "<div class='help-block'>Only administrators</div>" +
@@ -658,9 +732,20 @@ il.uiTests.fixtures = function(){
     "<label><input type='radio' type' id='mail_type_1' value='1' checked='checked'>For all Participants</label>" +
     "<div class='help-block'>Members, administrators and tutors can use the feature ‘Mail to Members’ in the ‘Members’ tab.</div> " +
     "</div>" +
+    "<div class='radio'>" +
+    "<label><input type='radio' type' id='mail_type_1' value='1' checked='checked'>For all Participants</label>" +
+    "<div class='help-block'>Members, administrators and tutors can use the feature ‘Mail to Members’ in the ‘Members’ tab.</div> " +
+    "</div>" +
+    "<div class='radio'>" +
+    "<label><input type='radio' type' id='mail_type_1' value='1' checked='checked'>For all Participants</label>" +
+    "<div class='help-block'>Members, administrators and tutors can use the feature ‘Mail to Members’ in the ‘Members’ tab.</div> " +
+    "</div>" +
+    "<div class='radio'>" +
+    "<label><input type='radio' type' id='mail_type_1' value='1' checked='checked'>For all Participants</label>" +
+    "<div class='help-block'>Members, administrators and tutors can use the feature ‘Mail to Members’ in the ‘Members’ tab.</div> " +
+    "</div>" +
     "</div>");
-
-        fixtures.checkboxPositive = {
+    fixtures.checkboxPositive = {
         "type":"wording",
         "subtype":"amount",
         "selectors":[{
@@ -680,12 +765,35 @@ il.uiTests.fixtures = function(){
         "not":"not"
     };
 
+    fixtures.checkboxDescriptionPlace = {
+        "type":"wording",
+        "subtype":"amount",
+        "selectors":[{
+            type: "parents",
+            selector: "label"
+        }],
+        "contentType": "content",
+        "operator":"=",
+        "amount":"0",
+        "not":""
+    };
+
     fixtures.radioCheckboxSectionOke = $("<div class='form-group' id='il_prop_cont_show_members'> " +
     "<label for='show_members' class='col-sm-3 control-label'>Show Members</label> " +
     "<div class='col-sm-9'> " +
     "<div class='checkbox'> " +
     "<label> " +
     "<input type='checkbox' id='show_members' name='show_members' value='1' checked='checked'>&nbsp;</label> " +
+    "</div><div class='help-block'>If activated...</div> " +
+    "</div> " +
+    "</div>");
+    fixtures.radioCheckboxSectionWrongDescriptionPlace = $("<div class='form-group' id='il_prop_cont_show_members'> " +
+    "<label for='show_members' class='col-sm-3 control-label'>Show Members</label> " +
+    "<div class='col-sm-9'> " +
+    "<div class='checkbox'> " +
+    "<label> " +
+    "<input type='checkbox' id='show_members' name='show_members' value='1' checked='checked'>&nbsp;Wrong Desription" +
+    "</label> " +
     "</div><div class='help-block'>If activated...</div> " +
     "</div> " +
     "</div>");
@@ -707,5 +815,63 @@ il.uiTests.fixtures = function(){
     "</div><div class='help-block'>If activated...</div> " +
     "</div> " +
     "</div>");
+
+    fixtures.equalLabelRadioGroup = {
+        "type":"wording",
+        "subtype":"compare",
+        "selectorsA":[{
+            type: "parents",
+            selector: "label"
+        }],
+        "selectorsB":[{
+            type: "parents",
+            selector: ".form-group"
+        },{
+            type: "children",
+            selector: "label"
+        }
+        ],
+        "contentTypeA": "content",
+        "contentTypeB": "content",
+        "not":"true"
+    };
+
+    fixtures.radioGroupLabel = $("<div class='form-group' id='il_prop_cont_mail_type'> " +
+    "<label for='mail_type' class='col-sm-3 control-label'>Mail to Members</label> " +
+    "<div class='col-sm-9'> " +
+    "<div id='mail_type'> " +
+    "<div class='radio'> " +
+    "<label><input type='radio'  name='mail_type' id='mail_type_2' value='2'>" +
+    "For Tutors and Administrators only</label> " +
+    "<div class='help-block'>Only administrators and tutors can use.</div> " +
+    "</div> " +
+    "<div class='radio'> " +
+    "<label><input type='radio'  name='mail_type' id='mail_type_1' value='1' checked='checked'>" +
+    "Mail to Members</label> " +
+    "<div class='help-block'>Members, administrators</div> " +
+    "</div> " +
+    "</div> " +
+    "</div> " +
+    "</div>");
+
+    fixtures.equalLabelRadioGroup = {
+        "type":"structure",
+        "subtype":"ordering",
+        "ordering":{
+            "selectors":[{
+                type: "parents",
+                selector: "label"
+            }],
+            "items":[{
+                "orderingVariant":{},
+
+                "optional":"true",
+                "repetitions":"-1",
+                "not":""
+            }]
+        },
+
+        "not":"true"
+    };
     return fixtures;
 }

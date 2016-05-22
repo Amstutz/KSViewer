@@ -12,10 +12,7 @@ describe("Helper CSS Suite", function() {
         });
 
         it("Stretch 0,0", function () {
-            console.log(il.uiTests.stretchRecht(fixtures.rect));
             expect(il.uiTests.stretchRecht(fixtures.rect)).not.toEqual(il.uiTests.stretchRecht(fixtures.rect,0,0));
-            console.log(il.uiTests.stretchRecht(fixtures.rect));
-
             expect(il.uiTests.stretchRecht(fixtures.rect,0,0)).not.toEqual({left: 0, top: 0, width: 100, height: 100});
             expect(il.uiTests.stretchRecht(fixtures.rect,0,0)).toEqual({left: 0, top: 0, width: 0, height: 0});
         });

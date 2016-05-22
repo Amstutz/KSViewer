@@ -34,7 +34,29 @@ describe("Content Suite", function() {
                 expect(il.uiTests.testVariant(fixtures.radioCheckboxSectionOke.find(":checkbox"),"",fixtures.checkboxPositive)).toBe(true);
                 expect(il.uiTests.testVariant(fixtures.radioCheckboxSectionNegation1.find(":checkbox"),"",fixtures.checkboxPositive)).toBe(false);
                 expect(il.uiTests.testVariant(fixtures.radioCheckboxSectionNegation2.find(":checkbox"),"",fixtures.checkboxPositive)).toBe(false);
+            });
+            it("Checkbox description place", function() {
+                expect(il.uiTests.testVariant(fixtures.radioCheckboxSectionOke.find(":checkbox"),"",fixtures.checkboxDescriptionPlace)).toBe(true);
+                expect(il.uiTests.testVariant(fixtures.radioCheckboxSectionWrongDescriptionPlace.find(":checkbox"),"",fixtures.checkboxDescriptionPlace)).toBe(false);
+                expect(il.uiTests.testVariant(fixtures.radioCheckboxSectionNegation1.find(":checkbox"),"",fixtures.checkboxDescriptionPlace)).toBe(true);
+                expect(il.uiTests.testVariant(fixtures.radioCheckboxSectionNegation2.find(":checkbox"),"",fixtures.checkboxDescriptionPlace)).toBe(true);
 
+            });
+            it("radio smaller than6", function() {
+                expect(il.uiTests.testRule(fixtures.radioButtons1.find(":radio").first(),"",fixtures.radioSmallerThan6Words)).toBe(true);
+                expect(il.uiTests.testRule(fixtures.radioButtons2.find(":radio").first(),"",fixtures.radioSmallerThan6Words)).toBe(false);
+                expect(il.uiTests.testRule(fixtures.radioButtons3.find(":radio").first(),"",fixtures.radioSmallerThan6Words)).toBe(true);
+
+            });
+
+            it("radio not 0", function() {
+                expect(il.uiTests.testRule(fixtures.radioButtons1.find(":radio").first(),"",fixtures.radioNot0Words)).toBe(true);
+                expect(il.uiTests.testRule(fixtures.radioButtons2.find(":radio").first(),"",fixtures.radioNot0Words)).toBe(true);
+                expect(il.uiTests.testRule(fixtures.radioButtons3.find(":radio").first(),"",fixtures.radioNot0Words)).toBe(false);
+            });
+            it("Equal Label Radio Group", function() {
+                expect(il.uiTests.testVariant(fixtures.radioGroupLabel.find(":radio").first(),"",fixtures.equalLabelRadioGroup)).toBe(true);
+                expect(il.uiTests.testVariant(fixtures.radioGroupLabel.find(":radio").get(1),"",fixtures.equalLabelRadioGroup)).toBe(false);
             });
         });
     });

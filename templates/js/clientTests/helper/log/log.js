@@ -27,7 +27,7 @@ il.uiTests.log = {
             level: 300
         },
         wording: {
-            level: 300
+            level: 0
         },
         compareValues: {
             level: 300
@@ -36,7 +36,7 @@ il.uiTests.log = {
             level:300
         },
         countWords: {
-            level: 0
+            level: 300
         },
         countRelatives: {
             level: 300

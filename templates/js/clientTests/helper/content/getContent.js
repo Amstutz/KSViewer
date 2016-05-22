@@ -20,6 +20,7 @@ il.uiTests.getContent = function(element, type, identifier){
             return getContentByAttribute(element, identifier);
         case "self":
         case "content":
+        default:
             return getOwnContent(element);
     }
 }
