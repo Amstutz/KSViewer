@@ -40,6 +40,83 @@ describe("Structure Suite", function() {
 
             });
         });
+        describe("Ordering", function() {
+            it("Regular", function() {
+                expect(il.uiTests.testVariant( fixtures.orderingStructure1,"",fixtures.orderingLabels )).toBe(true);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure2,"",fixtures.orderingLabels )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure3,"",fixtures.orderingLabels )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure4,"",fixtures.orderingLabels )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure5,"",fixtures.orderingLabels )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure6,"",fixtures.orderingLabels )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure7,"",fixtures.orderingLabels )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure8,"",fixtures.orderingLabels )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure9,"",fixtures.orderingLabels )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure10,"",fixtures.orderingLabels )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure11,"",fixtures.orderingLabels )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure12,"",fixtures.orderingLabels )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure13,"",fixtures.orderingLabels )).toBe(false);
+            });
+            it("Optional Elements", function() {
+                expect(il.uiTests.testVariant( fixtures.orderingStructure1,"",fixtures.orderingLabelsOptional )).toBe(true);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure2,"",fixtures.orderingLabelsOptional )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure3,"",fixtures.orderingLabelsOptional )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure4,"",fixtures.orderingLabelsOptional )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure5,"",fixtures.orderingLabelsOptional )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure6,"",fixtures.orderingLabelsOptional )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure7,"",fixtures.orderingLabelsOptional )).toBe(true);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure8,"",fixtures.orderingLabelsOptional )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure9,"",fixtures.orderingLabelsOptional )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure10,"",fixtures.orderingLabelsOptional )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure11,"",fixtures.orderingLabelsOptional )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure12,"",fixtures.orderingLabelsOptional )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure13,"",fixtures.orderingLabelsOptional )).toBe(false);
+            });
+            it("Optional Elements Repetition", function() {
+                expect(il.uiTests.testVariant( fixtures.orderingStructure1,"",fixtures.orderingLabelsRepetition )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure2,"",fixtures.orderingLabelsRepetition )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure3,"",fixtures.orderingLabelsRepetition )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure4,"",fixtures.orderingLabelsRepetition )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure5,"",fixtures.orderingLabelsRepetition )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure6,"",fixtures.orderingLabelsRepetition )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure7,"",fixtures.orderingLabelsRepetition )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure8,"",fixtures.orderingLabelsRepetition )).toBe(true);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure9,"",fixtures.orderingLabelsRepetition )).toBe(true);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure10,"",fixtures.orderingLabelsRepetition )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure11,"",fixtures.orderingLabelsRepetition )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure12,"",fixtures.orderingLabelsRepetition )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure13,"",fixtures.orderingLabelsRepetition )).toBe(false);
+            });
+            it("Optional Elements Repetition", function() {
+                expect(il.uiTests.testVariant( fixtures.orderingStructure1,"",fixtures.orderingLabelsOptionalRepetition )).toBe(true);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure2,"",fixtures.orderingLabelsOptionalRepetition )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure3,"",fixtures.orderingLabelsOptionalRepetition )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure4,"",fixtures.orderingLabelsOptionalRepetition )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure5,"",fixtures.orderingLabelsOptionalRepetition )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure6,"",fixtures.orderingLabelsOptionalRepetition )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure7,"",fixtures.orderingLabelsOptionalRepetition )).toBe(true);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure8,"",fixtures.orderingLabelsOptionalRepetition )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure9,"",fixtures.orderingLabelsOptionalRepetition )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure10,"",fixtures.orderingLabelsOptionalRepetition )).toBe(true);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure11,"",fixtures.orderingLabelsOptionalRepetition )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure12,"",fixtures.orderingLabelsOptionalRepetition )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure13,"",fixtures.orderingLabelsOptionalRepetition )).toBe(false);
+            });
+            it("Optional Elements Repetition", function() {
+                expect(il.uiTests.testVariant( fixtures.orderingStructure1,"",fixtures.orderingLabelsOptionalRepetitionEnd )).toBe(true);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure2,"",fixtures.orderingLabelsOptionalRepetitionEnd )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure3,"",fixtures.orderingLabelsOptionalRepetitionEnd )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure4,"",fixtures.orderingLabelsOptionalRepetitionEnd )).toBe(true);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure5,"",fixtures.orderingLabelsOptionalRepetitionEnd )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure6,"",fixtures.orderingLabelsOptionalRepetitionEnd )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure7,"",fixtures.orderingLabelsOptionalRepetitionEnd )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure8,"",fixtures.orderingLabelsOptionalRepetitionEnd )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure9,"",fixtures.orderingLabelsOptionalRepetitionEnd )).toBe(false);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure10,"",fixtures.orderingLabelsOptionalRepetitionEnd )).toBe(true);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure11,"",fixtures.orderingLabelsOptionalRepetitionEnd )).toBe(true);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure12,"",fixtures.orderingLabelsOptionalRepetitionEnd )).toBe(true);
+                expect(il.uiTests.testVariant( fixtures.orderingStructure13,"",fixtures.orderingLabelsOptionalRepetitionEnd )).toBe(true);
+            });
+        });
 
 
     });

@@ -18,6 +18,8 @@ include_once("class.ilKitchenSinkLessGUI.php");
 include_once("class.ilKitchenSinkIconsGUI.php");
 include_once("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/classes/Models/class.KitchenSinkSkin.php");
 include_once("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/classes/UI/Factories/class.KSFactory.php");
+include_once("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/classes/Models/classKitchenSinkCrawler.php");
+
 require_once "Services/UIComponent/Button/classes/class.ilLinkButton.php";
 
 /**
@@ -151,6 +153,10 @@ class ilKitchenSinkMainGUI
     }
 
     protected function entries(){
+
+        $crawler = new KitchenSinkCrawler();
+        $crawler->crawl();
+        /**
         $toolbar = new ilToolbarGUI();
         $reload_btn = ilLinkButton::getInstance();
         $reload_btn->setCaption('Refresh Entries Test',false);
@@ -160,7 +166,7 @@ class ilKitchenSinkMainGUI
         $this->tpl->setLeftNavContent($this->explorer->getHTML());
         $this->entryGUI = new ilKitchenSinkEntryGUI($this->explorer->getCurrentOpenedNode(), $this->explorer->getTree(),$this, $this->getUiFactory());
         $this->tpl->setContent($toolbar->getHTML().$this->entryGUI->renderEntry());
-        $this->tpl->show();
+        $this->tpl->show();**/
     }
 
     protected function reloadJson(){

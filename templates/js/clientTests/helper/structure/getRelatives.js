@@ -52,8 +52,6 @@ il.uiTests.getRelatives = function(element,type,selector){
     };
 
     switch(type){
-        case "self":
-            return getSelf(element,selector);
         case "siblings":
             return getSiblings(element,selector);
         case "prev":
@@ -75,8 +73,10 @@ il.uiTests.getRelatives = function(element,type,selector){
             return getBySelector(element,selector);
         case "root":
             return getRoot(element);
+        case "self":
+        default:
+            return getSelf(element,selector);
     }
-    return $(il.uiTests.wrapElement(element)).text().trim();
 }
 
 

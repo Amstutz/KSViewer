@@ -13,17 +13,10 @@ il.uiTests.fixtures = function(){
     fixtures.badge.numberRuleVariant = {
         "type":"wording",
         "subtype":"amount",
-        "selectors":[{
-            type: "self"
-        }],
-        "contentType": "content",
-        "operator":"=",
-        "amount":"1",
         "regex": {
             "term":"^(?!0)(\\d+)$",
             "modifier": "g"
         },
-        "not":""
     };
 
     fixtures.badge.glyphNeighbourVariant = {
@@ -854,24 +847,233 @@ il.uiTests.fixtures = function(){
     "</div> " +
     "</div>");
 
-    fixtures.equalLabelRadioGroup = {
+    fixtures.orderingLabels = {
         "type":"structure",
         "subtype":"ordering",
-        "ordering":{
-            "selectors":[{
-                type: "parents",
-                selector: "label"
-            }],
-            "items":[{
-                "orderingVariant":{},
 
-                "optional":"true",
-                "repetitions":"-1",
-                "not":""
-            }]
-        },
+        "selectors":[{
+            type: "children",
+            selector: "div"
+        }],
+        "items":[
+            {
+                "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "1"
+                }
+            },
+            {
+                "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "2"
+                }
+            },
+            {
+                "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "3"
+                }
+            },
+            {
+                "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "4"
+                }
+            }
+        ],
 
-        "not":"true"
+
+        "not":""
     };
+    fixtures.orderingLabelsOptional = {
+        "type":"structure",
+        "subtype":"ordering",
+
+        "selectors":[{
+            type: "children",
+            selector: "div"
+        }],
+        "items":[
+            {
+                "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "1"
+                }
+            },
+            {
+                "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "2"
+                }
+            },
+            {
+                "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "3"
+                },
+                "optional": true,
+            },
+            {
+                "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "4"
+                }
+            }
+        ],
+
+        "not":""
+    };
+    fixtures.orderingLabelsRepetition = {
+        "type":"structure",
+        "subtype":"ordering",
+
+        "selectors":[{
+            type: "children",
+            selector: "div"
+        }],
+        "items":[
+            {
+                "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "1"
+                },
+                "repetitions": 2
+            },
+            {
+                "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "2"
+                }
+            },
+            {
+                "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "3"
+                },
+                "optional": true
+            },
+            {
+                "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "4"
+                }
+            }
+        ],
+
+        "not":""
+    };
+    fixtures.orderingLabelsOptionalRepetition = {
+        "type":"structure",
+        "subtype":"ordering",
+
+        "selectors":[{
+            type: "children",
+            selector: "div"
+        }],
+        "items":[
+            {
+                "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "1"
+                }
+            },
+            {
+                "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "2"
+                }
+            },
+            {
+                "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "3"
+                },
+                "optional": true,
+                "repetitions": -1
+            },
+            {
+                "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "4"
+                }
+            }
+        ],
+
+        "not":""
+    };
+    fixtures.orderingLabelsOptionalRepetitionEnd = {
+        "type":"structure",
+        "subtype":"ordering",
+
+        "selectors":[{
+            type: "children",
+            selector: "div"
+        }],
+        "items":[
+            {
+                "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "1"
+                }
+            },
+            {
+                "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "2"
+                }
+            },
+            {
+                "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "3"
+                }
+            },
+            {
+                "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "improbable word and the end",
+                    "not":true
+                },
+                "optional": true,
+                "repetitions": -1
+            }
+        ],
+
+        "not":""
+    };
+    fixtures.orderingStructure1 = $("<div id='root'><span></span><div>1</div><div>2</div><div>3</div><div>4</div></div>");
+    fixtures.orderingStructure2 = $("<div id='root'><span></span><div>1</div><div>3</div><div>3</div><div>4</div></div>");
+    fixtures.orderingStructure3 = $("<div id='root'><span></span><div>1</div><div>2</div><div>2</div><div>4</div></div>");
+    fixtures.orderingStructure4 = $("<div id='root'><span></span><div>1</div><div>2</div><div>3</div></div>");
+    fixtures.orderingStructure5 = $("<div id='root'><span></span><div>1</div></div>");
+    fixtures.orderingStructure6 = $("<div id='root'><span></span><div>1</div><div>3</div><div>3</div><div>4</div><div>5</div></div>");
+    fixtures.orderingStructure7 = $("<div id='root'><span></span><div>1</div><div>2</div><div>4</div></div>");
+    fixtures.orderingStructure8 = $("<div id='root'><span></span><div>1</div><div>1</div><div>2</div><div>3</div><div>4</div></div>");
+    fixtures.orderingStructure9 = $("<div id='root'><span></span><div>1</div><div>1</div><div>2</div><div>4</div></div>");
+    fixtures.orderingStructure10 = $("<div id='root'><span></span><div>1</div><div>2</div><div>3</div><div>3</div><div>3</div><div>3</div><div>4</div></div>");
+    fixtures.orderingStructure11 = $("<div id='root'><span></span><div>1</div><div>2</div><div>3</div><div>4</div><div></div></div>");
+    fixtures.orderingStructure12 = $("<div id='root'><span></span><div>1</div><div>2</div><div>3</div><div>sdfsadf asdf sadf  sadf asdf</div></div>");
+    fixtures.orderingStructure13 = $("<div id='root'><span></span><div>1</div><div>2</div><div>3</div><div>sdfsadf asdf sadf  sadf asdf</div><div>sdfsadf asdf sadf  sadf asdf asdf</div></div>");
+
     return fixtures;
 }
