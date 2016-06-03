@@ -15,14 +15,14 @@ use ILIAS\UI\Implementation\Crawler\Entry as Entry;
 class ilKSDocumentationEntryGUI
 {
     /**
-     * @var KitchenSinkEntry
+     * @var Entry\ComponentEntry
      */
     protected $entry = null;
 
     /**
-     * @var KitchenSinkTree
+     * @var Entry\ComponentEntries
      */
-    protected $tree = null;
+    protected $entries = null;
 
     /**
      * @var ilCtrl $ctrl
@@ -30,7 +30,7 @@ class ilKSDocumentationEntryGUI
     protected $ctrl;
 
     /**
-     * @var ilKitchenSinkMainGUI
+     * @var ilKSDocumentationGUI
      */
     protected $parent;
 
@@ -76,91 +76,72 @@ class ilKSDocumentationEntryGUI
         $tpl->addCss("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/libs/highlight/styles/default.css");
         $tpl->addCss("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/templates/entry/css/entry.css");
 
-        $unordered = $this->f->listing()->unordered(
-            array(
-                $this->f->text()->standard("Point 1"),$this->f->text()->standard("Point 2"),$this->f->text()->standard("Point 3")
+
+        $description = $this->f->panel()->block("Description",
+            $this->f->listing()->descriptive(
+                array(
+                    "Purpose" => $this->entry->getDescription()->getProperty("purpose"),
+                    "Composition" => $this->entry->getDescription()->getProperty("composition"),
+                    "Effect" => $this->entry->getDescription()->getProperty("effect"),
+                    "Rivals" => $this->f->listing()->ordered(
+                        $this->entry->getDescription()->getProperty("rivals")
+                    )
+                )
             )
         );
-        $ordered = $this->f->listing()->ordered(
-            array(
-                $this->f->text()->standard("Point 1"),$this->f->text()->standard("Point 2"),$this->f->text()->standard("Point 3")
-            )
-        );
-        $descriptive = $this->f->listing()->descriptive(
-            array(
-                array($this->f->text()->standard("Description 1"),$this->f->text()->standard("Point 1")),
-                array($this->f->text()->standard("Description 2"),$this->f->text()->standard("Point 2")),
-                array($this->f->text()->standard("Description 3"),$this->f->text()->standard("Point 3"))
-            )
-        );
+        /**
+        ->withCard($this->f->card(
+            "Title", "Content",$this->f->image()->responsive("./templates/default/images/logo/ilias_logo_114x114.png", "Thumbnail Example"
+        )))**/
 
 
-        $html =
-            "Unordered: ".$this->r->render($unordered).
-            "Ordered: ".$this->r->render($ordered).
-            "Descriptive: ".$this->r->render($descriptive);
+        $rule_listings = array();
+        foreach($this->entry->getRulesAsArray() as $categoery => $category_rules){
+            $rule_listings[ucfirst($categoery)] = $this->f->listing()->ordered($category_rules);
+        }
 
-
-        $standardLink = $this->f->link("http://www.google.ch",$this->f->text()->standard("GOOGLE"));
-        $headingLink = $this->f->link("http://www.google.ch",$this->f->text()->heading("GOOGLE"));
-
-
-        $html .=
-            "Standard: ".$this->r->render($standardLink)."</br>".
-            "Heading: ".$this->r->render($headingLink)."</br>";
-
-
-        $image = $this->f->image()->responsive("./templates/default/images/logo/ilias_logo_114x114.png", "Thumbnail Example");
-
-        $card = $this->f->card("Title", "Content",$image);
-
-        $html .= "Test Thumbnail: ".$this->r->render($card)."</br>";
-
-        $orderedList = $this->f->listing()->ordered(array(
-                $this->f->text()->standard("Point 1"),$this->f->text()->standard("Point 2"),$this->f->text()->standard("Point 3")
-            )
+        $rules = $this->f->panel()->block("Rules",
+            $this->f->listing()->descriptive($rule_listings)
         );
 
+        $examples_snippets = array();
 
-        $card = $this->f->card("ILIAS", "Everybody loves ILIAS",
-            $this->f->image()->responsive("./templates/default/images/logo/ilias_logo_114x114.png", "Card Example")
-        );
+        if($this->entry->getExamples()){
+            foreach($this->entry->getExamples() as $name => $path){
+                include_once($path);
+                $examples_snippets[] = $this->f->text()->heading(ucfirst(str_replace("_"," ",$name)));
+                $examples_snippets[] = $this->f->generic($name());
+                $examples_snippets[] = $this->f->text()->code(str_replace("<?php\n","",file_get_contents ($path)));
+            }
 
-        $row = $this->f->grid()->row(
-            array(
-                $this->f->grid()->column(array($orderedList),10),
-                $this->f->grid()->column(array($card),2),
-            )
-        );
+        }
+
+        $examples = $this->f->panel()->block("Examples", $examples_snippets);
 
 
-        $blockPanel1 = $this->f->panel()->block("Title of Block 1",
-            array($row)
-        );
 
-        $blockPanel2 = $this->f->panel()->block("Title of Block 2",
-            array(
-                $this->f->listing()->descriptive(
-                    array(
-                        array($this->f->text()->standard("Description 1"),$this->f->text()->standard("Point 1")),
-                        array($this->f->text()->standard("Description 2"),$this->f->text()->standard("Point 2")),
-                        array($this->f->text()->standard("Description 3"),$this->f->text()->standard("Point 3"))
+
+
+
+        $this->entry->getExamples();
+
+        $relations = $this->f->panel()->block("Relations",
+            $this->f->listing()->descriptive(
+                array(
+                    "Parents" => $this->f->listing()->ordered(
+                        $this->entries->getParentsOfEntryTitles($this->entry->getId())
+                    ),
+                    "Descendants" => $this->f->listing()->unordered(
+                        $this->entries->getDescendantsOfEntryTitles($this->entry->getId())
                     )
                 )
             )
         );
 
-        $bulletin = $this->f->panel()->bulletin("Bulletin for the Win", array($blockPanel1,$blockPanel2));
-
-        $html .=  $this->r->render($bulletin);
-
-        return $html;
+        $bulletin = $this->f->panel()->bulletin($this->entry->getTitle(), array($description,$rules,$examples,$relations));
 
 
-
-
-        return $this->r->render($this->f->text()->heading("test"));
-
+        return $this->r->render($bulletin);
         /**
         $description_block = ilPanelGUI::getInstance();
         $description_block->setHeading($this->getEntry()->getTitle());
@@ -174,8 +155,8 @@ class ilKSDocumentationEntryGUI
             $this->getLessBlock().
             $this->getCodeBlock('html').
             $this->getCodeBlock('php')
-            //$this->getLogBlock()
-        );**/
+            //$this->getLogBlock()**/
+
     }
 
     /**
@@ -218,161 +199,11 @@ class ilKSDocumentationEntryGUI
         return $description_panel->getHTML();
     }
 
-    /**
-     * @return string
-     */
-    protected function getExampleBlock(){
-        if($this->getEntry()->getHtml()){
-            $example_block = ilPanelGUI::getInstance();
-            $example_block->setHeading('Example');
-            $example_block->setBody($this->getEntry()->getHtml());
-            $example_block->setHeadingStyle(ilPanelGUI::HEADING_STYLE_BLOCK);
-            $example_block->setPanelStyle(ilPanelGUI::PANEL_STYLE_SECONDARY);
-            return $example_block->getHTML();
-        }
-        return "";
-    }
-
-    /**
-     * @return string
-     */
-    protected function getRulesBlock(){
-        if($this->getEntry()->getRules()){
-            $rule_panel = ilPanelGUI::getInstance();
-            $rule_panel->setHeading("Rules");
-            $rule_panel->setHeadingStyle(ilPanelGUI::HEADING_STYLE_BLOCK);
-            $rule_panel->setPanelStyle(ilPanelGUI::PANEL_STYLE_SECONDARY);
-
-            $rules_categories = $this->getUiFactory()->listing()->description();
-            if(is_array($this->getEntry()->getRules())){
-                foreach($this->getEntry()->getRules() as $rule_category){
-                    if(is_array($rule_category->rules)){
-                        $rules = $this->getUiFactory()->listing()->ordered();
-                        foreach($rule_category->rules as $id => $rule){
-                            $rules->setElementByKey($id,$rule->description);
-                        }
-                        $rules_categories->setElementByKey($rule_category->id,$rules->to_html_string());
-                    }
-
-                }
-                $rule_panel->setBody($rules_categories->to_html_string());
-
-            }else{
-                $rule_panel->setBody("No rules defined");
-            }
-
-            return $rule_panel->getHTML();
-        }
-        return "";
-    }
-
-    protected function getRelationsBlock(){
-        $this->panel = ilPanelGUI::getInstance();
-        $this->panel->setHeading("Relations");
-        $this->panel->setHeadingStyle(ilPanelGUI::HEADING_STYLE_BLOCK);
-        $this->panel->setPanelStyle(ilPanelGUI::PANEL_STYLE_PRIMARY);
-
-        $this->panel->setBody($this->getUiFactory()->listing()->description()->setElements(array(
-            "Is A" => $this->getHtmlLinksFromEntryIds($this->getTree()->getParentsOfEntry($this->getEntry()->getId())),
-            "Children" => $this->getHtmlLinksFromEntryIds($this->getEntry()->getChildrenIds()),
-            "Must be used by" => $this->getHtmlLinksFromEntryIds($this->getEntry()->getMustBeUsedBy()),
-            "May be used by" => $this->getHtmlLinksFromEntryIds($this->getEntry()->getMayBeUsedBy()))
-        )->to_html_string());
-
-        return $this->panel->getHTML();
-    }
-
-    protected function getLessBlock(){
-        $this->panel = ilPanelGUI::getInstance();
-        $this->panel->setHeading("Less");
-        $this->panel->setHeadingStyle(ilPanelGUI::HEADING_STYLE_BLOCK);
-        $this->panel->setPanelStyle(ilPanelGUI::PANEL_STYLE_PRIMARY);
-
-        if($this->getEntry()->getLessVariables()){
-            $less_file = new KitchenSinkLessFile(KitchenSinkSkin::getDefaultLessVariablesFile());
-            $less_file->read();
-
-            $less_links = "";
-
-            foreach($this->getEntry()->getLessVariables() as $variable_name){
-                $variable = $less_file->getVariableByName($variable_name);
-                if($variable){
-                    $less_links .=  $this->getHtmlLinkForVariable($variable)."; ";
-                }else{
-                    $less_links .= $variable_name." (Not found in variables.less); ";
-                }
-
-            }
-        }
-        $this->panel->setBody($less_links);
-        return $this->panel->getHTML();
-    }
-
-    /**
-     * @return string
-     */
-    protected function getCodeBlock($type){
-
-        if($this->getEntry()->getHtml()){
-            $code_panel = ilPanelGUI::getInstance();
-            $code_panel->setHeading("Code ".$type);
-            $code_panel->setHeadingStyle(ilPanelGUI::HEADING_STYLE_BLOCK);
-            $code_panel->setPanelStyle(ilPanelGUI::PANEL_STYLE_SECONDARY);
-
-            $code_block = $this->getUiFactory()->codeBlock();
-            $code_block->setType($type);
-
-            if($type == 'html'){
-                $code_block->setCode(htmlentities($this->getEntry()->getHtml()));
-                $code_panel->setBody($code_block->to_html_string());
-            }if(false){
-                //$code_block->setCode(htmlentities($this->getEntry()->getPhp()));
-                if($this->testPHPExample()){
-                    $label = "<div class=\"label label-success\">Test Passed</div>";
-
-                    $code_panel->setBody($code_block->to_html_string().$label);
-
-                }else{
-                    $label = "<div class=\"label label-danger\">Test Failed</div>";
-                    //$failure_code_tpl = (new ilKitchenSinkPlugin())->getTemplate('entry/tpl.entry_code.html', true, true);
-                    //$failure_code_tpl->touchBlock("code");
-                    //$failure_code_tpl->setVariable("CODE",htmlentities($this->getEntry()->getPhpClassInstance()->render()));
-                    $code_panel->setBody($code_block->to_html_string().$label);//."<p>Failed PHP-Output: </p>".$failure_code_tpl->get());
-
-                }
-
-            }
-            return $code_panel->getHTML();
-        }
-
-    }
-
-    protected function testPHPExample(){
-        $output_php = preg_replace('/\s+/', '',$this->getEntry()->getPhpClassInstance()->render());
-        $output_html = preg_replace('/\s+/', '',$this->entry->getHtml());
-
-        if(strcmp($output_php, $output_html) === 0){
-            return true;
-        }
-        return false;
-    }
 
 
 
-    public function getLogBlock(){
 
-        $this->panel = ilPanelGUI::getInstance();
-        $this->panel->setHeading("Change Log");
-        $this->panel->setHeadingStyle(ilPanelGUI::HEADING_STYLE_BLOCK);
-        $this->panel->setPanelStyle(ilPanelGUI::PANEL_STYLE_PRIMARY);
-        $log_html = "";
-        foreach($this->entry->getLog() as $log_entry){
 
-            $log_html .= "<p>".$log_entry->author->date.": ".$log_entry->subject." by ".$log_entry->author->name."</p>";
-        }
-        $this->panel->setBody($log_html);
-        return $this->panel->getHTML();
-    }
 
     /**
      * @param KitchenSinkLessVariable $variable

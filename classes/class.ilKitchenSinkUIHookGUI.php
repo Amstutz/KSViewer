@@ -5,6 +5,7 @@
 include_once('./Services/UIComponent/classes/class.ilUIHookPluginGUI.php');
 include_once('./Services/UIComponent/Tabs/classes/class.ilTabsGUI.php');
 include_once("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/classes/Display/class.ilKitchenSinkMainGUI.php");
+include_once("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/classes/Display/class.ilKSDocumentationGUI.php");
 
 
 
@@ -97,7 +98,7 @@ class ilKitchenSinkUIHookGUI extends ilUIHookPluginGUI {
 **/
 
 
-                $tpl->addOnLoadCode("il.uiTests.setEntries(".json_encode(file_get_contents(ilKSDocumentationGUI::$KS_DATA_PATH)).");");
+                //$tpl->addOnLoadCode("il.uiTests.setEntries(".json_encode(file_get_contents(ilKSDocumentationGUI::$KS_DATA_PATH)).");");
                 $html = "";
                 $mode = ilUIHookPluginGUI::APPEND;
 
