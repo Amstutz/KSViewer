@@ -1,17 +1,14 @@
 <?php
 /* Copyright (c) 1998-2013 ILIAS open source, Extended GPL, see docs/LICENSE */
 
-include_once("./Services/UIComponent/Explorer2/classes/class.ilExplorerBaseGUI.php");
-include_once("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/classes/Models/class.KitchenSinkEntry.php");
-include_once("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/classes/Models/class.KitchenSinkTree.php");
-include_once("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/classes/class.ilKitchenSinkPlugin.php");
+include_once("Services/UIComponent/Explorer2/classes/class.ilExplorerBaseGUI.php");
 
-include_once("./Services/UIComponent/Panel/classes/class.ilPanelGUI.php");
+use ILIAS\UI\Implementation\Crawler\Entry as Entry;
 
 /**
  * Explorer example
  */
-class ilKitchenSinkEntryExplorerGUI extends ilExplorerBaseGUI
+class ilKSDocumentationExplorerGUI extends ilExplorerBaseGUI
 {
     /**
      * @var ilCtrl $ctrl
@@ -19,56 +16,57 @@ class ilKitchenSinkEntryExplorerGUI extends ilExplorerBaseGUI
     protected $ctrl;
 
     /**
+     *
+     */
+    protected $id = "ksDocumentationExplorer";
+
+    /**
      * @var string
      */
     protected $parentLink = "";
 
     /**
-     * @var KitchenSinkTree
+     * @var Entry\ComponentEntries
      */
-    protected $tree = null;
+    protected $entries = null;
 
     /**
      * @var string
      */
     protected $current_opened_node_id = "";
+
     /**
-     * ilKitchenSinkEntryExplorerGUI constructor.
-     * @param $a_expl_id
-     * @param ilKitchenSinkEntryGUI $a_parent_obj
+     * ilKSDocumentationExplorerGUI constructor.
+     * @param ilKitchenSinkMainGUI $a_parent_obj
      * @param $a_parent_cmd
+     * @param Entry\ComponentEntries $entries
+     * @param $current_opened_node_id
      */
-    public function __construct($a_expl_id, ilKitchenSinkMainGUI $a_parent_obj, $a_parent_cmd, $current_opened_node_id)
+    public function __construct(ilKitchenSinkMainGUI $a_parent_obj, $a_parent_cmd, Entry\ComponentEntries $entries, $current_opened_node_id)
     {
+
         global $ilCtrl;
         $this->ctrl = $ilCtrl;
-        parent::__construct($a_expl_id, $a_parent_obj, $a_parent_cmd);
+        parent::__construct($this->id, $a_parent_obj, $a_parent_cmd);
 
         $this->setParentLink($this->ctrl->getLinkTarget($this->parent_obj, $this->parent_cmd));
-        $data = json_decode(file_get_contents($a_parent_obj::KS_DATA_PATH."/".$a_parent_obj::KS_DATA_FILE));
 
-        if(!$data){
-            throw new ilKitchenSinkException(ilKitchenSinkException::PARSING_JSON_FAILED, $a_parent_obj::KS_DATA_PATH."/".$a_parent_obj::KS_DATA_FILE);
-        }
-        $this->setTree(new KitchenSinkTree());
-
-        foreach($data->uiComponent as $entry){
-            $this->getTree()->addEntry(new KitchenSinkEntry($entry));
-        }
+        $this->setEntries($entries);
 
         if(!$current_opened_node_id){
-            $this->setCurrentOpenedNodeId("root");
+            $this->setCurrentOpenedNodeId($this->getEntries()->getRootEntryId());
         }else{
             $this->setCurrentOpenedNodeId($current_opened_node_id);
         }
-        $this->openNodesRecursively($this->getCurrentOpenedNodeId());
 
+        $this->openNodesRecursively($this->getCurrentOpenedNodeId());
     }
 
     protected function openNodesRecursively($id){
         $this->setNodeOpen($id);
-        $parent_id = $this->getTree()->getEntryById($id)->getRelations()->isA;
-        if($parent_id != "root"){
+        $parent_id = $this->getEntries()->getEntryById($id)->getParent();
+
+        if($parent_id){
             $this->openNodesRecursively($parent_id);
         }
     }
@@ -79,41 +77,42 @@ class ilKitchenSinkEntryExplorerGUI extends ilExplorerBaseGUI
      */
     function getRootNode()
     {
-        return $this->getTree()->getRootEntry();
+        return $this->getEntries()->getRootEntry();
     }
 
     /**
      * @param $a_parent_node_id
-     * @return KitchenSinkEntry[]
+     * @return Entry\ComponentEntry[]
      */
     function getChildsOfNode($a_parent_node_id)
     {
 
-        $entry = $this->getTree()->getEntryById($a_parent_node_id);
+        $entry = $this->getEntries()->getEntryById($a_parent_node_id);
 
         /**
-         * @var KitchenSinkEntry[]
+         * @var Entry\ComponentEntry[]
          */
-        $childs = array();
-        foreach ($entry->getChildrenIds() as $child_id)
+        $children = array();
+        foreach ($entry->getChildren() as $child_id)
         {
-            $childs[$child_id] = $this->getTree()->getEntryById($child_id);
+            $children[$child_id] = $this->getEntries()->getEntryById($child_id);
         }
-        return $childs;
+        return $children;
     }
 
     /**
      * @param $a_entry_id
-     * @throws ilKitchenSinkException
+     * @return Entry\ComponentEntry
+     * @throws \ILIAS\UI\Implementation\Crawler\Exception\CrawlerException
      */
     function getNodeById($a_entry_id)
     {
-        return $this->getTree()->getEntryById($a_entry_id);
+        return $this->getEntries()->getEntryById($a_entry_id);
     }
 
     /**
-     * @param KitchenSinkEntry $entry
-     * @return KitchenSinkEntry
+     * @param mixed $entry
+     * @return Entry\ComponentEntry
      */
     function getNodeContent($entry)
     {
@@ -121,7 +120,7 @@ class ilKitchenSinkEntryExplorerGUI extends ilExplorerBaseGUI
     }
 
     /**
-     * @param KitchenSinkEntry $entry
+     * @param Entry\ComponentEntry $entry
      * @return string
      */
     function getNodeHref($entry)
@@ -130,7 +129,7 @@ class ilKitchenSinkEntryExplorerGUI extends ilExplorerBaseGUI
     }
 
     /**
-     * @param KitchenSinkEntry $entry
+     * @param Entry\ComponentEntry $entry
      * @return bool
      */
     function isNodeHighlighted($entry)
@@ -138,7 +137,7 @@ class ilKitchenSinkEntryExplorerGUI extends ilExplorerBaseGUI
         return $entry->getId() == $this->getCurrentOpenedNode()->getId();
     }
     /**
-     * @param KitchenSinkEntry $entry
+     * @param Entry\ComponentEntry $entry
      * @return mixed
      */
     function getNodeId($entry)
@@ -163,19 +162,19 @@ class ilKitchenSinkEntryExplorerGUI extends ilExplorerBaseGUI
     }
 
     /**
-     * @return KitchenSinkTree
+     * @return Entry\ComponentEntries
      */
-    public function getTree()
+    public function getEntries()
     {
-        return $this->tree;
+        return $this->entries;
     }
 
     /**
-     * @param KitchenSinkTree $tree
+     * @param Entry\ComponentEntries $entries
      */
-    public function setTree($tree)
+    public function setEntries($entries)
     {
-        $this->tree = $tree;
+        $this->entries = $entries;
     }
 
     /**
@@ -218,13 +217,11 @@ class ilKitchenSinkEntryExplorerGUI extends ilExplorerBaseGUI
     }
 
     /**
-     * @return KitchenSinkEntry
+     * @return Entry\ComponentEntry
      * @throws ilKitchenSinkException
      */
     public function getCurrentOpenedNode(){
-        return $this->getTree()->getEntryById($this->getCurrentOpenedNodeId());
+        return $this->getEntries()->getEntryById($this->getCurrentOpenedNodeId());
     }
 
 }
-
-?>

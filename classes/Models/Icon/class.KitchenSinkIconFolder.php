@@ -1,5 +1,5 @@
 <?php
-require_once("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/classes/Models/class.KitchenSinkIcon.php");
+require_once("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/classes/Models/Icon/class.KitchenSinkIcon.php");
 
 
 /***

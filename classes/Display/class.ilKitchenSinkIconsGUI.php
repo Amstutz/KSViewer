@@ -54,7 +54,7 @@ class ilKitchenSinkIconsGUI
      * @param KitchenSinkSkin $skin
      * @param \ILIAS\UI\Factory $ui_factory
      */
-    public function __construct(ilKitchenSinkMainGUI $parent, KitchenSinkSkin $skin, ILIAS\UI\Factory $ui_factory) {
+    public function __construct(ilKitchenSinkMainGUI $parent, KitchenSinkSkin $skin, $ui_factory) {
         /**
          * @var ilObjUser $ilUser
          */
@@ -65,7 +65,7 @@ class ilKitchenSinkIconsGUI
         $this->ctrl = $ilCtrl;
         $this->tpl = $tpl;
         $this->setSkin($skin);
-        $this->setUiFactory($ui_factory);
+        //$this->setUiFactory($ui_factory);
     }
 
 
@@ -136,7 +136,7 @@ class ilKitchenSinkIconsGUI
     public function renderIcons(){
         $this->initIconsForm();
         $this->getIconsValues();
-        return $this->form->getHtml().$this->renderIconsPreviews();
+        return $this->form->getHtml();//$this->renderIconsPreviews();
 
     }
 

@@ -155,7 +155,7 @@ class KitchenSinkEntry
             $this->setRelations($json->relations);
             $this->setLessVariables($json->lessVariables);
             $this->setLog($json->log);
-            if($json->html != ""){
+            if(true){
                 $this->setHtmlByPath($json->html);
             }
             if($json->php != ""){
@@ -464,8 +464,13 @@ class KitchenSinkEntry
      */
     public function setHtmlByPath($path)
     {
-        $path = ILIAS_ABSOLUTE_PATH."/Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/data/uiComponents/".$path;
-        $html = file_get_contents($path);
+        global $DIC;
+        $tpl = $DIC["tpl"];
+        $tpl->getStandardTemplate();
+        require_once("./libs/composer/vendor/autoload.php");
+        $path = ILIAS_ABSOLUTE_PATH."/src/UI/examples/Glyph/attachment_with_counters.php";
+        include_once($path);
+        $html = Glyph_attachment_with_counters();
         if(!$html){
             throw new ilKitchenSinkException(ilKitchenSinkException::INVALID_FILE_PATH, $path);
         }

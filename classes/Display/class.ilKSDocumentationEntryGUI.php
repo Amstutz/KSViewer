@@ -1,15 +1,18 @@
 <?php
 include_once("./Services/UIComponent/Panel/classes/class.ilPanelGUI.php");
-include_once("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/classes/Models/class.KitchenSinkLessFile.php");
+include_once("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/classes/Models/Less/class.KitchenSinkLessFile.php");
 include_once("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/classes/Models/class.KitchenSinkSkin.php");
 
 include_once ("Services/Form/classes/class.ilPropertyFormGUI.php");
+
+use ILIAS\UI\Implementation\Crawler\Entry as Entry;
+
 /**
  *
  * @author            Timon Amstutz <timon.amstutz@ilub.unibe.ch>
  * @version           $Id$*
  */
-class ilKitchenSinkEntryGUI
+class ilKSDocumentationEntryGUI
 {
     /**
      * @var KitchenSinkEntry
@@ -34,23 +37,30 @@ class ilKitchenSinkEntryGUI
     /**
      * @var ILIAS\UI\Factory
      */
-    protected $ui_factory = null;
+    protected $f = null;
 
     /**
-     * ilKitchenSinkEntryGUI constructor.
-     * @param KitchenSinkEntry $entry
-     * @param KitchenSinkTree $tree
-     * @param ilKitchenSinkMainGUI $parent
-     * @param \ILIAS\UI\Factory $ui_factory
+     * @var ILIAS\UI\Renderer
      */
-    public function __construct(KitchenSinkEntry $entry, KitchenSinkTree $tree, ilKitchenSinkMainGUI $parent, ILIAS\UI\Factory $ui_factory) {
-        global $ilCtrl;
+    protected $r = null;
+
+    /**
+     * ilKSDocumentationEntryGUI constructor.
+     * @param ilKSDocumentationGUI $parent
+     * @param Entry\ComponentEntry $entry
+     * @param Entry\ComponentEntries $entries
+     */
+    public function __construct(ilKSDocumentationGUI $parent, Entry\ComponentEntry $entry, Entry\ComponentEntries $entries) {
+        global $ilCtrl,$DIC;
+
+        $this->f = $DIC->ui()->factory();
+        $this->r = $DIC->ui()->renderer();
 
         $this->setEntry($entry);
-        $this->setTree($tree);
+        $this->setEntries($entries);
         $this->setParent($parent);
         $this->ctrl = $ilCtrl;
-        $this->setUiFactory($ui_factory);
+
     }
 
     /**
@@ -66,6 +76,92 @@ class ilKitchenSinkEntryGUI
         $tpl->addCss("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/libs/highlight/styles/default.css");
         $tpl->addCss("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/templates/entry/css/entry.css");
 
+        $unordered = $this->f->listing()->unordered(
+            array(
+                $this->f->text()->standard("Point 1"),$this->f->text()->standard("Point 2"),$this->f->text()->standard("Point 3")
+            )
+        );
+        $ordered = $this->f->listing()->ordered(
+            array(
+                $this->f->text()->standard("Point 1"),$this->f->text()->standard("Point 2"),$this->f->text()->standard("Point 3")
+            )
+        );
+        $descriptive = $this->f->listing()->descriptive(
+            array(
+                array($this->f->text()->standard("Description 1"),$this->f->text()->standard("Point 1")),
+                array($this->f->text()->standard("Description 2"),$this->f->text()->standard("Point 2")),
+                array($this->f->text()->standard("Description 3"),$this->f->text()->standard("Point 3"))
+            )
+        );
+
+
+        $html =
+            "Unordered: ".$this->r->render($unordered).
+            "Ordered: ".$this->r->render($ordered).
+            "Descriptive: ".$this->r->render($descriptive);
+
+
+        $standardLink = $this->f->link("http://www.google.ch",$this->f->text()->standard("GOOGLE"));
+        $headingLink = $this->f->link("http://www.google.ch",$this->f->text()->heading("GOOGLE"));
+
+
+        $html .=
+            "Standard: ".$this->r->render($standardLink)."</br>".
+            "Heading: ".$this->r->render($headingLink)."</br>";
+
+
+        $image = $this->f->image()->responsive("./templates/default/images/logo/ilias_logo_114x114.png", "Thumbnail Example");
+
+        $card = $this->f->card("Title", "Content",$image);
+
+        $html .= "Test Thumbnail: ".$this->r->render($card)."</br>";
+
+        $orderedList = $this->f->listing()->ordered(array(
+                $this->f->text()->standard("Point 1"),$this->f->text()->standard("Point 2"),$this->f->text()->standard("Point 3")
+            )
+        );
+
+
+        $card = $this->f->card("ILIAS", "Everybody loves ILIAS",
+            $this->f->image()->responsive("./templates/default/images/logo/ilias_logo_114x114.png", "Card Example")
+        );
+
+        $row = $this->f->grid()->row(
+            array(
+                $this->f->grid()->column(array($orderedList),10),
+                $this->f->grid()->column(array($card),2),
+            )
+        );
+
+
+        $blockPanel1 = $this->f->panel()->block("Title of Block 1",
+            array($row)
+        );
+
+        $blockPanel2 = $this->f->panel()->block("Title of Block 2",
+            array(
+                $this->f->listing()->descriptive(
+                    array(
+                        array($this->f->text()->standard("Description 1"),$this->f->text()->standard("Point 1")),
+                        array($this->f->text()->standard("Description 2"),$this->f->text()->standard("Point 2")),
+                        array($this->f->text()->standard("Description 3"),$this->f->text()->standard("Point 3"))
+                    )
+                )
+            )
+        );
+
+        $bulletin = $this->f->panel()->bulletin("Bulletin for the Win", array($blockPanel1,$blockPanel2));
+
+        $html .=  $this->r->render($bulletin);
+
+        return $html;
+
+
+
+
+        return $this->r->render($this->f->text()->heading("test"));
+
+        /**
         $description_block = ilPanelGUI::getInstance();
         $description_block->setHeading($this->getEntry()->getTitle());
         $description_block->setHeadingStyle(ilPanelGUI::HEADING_STYLE_SUBHEADING);
@@ -77,17 +173,15 @@ class ilKitchenSinkEntryGUI
             $this->getRelationsBlock().
             $this->getLessBlock().
             $this->getCodeBlock('html').
-            $this->getCodeBlock('php').
-            $this->getLogBlock()
-        );
-        return $description_block->getHTML();
+            $this->getCodeBlock('php')
+            //$this->getLogBlock()
+        );**/
     }
 
     /**
      * @return string
      */
     protected function getDescriptionBlock(){
-        $description_panel = ilPanelGUI::getInstance();
         $description_panel->setHeading('General');
         $description_panel->setHeadingStyle(ilPanelGUI::HEADING_STYLE_BLOCK);
         $description_panel->setPanelStyle(ilPanelGUI::PANEL_STYLE_SECONDARY);
@@ -180,8 +274,6 @@ class ilKitchenSinkEntryGUI
 
         $this->panel->setBody($this->getUiFactory()->listing()->description()->setElements(array(
             "Is A" => $this->getHtmlLinksFromEntryIds($this->getTree()->getParentsOfEntry($this->getEntry()->getId())),
-            "Must Use" => $this->getHtmlLinksFromEntryIds($this->getEntry()->getRelations()->mustUse),
-            "May Use" => $this->getHtmlLinksFromEntryIds($this->getEntry()->getRelations()->mayUse),
             "Children" => $this->getHtmlLinksFromEntryIds($this->getEntry()->getChildrenIds()),
             "Must be used by" => $this->getHtmlLinksFromEntryIds($this->getEntry()->getMustBeUsedBy()),
             "May be used by" => $this->getHtmlLinksFromEntryIds($this->getEntry()->getMayBeUsedBy()))
@@ -233,8 +325,8 @@ class ilKitchenSinkEntryGUI
             if($type == 'html'){
                 $code_block->setCode(htmlentities($this->getEntry()->getHtml()));
                 $code_panel->setBody($code_block->to_html_string());
-            }else{
-                $code_block->setCode(htmlentities($this->getEntry()->getPhp()));
+            }if(false){
+                //$code_block->setCode(htmlentities($this->getEntry()->getPhp()));
                 if($this->testPHPExample()){
                     $label = "<div class=\"label label-success\">Test Passed</div>";
 
@@ -317,7 +409,7 @@ class ilKitchenSinkEntryGUI
             ->to_html_string();
     }
     /**
-     * @return KitchenSinkEntry
+     * @return Entry\ComponentEntry
      */
     public function getEntry()
     {
@@ -325,27 +417,27 @@ class ilKitchenSinkEntryGUI
     }
 
     /**
-     * @param KitchenSinkEntry $entry
+     * @param Entry\ComponentEntry $entry
      */
-    public function setEntry($entry)
+    public function setEntry(Entry\ComponentEntry $entry)
     {
         $this->entry = $entry;
     }
 
     /**
-     * @return KitchenSinkTree
+     * @return Entry\ComponentEntries
      */
-    public function getTree()
+    public function getEntries()
     {
-        return $this->tree;
+        return $this->entries;
     }
 
     /**
-     * @param KitchenSinkTree $tree
+     * @param Entry\ComponentEntries $entries
      */
-    public function setTree($tree)
+    public function setEntries(Entry\ComponentEntries $entries)
     {
-        $this->tree = $tree;
+        $this->entries = $entries;
     }
 
     /**
@@ -363,24 +455,5 @@ class ilKitchenSinkEntryGUI
     {
         $this->parent = $parent;
     }
-
-    /**
-     * @return \ILIAS\UI\Factory
-     */
-    public function getUiFactory()
-    {
-        return $this->ui_factory;
-    }
-
-    /**
-     * @param \ILIAS\UI\Factory $ui_factory
-     */
-    public function setUiFactory($ui_factory)
-    {
-        $this->ui_factory = $ui_factory;
-    }
-
-
-
 }
 ?>

@@ -1,5 +1,5 @@
 {
-  "id": "Trigger Element",
+  "id": "triggerElement",
   "title": "Trigger Element",
   "type": "concrete",
   "phpClass": "none",

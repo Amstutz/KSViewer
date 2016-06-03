@@ -1,5 +1,4 @@
 <?php
-namespace ILIAS\UI;
 use ILIAS\UI\Listings\Factory as ListingFactory;
 use ILIAS\UI\CodeBlocks\CodeBlock as CodeBlock;
 use ILIAS\UI\GridRows\GridRow as GridRow;

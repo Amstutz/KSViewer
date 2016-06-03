@@ -1,0 +1,80 @@
+{
+  "id": "root",
+  "title": "KS-Entry",
+  "type": "",
+  "html": "root.html",
+  "php": "class.KitchenSinkExampleRoot.php",
+  "phpClass": "none",
+  "externalLibrary": {
+    "name": "Bootstrap Badge",
+    "href": "http://getbootstrap.com/components/#badges"
+  },
+  "lessVariables": ["brand-secondary", "font-size-base"],
+  "statusEntry": "Accepted by JF",
+  "statusImplementation": "To be implemented",
+  "description": {
+    "purpose": "what is to be done by this control",
+    "composition": "what happens if the control is operated",
+    "effect": "what happens if the control is operated",
+    "rivals": [
+        {
+          "name":"Rival 1",
+          "description": "What other controls are similar, what is their distinction"
+        }
+      ]
+    },
+  "background": "Relevant academic information",
+  "context": "The context states: where this control is used specifically (this list might not be complete) and how common is this control used",
+  "featureWikiReferences":[
+
+  ],
+  "rules":[
+    {
+      "id":"Usage",
+      "rules":  [
+        "Where and when an element is to be used or not"
+      ]},
+    {
+      "id":"Interaction",
+      "rules":  [
+        "How the interaction with this object takes place"
+      ]},
+    {
+      "id":"Wording",
+      "rules":  [
+        "How the wording of labels or captions must be"
+      ]},
+    {
+      "id":"Style",
+      "rules":  [
+        "How this element should look like"
+      ]},
+    {
+      "id":"Ordering",
+      "rules":  [
+        "How different elements of this instance are to be ordered"
+      ]},
+    {
+      "id":"Responsiveness",
+      "rules":  [
+        "How this element behaves on changing screen sizes"
+      ]},
+    {
+      "id":"Accessibility",
+      "rules":  [
+        "How this element is made accessible"
+      ]}
+  ],
+  "relations": {
+    "isA": "root",
+    "mustUse": [
+    ],
+    "mayUse":[
+    ]
+  },
+  "relations": {
+    "isA": "root",
+    "mustUse": [],
+    "mayUse":[]
+  }
+}
