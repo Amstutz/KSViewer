@@ -64,36 +64,52 @@ class ilKSDocumentationEntryGUI
     }
 
     /**
-     * @return html
+     * @return string
      */
     public function renderEntry(){
         /**
+         * Todo: Needs to go away here.
          * @var ilTemplate $tpl
          */
         global $tpl;
         $tpl->addJavaScript("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/libs/highlight/highlight.pack.js");
         $tpl->addOnLoadCode("hljs.initHighlightingOnLoad();");
         $tpl->addCss("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/libs/highlight/styles/default.css");
-        $tpl->addCss("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/templates/entry/css/entry.css");
 
+
+
+        $feature_wiki_links = array();
+        foreach($this->entry->getFeatureWikiReferences()as $href){
+            $feature_wiki_links[] = $this->f->link($href);
+        }
 
         $description = $this->f->panel()->block("Description",
-            $this->f->listing()->descriptive(
-                array(
-                    "Purpose" => $this->entry->getDescription()->getProperty("purpose"),
-                    "Composition" => $this->entry->getDescription()->getProperty("composition"),
-                    "Effect" => $this->entry->getDescription()->getProperty("effect"),
-                    "Rivals" => $this->f->listing()->ordered(
-                        $this->entry->getDescription()->getProperty("rivals")
+            array(
+                $this->f->listing()->descriptive(
+                    array(
+                        "Purpose" => $this->entry->getDescription()->getProperty("purpose"),
+                        "Composition" => $this->entry->getDescription()->getProperty("composition"),
+                        "Effect" => $this->entry->getDescription()->getProperty("effect"),
+                        "Rivals" => $this->f->listing()->ordered(
+                            $this->entry->getDescription()->getProperty("rivals")
+                        )
+                    )
+                ),
+                $this->f->listing()->descriptive(
+                    array(
+                        "Background" => $this->entry->getBackground(),
+                        "Feature Wiki References" => $this->f->listing()->ordered($feature_wiki_links)
                     )
                 )
             )
-        );
-        /**
-        ->withCard($this->f->card(
-            "Title", "Content",$this->f->image()->responsive("./templates/default/images/logo/ilias_logo_114x114.png", "Thumbnail Example"
-        )))**/
-
+        )->withCard($this->f->card(
+            "State", $this->f->listing()->descriptive(
+                array(
+                    "Entry" => $this->entry->getStatusEntry(),
+                    "Implementation" => $this->entry->getStatusImplementation()
+                )
+            )
+        ));
 
         $rule_listings = array();
         foreach($this->entry->getRulesAsArray() as $categoery => $category_rules){
@@ -106,23 +122,20 @@ class ilKSDocumentationEntryGUI
 
         $examples_snippets = array();
 
+
         if($this->entry->getExamples()){
+            $nr = 1;
             foreach($this->entry->getExamples() as $name => $path){
                 include_once($path);
-                $examples_snippets[] = $this->f->text()->heading(ucfirst(str_replace("_"," ",$name)));
-                $examples_snippets[] = $this->f->generic($name());
+                $examples_snippets[] = $this->f->text()->heading("Example ".$nr.": ".ucfirst(str_replace("_"," ",$name)));
+                $nr++;
+                $examples_snippets[] = $this->f->card("", $this->f->generic($name()));
                 $examples_snippets[] = $this->f->text()->code(str_replace("<?php\n","",file_get_contents ($path)));
             }
 
         }
 
         $examples = $this->f->panel()->block("Examples", $examples_snippets);
-
-
-
-
-
-
         $this->entry->getExamples();
 
         $relations = $this->f->panel()->block("Relations",
@@ -142,103 +155,9 @@ class ilKSDocumentationEntryGUI
 
 
         return $this->r->render($bulletin);
-        /**
-        $description_block = ilPanelGUI::getInstance();
-        $description_block->setHeading($this->getEntry()->getTitle());
-        $description_block->setHeadingStyle(ilPanelGUI::HEADING_STYLE_SUBHEADING);
-        $description_block->setPanelStyle(ilPanelGUI::PANEL_STYLE_PRIMARY);
-        $description_block->setBody(
-            $this->getDescriptionBlock().
-            $this->getExampleBlock().
-            $this->getRulesBlock().
-            $this->getRelationsBlock().
-            $this->getLessBlock().
-            $this->getCodeBlock('html').
-            $this->getCodeBlock('php')
-            //$this->getLogBlock()**/
-
-    }
-
-    /**
-     * @return string
-     */
-    protected function getDescriptionBlock(){
-        $description_panel->setHeading('General');
-        $description_panel->setHeadingStyle(ilPanelGUI::HEADING_STYLE_BLOCK);
-        $description_panel->setPanelStyle(ilPanelGUI::PANEL_STYLE_SECONDARY);
-
-
-        $description_panel->setBody($this->getUiFactory()->GridRow()
-            ->addColumn(
-                $this->getUiFactory()->listing()->description()->setElements(array(
-                    "Purpose"=>$this->getEntry()->getDescription()->getPurpose(),
-                    "Composition"=>$this->getEntry()->getDescription()->getComposition(),
-                    "Effect"=>$this->getEntry()->getDescription()->getEffect(),
-                    "Rival Elements"=>$this->getUiFactory()->listing()->ordered()
-                        ->setElements($this->getEntry()->getDescription()->getRivalElements())
-                        ->to_html_string()
-                ))->to_html_string()
-            ,8)
-            ->addColumn(
-                $this->getUiFactory()->Thumbnail()
-                ->setTitle("Status")
-                ->setType($this->getEntry()->getStatusType())
-                ->setContent(
-                    $this->getUiFactory()->listing()->description()->setElements(array(
-                        "Entry Status"=>$this->getEntry()->getStatusEntry(),
-                        "Implementation Status"=>$this->getEntry()->getStatusImplementation(),
-                        "Php Class"=>$this->getEntry()->getPhpClass(),
-                        "External Library"=>$this->getUiFactory()->Link()
-                            ->setCaption($this->getEntry()->getExternalClass()->name)
-                            ->setHref($this->getEntry()->getExternalClass()->href)
-                            ->to_html_string()
-                    ))->to_html_string()
-                )->to_html_string()
-            ,4)->to_html_string());
-
-        return $description_panel->getHTML();
     }
 
 
-
-
-
-
-
-    /**
-     * @param KitchenSinkLessVariable $variable
-     * @return string
-     */
-    protected function getHtmlLinkForVariable(KitchenSinkLessVariable $variable){
-        return $this->getUiFactory()->Link()
-            ->setHref($this->ctrl->getLinkTarget($this->getParent(),"less")."&variable=".$variable->getName()."#".$variable->getCategoryName())
-            ->setCaption( $variable->getName())
-            ->to_html_string();
-    }
-
-
-    /**
-     * @param array $ids
-     * @return string
-     */
-    protected function getHtmlLinksFromEntryIds(array $ids){
-        $html = "";
-        foreach($ids as $id){
-            $html .= $this->getHtmlLinkFromEntryId($id)."; ";
-        }
-        return $html;
-    }
-    /**
-     * @param $id
-     * @return stdClass
-     * @throws ilKitchenSinkException
-     */
-    protected function getHtmlLinkFromEntryId($id){
-        return $this->getUiFactory()->Link()
-            ->setHref($this->ctrl->getLinkTarget($this->getParent(),"entries")."&node_id=".$this->getTree()->getEntryById($id)->getId())
-            ->setCaption($this->getTree()->getEntryById($id)->getTitle())
-            ->to_html_string();
-    }
     /**
      * @return Entry\ComponentEntry
      */
