@@ -72,11 +72,10 @@ class ilKSDocumentationEntryGUI
          * @var ilTemplate $tpl
          */
         global $tpl;
+
         $tpl->addJavaScript("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/libs/highlight/highlight.pack.js");
         $tpl->addOnLoadCode("hljs.initHighlightingOnLoad();");
         $tpl->addCss("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/libs/highlight/styles/default.css");
-
-
 
         $feature_wiki_links = array();
         foreach($this->entry->getFeatureWikiReferences()as $href){
@@ -151,7 +150,9 @@ class ilKSDocumentationEntryGUI
             )
         );
 
-        $bulletin = $this->f->panel()->bulletin($this->entry->getTitle(), array($description,$rules,$examples,$relations));
+
+        $bulletin = $this->f->panel()->bulletin($this->entry->getTitle(),
+            array($description,$examples,$rules,$relations));
 
 
         return $this->r->render($bulletin);
