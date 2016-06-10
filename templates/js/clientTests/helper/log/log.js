@@ -9,10 +9,10 @@ il.uiTests.log = {
     },
     components: {
         uiTests: {
-            level: 3000
+            level: 0
         },
         testRule: {
-            level: 3000
+            level: 0
         },
         testVariant: {
             level: 100

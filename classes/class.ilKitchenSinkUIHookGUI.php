@@ -28,6 +28,7 @@ class ilKitchenSinkUIHookGUI extends ilUIHookPluginGUI {
         $this->ctrl = $ilCtrl;
     }
 
+    public static $data_path = "./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/data/checks";
 
     /**
      * @param       $a_comp
@@ -45,7 +46,7 @@ class ilKitchenSinkUIHookGUI extends ilUIHookPluginGUI {
             $hook = $a_comp . '/' . $a_part;
 
             if ($hook == '/template_get' AND $a_par['tpl_id'] == 'Services/MainMenu/tpl.main_menu.html') {
-                /**
+
                 $tpl->addJavaScript("Services/UIComponent/Modal/js/Modal.js",true);
 
                 $tpl->addJavaScript("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/templates/js/clientTests/uiTests.js",true);
@@ -95,10 +96,12 @@ class ilKitchenSinkUIHookGUI extends ilUIHookPluginGUI {
 
                 $tpl->addJavaScript("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/templates/js/clientTests/helper/log/log.js",true);
 
-**/
 
 
-                //$tpl->addOnLoadCode("il.uiTests.setEntries(".json_encode(file_get_contents(ilKSDocumentationGUI::$KS_DATA_PATH)).");");
+
+
+                $this->reloadJson(false);
+                $tpl->addOnLoadCode("il.uiTests.setEntries(".json_encode(file_get_contents(self::$data_path."checks.json")).");");
                 $html = "";
                 $mode = ilUIHookPluginGUI::APPEND;
 
@@ -111,6 +114,31 @@ class ilKitchenSinkUIHookGUI extends ilUIHookPluginGUI {
                 'html' => 'Testing'
             );
         }
+    }
+
+    protected function reloadJson($reload){
+        if($reload){
+            $directory = new RecursiveDirectoryIterator(self::$data_path);
+            $iterator = new RecursiveIteratorIterator($directory);
+            $regexIterator = new RegexIterator($iterator, '/^.+\.json$/i', RecursiveRegexIterator::GET_MATCH);
+
+            $pre = "{\"uiComponent\":[";
+            $post = "]}";
+            $data = $pre;
+            foreach ($regexIterator as $info) {
+                if($data != $pre){
+                    $data .= ",";
+                }
+                $data .= file_get_contents($info[0]);
+            }
+            $data .= $post;
+
+            file_put_contents(self::$data_path."checks.json", $data);
+
+            ilUtil::sendSuccess("All Entries have been reloaded",true);
+        }
+
+
     }
 
     /**

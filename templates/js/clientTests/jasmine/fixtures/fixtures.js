@@ -13,10 +13,29 @@ il.uiTests.fixtures = function(){
     fixtures.badge.numberRuleVariant = {
         "type":"wording",
         "subtype":"amount",
+        "selectors": [
+            {
+                "type": "parents",
+                "selector": "a"
+            },
+            {
+                "type": "children",
+                "selector": ".glyphicon"
+            }
+        ],
         "regex": {
             "term":"^(?!0)(\\d+)$",
             "modifier": "g"
         },
+        "ignore":{
+            "list": ["&nbsp;"],
+            "ignoreConjunctions":true,
+            "ignorePrepositions":true
+        },
+        "contentType": "content",
+        "operator":"=",
+        "amount":"1",
+        "not":""
     };
 
     fixtures.badge.glyphNeighbourVariant = {
@@ -462,6 +481,7 @@ il.uiTests.fixtures = function(){
             "ignoreConjunctions":true,
             "ignorePrepositions":true
         },
+        "contentType": "content",
         "not":""
     };
     fixtures.structure = $("" +

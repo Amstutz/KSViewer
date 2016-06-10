@@ -1,0 +1,100 @@
+{"uiComponent":[{
+  "id": "Trigger Element",
+  "selector": "a",
+  "rules":[{
+    "type": "accessabiltiy",
+    "description": "All Triggers MUST indicate hovering by a slight modification of the font color or background color.",
+    "level": "MUST",
+    "tests":[
+      {
+        "description": "Change on Hover",
+        "not": "",
+        "ignore": [[
+          {
+            "type": "parent",
+            "selector": "li.active"
+          }
+        ]],
+        "variants":
+        [
+          {
+            "type":"css",
+            "subtype":"coloring",
+            "selectorsA": [
+              {
+                "type": "self"
+              }
+            ],
+            "selectorsB": [
+              {
+                "type": "self"
+              }
+            ],
+            "coloring":[
+              {
+                "simulate":{
+                  "type": "hover",
+                  "point": "between"
+                },
+                "whichA": "color",
+                "whichB":"color",
+                "type": "isEqual",
+                "not": true
+              }
+            ],
+            "not":""
+          },
+          {
+            "type":"css",
+            "subtype":"coloring",
+            "selectorsA": [
+              {
+                "type": "self"
+              }
+            ],
+            "selectorsB": [
+              {
+                "type": "self"
+              }
+            ],
+            "coloring":[
+              {
+                "simulate":{
+                  "type": "hover",
+                  "point": "between"
+                },
+                "whichA": "background-color",
+                "whichB":"background-color",
+                "type": "isEqual",
+                "not": true
+              }
+            ],
+            "not":""
+          },
+          {
+            "type":"css",
+            "subtype":"properties",
+            "selectorsA": [
+              {
+                "type": "self"
+              }
+            ],
+            "properties":[
+              {
+                "simulate":{
+                  "type": "hover",
+                  "point": "before"
+                },
+                "whichA": "text-decoration",
+                "value": "underline",
+                "type": "isEqual"
+              }
+            ],
+            "not":""
+          }
+        ]
+      }
+    ]
+  }
+  ]
+}]}

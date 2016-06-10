@@ -47,8 +47,8 @@ if(ilback){
             this.currentDisplay.hide(this.processEntries);
         };
 
-        this.processTest = function(entry,ruleType,rule,test){
-            this.log.message(["this.processTest",entry,ruleType,rule,test],"uiTests",this.log.levels.debug);
+        this.processTest = function(entry,rule,test){
+            this.log.message(["this.processTest",entry,rule,test],"uiTests",this.log.levels.debug);
 
             var allPassed = true;
 
@@ -72,10 +72,10 @@ if(ilback){
                         self.elementIndex = elementIndex;
                         try{
                             passed = il.uiTests.testRule(this, entry.selector,test);
-                            var report = new ruleReport(this,entry,ruleType,rule,test,passed);
+                            var report = new ruleReport(this,entry,rule,test,passed);
                         }catch(e){
                             passed = false;
-                            var report = new ruleReport(this,entry,ruleType,rule,test,passed, e.message);
+                            var report = new ruleReport(this,entry,rule,test,passed, e.message);
                         }
 
 
@@ -104,42 +104,31 @@ if(ilback){
             if(self.entries.uiComponent.every(function(entry,entryIndex){
                     self.log.message(["this.processEntries Entry: "+entry.id,entry],"uiTests",self.log.levels.debug);
                     if(self.entryIndex < entryIndex && $.isArray(entry.rules)) {
-                        complete = entry.rules.every(function (ruleType,ruleTypeIndex) {
-                            if (self.ruleTypeIndex < ruleTypeIndex && $.isArray(ruleType.rules)) {
-                                complete = ruleType.rules.every(function (rule,ruleIndex) {
-                                    self.log.message(["this.processEntries Rule: "+rule.description,rule],"uiTests",self.log.levels.debug);
-                                    if (self.ruleIndex < ruleIndex && $.isArray(rule.tests)) {
-                                        var complete = rule.tests.every(function (test,testIndex) {
-                                            self.log.message(["this.processEntries Test: "+test.description,test],"uiTests",self.log.levels.debug);
-                                            if (self.testIndex < testIndex) {
-                                                if(!self.processTest(entry, ruleType, rule, test)){
-                                                    return false;
-                                                }
-                                                self.elementIndex = -1;
-                                            }
-                                            self.testIndex = testIndex;
-                                            return true;
-                                        });
-                                        if(complete){
-                                            self.ruleIndex = ruleIndex;
-
-                                            self.testIndex = -1;
-                                            return true;
+                        complete = entry.rules.every(function (rule,ruleIndex) {
+                            self.log.message(["this.processEntries Rule: "+rule.description,rule],"uiTests",self.log.levels.debug);
+                            if (self.ruleIndex < ruleIndex && $.isArray(rule.tests)) {
+                                var complete = rule.tests.every(function (test,testIndex) {
+                                    self.log.message(["this.processEntries Test: "+test.description,test],"uiTests",self.log.levels.debug);
+                                    if (self.testIndex < testIndex) {
+                                        if(!self.processTest(entry, rule, test)){
+                                            return false;
                                         }
-                                        return false;
+                                        self.elementIndex = -1;
                                     }
+                                    self.testIndex = testIndex;
                                     return true;
                                 });
                                 if(complete){
-                                    self.ruleTypeIndex = ruleTypeIndex;
-                                    self.ruleIndex = -1;
+                                    self.ruleIndex = ruleIndex;
+
+                                    self.testIndex = -1;
                                     return true;
                                 }
                                 return false;
-
                             }
                             return true;
                         });
+
                         if(complete){
                             self.entryIndex = entryIndex;
                             self.ruleTypeIndex = -1;
