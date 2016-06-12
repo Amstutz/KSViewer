@@ -8,9 +8,11 @@ il.uiTests.css = function(element,selector,testVariant){
 
 
 
+        console.log(rectB);
+
         return  positioning.every(function(position){
-            rectA = il.uiTests.stretchRecht(rectA,position.stretchHorizontalA,position.stretchVerticalA);
-            rectB = il.uiTests.stretchRecht(rectB,position.stretchHorizontalB,position.stretchVerticalB);
+            rectA = il.uiTests.stretchRect(rectA,position.stretchHorizontalA,position.stretchVerticalA);
+            rectB = il.uiTests.stretchRect(rectB,position.stretchHorizontalB,position.stretchVerticalB);
 
             var passed = il.uiTests.collisionCheck(position.type,rectA,rectB);
 
@@ -117,6 +119,7 @@ il.uiTests.css = function(element,selector,testVariant){
         });
     };
 
+    console.log("css");
     var elementA = il.uiTests.getRelativesByChain(element, testVariant.selectorsA);
     var elementB;
     if(testVariant.selectorsB){

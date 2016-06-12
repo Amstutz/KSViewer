@@ -1,0 +1,136 @@
+{
+  "title": "Button",
+  "selector": ".btn",
+  "rules": [
+    {
+      "description": "Buttons MUST NOT be used inside a Textual Paragraph.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type": "structure",
+              "subtype": "insideText",
+              "selectors": [{"type": "self"}],
+              "not": "true"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "The caption of a Button SHOULD contain no more than two words.",
+      "type": "Usage",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors":[{"type": "self"}],
+              "contentType": "content",
+              "operator":"<=",
+              "amount":"2",
+              "regex": "",
+              "not":""
+            }
+          ]
+        },
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors":[{"type": "self"}],
+              "contentType": "attribute",
+              "contentSelector": "value",
+              "operator":"<=",
+              "amount":"2",
+              "regex": "",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": " Every word except articles, coordinating conjunctions and prepositions MUST be capitalized.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors":[{
+                "type": "self"
+              }],
+              "contentType": "attribute",
+              "contentSelector": "value",
+              "operator":"=",
+              "amount":"0",
+              "regex": "( |\\(|^)[a-z][a-zA-Z0-9]*",
+              "ignore":{
+                "list": ["&nbsp;"],
+                "ignoreConjunctions":true,
+                "ignorePrepositions":true,
+                "ignoreArticles":true
+
+              },
+              "not":""
+            }
+          ]
+        },        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors":[{
+                "type": "self"
+              }],
+              "contentType": "content",
+              "operator":"=",
+              "amount":"0",
+              "regex": "( |\\(|^)[a-z][a-zA-Z0-9]*",
+              "ignore":{
+                "list": ["&nbsp;"],
+                "ignoreConjunctions":true,
+                "ignorePrepositions":true,
+                "ignoreArticles":true
+              },
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Buttons MUST NOT be used inside a Textual Paragraph.",
+      "type": "Composition",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type": "structure",
+              "subtype": "insideText",
+              "selectors": [{"type": "self"}],
+              "not": "true"
+            }
+          ]
+        }
+      ]
+    },
+
+  ]
+}
+

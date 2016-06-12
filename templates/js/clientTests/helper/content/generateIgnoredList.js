@@ -19,6 +19,8 @@ il.uiTests.generateIgnoredList = function(ignore){
 
     var conjunctions = [];
     var prepositions = [];
+    var articles = [];
+
     if(ignore.ignoreConjunctions){
         conjunctions = [
             "after","although","and", "as far as","as how","as if",
@@ -52,8 +54,14 @@ il.uiTests.generateIgnoredList = function(ignore){
             "since", "through", "throughout", "till",  "toward", "under", "underneath", "unlike", "until",  "upon", "up to","up","to",
             "with, within, without"];
     }
+    if(ignore.ignoreArticles) {
+        articles = ["a", "an", "few", "some", "the", "one"]
+    }
 
-    ignore.list = ignore.list.concat(conjunctions).concat(prepositions);
+
+
+
+    ignore.list = ignore.list.concat(conjunctions).concat(prepositions).concat(articles);
 
     for (var key in ignore.list) {
         if(typeof ignore.list[key] == "string"){

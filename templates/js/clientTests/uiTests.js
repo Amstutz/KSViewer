@@ -24,10 +24,10 @@ if(ilback){
 
             this.showDisplay = true;
             this.entryIndex = -1;
-            this.ruleTypeIndex = -1;
             this.ruleIndex = -1;
             this.testIndex= -1;
             this.elementIndex = -1;
+            this.skipping = ["Trigger Element","Counter","Status Counter","Novelty Counter"];
 
         }
 
@@ -102,13 +102,13 @@ if(ilback){
             self.log.message("this.processEntries","uiTests",self.log.levels.debug);
 
             if(self.entries.uiComponent.every(function(entry,entryIndex){
-                    self.log.message(["this.processEntries Entry: "+entry.id,entry],"uiTests",self.log.levels.debug);
-                    if(self.entryIndex < entryIndex && $.isArray(entry.rules)) {
+                    self.log.message(["this.processEntries Entry: "+entry.title,entry],"uiTests",self.log.levels.debug);
+                    if(self.entryIndex < entryIndex && $.inArray(entry.title,self.skipping) == -1 && $.isArray(entry.rules)) {
                         complete = entry.rules.every(function (rule,ruleIndex) {
                             self.log.message(["this.processEntries Rule: "+rule.description,rule],"uiTests",self.log.levels.debug);
                             if (self.ruleIndex < ruleIndex && $.isArray(rule.tests)) {
                                 var complete = rule.tests.every(function (test,testIndex) {
-                                    self.log.message(["this.processEntries Test: "+test.description,test],"uiTests",self.log.levels.debug);
+                                    self.log.message(["this.processEntries Test: ",test],"uiTests",self.log.levels.debug);
                                     if (self.testIndex < testIndex) {
                                         if(!self.processTest(entry, rule, test)){
                                             return false;
@@ -131,7 +131,7 @@ if(ilback){
 
                         if(complete){
                             self.entryIndex = entryIndex;
-                            self.ruleTypeIndex = -1;
+                            self.ruleIndex = -1;
                             return true;
                         }return false;
 

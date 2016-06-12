@@ -32,3 +32,5 @@
  *
 * ---
 * @return \ILIAS\UI\Factory
+ *
+ * **/

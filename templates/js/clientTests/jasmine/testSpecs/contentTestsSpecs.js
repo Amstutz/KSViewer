@@ -7,6 +7,10 @@ describe("Content Suite", function() {
 
     describe("Wording", function() {
         describe("Amount", function() {
+            it("Value Button", function() {
+                expect(il.uiTests.testVariant(fixtures.buttonWithValue,"",fixtures.buttonRules.wordingVariant1)).toBe(true);
+                expect(il.uiTests.testVariant(fixtures.buttonWithValue,"",fixtures.buttonRules.wordingVariant2)).toBe(false);
+            });
             it("By Selector", function() {
                 expect(il.uiTests.testVariant(fixtures.button2.wrappedHtml,fixtures.buttonEntry.selector,fixtures.buttonRules.variant1)).toBe(true);
                 expect(il.uiTests.testVariant(fixtures.button2.wrappedHtml,fixtures.buttonEntry.selector,fixtures.buttonRules.variant2)).toBe(false);

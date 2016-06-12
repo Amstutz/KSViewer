@@ -212,4 +212,28 @@ describe("Helper Content Suite", function() {
         });
     });
 
+    describe("Contains Text", function() {
+        it("Of Html", function() {
+            expect(il.uiTests.containsText(fixtures.button3.html )).toBe(false);
+            expect(il.uiTests.containsText(fixtures.structure)).toBe(false);
+            expect(il.uiTests.containsText(fixtures.structure.find("#element").siblings())).toBe(false);
+            expect(il.uiTests.containsText(fixtures.structure.find(".grandchildren"))).toBe(true);
+            expect(il.uiTests.containsText(fixtures.structure.find(".grandchildren").siblings())).toBe(true);
+            expect(il.uiTests.containsText(fixtures.structure.find("#grandchild11"))).toBe(true);
+
+            expect(il.uiTests.containsText(fixtures.structure.find(".siblings"))).toBe(false);
+
+        });
+        it("Button in Text", function() {
+            expect(il.uiTests.containsText(fixtures.buttonInText)).toBe(false);
+            expect(il.uiTests.containsText(fixtures.buttonInText.find(".btn"))).toBe(false);
+            expect(il.uiTests.containsText(fixtures.buttonInText.find(".btn").siblings())).toBe(false);
+            expect(il.uiTests.containsText(fixtures.buttonInText.find(".btn").parents("div"))).toBe(true);
+
+
+
+        });
+
+    });
+
 });

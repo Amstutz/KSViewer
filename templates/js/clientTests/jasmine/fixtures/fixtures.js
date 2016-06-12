@@ -15,23 +15,14 @@ il.uiTests.fixtures = function(){
         "subtype":"amount",
         "selectors": [
             {
-                "type": "parents",
-                "selector": "a"
-            },
-            {
-                "type": "children",
-                "selector": ".glyphicon"
+                "type": "self",
             }
         ],
         "regex": {
             "term":"^(?!0)(\\d+)$",
             "modifier": "g"
         },
-        "ignore":{
-            "list": ["&nbsp;"],
-            "ignoreConjunctions":true,
-            "ignorePrepositions":true
-        },
+
         "contentType": "content",
         "operator":"=",
         "amount":"1",
@@ -385,7 +376,37 @@ il.uiTests.fixtures = function(){
     fixtures.button2.html = $("<button type='button' class='btn btn-sm btn-primary dropdown-toggle' data-toggle='dropdown' data-container='body' id='ilAdvSelListAnchorText_asl'><span>&nbsp;Add New Item&nbsp;</span> <span class='caret'></span></button>");
     fixtures.button2.wrappedHtml = $("<div><button type='button' class='btn btn-sm btn-primary dropdown-toggle' data-toggle='dropdown' data-container='body' id='ilAdvSelListAnchorText_asl'><span>&nbsp;Add New Item&nbsp;</span> <span class='caret'></span></button></div>");
 
+    fixtures.buttonWithValue = $("<input class='btn btn-default' value='Change this Item'>");
     fixtures.buttonRules = {};
+
+    fixtures.buttonRules.wordingVariant1 = {
+        "type":"wording",
+        "subtype":"amount",
+        "selectors":[{
+            type: "self"
+        }],
+        "contentType": "content",
+        "operator":"<=",
+        "amount":"2",
+        "regex": "",
+        "not":""
+    };
+
+    fixtures.buttonRules.wordingVariant2 = {
+        "type":"wording",
+        "subtype":"amount",
+        "selectors":[{
+            type: "self"
+        }],
+        "contentType": "attribute",
+        "contentSelector": "value",
+        "operator":"<=",
+        "amount":"2",
+        "regex": "",
+        "not":""
+    };
+
+
     fixtures.buttonRules.variant1 = {
         "type":"wording",
         "subtype":"amount",
@@ -481,7 +502,6 @@ il.uiTests.fixtures = function(){
             "ignoreConjunctions":true,
             "ignorePrepositions":true
         },
-        "contentType": "content",
         "not":""
     };
     fixtures.structure = $("" +
@@ -1094,6 +1114,11 @@ il.uiTests.fixtures = function(){
     fixtures.orderingStructure11 = $("<div id='root'><span></span><div>1</div><div>2</div><div>3</div><div>4</div><div></div></div>");
     fixtures.orderingStructure12 = $("<div id='root'><span></span><div>1</div><div>2</div><div>3</div><div>sdfsadf asdf sadf  sadf asdf</div></div>");
     fixtures.orderingStructure13 = $("<div id='root'><span></span><div>1</div><div>2</div><div>3</div><div>sdfsadf asdf sadf  sadf asdf</div><div>sdfsadf asdf sadf  sadf asdf asdf</div></div>");
+
+
+
+
+    fixtures.buttonInText = $("<div id='root'><div>1 sdfsadf asdf sadf  sadf asdf <input class='btn btn-default btn-primary' type='submit' name='cmd[start]'></div></div>");
 
     return fixtures;
 }

@@ -1,13 +1,451 @@
 {"uiComponent":[{
-  "id": "Trigger Element",
+  "title": "Counter",
+  "selector": ".badge",
+  "rules": [
+    {
+      "description": "A Counter MUST only be used in combination with a glyph.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type": "structure",
+              "subtype": "amount",
+              "selectors": [
+                {
+                  "type": "parents",
+                  "selector": "a"
+                },
+                {
+                  "type": "children",
+                  "selector": ".glyphicon"
+                }
+              ],
+              "operator": "=",
+              "amount": "1",
+              "not": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "A Counter MUST contain exactly one number greater than zero and no other characters.",
+      "level": "MUST",
+      "type": "Composition",
+      "tests": [
+        {
+          "description": "Only Numbers",
+          "not": "",
+          "variants": [
+            {
+              "type": "wording",
+              "subtype": "amount",
+              "selectorType": "selector",
+              "selector": ".badge",
+              "operator": "=",
+              "amount": "1",
+              "regex": {
+                "term": "^(?!0)(\\d+)$",
+                "modifier": "g"
+              },
+              "not": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+,{
+  "title": "Novelty Counter",
+  "selector": "a span span:first-child .badge, a > span.badge",
+  "rules": [
+    {
+      "description": "The Novelty Counter MUST be displayed on the top right of the Glyph it accompanies.",
+      "type": "Style",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"css",
+              "subtype":"positioning",
+              "selectorsA": [
+                {
+                  "type": "self"
+                }
+              ],
+              "selectorsB": [
+                {
+                  "type": "parents",
+                  "selector": "a"
+                },
+                {
+                  "type": "children",
+                  "selector": ".glyphicon"
+                }
+              ],
+              "positioning":[
+                {
+                  "type": "collide"
+                },
+                {
+                  "type": "isAbove"
+                },
+                {
+                  "type": "isLeft",
+                  "not": "true"
+                }
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "The Novelty Counter SHOULD have an obtrusive background color such as red or orange.",
+      "level": "MUST",
+      "type": "Composition",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"css",
+              "subtype":"coloring",
+              "selectorsA": [
+                {
+                  "type": "self"
+                }
+              ],
+              "coloring":[
+                {
+                  "whichA": "background-color",
+                  "type": "isGrey",
+                  "not": "true"
+                },
+                {
+                  "whichA": "background-color",
+                  "type": "isRedDominant",
+                  "not": ""
+                }
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+
+
+
+,{
+  "title": "Status Counter",
+  "selector": "a > span > span:nth-child(2) .badge",
+  "rules": [
+    {
+      "description": "The Status Counter MUST be displayed on the lower right of the item it accompanies.",
+      "type": "Style",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"css",
+              "subtype":"positioning",
+              "selectorsA": [
+                {
+                  "type": "self"
+                }
+              ],
+              "selectorsB": [
+                {
+                  "type": "parents",
+                  "selector": "a"
+                },
+                {
+                  "type": "children",
+                  "selector": ".glyphicon"
+                }
+              ],
+              "positioning":[
+                {
+                  "type": "collide"
+                },
+                {
+                  "type": "isAbove",
+                  "not": "true"
+                },
+                {
+                  "type": "isLeft",
+                  "not": "true"
+                }
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "The Status Counter SHOULD have an non-obtrusive background color such as grey.",
+      "level": "MUST",
+      "type": "Composition",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"css",
+              "subtype":"coloring",
+              "selectorsA": [
+                {
+                  "type": "self"
+                }
+              ],
+              "coloring":[
+                {
+                  "whichA": "background-color",
+                  "type": "isGrey"
+                }
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+},{
+  "title": "Button",
+  "selector": ".btn",
+  "rules": [
+    {
+      "description": "Buttons MUST NOT be used inside a Textual Paragraph.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type": "structure",
+              "subtype": "insideText",
+              "selectors": [{"type": "self"}],
+              "not": "true"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "The caption of a Button SHOULD contain no more than two words.",
+      "type": "Usage",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors":[{"type": "self"}],
+              "contentType": "content",
+              "operator":"<=",
+              "amount":"2",
+              "regex": "",
+              "not":""
+            }
+          ]
+        },
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors":[{"type": "self"}],
+              "contentType": "attribute",
+              "contentSelector": "value",
+              "operator":"<=",
+              "amount":"2",
+              "regex": "",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": " Every word except articles, coordinating conjunctions and prepositions MUST be capitalized.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors":[{
+                "type": "self"
+              }],
+              "contentType": "attribute",
+              "contentSelector": "value",
+              "operator":"=",
+              "amount":"0",
+              "regex": "( |\\(|^)[a-z][a-zA-Z0-9]*",
+              "ignore":{
+                "list": ["&nbsp;"],
+                "ignoreConjunctions":true,
+                "ignorePrepositions":true,
+                "ignoreArticles":true
+
+              },
+              "not":""
+            }
+          ]
+        },        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors":[{
+                "type": "self"
+              }],
+              "contentType": "content",
+              "operator":"=",
+              "amount":"0",
+              "regex": "( |\\(|^)[a-z][a-zA-Z0-9]*",
+              "ignore":{
+                "list": ["&nbsp;"],
+                "ignoreConjunctions":true,
+                "ignorePrepositions":true,
+                "ignoreArticles":true
+              },
+              "not":""
+            }
+          ]
+        }
+      ]
+    }
+
+  ]
+}
+
+,{
+  "title": "Trigger Element",
   "selector": "a",
-  "rules":[{
-    "type": "accessabiltiy",
-    "description": "All Triggers MUST indicate hovering by a slight modification of the font color or background color.",
+  "rules":[
+    {
+      "description": "The interaction triggered by the Trigger Element MUST be fired if the ‘Return’-Key is clicked while the element is focused.",
+      "type": "Accessibility",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"accessibility",
+              "subtype":"focusable",
+              "selectors": [
+                {
+                  "type": "self"
+                }
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+
+
+
+
+    {
+      "description": "All Trigger Elements visible in a view MUST be accessible by keyboard by using the ‘Tab’-Key.",
+      "type": "Accessibility",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"accessibility",
+              "subtype":"tabbable",
+              "selectors": [
+                {
+                  "type": "self"
+                }
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+
+
+
+
+
+    {
+      "description": "All active Triggers MUST indicate hovering by displaying the cursor as pointer (hand).",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "ignore": [[
+            {
+              "type": "parent",
+              "selector": "li.active"
+            }
+          ]],
+          "variants": [
+            {
+              "type":"css",
+              "subtype":"properties",
+              "selectorsA": [
+                {
+                  "type": "self"
+                }
+              ],
+              "properties":[
+                {
+                  "simulate":{
+                    "type": "hover",
+                    "point": "before"
+                  },
+                  "whichA": "cursor",
+                  "value":"pointer",
+                  "type": "isEqual"
+                }
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+    "type": "style",
+    "description": " All Trigger Elements MUST slightly modify font color, underline or background color on-hovering.",
     "level": "MUST",
     "tests":[
       {
-        "description": "Change on Hover",
         "not": "",
         "ignore": [[
           {
@@ -20,16 +458,8 @@
           {
             "type":"css",
             "subtype":"coloring",
-            "selectorsA": [
-              {
-                "type": "self"
-              }
-            ],
-            "selectorsB": [
-              {
-                "type": "self"
-              }
-            ],
+            "selectorsA": [{"type": "self"}],
+            "selectorsB": [{"type": "self"}],
             "coloring":[
               {
                 "simulate":{
@@ -47,16 +477,8 @@
           {
             "type":"css",
             "subtype":"coloring",
-            "selectorsA": [
-              {
-                "type": "self"
-              }
-            ],
-            "selectorsB": [
-              {
-                "type": "self"
-              }
-            ],
+            "selectorsA": [{"type": "self"}],
+            "selectorsB": [{"type": "self"}],
             "coloring":[
               {
                 "simulate":{
@@ -96,5 +518,6 @@
       }
     ]
   }
+
   ]
 }]}

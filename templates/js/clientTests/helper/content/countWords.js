@@ -21,6 +21,7 @@ il.uiTests.countWords = function(text, regex, ignore){
         if(!text.split(/\s+/g)){
             return 0;
         }
+
         return text.split(/\s+/g).length;
     }
 

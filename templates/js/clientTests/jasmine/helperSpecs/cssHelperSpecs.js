@@ -12,27 +12,27 @@ describe("Helper CSS Suite", function() {
         });
 
         it("Stretch 0,0", function () {
-            expect(il.uiTests.stretchRecht(fixtures.rect)).not.toEqual(il.uiTests.stretchRecht(fixtures.rect,0,0));
-            expect(il.uiTests.stretchRecht(fixtures.rect,0,0)).not.toEqual({left: 0, top: 0, width: 100, height: 100});
-            expect(il.uiTests.stretchRecht(fixtures.rect,0,0)).toEqual({left: 0, top: 0, width: 0, height: 0});
+            expect(il.uiTests.stretchRect(fixtures.rect)).not.toEqual(il.uiTests.stretchRect(fixtures.rect,0,0));
+            expect(il.uiTests.stretchRect(fixtures.rect,0,0)).not.toEqual({left: 0, top: 0, width: 100, height: 100});
+            expect(il.uiTests.stretchRect(fixtures.rect,0,0)).toEqual({left: 0, top: 0, width: 0, height: 0});
         });
 
         it("Stretch 1,1", function () {
-            expect(il.uiTests.stretchRecht(fixtures.rect)).toEqual({left: 0, top: 0, width: 100, height: 100});
-            expect(il.uiTests.stretchRecht(fixtures.rect, 1)).toEqual({left: 0, top: 0, width: 100, height: 100});
-            expect(il.uiTests.stretchRecht(fixtures.rect,1,1)).toEqual({left: 0, top: 0, width: 100, height: 100});
-            expect(il.uiTests.stretchRecht(fixtures.rect,"1","1")).toEqual({left: 0, top: 0, width: 100, height: 100});
+            expect(il.uiTests.stretchRect(fixtures.rect)).toEqual({left: 0, top: 0, width: 100, height: 100});
+            expect(il.uiTests.stretchRect(fixtures.rect, 1)).toEqual({left: 0, top: 0, width: 100, height: 100});
+            expect(il.uiTests.stretchRect(fixtures.rect,1,1)).toEqual({left: 0, top: 0, width: 100, height: 100});
+            expect(il.uiTests.stretchRect(fixtures.rect,"1","1")).toEqual({left: 0, top: 0, width: 100, height: 100});
         });
         it("Stretch positive", function () {
-            expect(il.uiTests.stretchRecht(fixtures.rect,0.5,0.5)).toEqual({left: 0, top: 0, width: 50, height: 50});
-            expect(il.uiTests.stretchRecht(fixtures.rect,2,2)).toEqual({left: 0, top: 0, width: 200, height: 200});
-            expect(il.uiTests.stretchRecht(fixtures.rect,2,0.5)).toEqual({left: 0, top: 0, width: 200, height: 50});
-            expect(il.uiTests.stretchRecht(fixtures.rect,0.5,2)).toEqual({left: 0, top: 0, width: 50, height: 200});
+            expect(il.uiTests.stretchRect(fixtures.rect,0.5,0.5)).toEqual({left: 0, top: 0, width: 50, height: 50});
+            expect(il.uiTests.stretchRect(fixtures.rect,2,2)).toEqual({left: 0, top: 0, width: 200, height: 200});
+            expect(il.uiTests.stretchRect(fixtures.rect,2,0.5)).toEqual({left: 0, top: 0, width: 200, height: 50});
+            expect(il.uiTests.stretchRect(fixtures.rect,0.5,2)).toEqual({left: 0, top: 0, width: 50, height: 200});
         });
         it("Stretch negative", function () {
-            expect(il.uiTests.stretchRecht(fixtures.rect,-1,-1)).toEqual({left: -100, top: -100, width: 100, height: 100});
-            expect(il.uiTests.stretchRecht(fixtures.rect,-0.5,0.5)).toEqual({left: -50, top: 0, width: 50, height: 50});
-            expect(il.uiTests.stretchRecht(fixtures.rect,2,-2)).toEqual({left: 0, top: -200, width: 200, height: 200});
+            expect(il.uiTests.stretchRect(fixtures.rect,-1,-1)).toEqual({left: -100, top: -100, width: 100, height: 100});
+            expect(il.uiTests.stretchRect(fixtures.rect,-0.5,0.5)).toEqual({left: -50, top: 0, width: 50, height: 50});
+            expect(il.uiTests.stretchRect(fixtures.rect,2,-2)).toEqual({left: 0, top: -200, width: 200, height: 200});
         });
 
     });

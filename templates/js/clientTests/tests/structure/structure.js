@@ -110,12 +110,19 @@ il.uiTests.structure = function(element,selector,testVariant){
         return il.uiTests.compareValues(operator,nrElements,amount,true);
     };
 
+    this.insideText = function(element, selectors){
+        var $elements = il.uiTests.getRelativesByChain(element, selectors);
+        return il.uiTests.containsText($elements.parent())
+
+    };
 
     switch(testVariant.subtype){
         case "amount":
             return this.amount(element, testVariant.selectors, testVariant.operator,testVariant.amount);
         case "ordering":
             return this.ordering(element, testVariant.selectors, testVariant.items);
+        case "insideText":
+            return this.insideText(element, testVariant.selectors);
     }
 }
 

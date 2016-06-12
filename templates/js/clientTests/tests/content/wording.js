@@ -8,14 +8,16 @@ il.uiTests.wording = function(element,selector,testVariant){
 
         var content = il.uiTests.getContent(element,contentType,contentSelector);
         if(content == undefined){
-            throw new Error("Invalid wording content amount.")
+            content = "";
         }
+        var nrWords;
         if( content == ""){
-            return false;
+            nrWords =0;
+        }else{
+            var text = il.uiTests.getText(content);
+            nrWords = il.uiTests.countWords(text, regex,ignore);
         }
-        //content = il.uiTests.contentSanitize(content);
-        var text = il.uiTests.getText(content);
-        var nrWords = il.uiTests.countWords(text, regex,ignore);
+
 
         il.uiTests.log.message(["wording content",content],"wording",this.log.levels.debug);
         il.uiTests.log.message(["wording text",text],"wording",this.log.levels.debug);

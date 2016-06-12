@@ -1,0 +1,62 @@
+{
+  "title": "Counter",
+  "selector": ".badge",
+  "rules": [
+    {
+      "description": "A Counter MUST only be used in combination with a glyph.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type": "structure",
+              "subtype": "amount",
+              "selectors": [
+                {
+                  "type": "parents",
+                  "selector": "a"
+                },
+                {
+                  "type": "children",
+                  "selector": ".glyphicon"
+                }
+              ],
+              "operator": "=",
+              "amount": "1",
+              "not": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "A Counter MUST contain exactly one number greater than zero and no other characters.",
+      "level": "MUST",
+      "type": "Composition",
+      "tests": [
+        {
+          "description": "Only Numbers",
+          "not": "",
+          "variants": [
+            {
+              "type": "wording",
+              "subtype": "amount",
+              "selectorType": "selector",
+              "selector": ".badge",
+              "operator": "=",
+              "amount": "1",
+              "regex": {
+                "term": "^(?!0)(\\d+)$",
+                "modifier": "g"
+              },
+              "not": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+

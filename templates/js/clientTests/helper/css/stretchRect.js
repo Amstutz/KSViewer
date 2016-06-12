@@ -1,4 +1,4 @@
-il.uiTests.stretchRecht = function(rect,ratioWidth,ratioHeight){
+il.uiTests.stretchRect = function(rect,ratioWidth,ratioHeight){
     var newRect = {};
     if(ratioHeight === undefined){
         ratioHeight = 1;

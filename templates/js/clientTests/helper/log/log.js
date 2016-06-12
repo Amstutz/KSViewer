@@ -9,13 +9,13 @@ il.uiTests.log = {
     },
     components: {
         uiTests: {
-            level: 0
+            level: 3000
         },
         testRule: {
-            level: 0
+            level: 300
         },
         testVariant: {
-            level: 100
+            level: 200
         },
         reportsDisplay: {
             level: 300
@@ -36,13 +36,13 @@ il.uiTests.log = {
             level:300
         },
         countWords: {
-            level: 300
+            level: 0
         },
         countRelatives: {
             level: 300
         },
         structure: {
-            level: 3000
+            level: 0
         },
         collisionCheck: {
             level: 300

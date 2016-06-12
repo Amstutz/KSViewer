@@ -1,13 +1,105 @@
 {
-  "id": "Trigger Element",
+  "title": "Trigger Element",
   "selector": "a",
-  "rules":[{
-    "type": "accessabiltiy",
-    "description": "All Triggers MUST indicate hovering by a slight modification of the font color or background color.",
+  "rules":[
+    {
+      "description": "The interaction triggered by the Trigger Element MUST be fired if the ‘Return’-Key is clicked while the element is focused.",
+      "type": "Accessibility",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"accessibility",
+              "subtype":"focusable",
+              "selectors": [
+                {
+                  "type": "self"
+                }
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+
+
+
+
+    {
+      "description": "All Trigger Elements visible in a view MUST be accessible by keyboard by using the ‘Tab’-Key.",
+      "type": "Accessibility",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"accessibility",
+              "subtype":"tabbable",
+              "selectors": [
+                {
+                  "type": "self"
+                }
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+
+
+
+
+
+    {
+      "description": "All active Triggers MUST indicate hovering by displaying the cursor as pointer (hand).",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "ignore": [[
+            {
+              "type": "parent",
+              "selector": "li.active"
+            }
+          ]],
+          "variants": [
+            {
+              "type":"css",
+              "subtype":"properties",
+              "selectorsA": [
+                {
+                  "type": "self"
+                }
+              ],
+              "properties":[
+                {
+                  "simulate":{
+                    "type": "hover",
+                    "point": "before"
+                  },
+                  "whichA": "cursor",
+                  "value":"pointer",
+                  "type": "isEqual"
+                }
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+    "type": "style",
+    "description": " All Trigger Elements MUST slightly modify font color, underline or background color on-hovering.",
     "level": "MUST",
     "tests":[
       {
-        "description": "Change on Hover",
         "not": "",
         "ignore": [[
           {
@@ -20,16 +112,8 @@
           {
             "type":"css",
             "subtype":"coloring",
-            "selectorsA": [
-              {
-                "type": "self"
-              }
-            ],
-            "selectorsB": [
-              {
-                "type": "self"
-              }
-            ],
+            "selectorsA": [{"type": "self"}],
+            "selectorsB": [{"type": "self"}],
             "coloring":[
               {
                 "simulate":{
@@ -47,16 +131,8 @@
           {
             "type":"css",
             "subtype":"coloring",
-            "selectorsA": [
-              {
-                "type": "self"
-              }
-            ],
-            "selectorsB": [
-              {
-                "type": "self"
-              }
-            ],
+            "selectorsA": [{"type": "self"}],
+            "selectorsB": [{"type": "self"}],
             "coloring":[
               {
                 "simulate":{
@@ -96,5 +172,6 @@
       }
     ]
   }
+
   ]
 }

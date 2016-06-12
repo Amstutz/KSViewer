@@ -1,0 +1,88 @@
+{
+  "title": "Novelty Counter",
+  "selector": "a span span:first-child .badge, a > span.badge",
+  "rules": [
+    {
+      "description": "The Novelty Counter MUST be displayed on the top right of the Glyph it accompanies.",
+      "type": "Style",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"css",
+              "subtype":"positioning",
+              "selectorsA": [
+                {
+                  "type": "self"
+                }
+              ],
+              "selectorsB": [
+                {
+                  "type": "parents",
+                  "selector": "a"
+                },
+                {
+                  "type": "children",
+                  "selector": ".glyphicon"
+                }
+              ],
+              "positioning":[
+                {
+                  "type": "collide"
+                },
+                {
+                  "type": "isAbove"
+                },
+                {
+                  "type": "isLeft",
+                  "not": "true"
+                }
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "The Novelty Counter SHOULD have an obtrusive background color such as red or orange.",
+      "level": "MUST",
+      "type": "Composition",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"css",
+              "subtype":"coloring",
+              "selectorsA": [
+                {
+                  "type": "self"
+                }
+              ],
+              "coloring":[
+                {
+                  "whichA": "background-color",
+                  "type": "isGrey",
+                  "not": "true"
+                },
+                {
+                  "whichA": "background-color",
+                  "type": "isRedDominant",
+                  "not": ""
+                }
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+
+
+

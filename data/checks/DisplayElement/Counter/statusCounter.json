@@ -1,0 +1,79 @@
+{
+  "title": "Status Counter",
+  "selector": "a > span > span:nth-child(2) .badge",
+  "rules": [
+    {
+      "description": "The Status Counter MUST be displayed on the lower right of the item it accompanies.",
+      "type": "Style",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"css",
+              "subtype":"positioning",
+              "selectorsA": [
+                {
+                  "type": "self"
+                }
+              ],
+              "selectorsB": [
+                {
+                  "type": "parents",
+                  "selector": "a"
+                },
+                {
+                  "type": "children",
+                  "selector": ".glyphicon"
+                }
+              ],
+              "positioning":[
+                {
+                  "type": "collide"
+                },
+                {
+                  "type": "isAbove",
+                  "not": "true"
+                },
+                {
+                  "type": "isLeft",
+                  "not": "true"
+                }
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "The Status Counter SHOULD have an non-obtrusive background color such as grey.",
+      "level": "MUST",
+      "type": "Composition",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"css",
+              "subtype":"coloring",
+              "selectorsA": [
+                {
+                  "type": "self"
+                }
+              ],
+              "coloring":[
+                {
+                  "whichA": "background-color",
+                  "type": "isGrey"
+                }
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
