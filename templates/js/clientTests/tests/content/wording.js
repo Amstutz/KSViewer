@@ -27,7 +27,7 @@ il.uiTests.wording = function(element,selector,testVariant){
         if(!operator){
             operator = "=";
         }
-        if(!amount){
+        if(amount  === undefined){
             amount = 1;
         }
         return il.uiTests.compareValues(operator,nrWords,amount,true);

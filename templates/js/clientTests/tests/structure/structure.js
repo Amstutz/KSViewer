@@ -59,6 +59,7 @@ il.uiTests.structure = function(element,selector,testVariant){
                 }
 
             }else{
+                console.log();
                 passed = il.uiTests.testVariant(orderingElement,"",currentItem.variant);
                 console.log(currentItem.variant,passed);
 
@@ -99,14 +100,19 @@ il.uiTests.structure = function(element,selector,testVariant){
 
         var nrElements = il.uiTests.countRelatives(element, selectors);
 
+        if(!nrElements){
+            nrElements = 0;
+        }
         if(!operator){
             operator = "=";
         }
-        if(!amount){
+        if(amount === undefined){
             amount = 1;
         }
         il.uiTests.log.message(["structure.amount comparable",operator,nrElements,amount],"structure",this.log.levels.debug);
 
+        console.log(nrElements);
+        console.log(operator,nrElements,amount);
         return il.uiTests.compareValues(operator,nrElements,amount,true);
     };
 

@@ -113,8 +113,8 @@
       ]
     },
     {
-      "description": "Buttons MUST NOT be used inside a Textual Paragraph.",
-      "type": "Composition",
+      "description": " If Text and Glyphs are used alongside as caption for a Button the Glyph MUST be displayed on the left side.",
+      "type": "Style",
       "level": "MUST",
       "tests": [
         {
@@ -122,15 +122,165 @@
           "variants": [
             {
               "type": "structure",
-              "subtype": "insideText",
-              "selectors": [{"type": "self"}],
-              "not": "true"
+              "subtype": "amount",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": ".glyphicon"
+                }
+              ],
+              "amount":0,
+              "operator":"=",
+              "not": ""
+            },
+            {
+              "type":"structure",
+              "subtype":"ordering",
+              "selectors":[{
+                "type": "children"
+              }],
+              "items":[
+                {
+                  "variant": {
+                    "type": "structure",
+                    "subtype": "amount",
+                    "selectors": [
+                      {
+                        "type": "self",
+                        "selector": ".glyphicon"
+                      }
+                    ],
+                    "amount": 1,
+                    "operator": "=",
+                    "not": ""
+                  }
+                },
+                {
+                  "variant": {
+                    "type": "true"
+                  },
+                  "optional": true,
+                  "repetitions": -1
+                }
+              ],
+
+              "not":""
             }
           ]
         }
       ]
     },
+    {
+      "description": "If Text and a Caret are used alongside as caption for a Button the Caret MUST be displayed on the right side.",
+      "type": "Style",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type": "structure",
+              "subtype": "amount",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": ".caret"
+                }
+              ],
+              "amount":0,
+              "operator":"=",
+              "not": ""
+            },
+            {
+              "type":"structure",
+              "subtype":"ordering",
+              "selectors":[{
+                "type": "children"
+              }],
+              "items":[
+                {
+                  "variant": {
+                    "type": "true"
+                  },
+                  "optional": true,
+                  "repetitions": -1
+                },
+                {
+                  "variant": {
+                    "type": "structure",
+                    "subtype": "amount",
+                    "selectors": [
+                      {
+                        "type": "self",
+                        "selector": ".caret"
+                      }
+                    ],
+                    "amount": 1,
+                    "operator": "=",
+                    "not": ""
+                  }
+                }
+              ],
 
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "All glyph-only buttons MUST have aria-labels.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type": "structure",
+              "subtype": "amount",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": ".glyphicon"
+                }
+              ],
+              "amount":0,
+              "operator":"=",
+              "not": ""
+            },
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors":[{"type": "self"}],
+              "contentType": "content",
+              "operator":">",
+              "amount":"0",
+              "regex": "",
+              "not":""
+            },
+            {
+              "type":"accessibility",
+              "subtype":"ariaLabeled",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": ".glyphicon"
+                }
+              ],
+              "not":""
+            },
+            {
+              "type":"accessibility",
+              "subtype":"ariaLabeled",
+              "selectors": [{"type": "self"}
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    }
   ]
 }
 

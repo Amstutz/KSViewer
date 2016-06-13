@@ -958,7 +958,7 @@ il.uiTests.fixtures = function(){
                     "subtype": "amount",
                     "regex": "3"
                 },
-                "optional": true,
+                "optional": true
             },
             {
                 "variant": {
@@ -1114,8 +1114,20 @@ il.uiTests.fixtures = function(){
     fixtures.orderingStructure11 = $("<div id='root'><span></span><div>1</div><div>2</div><div>3</div><div>4</div><div></div></div>");
     fixtures.orderingStructure12 = $("<div id='root'><span></span><div>1</div><div>2</div><div>3</div><div>sdfsadf asdf sadf  sadf asdf</div></div>");
     fixtures.orderingStructure13 = $("<div id='root'><span></span><div>1</div><div>2</div><div>3</div><div>sdfsadf asdf sadf  sadf asdf</div><div>sdfsadf asdf sadf  sadf asdf asdf</div></div>");
-
-
+    fixtures.structure0Amount=
+    {
+        "type": "structure",
+        "subtype": "amount",
+        "selectors": [
+        {
+            "type": "children",
+            "selector": ".glyphicon"
+        }
+    ],
+        "amount":0,
+        "operator":"=",
+        "not": ""
+    };
 
 
     fixtures.buttonInText = $("<div id='root'><div>1 sdfsadf asdf sadf  sadf asdf <input class='btn btn-default btn-primary' type='submit' name='cmd[start]'></div></div>");

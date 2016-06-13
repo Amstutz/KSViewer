@@ -339,12 +339,283 @@
           ]
         }
       ]
-    }
+    },
+    {
+      "description": " If Text and Glyphs are used alongside as caption for a Button the Glyph MUST be displayed on the left side.",
+      "type": "Style",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type": "structure",
+              "subtype": "amount",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": ".glyphicon"
+                }
+              ],
+              "amount":0,
+              "operator":"=",
+              "not": ""
+            },
+            {
+              "type":"structure",
+              "subtype":"ordering",
+              "selectors":[{
+                "type": "children"
+              }],
+              "items":[
+                {
+                  "variant": {
+                    "type": "structure",
+                    "subtype": "amount",
+                    "selectors": [
+                      {
+                        "type": "self",
+                        "selector": ".glyphicon"
+                      }
+                    ],
+                    "amount": 1,
+                    "operator": "=",
+                    "not": ""
+                  }
+                },
+                {
+                  "variant": {
+                    "type": "true"
+                  },
+                  "optional": true,
+                  "repetitions": -1
+                }
+              ],
 
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "If Text and a Caret are used alongside as caption for a Button the Caret MUST be displayed on the right side.",
+      "type": "Style",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type": "structure",
+              "subtype": "amount",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": ".caret"
+                }
+              ],
+              "amount":0,
+              "operator":"=",
+              "not": ""
+            },
+            {
+              "type":"structure",
+              "subtype":"ordering",
+              "selectors":[{
+                "type": "children"
+              }],
+              "items":[
+                {
+                  "variant": {
+                    "type": "true"
+                  },
+                  "optional": true,
+                  "repetitions": -1
+                },
+                {
+                  "variant": {
+                    "type": "structure",
+                    "subtype": "amount",
+                    "selectors": [
+                      {
+                        "type": "self",
+                        "selector": ".caret"
+                      }
+                    ],
+                    "amount": 1,
+                    "operator": "=",
+                    "not": ""
+                  }
+                }
+              ],
+
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "All glyph-only buttons MUST have aria-labels.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type": "structure",
+              "subtype": "amount",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": ".glyphicon"
+                }
+              ],
+              "amount":0,
+              "operator":"=",
+              "not": ""
+            },
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors":[{"type": "self"}],
+              "contentType": "content",
+              "operator":">",
+              "amount":"0",
+              "regex": "",
+              "not":""
+            },
+            {
+              "type":"accessibility",
+              "subtype":"ariaLabeled",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": ".glyphicon"
+                }
+              ],
+              "not":""
+            },
+            {
+              "type":"accessibility",
+              "subtype":"ariaLabeled",
+              "selectors": [{"type": "self"}
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    }
   ]
 }
 
 ,{
+  "title": "Close Button",
+  "selector": ".close",
+  "rules": [
+    {
+      "description": "The Close Button MUST always be positioned in the top right of a collection.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"css",
+              "subtype":"positioning",
+
+              "selectorsA": [
+                {
+                  "type": "self"
+                }
+              ],
+              "selectorsB": [
+                {
+                  "type": "parents",
+                  "selector": ".modal-dialog"
+                }
+              ],
+              "positioning":[
+                {
+                  "type": "isContained"
+                },
+                {
+                  "type": "collideHorizontal",
+                  "stretchHorizontalB": 0.8,
+                  "not": true
+                },
+                {
+                  "type": "collideVertical",
+                  "stretchVerticalB": 0.2
+                }
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "The functionality of the close button MUST be indicated for screen readers by an aria-label.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"accessibility",
+              "subtype":"ariaLabeled",
+              "selectors": [{"type": "self"}
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+
+,
+{
+  "title": "Primary Button",
+  "selector": ".btn-primary",
+  "rules": [
+    {
+      "description": "There MUST only be one Primary Button per page in ILIAS.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "root"
+                },{
+                  "type": "find",
+                  "selector": ".btn-primary"
+                }
+              ],
+              "operator":"<=",
+              "amount":"1",
+              "not":""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+},{
   "title": "Trigger Element",
   "selector": "a",
   "rules":[

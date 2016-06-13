@@ -27,7 +27,7 @@ if(ilback){
             this.ruleIndex = -1;
             this.testIndex= -1;
             this.elementIndex = -1;
-            this.skipping = ["Trigger Element","Counter","Status Counter","Novelty Counter"];
+            this.skipping = ["Trigger Element","Counter","Status Counter","Novelty Counter","Button"];
 
         }
 

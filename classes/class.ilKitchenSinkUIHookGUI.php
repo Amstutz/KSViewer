@@ -71,6 +71,8 @@ class ilKitchenSinkUIHookGUI extends ilUIHookPluginGUI {
                 $tpl->addJavaScript("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/templates/js/clientTests/helper/structure/getRelatives.js",true);
                 $tpl->addJavaScript("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/templates/js/clientTests/helper/structure/getRelativesByChain.js",true);
                 $tpl->addJavaScript("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/templates/js/clientTests/helper/structure/getSelector.js",true);
+                $tpl->addJavaScript("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/templates/js/clientTests/helper/structure/checkAttribute.js",true);
+
 
                 $tpl->addJavaScript("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/templates/js/clientTests/helper/css/checkVisible.js",true);
                 $tpl->addJavaScript("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/templates/js/clientTests/helper/css/getRect.js",true);
@@ -86,6 +88,7 @@ class ilKitchenSinkUIHookGUI extends ilUIHookPluginGUI {
                 $tpl->addJavaScript("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/templates/js/clientTests/helper/simulate/simulate.js",true);
                 $tpl->addJavaScript("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/templates/js/clientTests/helper/accessibility/isFocusable.js",true);
                 $tpl->addJavaScript("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/templates/js/clientTests/helper/accessibility/isTabbable.js",true);
+                $tpl->addJavaScript("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/templates/js/clientTests/helper/accessibility/isLabeled.js",true);
 
 
                 $tpl->addJavaScript("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/templates/js/clientTests/tests/testRule.js",true);

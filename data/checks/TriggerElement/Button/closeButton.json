@@ -1,0 +1,70 @@
+{
+  "title": "Close Button",
+  "selector": ".close",
+  "rules": [
+    {
+      "description": "The Close Button MUST always be positioned in the top right of a collection.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"css",
+              "subtype":"positioning",
+
+              "selectorsA": [
+                {
+                  "type": "self"
+                }
+              ],
+              "selectorsB": [
+                {
+                  "type": "parents",
+                  "selector": ".modal-dialog"
+                }
+              ],
+              "positioning":[
+                {
+                  "type": "isContained"
+                },
+                {
+                  "type": "collideHorizontal",
+                  "stretchHorizontalB": 0.8,
+                  "not": true
+                },
+                {
+                  "type": "collideVertical",
+                  "stretchVerticalB": 0.2
+                }
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "The functionality of the close button MUST be indicated for screen readers by an aria-label.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"accessibility",
+              "subtype":"ariaLabeled",
+              "selectors": [{"type": "self"}
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+
