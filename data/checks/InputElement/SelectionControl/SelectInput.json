@@ -1,0 +1,112 @@
+{
+  "title": "Select Input",
+  "selector": "select",
+  "rules": [
+    {
+      "description": " Select Inputs MUST NOT be used for binary choices.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": "option"
+                }
+              ],
+              "operator":"<=",
+              "amount":"2",
+              "not":true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Select Inputs SHOULD allow user selecting 1 out of N elements where N > 5 and no autocomplete selection is available.",
+      "type": "Usage",
+      "level": "Should",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": "option"
+                }
+              ],
+              "operator":">",
+              "amount":"5",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "  If the number of selectable items is greater than 20 a Tag Input with autocomplete SHOULD be used instead.",
+      "type": "Usage",
+      "level": "Should",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": "option"
+                }
+              ],
+              "operator":"<=",
+              "amount":"20",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": " Select Inputs MUST NOT for selecting multiple values. Use Tag Input with autocomplete instead.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "self",
+                  "selector": "[multiple]"
+                }
+              ],
+              "operator":"=",
+              "amount":"0",
+              "not":""
+            }
+          ]
+        }
+      ]
+    }
+
+  ]
+}
+
+
+
+
+

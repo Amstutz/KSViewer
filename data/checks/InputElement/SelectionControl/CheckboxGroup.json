@@ -1,0 +1,105 @@
+{
+  "title": "Checkbox Group",
+  "selector": "input[type=checkbox]",
+  "rules": [
+    {
+      "description": "If only few items are expected to be selected (<=5), the total number of items to select from SHOULD not be larger than 25. Use a Tag Input otherwise.",
+      "type": "Usage",
+      "level": "Should",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "parents",
+                  "selector": ".form-group"
+                },
+                {
+                  "type": "selector",
+                  "selector": "input[type=checkbox]"
+                }
+              ],
+              "operator":"<=",
+              "amount":"1",
+              "not":""
+            },
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "parents",
+                  "selector": ".form-group"
+                },
+                {
+                  "type": "selector",
+                  "selector": "input[type=checkbox]"
+                }
+              ],
+              "operator":"<=",
+              "amount":"25",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Other than for the checkbox input, each checkbox MUST be labeled.",
+      "type": "Wording",
+      "level": "Must",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "parents",
+                  "selector": ".form-group"
+                },
+                {
+                  "type": "selector",
+                  "selector": "input[type=checkbox]"
+                }
+              ],
+              "operator":"<=",
+              "amount":"1",
+              "not":""
+            },
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors":[
+                {
+                  "type": "next"
+                },
+                {
+                  "type": "selector",
+                  "selector": "label"
+                }
+              ],
+              "contentType": "content",
+              "operator":"=",
+              "amount":"0",
+              "regex":"",
+              "not":true
+            }
+          ]
+        }
+      ]
+    }
+
+  ]
+}
+
+
+
+
+

@@ -1,0 +1,118 @@
+{
+  "title": "Checkbox",
+  "selector": ".checkbox",
+  "rules": [
+    {
+      "description": "A checkbox SHOULD be used whenever a user has to perform a binary choice. You MUST NOT use a Select input or a radio group in this case.",
+      "type": "Usage",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "selector":".radio",
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "siblings",
+                  "selector": ".radio"
+                }
+              ],
+              "operator":"<",
+              "amount":"2",
+              "not":true
+            }
+          ]
+        },
+        {
+          "selector":"select",
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": "option"
+                }
+              ],
+              "operator":"<=",
+              "amount":"2",
+              "not":true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "The checkbox’s identifier MUST always state something positive.",
+      "type": "Usage",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors":[
+                {
+                  "type": "parents",
+                  "selector": ".form-group"
+                },
+                {
+                  "type": "children",
+                  "selector": "label:first"
+                }
+              ],
+              "contentType": "content",
+              "operator":"=",
+              "amount":"0",
+              "regex":
+              {
+                "term":".*(\\s|^)not(\\s|$).*",
+                "modifier": "gi"
+              },
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "If a description is needed, it MUST be placed below the checkbox in the usual place for descriptions of form settings.",
+      "type": "Usage",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors":[
+                {
+                  "type": "children",
+                  "selector": "label"
+                }
+              ],
+              "contentType": "content",
+              "operator":"=",
+              "amount":"0",
+              "regex":"",
+              "not":""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+
+
+
+

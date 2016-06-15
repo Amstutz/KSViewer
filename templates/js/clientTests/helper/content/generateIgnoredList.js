@@ -60,7 +60,6 @@ il.uiTests.generateIgnoredList = function(ignore){
 
 
 
-
     ignore.list = ignore.list.concat(conjunctions).concat(prepositions).concat(articles);
 
     for (var key in ignore.list) {

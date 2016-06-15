@@ -1,0 +1,333 @@
+{
+  "title": "Form Settings",
+  "selector": "form .form-horizontal .form-group",
+  "rules": [
+    {
+      "description": "A setting MUST be contained by a Titled Form Section.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "prevAll",
+                  "selector": ".ilFormHeader"
+                }
+              ],
+              "operator":">=",
+              "amount":"1",
+              "not":""
+            },
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "parents",
+                  "selector": ".form-group"
+                },
+                {
+                  "type": "prevAll",
+                  "selector": ".ilFormHeader"
+                }
+              ],
+              "operator":">=",
+              "amount":"1",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "A setting MUST use an identifier and an input element.",
+      "type": "Composition",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": "label:nth-of-type(1)"
+                }
+              ],
+              "operator":"=",
+              "amount":"1",
+              "not":""
+            }
+          ]
+        },
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": "input, select, .checkbox, textarea"
+                }
+              ],
+              "operator":">=",
+              "amount":"1",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "A by-line MUST be placed directly underneath the option it describes.",
+      "type": "Composition",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": ".help-block"
+                }
+              ],
+              "operator":"=",
+              "amount":"0",
+              "not":""
+            },
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": ".help-block"
+                },
+                {
+                  "type": "prev",
+                  "selector": "input, select, .checkbox, textarea,label"
+                }
+              ],
+              "operator":">=",
+              "amount":"1",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": " An identifier MUST be composed of one single term or a very short phrase of no more than 5 words. The identifier is an eye catcher for users skimming the form.",
+      "type": "Wording",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": "label:nth-of-type(1)"
+                }
+              ],
+              "operator":">=",
+              "amount":"1",
+              "not":""
+            }
+          ]
+        },{
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": "label:nth-of-type(1)"
+                }
+              ],
+              "operator":"<=",
+              "amount":"5",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "An identifier MUST make a positive statement. If the purpose of the setting is inherently negative, use Verbs as 'Limit..', 'Lock..'.",
+      "type": "Wording",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": "label:nth-of-type(1)"
+                }
+              ],
+              "operator":"=",
+              "regex":
+              {
+                "term":".*(\\s|^)not(\\s|$).*",
+                "modifier": "gi"
+              },
+              "amount":"0",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "If by-lines are provided they MUST be informative, not merely repeating the identifier’s or input element’s content. If no informative description can be devised, no description is needed. ",
+      "type": "Wording",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"compare",
+              "selectorsA": [
+                {
+                  "type": "children",
+                  "selector": "label:nth-of-type(1)"
+                }
+              ],
+              "selectorsB": [
+                {
+                  "type": "selector",
+                  "selector": ".help-block"
+                }
+              ],
+              "not":true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "By-lines SHOULD be short with no more than 25 words.",
+      "type": "Wording",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": ".help-block"
+                }
+              ],
+              "operator":"<=",
+              "amount":"25",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "A by-line SHOULD NOT address the user directly. Addressing users directly is reserved for cases of high risk of severe mis-configuration.",
+      "type": "Wording",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": ".help-block"
+                }
+              ],
+              "operator":"=",
+              "amount":"0",
+              "regex":
+              {
+                "term":".*(\\s|^)you|your(\\s|$).*",
+                "modifier": "gi"
+              },
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "A by-line MUST be grammatically complete sentence with a period (.) at the end.",
+      "type": "Wording",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": ".help-block"
+                }
+              ],
+              "operator":"=",
+              "amount":"0",
+              "not":""
+            },
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": ".help-block"
+                }
+              ],
+              "operator":"=",
+              "amount":"1",
+              "regex":
+              {
+                "term":".*(\\.$)",
+                "modifier": "gi"
+              },
+              "not":""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+

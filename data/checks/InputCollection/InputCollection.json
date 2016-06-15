@@ -1,0 +1,29 @@
+{
+  "title": "Input Collection",
+  "selector": "input, select, textarea",
+  "rules":[
+    {
+      "description": "Every Input Element in every Input Collection MUST be accessible by keyboard.",
+      "type": "Accessibility",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"accessibility",
+              "subtype":"tabbable",
+              "selectors": [
+                {
+                  "type": "self"
+                }
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    }
+
+  ]
+}

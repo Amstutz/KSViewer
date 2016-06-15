@@ -16,6 +16,7 @@ il.uiTests.getRelatives = function(element,type,selector){
     };
 
     var getPreviousAll = function(element,selector){
+        console.log($(element).prevAll(selector));
         return $(element).prevAll(selector);
     };
 
@@ -27,12 +28,20 @@ il.uiTests.getRelatives = function(element,type,selector){
         return $(element).nextAll(selector);
     };
 
+    var getNextUntil = function(element,selector){
+        return $(element).nextUntil(selector);
+    };
+
     var getParent = function(element,selector){
         return $(element).parent(selector);
     };
 
     var getParents = function(element,selector){
         return $(element).parents(selector);
+    };
+
+    var getParentsUntil = function(element,selector){
+        return $(element).parentsUntil(selector);
     };
 
     var getChildren = function(element,selector){
@@ -62,10 +71,14 @@ il.uiTests.getRelatives = function(element,type,selector){
             return getNext(element,selector);
         case "nextAll":
             return getNextAll(element,selector);
+        case "nextUntil":
+            return getNextUntil(element,selector);
         case "parent":
             return getParent(element,selector);
         case "parents":
             return getParents(element,selector);
+        case "parentsUntil":
+            return getParentsUntil(element,selector);
         case "children":
             return getChildren(element,selector);
         case "find":

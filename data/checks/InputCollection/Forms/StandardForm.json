@@ -1,0 +1,314 @@
+{
+  "title": "Standard Form",
+  "selector": "form .form-horizontal",
+  "rules": [
+    {
+      "description": "Forms MUST NOT be used on the same content screen as tables.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "root"
+                },{
+                  "type": "find",
+                  "selector": "table.table"
+                }
+              ],
+              "operator":"=",
+              "amount":"0",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Forms MUST NOT be used on the same content screen as toolbars.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "root"
+                },{
+                  "type": "find",
+                  "selector": ".ilToolbar"
+                }
+              ],
+              "operator":"=",
+              "amount":"0",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Each form MUST contain at least one titled form section.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": ".ilFormHeader, .ilHeader"
+                }
+              ],
+              "operator":">=",
+              "amount":"1",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "In the 'Settings' tab of a module a Titled Form has specific rules: The title of the first Titled Form Section MUST always be 'Edit [NameOfModule]'. ",
+      "type": "Wording",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "root"
+                },{
+                  "type": "selector",
+                  "selector": "#tab_settings.active"
+                }
+              ],
+              "operator":"=",
+              "amount":"0",
+              "not":""
+            },
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "root"
+                },{
+                  "type": "selector",
+                  "selector": "#ilSubTab li:first.active"
+                }
+              ],
+              "operator":"=",
+              "amount":"0",
+              "not":""
+            },
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": ".ilFormHeader:first"
+
+                }
+              ],
+              "regex":{
+                "term": "^Edit\\s[a-z].*",
+                "modifier":"i"
+              },
+              "operator":"=",
+              "amount":"1",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "In the 'Settings' tab of a module a Titled Form has specific rules: It’s first Form Settings MUST be 'Title'",
+      "type": "Wording",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "root"
+                },{
+                  "type": "selector",
+                  "selector": "#tab_settings.active"
+                }
+              ],
+              "operator":"=",
+              "amount":"0",
+              "not":""
+            },
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "root"
+                },{
+                  "type": "selector",
+                  "selector": "#ilSubTab li:first.active"
+                }
+              ],
+              "operator":"=",
+              "amount":"0",
+              "not":""
+            },
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": ".form-group:first label:first"
+
+                }
+              ],
+              "regex":{
+                "term": "^Title",
+                "modifier":"i"
+              },
+              "operator":"=",
+              "amount":"1",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "In the 'Settings' tab of a module a Titled Form has specific rules: It’s second Form Settings MUST be 'Description'.",
+      "type": "Wording",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "root"
+                },{
+                  "type": "selector",
+                  "selector": "#tab_settings.active"
+                }
+              ],
+              "operator":"=",
+              "amount":"0",
+              "not":""
+            },
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "root"
+                },{
+                  "type": "selector",
+                  "selector": "#ilSubTab li:first.active"
+                }
+              ],
+              "operator":"=",
+              "amount":"0",
+              "not":""
+            },
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": ".form-group:nth-of-type(3):first label:first"
+
+                }
+              ],
+              "regex":{
+                "term": "^Description",
+                "modifier":"i"
+              },
+              "operator":"=",
+              "amount":"1",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "The first and last titled form section of a form MUST contain a 'Save' and 'Cancel' button for the form. 'Save' is left and “Cancel” is right. In some rare exceptions the Buttons MAY be named differently: if 'Save' or 'Cancel' are clearly a misleading since the action is more than storing the data into the database. 'Send Mail' would be an example of this.",
+      "type": "Composition",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"ordering",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": ".ilFormHeader:first .ilFormCmds"
+                },
+                {
+                  "type": "children",
+                  "selector": "input.btn"
+                }
+              ],
+              "items":[
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "contentType": "attribute",
+                    "regex": "Save",
+                    "contentSelector": "value",
+                    "amount": 1
+                  }
+                },
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "contentType": "attribute",
+                    "regex": "Cancel",
+                    "contentSelector": "value",
+                    "amount": 1
+                  }
+                }
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

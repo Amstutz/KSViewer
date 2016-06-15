@@ -7,7 +7,10 @@ il.uiTests.getSelector = function(element){
             return this.tagName + indexOfParentString;
         }).get().reverse().join(" ");
 
-    selector += " "+ element.get()[0].nodeName;
+    if(element.get()[0]){
+        selector += " "+ element.get()[0].nodeName;
+
+    }
     selector += ":nth-child(" + (element.index()+1) + ")";
 
     return selector;

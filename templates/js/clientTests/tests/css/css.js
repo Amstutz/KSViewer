@@ -30,23 +30,28 @@ il.uiTests.css = function(element,selector,testVariant){
         return  properties.every(function(propertyRule){
 
 
+            var simulation_class = "";
+
             if(propertyRule.simulate && propertyRule.simulate.point == "before"){
-                il.uiTests.simulateCssEvent(propertyRule.simulate.type);
+                simulation_class = il.uiTests.simulateCssEvent(propertyRule.simulate.type);
+                elementA = $("."+simulation_class + " "+elementA.selector);
             }
 
             var propertyA = il.uiTests.getCSSProperty(elementA,propertyRule.whichA);
 
             if(propertyRule.simulate && propertyRule.simulate.point == "between"){
 
-                il.uiTests.simulateCssEvent(propertyRule.simulate.type);
+                simulation_class = il.uiTests.simulateCssEvent(propertyRule.simulate.type);
+                elementB = $("."+simulation_class + " "+il.uiTests.getSelector(elementB));
             }
 
-            var propertyB = il.uiTests.getCSSProperty(elementA,propertyRule.whichB);
+            var propertyB = il.uiTests.getCSSProperty(elementB,propertyRule.whichB);
 
             if(propertyRule.simulate){
                 il.uiTests.simulateCssEvent("stop");
             }
 
+            console.log(propertyA , propertyB);
 
             if(propertyA && propertyB){
                 var passed = il.uiTests.propertyCheck(propertyRule.type,propertyA,propertyB);
@@ -76,28 +81,35 @@ il.uiTests.css = function(element,selector,testVariant){
 
 
             if(colorRule.simulate && colorRule.simulate.point == "before"){
-                il.uiTests.simulateCssEvent(colorRule.simulate.type);
+                simulation_class = il.uiTests.simulateCssEvent(colorRule.simulate.type);
+                elementA = $("."+simulation_class + " "+elementA.selector);
             }
 
             var colorsA = il.uiTests.getColor(elementA);
+            var colorA = colorsA[colorRule.whichA];
+            console.log(colorA);
 
             if(colorRule.simulate && colorRule.simulate.point == "between"){
-
-                il.uiTests.simulateCssEvent(colorRule.simulate.type);
+                simulation_class = il.uiTests.simulateCssEvent(colorRule.simulate.type);
+                elementB = $("."+simulation_class + " "+il.uiTests.getSelector(elementB));
             }
 
+            console.log(elementB);
+
             var colorsB = il.uiTests.getColor(elementB);
+
 
             if(colorRule.simulate){
                 il.uiTests.simulateCssEvent("stop");
             }
 
-            var colorA = colorsA[colorRule.whichA];
 
             if(colorsB){
                 var colorB = colorsB[colorRule.whichB];
             }
-
+            console.log(elementA);
+            console.log(colorA);
+            console.log(colorB);
             if(colorA && colorB){
                 var passed = il.uiTests.colorCheck(colorRule.type,colorA,colorB);
             }
@@ -119,7 +131,6 @@ il.uiTests.css = function(element,selector,testVariant){
         });
     };
 
-    console.log("css");
     var elementA = il.uiTests.getRelativesByChain(element, testVariant.selectorsA);
     var elementB;
     if(testVariant.selectorsB){

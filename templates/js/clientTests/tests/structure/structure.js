@@ -12,9 +12,6 @@ il.uiTests.structure = function(element,selector,testVariant){
         var orderingVariantsListIndex = 0;
 
         var allElementsPassed = elementList.get().every(function(orderingElement){
-            console.log("start call: ",orderingElement);
-            console.log("start call: ",itemsClone[orderingVariantsListIndex]);
-
             var currentItem = itemsClone[orderingVariantsListIndex];
 
             il.uiTests.log.message(["structure.ordering check element",orderingElement,currentItem],"testRule",il.uiTests.log.levels.debug);
@@ -59,9 +56,7 @@ il.uiTests.structure = function(element,selector,testVariant){
                 }
 
             }else{
-                console.log();
                 passed = il.uiTests.testVariant(orderingElement,"",currentItem.variant);
-                console.log(currentItem.variant,passed);
 
             }
 
@@ -72,7 +67,6 @@ il.uiTests.structure = function(element,selector,testVariant){
             }else{
                 orderingVariantsListIndex++;
             }
-            console.log("return value: ",passed);
             return passed;
         });
 
@@ -82,12 +76,10 @@ il.uiTests.structure = function(element,selector,testVariant){
         if(itemsClone.length > orderingVariantsListIndex){
             var itemsClone2 = JSON.parse(JSON.stringify(itemsClone));
             itemsClone2.splice(0, orderingVariantsListIndex);
-            console.log(itemsClone2);
             return itemsClone2.every(function(itemsClone2){
                 if(itemsClone2.optional || itemsClone2.passed){
                     return true;
                 }
-                console.log(itemsClone2);
                 return false;
             });
         }
@@ -111,8 +103,6 @@ il.uiTests.structure = function(element,selector,testVariant){
         }
         il.uiTests.log.message(["structure.amount comparable",operator,nrElements,amount],"structure",this.log.levels.debug);
 
-        console.log(nrElements);
-        console.log(operator,nrElements,amount);
         return il.uiTests.compareValues(operator,nrElements,amount,true);
     };
 

@@ -1,0 +1,148 @@
+{
+  "title": "Radio Group",
+  "selector": ".radio",
+  "rules": [
+    {
+      "description": "A radio group SHOULD contain 3 to 5 options.",
+      "type": "Usage",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "siblings",
+                  "selector": ".radio"
+                }
+              ],
+              "operator":">=",
+              "amount":"2",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "If more than 5 options are available a Select Input SHOULD be used. ",
+      "type": "Usage",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "siblings",
+                  "selector": ".radio"
+                }
+              ],
+              "operator":"<=",
+              "amount":"4",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Each option in a radio group MUST be labeled.",
+      "type": "Wording",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors":[
+                {
+                  "type": "children",
+                  "selector": "label"
+                }
+              ],
+              "contentType": "content",
+              "operator":"=",
+              "amount":"0",
+              "regex":"",
+              "not":true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "This label SHOULD not consist of more than 5 words. ",
+      "type": "Wording",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors":[
+                {
+                  "type": "children",
+                  "selector": "label"
+                }
+              ],
+              "contentType": "content",
+              "operator":"<=",
+              "amount":"5",
+              "regex":"",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "If used in forms, the label of the options SHOULD not simply repeat the identifier on the left. A meaningful labeling should be chosen instead.",
+      "type": "Wording",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"compare",
+              "selectorsA":[
+                {
+                  "type": "parents",
+                  "selector": ".form-group"
+                },
+                {
+                  "type": "children",
+                  "selector": "label:first"
+                }
+              ],
+              "selectorsB":[
+                {
+                  "type": "children",
+                  "selector": "label"
+                }
+              ],
+              "not":true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+
+
+
+

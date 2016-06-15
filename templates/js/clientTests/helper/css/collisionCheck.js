@@ -90,7 +90,6 @@ il.uiTests.collisionCheck = function(type,rect1,rect2){
         return isContainedVertical(rect1, rect2)  && isContainedHorizontal(rect1, rect2);
     };
 
-    console.log(rect1, rect2);
     switch(type) {
         case "equalLeft":
             return equalLeft(rect1, rect2);

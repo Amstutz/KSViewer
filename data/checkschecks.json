@@ -227,6 +227,1372 @@
     }
   ]
 },{
+  "title": "Form Settings",
+  "selector": "form .form-horizontal .form-group",
+  "rules": [
+    {
+      "description": "A setting MUST be contained by a Titled Form Section.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "prevAll",
+                  "selector": ".ilFormHeader"
+                }
+              ],
+              "operator":">=",
+              "amount":"1",
+              "not":""
+            },
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "parents",
+                  "selector": ".form-group"
+                },
+                {
+                  "type": "prevAll",
+                  "selector": ".ilFormHeader"
+                }
+              ],
+              "operator":">=",
+              "amount":"1",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "A setting MUST use an identifier and an input element.",
+      "type": "Composition",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": "label:nth-of-type(1)"
+                }
+              ],
+              "operator":"=",
+              "amount":"1",
+              "not":""
+            }
+          ]
+        },
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": "input, select, .checkbox, textarea"
+                }
+              ],
+              "operator":">=",
+              "amount":"1",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "A by-line MUST be placed directly underneath the option it describes.",
+      "type": "Composition",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": ".help-block"
+                }
+              ],
+              "operator":"=",
+              "amount":"0",
+              "not":""
+            },
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": ".help-block"
+                },
+                {
+                  "type": "prev",
+                  "selector": "input, select, .checkbox, textarea,label"
+                }
+              ],
+              "operator":">=",
+              "amount":"1",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": " An identifier MUST be composed of one single term or a very short phrase of no more than 5 words. The identifier is an eye catcher for users skimming the form.",
+      "type": "Wording",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": "label:nth-of-type(1)"
+                }
+              ],
+              "operator":">=",
+              "amount":"1",
+              "not":""
+            }
+          ]
+        },{
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": "label:nth-of-type(1)"
+                }
+              ],
+              "operator":"<=",
+              "amount":"5",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "An identifier MUST make a positive statement. If the purpose of the setting is inherently negative, use Verbs as 'Limit..', 'Lock..'.",
+      "type": "Wording",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": "label:nth-of-type(1)"
+                }
+              ],
+              "operator":"=",
+              "regex":
+              {
+                "term":".*(\\s|^)not(\\s|$).*",
+                "modifier": "gi"
+              },
+              "amount":"0",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "If by-lines are provided they MUST be informative, not merely repeating the identifier’s or input element’s content. If no informative description can be devised, no description is needed. ",
+      "type": "Wording",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"compare",
+              "selectorsA": [
+                {
+                  "type": "children",
+                  "selector": "label:nth-of-type(1)"
+                }
+              ],
+              "selectorsB": [
+                {
+                  "type": "selector",
+                  "selector": ".help-block"
+                }
+              ],
+              "not":true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "By-lines SHOULD be short with no more than 25 words.",
+      "type": "Wording",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": ".help-block"
+                }
+              ],
+              "operator":"<=",
+              "amount":"25",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "A by-line SHOULD NOT address the user directly. Addressing users directly is reserved for cases of high risk of severe mis-configuration.",
+      "type": "Wording",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": ".help-block"
+                }
+              ],
+              "operator":"=",
+              "amount":"0",
+              "regex":
+              {
+                "term":".*(\\s|^)you|your(\\s|$).*",
+                "modifier": "gi"
+              },
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "A by-line MUST be grammatically complete sentence with a period (.) at the end.",
+      "type": "Wording",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": ".help-block"
+                }
+              ],
+              "operator":"=",
+              "amount":"0",
+              "not":""
+            },
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": ".help-block"
+                }
+              ],
+              "operator":"=",
+              "amount":"1",
+              "regex":
+              {
+                "term":".*(\\.$)",
+                "modifier": "gi"
+              },
+              "not":""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+,{
+  "title": "Standard Form",
+  "selector": "form .form-horizontal",
+  "rules": [
+    {
+      "description": "Forms MUST NOT be used on the same content screen as tables.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "root"
+                },{
+                  "type": "find",
+                  "selector": "table.table"
+                }
+              ],
+              "operator":"=",
+              "amount":"0",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Forms MUST NOT be used on the same content screen as toolbars.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "root"
+                },{
+                  "type": "find",
+                  "selector": ".ilToolbar"
+                }
+              ],
+              "operator":"=",
+              "amount":"0",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Each form MUST contain at least one titled form section.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": ".ilFormHeader, .ilHeader"
+                }
+              ],
+              "operator":">=",
+              "amount":"1",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "In the 'Settings' tab of a module a Titled Form has specific rules: The title of the first Titled Form Section MUST always be 'Edit [NameOfModule]'. ",
+      "type": "Wording",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "root"
+                },{
+                  "type": "selector",
+                  "selector": "#tab_settings.active"
+                }
+              ],
+              "operator":"=",
+              "amount":"0",
+              "not":""
+            },
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "root"
+                },{
+                  "type": "selector",
+                  "selector": "#ilSubTab li:first.active"
+                }
+              ],
+              "operator":"=",
+              "amount":"0",
+              "not":""
+            },
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": ".ilFormHeader:first"
+
+                }
+              ],
+              "regex":{
+                "term": "^Edit\\s[a-z].*",
+                "modifier":"i"
+              },
+              "operator":"=",
+              "amount":"1",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "In the 'Settings' tab of a module a Titled Form has specific rules: It’s first Form Settings MUST be 'Title'",
+      "type": "Wording",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "root"
+                },{
+                  "type": "selector",
+                  "selector": "#tab_settings.active"
+                }
+              ],
+              "operator":"=",
+              "amount":"0",
+              "not":""
+            },
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "root"
+                },{
+                  "type": "selector",
+                  "selector": "#ilSubTab li:first.active"
+                }
+              ],
+              "operator":"=",
+              "amount":"0",
+              "not":""
+            },
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": ".form-group:first label:first"
+
+                }
+              ],
+              "regex":{
+                "term": "^Title",
+                "modifier":"i"
+              },
+              "operator":"=",
+              "amount":"1",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "In the 'Settings' tab of a module a Titled Form has specific rules: It’s second Form Settings MUST be 'Description'.",
+      "type": "Wording",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "root"
+                },{
+                  "type": "selector",
+                  "selector": "#tab_settings.active"
+                }
+              ],
+              "operator":"=",
+              "amount":"0",
+              "not":""
+            },
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "root"
+                },{
+                  "type": "selector",
+                  "selector": "#ilSubTab li:first.active"
+                }
+              ],
+              "operator":"=",
+              "amount":"0",
+              "not":""
+            },
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": ".form-group:nth-of-type(3):first label:first"
+
+                }
+              ],
+              "regex":{
+                "term": "^Description",
+                "modifier":"i"
+              },
+              "operator":"=",
+              "amount":"1",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "The first and last titled form section of a form MUST contain a 'Save' and 'Cancel' button for the form. 'Save' is left and “Cancel” is right. In some rare exceptions the Buttons MAY be named differently: if 'Save' or 'Cancel' are clearly a misleading since the action is more than storing the data into the database. 'Send Mail' would be an example of this.",
+      "type": "Composition",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"ordering",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": ".ilFormHeader:first .ilFormCmds"
+                },
+                {
+                  "type": "children",
+                  "selector": "input.btn"
+                }
+              ],
+              "items":[
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "contentType": "attribute",
+                    "regex": "Save",
+                    "contentSelector": "value",
+                    "amount": 1
+                  }
+                },
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "contentType": "attribute",
+                    "regex": "Cancel",
+                    "contentSelector": "value",
+                    "amount": 1
+                  }
+                }
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+},{
+  "title": "Titled Form Section",
+  "selector": "form .form-horizontal .ilFormHeader",
+  "rules": [
+    {
+      "description": "Proper Titled Form Sections SHOULD comprise 2 to 5 Settings. ",
+      "type": "Composition",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "nextUntil",
+                  "selector": ".ilFormHeader,.ilFormFooter"
+                }
+              ],
+              "operator":">=",
+              "amount":"2",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "More than 5 Settings SHOULD be split into two areas unless this would tamper with the 'familiar' information architecture of forms.",
+      "type": "Composition",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "nextUntil",
+                  "selector": ".ilFormHeader,.ilFormFooter"
+                }
+              ],
+              "operator":"<=",
+              "amount":"5",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "A Titled Form Section MUST contain a title.",
+      "type": "Composition",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": ".ilHeader"
+                }
+              ],
+              "operator":"=",
+              "amount":"1",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "The title SHOULD contain less than 30 characters.",
+      "type": "Composition",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": ".ilHeader"
+                }
+              ],
+              "operator":"<=",
+              "amount":"30",
+              "regex":{
+                "term": ".",
+                "modifier": "g"
+              },
+              "not":""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+},{
+  "title": "Input Collection",
+  "selector": "input, select, textarea",
+  "rules":[
+    {
+      "description": "Every Input Element in every Input Collection MUST be accessible by keyboard.",
+      "type": "Accessibility",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"accessibility",
+              "subtype":"tabbable",
+              "selectors": [
+                {
+                  "type": "self"
+                }
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    }
+
+  ]
+},{
+  "title": "Input Element",
+  "selector": "input, select, textarea",
+  "rules": [
+    {
+      "description": "All Input Elements visible in a view MUST be accessible by keyboard by using the ‘Tab’-Key.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"accessibility",
+              "subtype":"tabbable",
+              "selectors": [
+                {
+                  "type": "self"
+                }
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "If focused, the Input Elements MUST change their Input Border Color to the Input Focus Border Color.",
+      "type": "Usage",
+      "level": "MUST",
+
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"css",
+              "subtype":"properties",
+              "selectorsA": [
+                {
+                  "type": "self"
+                }
+              ],
+              "selectorsB": [
+                {
+                  "type": "self"
+                }
+              ],
+              "properties":[
+                {
+                  "simulate":{
+                    "type": "focus",
+                    "point": "between"
+                  },
+                  "whichA": "outline",
+                  "whichB":"outline",
+                  "type": "isEqual",
+                  "not": true
+                }
+              ],
+              "not":""
+            },
+            {
+              "type":"css",
+              "subtype":"properties",
+              "selectorsA": [
+                {
+                  "type": "self"
+                }
+              ],
+              "selectorsB": [
+                {
+                  "type": "self"
+                }
+              ],
+              "properties":[
+                {
+                  "simulate":{
+                    "type": "focus",
+                    "point": "between"
+                  },
+                  "whichA": "border-color",
+                  "whichB":"border-color",
+                  "type": "isEqual",
+                  "not": true
+                }
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+
+
+
+
+,{
+  "title": "Checkbox",
+  "selector": ".checkbox",
+  "rules": [
+    {
+      "description": "A checkbox SHOULD be used whenever a user has to perform a binary choice. You MUST NOT use a Select input or a radio group in this case.",
+      "type": "Usage",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "selector":".radio",
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "siblings",
+                  "selector": ".radio"
+                }
+              ],
+              "operator":"<",
+              "amount":"2",
+              "not":true
+            }
+          ]
+        },
+        {
+          "selector":"select",
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": "option"
+                }
+              ],
+              "operator":"<=",
+              "amount":"2",
+              "not":true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "The checkbox’s identifier MUST always state something positive.",
+      "type": "Usage",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors":[
+                {
+                  "type": "parents",
+                  "selector": ".form-group"
+                },
+                {
+                  "type": "children",
+                  "selector": "label:first"
+                }
+              ],
+              "contentType": "content",
+              "operator":"=",
+              "amount":"0",
+              "regex":
+              {
+                "term":".*(\\s|^)not(\\s|$).*",
+                "modifier": "gi"
+              },
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "If a description is needed, it MUST be placed below the checkbox in the usual place for descriptions of form settings.",
+      "type": "Usage",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors":[
+                {
+                  "type": "children",
+                  "selector": "label"
+                }
+              ],
+              "contentType": "content",
+              "operator":"=",
+              "amount":"0",
+              "regex":"",
+              "not":""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+
+
+
+
+,{
+  "title": "Checkbox Group",
+  "selector": "input[type=checkbox]",
+  "rules": [
+    {
+      "description": "If only few items are expected to be selected (<=5), the total number of items to select from SHOULD not be larger than 25. Use a Tag Input otherwise.",
+      "type": "Usage",
+      "level": "Should",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "parents",
+                  "selector": ".form-group"
+                },
+                {
+                  "type": "selector",
+                  "selector": "input[type=checkbox]"
+                }
+              ],
+              "operator":"<=",
+              "amount":"1",
+              "not":""
+            },
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "parents",
+                  "selector": ".form-group"
+                },
+                {
+                  "type": "selector",
+                  "selector": "input[type=checkbox]"
+                }
+              ],
+              "operator":"<=",
+              "amount":"25",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Other than for the checkbox input, each checkbox MUST be labeled.",
+      "type": "Wording",
+      "level": "Must",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "parents",
+                  "selector": ".form-group"
+                },
+                {
+                  "type": "selector",
+                  "selector": "input[type=checkbox]"
+                }
+              ],
+              "operator":"<=",
+              "amount":"1",
+              "not":""
+            },
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors":[
+                {
+                  "type": "next"
+                },
+                {
+                  "type": "selector",
+                  "selector": "label"
+                }
+              ],
+              "contentType": "content",
+              "operator":"=",
+              "amount":"0",
+              "regex":"",
+              "not":true
+            }
+          ]
+        }
+      ]
+    }
+
+  ]
+}
+
+
+
+
+
+,{
+  "title": "Radio Group",
+  "selector": ".radio",
+  "rules": [
+    {
+      "description": "A radio group SHOULD contain 3 to 5 options.",
+      "type": "Usage",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "siblings",
+                  "selector": ".radio"
+                }
+              ],
+              "operator":">=",
+              "amount":"2",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "If more than 5 options are available a Select Input SHOULD be used. ",
+      "type": "Usage",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "siblings",
+                  "selector": ".radio"
+                }
+              ],
+              "operator":"<=",
+              "amount":"4",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Each option in a radio group MUST be labeled.",
+      "type": "Wording",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors":[
+                {
+                  "type": "children",
+                  "selector": "label"
+                }
+              ],
+              "contentType": "content",
+              "operator":"=",
+              "amount":"0",
+              "regex":"",
+              "not":true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "This label SHOULD not consist of more than 5 words. ",
+      "type": "Wording",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors":[
+                {
+                  "type": "children",
+                  "selector": "label"
+                }
+              ],
+              "contentType": "content",
+              "operator":"<=",
+              "amount":"5",
+              "regex":"",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "If used in forms, the label of the options SHOULD not simply repeat the identifier on the left. A meaningful labeling should be chosen instead.",
+      "type": "Wording",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"compare",
+              "selectorsA":[
+                {
+                  "type": "parents",
+                  "selector": ".form-group"
+                },
+                {
+                  "type": "children",
+                  "selector": "label:first"
+                }
+              ],
+              "selectorsB":[
+                {
+                  "type": "children",
+                  "selector": "label"
+                }
+              ],
+              "not":true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+
+
+
+
+,{
+  "title": "Select Input",
+  "selector": "select",
+  "rules": [
+    {
+      "description": " Select Inputs MUST NOT be used for binary choices.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": "option"
+                }
+              ],
+              "operator":"<=",
+              "amount":"2",
+              "not":true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Select Inputs SHOULD allow user selecting 1 out of N elements where N > 5 and no autocomplete selection is available.",
+      "type": "Usage",
+      "level": "Should",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": "option"
+                }
+              ],
+              "operator":">",
+              "amount":"5",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "  If the number of selectable items is greater than 20 a Tag Input with autocomplete SHOULD be used instead.",
+      "type": "Usage",
+      "level": "Should",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": "option"
+                }
+              ],
+              "operator":"<=",
+              "amount":"20",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": " Select Inputs MUST NOT for selecting multiple values. Use Tag Input with autocomplete instead.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "self",
+                  "selector": "[multiple]"
+                }
+              ],
+              "operator":"=",
+              "amount":"0",
+              "not":""
+            }
+          ]
+        }
+      ]
+    }
+
+  ]
+}
+
+
+
+
+
+,{
   "title": "Button",
   "selector": ".btn",
   "rules": [
@@ -508,9 +1874,46 @@
           ]
         }
       ]
+    },
+    {
+      "description": " Button DOM elements MUST either be of type “button” or of type “a” accompanied with the aria-role “Button”",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"accessibility",
+              "subtype":"role",
+              "selectors": [
+                {
+                  "type": "self"
+                }
+              ],
+              "role": "button",
+              "not":""
+            },
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "self",
+                  "selector": "button, input[type='button'], input[type='submit']"
+                }
+              ],
+              "operator":"=",
+              "amount":"1"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
+
+
 
 ,{
   "title": "Close Button",
@@ -641,10 +2044,6 @@
         }
       ]
     },
-
-
-
-
     {
       "description": "All Trigger Elements visible in a view MUST be accessible by keyboard by using the ‘Tab’-Key.",
       "type": "Accessibility",
@@ -667,11 +2066,6 @@
         }
       ]
     },
-
-
-
-
-
     {
       "description": "All active Triggers MUST indicate hovering by displaying the cursor as pointer (hand).",
       "type": "Usage",

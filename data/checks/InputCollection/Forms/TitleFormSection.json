@@ -1,0 +1,110 @@
+{
+  "title": "Titled Form Section",
+  "selector": "form .form-horizontal .ilFormHeader",
+  "rules": [
+    {
+      "description": "Proper Titled Form Sections SHOULD comprise 2 to 5 Settings. ",
+      "type": "Composition",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "nextUntil",
+                  "selector": ".ilFormHeader,.ilFormFooter"
+                }
+              ],
+              "operator":">=",
+              "amount":"2",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "More than 5 Settings SHOULD be split into two areas unless this would tamper with the 'familiar' information architecture of forms.",
+      "type": "Composition",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "nextUntil",
+                  "selector": ".ilFormHeader,.ilFormFooter"
+                }
+              ],
+              "operator":"<=",
+              "amount":"5",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "A Titled Form Section MUST contain a title.",
+      "type": "Composition",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": ".ilHeader"
+                }
+              ],
+              "operator":"=",
+              "amount":"1",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "The title SHOULD contain less than 30 characters.",
+      "type": "Composition",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": ".ilHeader"
+                }
+              ],
+              "operator":"<=",
+              "amount":"30",
+              "regex":{
+                "term": ".",
+                "modifier": "g"
+              },
+              "not":""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

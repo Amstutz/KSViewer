@@ -27,7 +27,10 @@ if(ilback){
             this.ruleIndex = -1;
             this.testIndex= -1;
             this.elementIndex = -1;
-            this.skipping = ["Trigger Element","Counter","Status Counter","Novelty Counter","Button"];
+            this.skipping = ["Counter","Status Counter","Novelty Counter",
+                "Trigger Element","Primary Button", "Close Button","Button",
+                "Input Element", "Checkbox", "Radio Group","Checkbox Group", "Select Input",
+                "Input Collection","Standard Form","Titled Form Section"];
 
         }
 
@@ -52,13 +55,18 @@ if(ilback){
 
             var allPassed = true;
 
-            $(entry.selector).each(function (elementIndex) {
+            var selector = entry.selector;
+
+            if(test.selector){
+                selector = test.selector;
+            }
+
+            $(selector).each(function (elementIndex) {
                 var element = $(this);
                 var ignore = false;
                 if(test.ignore){
                     il.uiTests.log.message(["this.processTest Ignoring: ",test.ignore],"uiTests",il.uiTests.log.levels.info);
                     ignore = test.ignore.some(function(selector){
-
                         il.uiTests.log.message(["this.processTest test Ignore: ",selector],"uiTests",il.uiTests.log.levels.info);
                         return il.uiTests.countRelatives(element,selector) > 0;
                     });
@@ -71,7 +79,7 @@ if(ilback){
 
                         self.elementIndex = elementIndex;
                         try{
-                            passed = il.uiTests.testRule(this, entry.selector,test);
+                            passed = il.uiTests.testRule(this, selector,test);
                             var report = new ruleReport(this,entry,rule,test,passed);
                         }catch(e){
                             passed = false;

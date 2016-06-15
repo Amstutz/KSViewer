@@ -24,10 +24,6 @@
         }
       ]
     },
-
-
-
-
     {
       "description": "All Trigger Elements visible in a view MUST be accessible by keyboard by using the ‘Tab’-Key.",
       "type": "Accessibility",
@@ -50,11 +46,6 @@
         }
       ]
     },
-
-
-
-
-
     {
       "description": "All active Triggers MUST indicate hovering by displaying the cursor as pointer (hand).",
       "type": "Usage",

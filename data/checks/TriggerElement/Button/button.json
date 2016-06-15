@@ -280,7 +280,44 @@
           ]
         }
       ]
+    },
+    {
+      "description": " Button DOM elements MUST either be of type “button” or of type “a” accompanied with the aria-role “Button”",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"accessibility",
+              "subtype":"role",
+              "selectors": [
+                {
+                  "type": "self"
+                }
+              ],
+              "role": "button",
+              "not":""
+            },
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "self",
+                  "selector": "button, input[type='button'], input[type='submit']"
+                }
+              ],
+              "operator":"=",
+              "amount":"1"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
+
+
 
