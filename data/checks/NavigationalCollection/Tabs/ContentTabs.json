@@ -1,0 +1,32 @@
+{
+  "title": "Content Tabs",
+  "selector": "#ilTab",
+  "rules":[
+    {
+      "description": "If there are more tabs that can be displayed by the available length, the Tabs not fitting on the right MUST be moved into a Dropdown Menu labeled with “...” and a Glyph Down.",
+      "type": "Responsiveness",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type": "structure",
+              "subtype": "amount",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": "#ilLastTab"
+                }
+              ],
+              "operator": "=",
+              "amount": "1",
+              "not": ""
+            }
+          ]
+        }
+      ]
+    }
+
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "title": "Navigational Collection",
+  "selector": "#ilTab, #ilSubTab",
+  "rules":[
+    {
+      "description": "Navigational Collections SHOULD only contain links as interaction triggers.",
+      "type": "Composition",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type": "structure",
+              "subtype": "amount",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": ".btn:not(.dropdown-toggle)"
+                }
+              ],
+              "operator": "=",
+              "amount": "0",
+              "not": ""
+            }
+          ]
+        }
+      ]
+    }
+
+  ]
+}

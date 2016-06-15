@@ -1,0 +1,158 @@
+{
+  "title": "Tabs",
+  "selector": "#ilTab, #ilSubTab",
+  "rules":[
+    {
+      "description": "There MUST NOT be more than 10 Tabs.",
+      "type": "Composition",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type": "structure",
+              "subtype": "amount",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": "li:not(#ilLastTab)"
+                }
+              ],
+              "operator": "<=",
+              "amount": "10",
+              "not": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Tabs MUST NOT contain more than 2 words.",
+      "type": "Wording",
+      "level": "MUST",
+      "tests": [
+        {
+          "selector": "#ilTab li:not(#ilLastTab)",
+          "not": "",
+          "variants": [
+            {
+              "type": "wording",
+              "subtype": "amount",
+              "operator": "<=",
+              "amount": "2",
+              "not": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Every word except articles, coordinating conjunctions and prepositions of four or fewer letters MUST be capitalized.",
+      "type": "Wording",
+      "level": "MUST",
+      "tests": [
+        {
+          "selector": "#ilTab li:not(#ilLastTab)",
+          "not": "",
+          "variants": [
+            {
+              "type": "wording",
+              "subtype": "amount",
+              "selectors": [
+                {
+                  "type": "self"
+                }
+              ],
+              "contentType": "content",
+              "operator": "=",
+              "amount": "0",
+              "regex": "( |\\(|^)[a-z][a-zA-Z0-9]*",
+              "ignore": {
+                "list": [
+                  "&nbsp;"
+                ],
+                "ignoreConjunctions": true,
+                "ignorePrepositions": true,
+                "ignoreArticles": true
+              },
+              "not": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Nouns rather than verbs SHOULD be used to label Tabs, for example Content or Settings.",
+      "type": "Wording",
+      "level": "MUST",
+      "tests": [
+        {
+          "selector": "#ilTab li:not(#ilLastTab)",
+          "not": "",
+          "variants": [
+            {
+              "type": "wording",
+              "subtype": "amount",
+              "selectors": [
+                {
+                  "type": "self"
+                }
+              ],
+              "contentType": "content",
+              "operator": "=",
+              "amount": "0",
+              "regex":
+              {
+                "term":".*(\\s|^)show|edit|do(\\s|$).*",
+                "modifier": "gi"
+              },
+              "not": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "The Tab currently opened/active MUST visually differ from the others.",
+      "type": "Style",
+      "level": "MUST",
+      "tests": [
+        {
+          "selector": "#ilTab li.active",
+          "not": "",
+          "variants": [
+            {
+              "type":"css",
+              "subtype":"properties",
+              "selectorsA": [
+                {
+                  "type": "children",
+                  "selector": "a"
+                }
+              ],
+              "selectorsB": [
+                {
+                  "type": "parent"
+                },
+                {
+                  "type": "children",
+                  "selector": "li:not(.active) a"
+                }
+              ],
+              "properties":[
+                {
+                  "whichA": "padding",
+                  "whichB": "padding",
+                  "type": "isEqual"
+                }
+              ],
+              "not":true
+            }
+          ]
+        }
+      ]
+    }
+
+  ]
+}

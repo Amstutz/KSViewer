@@ -1,0 +1,83 @@
+{
+  "title": "Form Subsettings",
+  "selector": "form .form-horizontal .form-group .ilSubForm",
+  "rules": [
+    {
+      "description": "There MUST NOT be a nesting of more than one subsetting (see Jour Fixe comment in feature wiki reference). The only exception to this rule is the required quantification of a subsetting by a date or number. These exceptions MUST individually accepted by the Jour Fixe.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": ".ilSubForm .ilSubForm"
+                }
+              ],
+              "operator":"=",
+              "amount":"0",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Subsettings MUST bear an identifier.",
+      "type": "Composition",
+      "level": "MUST",
+      "tests": [
+        {
+          "selector": "form .form-horizontal .form-group .ilSubForm .form-group",
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": "label"
+                }
+              ],
+              "operator":">=",
+              "amount":"1",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Subsetting MUST NOT be enabled by any other form element than a checkbox or a radio input group.",
+      "type": "Interaction",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "siblings",
+                  "selector": "checkbox, .radio"
+                }
+              ],
+              "operator":">=",
+              "amount":"1",
+              "not":""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+

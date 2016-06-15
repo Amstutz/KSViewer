@@ -555,6 +555,179 @@
           ]
         }
       ]
+    },
+    {
+      "description": "By-lines SHOULD NOT use any formatting in descriptions (bold, italic or similar).",
+      "type": "Wording",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": ".help-block"
+                }
+              ],
+              "operator":"=",
+              "amount":"0",
+              "regex":
+              {
+                "term":".*(\\s|^)<.*>.*<.*>(\\s|$).*",
+                "modifier": "gi"
+              },
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "By-lines MUST NOT feature parentheses since they greatly diminish readability.",
+      "type": "Wording",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": ".help-block"
+                }
+              ],
+              "operator":"=",
+              "amount":"0",
+              "regex":
+              {
+                "term":"(.*)\\(|\\)(.*)",
+                "modifier": "gi"
+              },
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "By-lines SHOULD NOT start with terms such as: If this option is set … If this setting is active … Choose this setting if … This setting … Rather state what happens directly: Participants get / make / can … Point in time after which…. ILIAS will monitor… Sub-items xy are automatically whatever…",
+      "type": "Wording",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": ".help-block"
+                }
+              ],
+              "operator":"=",
+              "amount":"0",
+              "regex":
+              {
+                "term":"(^If .*)|(^Choose this setting .*)|(^This setting  .*)",
+                "modifier": "gi"
+              },
+              "not":""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+,{
+  "title": "Form Subsettings",
+  "selector": "form .form-horizontal .form-group .ilSubForm",
+  "rules": [
+    {
+      "description": "There MUST NOT be a nesting of more than one subsetting (see Jour Fixe comment in feature wiki reference). The only exception to this rule is the required quantification of a subsetting by a date or number. These exceptions MUST individually accepted by the Jour Fixe.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": ".ilSubForm .ilSubForm"
+                }
+              ],
+              "operator":"=",
+              "amount":"0",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Subsettings MUST bear an identifier.",
+      "type": "Composition",
+      "level": "MUST",
+      "tests": [
+        {
+          "selector": "form .form-horizontal .form-group .ilSubForm .form-group",
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": "label"
+                }
+              ],
+              "operator":">=",
+              "amount":"1",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Subsetting MUST NOT be enabled by any other form element than a checkbox or a radio input group.",
+      "type": "Interaction",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "siblings",
+                  "selector": "checkbox, .radio"
+                }
+              ],
+              "operator":">=",
+              "amount":"1",
+              "not":""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
@@ -1593,6 +1766,225 @@
 
 
 ,{
+  "title": "Navigational Collection",
+  "selector": "#ilTab, #ilSubTab",
+  "rules":[
+    {
+      "description": "Navigational Collections SHOULD only contain links as interaction triggers.",
+      "type": "Composition",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type": "structure",
+              "subtype": "amount",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": ".btn:not(.dropdown-toggle)"
+                }
+              ],
+              "operator": "=",
+              "amount": "0",
+              "not": ""
+            }
+          ]
+        }
+      ]
+    }
+
+  ]
+},{
+  "title": "Content Tabs",
+  "selector": "#ilTab",
+  "rules":[
+    {
+      "description": "If there are more tabs that can be displayed by the available length, the Tabs not fitting on the right MUST be moved into a Dropdown Menu labeled with “...” and a Glyph Down.",
+      "type": "Responsiveness",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type": "structure",
+              "subtype": "amount",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": "#ilLastTab"
+                }
+              ],
+              "operator": "=",
+              "amount": "1",
+              "not": ""
+            }
+          ]
+        }
+      ]
+    }
+
+  ]
+},{
+  "title": "Tabs",
+  "selector": "#ilTab, #ilSubTab",
+  "rules":[
+    {
+      "description": "There MUST NOT be more than 10 Tabs.",
+      "type": "Composition",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type": "structure",
+              "subtype": "amount",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": "li:not(#ilLastTab)"
+                }
+              ],
+              "operator": "<=",
+              "amount": "10",
+              "not": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Tabs MUST NOT contain more than 2 words.",
+      "type": "Wording",
+      "level": "MUST",
+      "tests": [
+        {
+          "selector": "#ilTab li:not(#ilLastTab)",
+          "not": "",
+          "variants": [
+            {
+              "type": "wording",
+              "subtype": "amount",
+              "operator": "<=",
+              "amount": "2",
+              "not": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Every word except articles, coordinating conjunctions and prepositions of four or fewer letters MUST be capitalized.",
+      "type": "Wording",
+      "level": "MUST",
+      "tests": [
+        {
+          "selector": "#ilTab li:not(#ilLastTab)",
+          "not": "",
+          "variants": [
+            {
+              "type": "wording",
+              "subtype": "amount",
+              "selectors": [
+                {
+                  "type": "self"
+                }
+              ],
+              "contentType": "content",
+              "operator": "=",
+              "amount": "0",
+              "regex": "( |\\(|^)[a-z][a-zA-Z0-9]*",
+              "ignore": {
+                "list": [
+                  "&nbsp;"
+                ],
+                "ignoreConjunctions": true,
+                "ignorePrepositions": true,
+                "ignoreArticles": true
+              },
+              "not": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Nouns rather than verbs SHOULD be used to label Tabs, for example Content or Settings.",
+      "type": "Wording",
+      "level": "MUST",
+      "tests": [
+        {
+          "selector": "#ilTab li:not(#ilLastTab)",
+          "not": "",
+          "variants": [
+            {
+              "type": "wording",
+              "subtype": "amount",
+              "selectors": [
+                {
+                  "type": "self"
+                }
+              ],
+              "contentType": "content",
+              "operator": "=",
+              "amount": "0",
+              "regex":
+              {
+                "term":".*(\\s|^)show|edit|do(\\s|$).*",
+                "modifier": "gi"
+              },
+              "not": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "The Tab currently opened/active MUST visually differ from the others.",
+      "type": "Style",
+      "level": "MUST",
+      "tests": [
+        {
+          "selector": "#ilTab li.active",
+          "not": "",
+          "variants": [
+            {
+              "type":"css",
+              "subtype":"properties",
+              "selectorsA": [
+                {
+                  "type": "children",
+                  "selector": "a"
+                }
+              ],
+              "selectorsB": [
+                {
+                  "type": "parent"
+                },
+                {
+                  "type": "children",
+                  "selector": "li:not(.active) a"
+                }
+              ],
+              "properties":[
+                {
+                  "whichA": "padding",
+                  "whichB": "padding",
+                  "type": "isEqual"
+                }
+              ],
+              "not":true
+            }
+          ]
+        }
+      ]
+    }
+
+  ]
+},{
   "title": "Button",
   "selector": ".btn",
   "rules": [

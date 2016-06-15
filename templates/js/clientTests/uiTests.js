@@ -30,7 +30,8 @@ if(ilback){
             this.skipping = ["Counter","Status Counter","Novelty Counter",
                 "Trigger Element","Primary Button", "Close Button","Button",
                 "Input Element", "Checkbox", "Radio Group","Checkbox Group", "Select Input",
-                "Input Collection","Standard Form","Titled Form Section"];
+                "Input Collection","Standard Form","Titled Form Section", "Form Settings", "Form Subsettings"
+                ];
 
         }
 

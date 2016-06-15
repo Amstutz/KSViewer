@@ -327,6 +327,96 @@
           ]
         }
       ]
+    },
+    {
+      "description": "By-lines SHOULD NOT use any formatting in descriptions (bold, italic or similar).",
+      "type": "Wording",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": ".help-block"
+                }
+              ],
+              "operator":"=",
+              "amount":"0",
+              "regex":
+              {
+                "term":".*(\\s|^)<.*>.*<.*>(\\s|$).*",
+                "modifier": "gi"
+              },
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "By-lines MUST NOT feature parentheses since they greatly diminish readability.",
+      "type": "Wording",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": ".help-block"
+                }
+              ],
+              "operator":"=",
+              "amount":"0",
+              "regex":
+              {
+                "term":"(.*)\\(|\\)(.*)",
+                "modifier": "gi"
+              },
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "By-lines SHOULD NOT start with terms such as: If this option is set … If this setting is active … Choose this setting if … This setting … Rather state what happens directly: Participants get / make / can … Point in time after which…. ILIAS will monitor… Sub-items xy are automatically whatever…",
+      "type": "Wording",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": ".help-block"
+                }
+              ],
+              "operator":"=",
+              "amount":"0",
+              "regex":
+              {
+                "term":"(^If .*)|(^Choose this setting .*)|(^This setting  .*)",
+                "modifier": "gi"
+              },
+              "not":""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
