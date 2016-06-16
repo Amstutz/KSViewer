@@ -21,6 +21,7 @@ il.uiTests.wording = function(element,selector,testVariant){
 
         il.uiTests.log.message(["wording content",content],"wording",this.log.levels.debug);
         il.uiTests.log.message(["wording text",text],"wording",this.log.levels.debug);
+        il.uiTests.log.message(["wording regex",regex],"wording",this.log.levels.debug);
 
         il.uiTests.log.message(["wording.amount nr words",nrWords],"wording",this.log.levels.debug);
 

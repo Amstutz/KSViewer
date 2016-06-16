@@ -33,7 +33,7 @@
       "level": "MUST",
       "tests": [
         {
-          "selector": "#ilTab li:not(#ilLastTab)",
+          "selector": "#ilTab li:not(#ilLastTab) a",
           "not": "",
           "variants": [
             {
@@ -53,7 +53,7 @@
       "level": "MUST",
       "tests": [
         {
-          "selector": "#ilTab li:not(#ilLastTab)",
+          "selector": "#ilTab li:not(#ilLastTab), #ilSubTab li",
           "not": "",
           "variants": [
             {
@@ -88,7 +88,7 @@
       "level": "MUST",
       "tests": [
         {
-          "selector": "#ilTab li:not(#ilLastTab)",
+          "selector": "#ilTab li:not(#ilLastTab), #ilSubTab li",
           "not": "",
           "variants": [
             {
@@ -104,7 +104,7 @@
               "amount": "0",
               "regex":
               {
-                "term":".*(\\s|^)show|edit|do(\\s|$).*",
+                "term":".*(\\s|^)(show|edit|do|manage|sort|configure|customize|manage)(\\s|$).*",
                 "modifier": "gi"
               },
               "not": ""
@@ -119,7 +119,7 @@
       "level": "MUST",
       "tests": [
         {
-          "selector": "#ilTab li.active",
+          "selector": "#ilTab li.active, #ilSubTab li.active",
           "not": "",
           "variants": [
             {
@@ -133,17 +133,32 @@
               ],
               "selectorsB": [
                 {
-                  "type": "parent"
-                },
-                {
+                  "type": "siblings",
+                  "selector": "li"
+                },                {
                   "type": "children",
-                  "selector": "li:not(.active) a"
+                  "selector": "a:not(.active)"
                 }
               ],
               "properties":[
                 {
-                  "whichA": "padding",
-                  "whichB": "padding",
+                  "whichA": "background",
+                  "whichB": "background",
+                  "type": "isEqual"
+                },
+                {
+                  "whichA": "color",
+                  "whichB": "color",
+                  "type": "isEqual"
+                },
+                {
+                  "whichA": "border",
+                  "whichB": "border",
+                  "type": "isEqual"
+                },
+                {
+                  "whichA": "text-decoration",
+                  "whichB": "text-decoration",
                   "type": "isEqual"
                 }
               ],
@@ -152,7 +167,76 @@
           ]
         }
       ]
+    },
+    {
+      "description": "The complete list of tabs MUST cary the role 'tablist'",
+      "type": "Accessability",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"accessibility",
+              "subtype":"role",
+              "selectors": [
+                {
+                  "type": "self"
+                }
+              ],
+              "role": "tablist",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "The individual Tabs MUST cary the role 'tab'",
+      "type": "Accessability",
+      "level": "MUST",
+      "tests": [
+        {
+          "selector": "#ilTab li:not(#ilLastTab), #ilSubTab li",
+          "not": "",
+          "variants": [
+            {
+              "type":"accessibility",
+              "subtype":"role",
+              "selectors": [
+                {
+                  "type": "self"
+                }
+              ],
+              "role": "tab",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "All Tabs MUST be accessible by keyboard.",
+      "type": "Accessibility",
+      "level": "MUST",
+      "tests": [
+        {
+          "selector": "#ilTab li:not(#ilLastTab) a, #ilSubTab li a",
+          "not": "",
+          "variants": [
+            {
+              "type":"accessibility",
+              "subtype":"tabbable",
+              "selectors": [
+                {
+                  "type": "self"
+                }
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
     }
-
   ]
 }

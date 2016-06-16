@@ -227,6 +227,1188 @@
     }
   ]
 },{
+  "title": "Button",
+  "selector": ".btn",
+  "rules": [
+    {
+      "description": "Buttons MUST NOT be used inside a Textual Paragraph.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type": "structure",
+              "subtype": "insideText",
+              "selectors": [{"type": "self"}],
+              "not": "true"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "The caption of a Button SHOULD contain no more than two words.",
+      "type": "Usage",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors":[{"type": "self"}],
+              "contentType": "content",
+              "operator":"<=",
+              "amount":"2",
+              "regex": "",
+              "not":""
+            }
+          ]
+        },
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors":[{"type": "self"}],
+              "contentType": "attribute",
+              "contentSelector": "value",
+              "operator":"<=",
+              "amount":"2",
+              "regex": "",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": " Every word except articles, coordinating conjunctions and prepositions MUST be capitalized.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors":[{
+                "type": "self"
+              }],
+              "contentType": "attribute",
+              "contentSelector": "value",
+              "operator":"=",
+              "amount":"0",
+              "regex": "( |\\(|^)[a-z][a-zA-Z0-9]*",
+              "ignore":{
+                "list": ["&nbsp;"],
+                "ignoreConjunctions":true,
+                "ignorePrepositions":true,
+                "ignoreArticles":true
+
+              },
+              "not":""
+            }
+          ]
+        },        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors":[{
+                "type": "self"
+              }],
+              "contentType": "content",
+              "operator":"=",
+              "amount":"0",
+              "regex": "( |\\(|^)[a-z][a-zA-Z0-9]*",
+              "ignore":{
+                "list": ["&nbsp;"],
+                "ignoreConjunctions":true,
+                "ignorePrepositions":true,
+                "ignoreArticles":true
+              },
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": " If Text and Glyphs are used alongside as caption for a Button the Glyph MUST be displayed on the left side.",
+      "type": "Style",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type": "structure",
+              "subtype": "amount",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": ".glyphicon"
+                }
+              ],
+              "amount":0,
+              "operator":"=",
+              "not": ""
+            },
+            {
+              "type": "wording",
+              "subtype": "amount",
+              "selectors": [
+                {
+                  "type": "self"
+                }
+              ],
+              "amount":0,
+              "operator":"=",
+              "not": ""
+            },
+            {
+              "type":"structure",
+              "subtype":"ordering",
+              "selectors":[{
+                "type": "children"
+              }],
+              "items":[
+                {
+                  "variant": {
+                    "type": "structure",
+                    "subtype": "amount",
+                    "selectors": [
+                      {
+                        "type": "self",
+                        "selector": ".glyphicon"
+                      }
+                    ],
+                    "amount": 1,
+                    "operator": "=",
+                    "not": ""
+                  }
+                },
+                {
+                  "variant": {
+                    "type": "true"
+                  },
+                  "optional": true,
+                  "repetitions": -1
+                }
+              ],
+
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "If Text and a Caret are used alongside as caption for a Button the Caret MUST be displayed on the right side.",
+      "type": "Style",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type": "structure",
+              "subtype": "amount",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": ".caret"
+                }
+              ],
+              "amount":0,
+              "operator":"=",
+              "not": ""
+            },
+            {
+              "type":"structure",
+              "subtype":"ordering",
+              "selectors":[{
+                "type": "children"
+              }],
+              "items":[
+                {
+                  "variant": {
+                    "type": "true"
+                  },
+                  "optional": true,
+                  "repetitions": -1
+                },
+                {
+                  "variant": {
+                    "type": "structure",
+                    "subtype": "amount",
+                    "selectors": [
+                      {
+                        "type": "self",
+                        "selector": ".caret"
+                      }
+                    ],
+                    "amount": 1,
+                    "operator": "=",
+                    "not": ""
+                  }
+                }
+              ],
+
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "All glyph-only buttons MUST have aria-labels.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type": "structure",
+              "subtype": "amount",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": ".glyphicon"
+                }
+              ],
+              "amount":0,
+              "operator":"=",
+              "not": ""
+            },
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors":[{"type": "self"}],
+              "contentType": "content",
+              "operator":">",
+              "amount":"0",
+              "regex": "",
+              "not":""
+            },
+            {
+              "type":"accessibility",
+              "subtype":"ariaLabeled",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": ".glyphicon"
+                }
+              ],
+              "not":""
+            },
+            {
+              "type":"accessibility",
+              "subtype":"ariaLabeled",
+              "selectors": [{"type": "self"}
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": " Button DOM elements MUST either be of type “button” or of type “a” accompanied with the aria-role “Button”",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"accessibility",
+              "subtype":"role",
+              "selectors": [
+                {
+                  "type": "self"
+                }
+              ],
+              "role": "button",
+              "not":""
+            },
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "self",
+                  "selector": "button, input[type='button'], input[type='submit']"
+                }
+              ],
+              "operator":"=",
+              "amount":"1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+
+
+,{
+  "title": "Close Button",
+  "selector": ".close",
+  "rules": [
+    {
+      "description": "The Close Button MUST always be positioned in the top right of a collection.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"css",
+              "subtype":"positioning",
+
+              "selectorsA": [
+                {
+                  "type": "self"
+                }
+              ],
+              "selectorsB": [
+                {
+                  "type": "parents",
+                  "selector": ".modal-dialog"
+                }
+              ],
+              "positioning":[
+                {
+                  "type": "isContained"
+                },
+                {
+                  "type": "collideHorizontal",
+                  "stretchHorizontalB": 0.8,
+                  "not": true
+                },
+                {
+                  "type": "collideVertical",
+                  "stretchVerticalB": 0.2
+                }
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "The functionality of the close button MUST be indicated for screen readers by an aria-label.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"accessibility",
+              "subtype":"ariaLabeled",
+              "selectors": [{"type": "self"}
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+
+,
+{
+  "title": "Primary Button",
+  "selector": ".btn-primary",
+  "rules": [
+    {
+      "description": "There MUST only be one Primary Button per page in ILIAS.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "root"
+                },{
+                  "type": "find",
+                  "selector": ".btn-primary"
+                }
+              ],
+              "operator":"<=",
+              "amount":"1",
+              "not":""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+},{
+  "title": "Trigger Element",
+  "selector": "btn, a:not(.ilAccAnchor)",
+  "rules":[
+    {
+      "description": "The interaction triggered by the Trigger Element MUST be fired if the ‘Return’-Key is clicked while the element is focused.",
+      "type": "Accessibility",
+      "level": "MUST",
+      "tests": [
+        {
+          "ignore": [[
+            {
+              "type": "parent",
+              "selector": ".ilHeader"
+            }
+          ]],
+          "not": "",
+          "variants": [
+            {
+              "type":"accessibility",
+              "subtype":"focusable",
+              "selectors": [
+                {
+                  "type": "self"
+                }
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "All Trigger Elements visible in a view MUST be accessible by keyboard by using the ‘Tab’-Key.",
+      "type": "Accessibility",
+      "level": "MUST",
+      "tests": [
+        {
+          "ignore": [[
+            {
+              "type": "parent",
+              "selector": ".ilHeader"
+            }
+          ]],
+          "variants": [
+            {
+              "type":"accessibility",
+              "subtype":"tabbable",
+              "selectors": [
+                {
+                  "type": "self"
+                }
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "All active Triggers MUST indicate hovering by displaying the cursor as pointer (hand).",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "ignore": [[
+            {
+              "type": "parent",
+              "selector": "li.active, .ilHeader"
+            }
+          ]],
+          "variants": [
+            {
+              "type":"css",
+              "subtype":"properties",
+              "selectorsA": [
+                {
+                  "type": "self"
+                }
+              ],
+              "properties":[
+                {
+                  "simulate":{
+                    "type": "hover",
+                    "point": "before"
+                  },
+                  "whichA": "cursor",
+                  "value":"pointer",
+                  "type": "isEqual"
+                }
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+    "type": "style",
+    "description": " All Trigger Elements MUST slightly modify font color, underline or background color on-hovering.",
+    "level": "MUST",
+    "tests":[
+      {
+        "not": "",
+        "ignore": [[
+          {
+            "type": "parent",
+            "selector": "li.active, .ilHeader"
+          }
+        ]],
+        "variants":
+        [
+          {
+            "type":"css",
+            "subtype":"coloring",
+            "selectorsA": [{"type": "self"}],
+            "selectorsB": [{"type": "self"}],
+            "coloring":[
+              {
+                "simulate":{
+                  "type": "hover",
+                  "point": "between"
+                },
+                "whichA": "color",
+                "whichB":"color",
+                "type": "isEqual",
+                "not": true
+              }
+            ],
+            "not":""
+          },
+          {
+            "type":"css",
+            "subtype":"coloring",
+            "selectorsA": [{"type": "self"}],
+            "selectorsB": [{"type": "self"}],
+            "coloring":[
+              {
+                "simulate":{
+                  "type": "hover",
+                  "point": "between"
+                },
+                "whichA": "background-color",
+                "whichB":"background-color",
+                "type": "isEqual",
+                "not": true
+              }
+            ],
+            "not":""
+          },
+          {
+            "type":"css",
+            "subtype":"properties",
+            "selectorsA": [
+              {
+                "type": "self"
+              }
+            ],
+            "properties":[
+              {
+                "simulate":{
+                  "type": "hover",
+                  "point": "before"
+                },
+                "whichA": "text-decoration",
+                "value": "underline",
+                "type": "isEqual"
+              }
+            ],
+            "not":""
+          }
+        ]
+      }
+    ]
+  }
+
+  ]
+},{
+  "title": "Input Element",
+  "selector": "input, select, textarea",
+  "rules": [
+    {
+      "description": "All Input Elements visible in a view MUST be accessible by keyboard by using the ‘Tab’-Key.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"accessibility",
+              "subtype":"tabbable",
+              "selectors": [
+                {
+                  "type": "self"
+                }
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "If focused, the Input Elements MUST change their Input Border Color to the Input Focus Border Color.",
+      "type": "Usage",
+      "level": "MUST",
+
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"css",
+              "subtype":"properties",
+              "selectorsA": [
+                {
+                  "type": "self"
+                }
+              ],
+              "selectorsB": [
+                {
+                  "type": "self"
+                }
+              ],
+              "properties":[
+                {
+                  "simulate":{
+                    "type": "focus",
+                    "point": "between"
+                  },
+                  "whichA": "outline",
+                  "whichB":"outline",
+                  "type": "isEqual",
+                  "not": true
+                }
+              ],
+              "not":""
+            },
+            {
+              "type":"css",
+              "subtype":"properties",
+              "selectorsA": [
+                {
+                  "type": "self"
+                }
+              ],
+              "selectorsB": [
+                {
+                  "type": "self"
+                }
+              ],
+              "properties":[
+                {
+                  "simulate":{
+                    "type": "focus",
+                    "point": "between"
+                  },
+                  "whichA": "border-color",
+                  "whichB":"border-color",
+                  "type": "isEqual",
+                  "not": true
+                }
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+
+
+
+
+,{
+  "title": "Checkbox",
+  "selector": ".checkbox",
+  "rules": [
+    {
+      "description": "A checkbox SHOULD be used whenever a user has to perform a binary choice. You MUST NOT use a Select input or a radio group in this case.",
+      "type": "Usage",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "selector":".radio",
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "siblings",
+                  "selector": ".radio"
+                }
+              ],
+              "operator":"<",
+              "amount":"2",
+              "not":true
+            }
+          ]
+        },
+        {
+          "selector":"select",
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": "option"
+                }
+              ],
+              "operator":"<=",
+              "amount":"2",
+              "not":true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "The checkbox’s identifier MUST always state something positive.",
+      "type": "Usage",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors":[
+                {
+                  "type": "parents",
+                  "selector": ".form-group"
+                },
+                {
+                  "type": "children",
+                  "selector": "label:first"
+                }
+              ],
+              "contentType": "content",
+              "operator":"=",
+              "amount":"0",
+              "regex":
+              {
+                "term":".*(\\s|^)not(\\s|$).*",
+                "modifier": "gi"
+              },
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "If a description is needed, it MUST be placed below the checkbox in the usual place for descriptions of form settings.",
+      "type": "Usage",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors":[
+                {
+                  "type": "children",
+                  "selector": "label"
+                }
+              ],
+              "contentType": "content",
+              "operator":"=",
+              "amount":"0",
+              "regex":"",
+              "not":""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+
+
+
+
+,{
+  "title": "Checkbox Group",
+  "selector": "input[type=checkbox]",
+  "rules": [
+    {
+      "description": "Use if only few items are expected to be selected (<=5), the total number of items to select from SHOULD not be larger than 25. Use a Tag Input otherwise.",
+      "type": "Usage",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "parents",
+                  "selector": ".form-group"
+                },
+                {
+                  "type": "selector",
+                  "selector": ":not(.ilSubForm) input[type=checkbox]"
+                }
+              ],
+              "operator":"<=",
+              "amount":"25",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Other than for the checkbox input, each checkbox MUST be labeled.",
+      "type": "Wording",
+      "level": "Must",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "parents",
+                  "selector": ".form-group"
+                },
+                {
+                  "type": "selector",
+                  "selector": "input[type=checkbox]"
+                }
+              ],
+              "operator":"<=",
+              "amount":"1",
+              "not":""
+            },
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors":[
+                {
+                  "type": "next"
+                },
+                {
+                  "type": "selector",
+                  "selector": "label"
+                }
+              ],
+              "contentType": "content",
+              "operator":"=",
+              "amount":"0",
+              "regex":"",
+              "not":true
+            }
+          ]
+        }
+      ]
+    }
+
+  ]
+}
+
+
+
+
+
+,{
+  "title": "Radio Group",
+  "selector": ".radio",
+  "rules": [
+    {
+      "description": "A radio group SHOULD contain 3 to 5 options.",
+      "type": "Usage",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "siblings",
+                  "selector": ".radio"
+                }
+              ],
+              "operator":">=",
+              "amount":"2",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "If more than 5 options are available a Select Input SHOULD be used. ",
+      "type": "Usage",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "siblings",
+                  "selector": ".radio"
+                }
+              ],
+              "operator":"<=",
+              "amount":"4",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Each option in a radio group MUST be labeled.",
+      "type": "Wording",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors":[
+                {
+                  "type": "children",
+                  "selector": "label"
+                }
+              ],
+              "contentType": "content",
+              "operator":"=",
+              "amount":"0",
+              "regex":"",
+              "not":true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "This label SHOULD not consist of more than 5 words. ",
+      "type": "Wording",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"amount",
+              "selectors":[
+                {
+                  "type": "children",
+                  "selector": "label"
+                }
+              ],
+              "contentType": "content",
+              "operator":"<=",
+              "amount":"5",
+              "regex":"",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "If used in forms, the label of the options SHOULD not simply repeat the identifier on the left. A meaningful labeling should be chosen instead.",
+      "type": "Wording",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"wording",
+              "subtype":"compare",
+              "selectorsA":[
+                {
+                  "type": "parents",
+                  "selector": ".form-group"
+                },
+                {
+                  "type": "children",
+                  "selector": "label:first"
+                }
+              ],
+              "selectorsB":[
+                {
+                  "type": "children",
+                  "selector": "label"
+                }
+              ],
+              "not":true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+
+
+
+
+,{
+  "title": "Select Input",
+  "selector": "select",
+  "rules": [
+    {
+      "description": " Select Inputs MUST NOT be used for binary choices.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": "option"
+                }
+              ],
+              "operator":"<=",
+              "amount":"2",
+              "not":true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Select Inputs SHOULD allow user selecting 1 out of N elements where N > 5 and no autocomplete selection is available.",
+      "type": "Usage",
+      "level": "Should",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": "option"
+                }
+              ],
+              "operator":">",
+              "amount":"5",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "  If the number of selectable items is greater than 20 a Tag Input with autocomplete SHOULD be used instead.",
+      "type": "Usage",
+      "level": "Should",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": "option"
+                }
+              ],
+              "operator":"<=",
+              "amount":"20",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": " Select Inputs MUST NOT for selecting multiple values. Use Tag Input with autocomplete instead.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "self",
+                  "selector": "[multiple]"
+                }
+              ],
+              "operator":"=",
+              "amount":"0",
+              "not":""
+            }
+          ]
+        }
+      ]
+    }
+
+  ]
+}
+
+
+
+
+
+,{
   "title": "Form Settings",
   "selector": "form .form-horizontal .form-group",
   "rules": [
@@ -1183,589 +2365,6 @@
 
   ]
 },{
-  "title": "Input Element",
-  "selector": "input, select, textarea",
-  "rules": [
-    {
-      "description": "All Input Elements visible in a view MUST be accessible by keyboard by using the ‘Tab’-Key.",
-      "type": "Usage",
-      "level": "MUST",
-      "tests": [
-        {
-          "not": "",
-          "variants": [
-            {
-              "type":"accessibility",
-              "subtype":"tabbable",
-              "selectors": [
-                {
-                  "type": "self"
-                }
-              ],
-              "not":""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "If focused, the Input Elements MUST change their Input Border Color to the Input Focus Border Color.",
-      "type": "Usage",
-      "level": "MUST",
-
-      "tests": [
-        {
-          "not": "",
-          "variants": [
-            {
-              "type":"css",
-              "subtype":"properties",
-              "selectorsA": [
-                {
-                  "type": "self"
-                }
-              ],
-              "selectorsB": [
-                {
-                  "type": "self"
-                }
-              ],
-              "properties":[
-                {
-                  "simulate":{
-                    "type": "focus",
-                    "point": "between"
-                  },
-                  "whichA": "outline",
-                  "whichB":"outline",
-                  "type": "isEqual",
-                  "not": true
-                }
-              ],
-              "not":""
-            },
-            {
-              "type":"css",
-              "subtype":"properties",
-              "selectorsA": [
-                {
-                  "type": "self"
-                }
-              ],
-              "selectorsB": [
-                {
-                  "type": "self"
-                }
-              ],
-              "properties":[
-                {
-                  "simulate":{
-                    "type": "focus",
-                    "point": "between"
-                  },
-                  "whichA": "border-color",
-                  "whichB":"border-color",
-                  "type": "isEqual",
-                  "not": true
-                }
-              ],
-              "not":""
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
-
-
-
-
-
-,{
-  "title": "Checkbox",
-  "selector": ".checkbox",
-  "rules": [
-    {
-      "description": "A checkbox SHOULD be used whenever a user has to perform a binary choice. You MUST NOT use a Select input or a radio group in this case.",
-      "type": "Usage",
-      "level": "SHOULD",
-      "tests": [
-        {
-          "selector":".radio",
-          "not": "",
-          "variants": [
-            {
-              "type":"structure",
-              "subtype":"amount",
-              "selectors": [
-                {
-                  "type": "siblings",
-                  "selector": ".radio"
-                }
-              ],
-              "operator":"<",
-              "amount":"2",
-              "not":true
-            }
-          ]
-        },
-        {
-          "selector":"select",
-          "not": "",
-          "variants": [
-            {
-              "type":"structure",
-              "subtype":"amount",
-              "selectors": [
-                {
-                  "type": "children",
-                  "selector": "option"
-                }
-              ],
-              "operator":"<=",
-              "amount":"2",
-              "not":true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "The checkbox’s identifier MUST always state something positive.",
-      "type": "Usage",
-      "level": "SHOULD",
-      "tests": [
-        {
-          "not": "",
-          "variants": [
-            {
-              "type":"wording",
-              "subtype":"amount",
-              "selectors":[
-                {
-                  "type": "parents",
-                  "selector": ".form-group"
-                },
-                {
-                  "type": "children",
-                  "selector": "label:first"
-                }
-              ],
-              "contentType": "content",
-              "operator":"=",
-              "amount":"0",
-              "regex":
-              {
-                "term":".*(\\s|^)not(\\s|$).*",
-                "modifier": "gi"
-              },
-              "not":""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "If a description is needed, it MUST be placed below the checkbox in the usual place for descriptions of form settings.",
-      "type": "Usage",
-      "level": "SHOULD",
-      "tests": [
-        {
-          "not": "",
-          "variants": [
-            {
-              "type":"wording",
-              "subtype":"amount",
-              "selectors":[
-                {
-                  "type": "children",
-                  "selector": "label"
-                }
-              ],
-              "contentType": "content",
-              "operator":"=",
-              "amount":"0",
-              "regex":"",
-              "not":""
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
-
-
-
-
-
-,{
-  "title": "Checkbox Group",
-  "selector": "input[type=checkbox]",
-  "rules": [
-    {
-      "description": "If only few items are expected to be selected (<=5), the total number of items to select from SHOULD not be larger than 25. Use a Tag Input otherwise.",
-      "type": "Usage",
-      "level": "Should",
-      "tests": [
-        {
-          "not": "",
-          "variants": [
-            {
-              "type":"structure",
-              "subtype":"amount",
-              "selectors": [
-                {
-                  "type": "parents",
-                  "selector": ".form-group"
-                },
-                {
-                  "type": "selector",
-                  "selector": "input[type=checkbox]"
-                }
-              ],
-              "operator":"<=",
-              "amount":"1",
-              "not":""
-            },
-            {
-              "type":"structure",
-              "subtype":"amount",
-              "selectors": [
-                {
-                  "type": "parents",
-                  "selector": ".form-group"
-                },
-                {
-                  "type": "selector",
-                  "selector": "input[type=checkbox]"
-                }
-              ],
-              "operator":"<=",
-              "amount":"25",
-              "not":""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "Other than for the checkbox input, each checkbox MUST be labeled.",
-      "type": "Wording",
-      "level": "Must",
-      "tests": [
-        {
-          "not": "",
-          "variants": [
-            {
-              "type":"structure",
-              "subtype":"amount",
-              "selectors": [
-                {
-                  "type": "parents",
-                  "selector": ".form-group"
-                },
-                {
-                  "type": "selector",
-                  "selector": "input[type=checkbox]"
-                }
-              ],
-              "operator":"<=",
-              "amount":"1",
-              "not":""
-            },
-            {
-              "type":"wording",
-              "subtype":"amount",
-              "selectors":[
-                {
-                  "type": "next"
-                },
-                {
-                  "type": "selector",
-                  "selector": "label"
-                }
-              ],
-              "contentType": "content",
-              "operator":"=",
-              "amount":"0",
-              "regex":"",
-              "not":true
-            }
-          ]
-        }
-      ]
-    }
-
-  ]
-}
-
-
-
-
-
-,{
-  "title": "Radio Group",
-  "selector": ".radio",
-  "rules": [
-    {
-      "description": "A radio group SHOULD contain 3 to 5 options.",
-      "type": "Usage",
-      "level": "SHOULD",
-      "tests": [
-        {
-          "not": "",
-          "variants": [
-            {
-              "type":"structure",
-              "subtype":"amount",
-              "selectors": [
-                {
-                  "type": "siblings",
-                  "selector": ".radio"
-                }
-              ],
-              "operator":">=",
-              "amount":"2",
-              "not":""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "If more than 5 options are available a Select Input SHOULD be used. ",
-      "type": "Usage",
-      "level": "SHOULD",
-      "tests": [
-        {
-          "not": "",
-          "variants": [
-            {
-              "type":"structure",
-              "subtype":"amount",
-              "selectors": [
-                {
-                  "type": "siblings",
-                  "selector": ".radio"
-                }
-              ],
-              "operator":"<=",
-              "amount":"4",
-              "not":""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "Each option in a radio group MUST be labeled.",
-      "type": "Wording",
-      "level": "MUST",
-      "tests": [
-        {
-          "not": "",
-          "variants": [
-            {
-              "type":"wording",
-              "subtype":"amount",
-              "selectors":[
-                {
-                  "type": "children",
-                  "selector": "label"
-                }
-              ],
-              "contentType": "content",
-              "operator":"=",
-              "amount":"0",
-              "regex":"",
-              "not":true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "This label SHOULD not consist of more than 5 words. ",
-      "type": "Wording",
-      "level": "SHOULD",
-      "tests": [
-        {
-          "not": "",
-          "variants": [
-            {
-              "type":"wording",
-              "subtype":"amount",
-              "selectors":[
-                {
-                  "type": "children",
-                  "selector": "label"
-                }
-              ],
-              "contentType": "content",
-              "operator":"<=",
-              "amount":"5",
-              "regex":"",
-              "not":""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "If used in forms, the label of the options SHOULD not simply repeat the identifier on the left. A meaningful labeling should be chosen instead.",
-      "type": "Wording",
-      "level": "SHOULD",
-      "tests": [
-        {
-          "not": "",
-          "variants": [
-            {
-              "type":"wording",
-              "subtype":"compare",
-              "selectorsA":[
-                {
-                  "type": "parents",
-                  "selector": ".form-group"
-                },
-                {
-                  "type": "children",
-                  "selector": "label:first"
-                }
-              ],
-              "selectorsB":[
-                {
-                  "type": "children",
-                  "selector": "label"
-                }
-              ],
-              "not":true
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
-
-
-
-
-
-,{
-  "title": "Select Input",
-  "selector": "select",
-  "rules": [
-    {
-      "description": " Select Inputs MUST NOT be used for binary choices.",
-      "type": "Usage",
-      "level": "MUST",
-      "tests": [
-        {
-          "not": "",
-          "variants": [
-            {
-              "type":"structure",
-              "subtype":"amount",
-              "selectors": [
-                {
-                  "type": "children",
-                  "selector": "option"
-                }
-              ],
-              "operator":"<=",
-              "amount":"2",
-              "not":true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "Select Inputs SHOULD allow user selecting 1 out of N elements where N > 5 and no autocomplete selection is available.",
-      "type": "Usage",
-      "level": "Should",
-      "tests": [
-        {
-          "not": "",
-          "variants": [
-            {
-              "type":"structure",
-              "subtype":"amount",
-              "selectors": [
-                {
-                  "type": "children",
-                  "selector": "option"
-                }
-              ],
-              "operator":">",
-              "amount":"5",
-              "not":""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "  If the number of selectable items is greater than 20 a Tag Input with autocomplete SHOULD be used instead.",
-      "type": "Usage",
-      "level": "Should",
-      "tests": [
-        {
-          "not": "",
-          "variants": [
-            {
-              "type":"structure",
-              "subtype":"amount",
-              "selectors": [
-                {
-                  "type": "children",
-                  "selector": "option"
-                }
-              ],
-              "operator":"<=",
-              "amount":"20",
-              "not":""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": " Select Inputs MUST NOT for selecting multiple values. Use Tag Input with autocomplete instead.",
-      "type": "Usage",
-      "level": "MUST",
-      "tests": [
-        {
-          "not": "",
-          "variants": [
-            {
-              "type":"structure",
-              "subtype":"amount",
-              "selectors": [
-                {
-                  "type": "self",
-                  "selector": "[multiple]"
-                }
-              ],
-              "operator":"=",
-              "amount":"0",
-              "not":""
-            }
-          ]
-        }
-      ]
-    }
-
-  ]
-}
-
-
-
-
-
-,{
   "title": "Navigational Collection",
   "selector": "#ilTab, #ilSubTab",
   "rules":[
@@ -1797,6 +2396,135 @@
 
   ]
 },{
+  "title": "Content Subtabs",
+  "selector": "#ilSubTab",
+  "rules":[
+    {
+      "description": "Ordering (for Subtabs of first tab): i. View (Zeigen) tab: Displays content of First Tab. ii. Manage; Verwalten tab: To cary out actions to be performed on multiple items at once iii. Sorting: To sort items iv. Customize Page: If the page editor is activated in the administration, then page content can be added and placed above and below content lists.",
+      "type": "Composition",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type": "structure",
+              "subtype": "amount",
+              "selectors": [
+                {
+                  "type": "root"
+                },
+                {
+                  "type": "selector",
+                  "selector": "ul.ilMainMenu li.dropdown:nth-of-type(2) a.MMActive"
+                }
+              ],
+              "operator": "=",
+              "amount": "0",
+              "not": ""
+            },
+            {
+              "type": "structure",
+              "subtype": "amount",
+              "selectors": [
+                {
+                  "type": "root"
+                },
+                {
+                  "type": "selector",
+                  "selector": "#ilTab li:first.active"
+                }
+              ],
+              "operator": "=",
+              "amount": "0",
+              "not": ""
+            },
+            {
+              "type":"structure",
+              "subtype":"ordering",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": "li"
+                },
+                {
+                  "type": "children",
+                  "selector": "a"
+                }
+              ],
+              "items":[
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "^View$",
+                    "amount": 1
+                  },
+                  "optional": true
+                },
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "^Manage$",
+                    "amount": 1
+                  },
+                  "optional": true
+                },
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "^Sorting$",
+                    "amount": 1
+                  },
+                  "optional": true
+                },
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "^Customize Page$",
+                    "amount": 1
+                  },
+                  "optional": true
+                }
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Content Subtabs MUST NOT have further subtabs (3rd Level of subtabs).",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type": "structure",
+              "subtype": "amount",
+              "selectors": [
+                {
+                  "type": "root"},
+                {
+                  "type":"selector",
+                  "selector":".ilSubTab"
+                }
+              ],
+              "operator": "<=",
+              "amount": "1",
+              "not": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+},{
   "title": "Content Tabs",
   "selector": "#ilTab",
   "rules":[
@@ -1824,8 +2552,207 @@
           ]
         }
       ]
+    },
+    {
+      "description": "Tabs MUST be in the following order: Content-related tabs, if content is not a 'separate view', Info tab,  Settings tab ,  Member or similar user lists, Learning Progress tab,   All other tabs (not in this list),  Metadata tab,  Export tab, Permissions tab.",
+      "type": "Composition",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type": "structure",
+              "subtype": "amount",
+              "selectors": [
+                {
+                  "type": "root"
+                },
+                {
+                  "type": "selector",
+                  "selector": "ul.ilMainMenu li.dropdown:nth-of-type(2) a.MMActive"
+                }
+              ],
+              "operator": "=",
+              "amount": "0",
+              "not": ""
+            },
+            {
+              "type":"structure",
+              "subtype":"ordering",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": "li:not(#ilLastTab)"
+                },
+                {
+                  "type": "children",
+                  "selector": "a"
+                }
+              ],
+              "items":[
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "Content(\\s.*|$)",
+                    "amount": 1
+                  }
+                },
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "Info",
+                    "amount": 1
+                  }
+                },
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "Settings",
+                    "amount": 1
+                  }
+                },
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "Members",
+                    "amount": 1
+                  },
+                  "optional": true
+                },
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "Learning Progress",
+                    "amount": 1
+                  },
+                  "optional": true
+                },
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "^(?!Metadata|Export|Permissions)(.*)$",
+                    "amount": 1
+                  },
+                  "optional": true,
+                  "repetitions": -1
+                },
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "Metadata",
+                    "amount": 1
+                  },
+                  "optional": true
+                },
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "Export",
+                    "amount": 1
+                  },
+                  "optional": true
+                },
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "Permissions",
+                    "amount": 1
+                  }
+                },
+                {
+                  "variant": {
+                    "type": "structure",
+                    "subtype": "amount",
+                    "selectors":[{
+                      "type":"selector",
+                      "selector":".glyphicon-chevron-right"
+                    }
+                    ],
+                    "amount": 1
+                  },
+                  "optional": true
+                }
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Tabs to change the Mode of the Object presented (e.g. to “Preview”) MUST be placed on the very right and be followed by a Next-Glyph.",
+      "type": "Ordering",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type": "structure",
+              "subtype": "amount",
+              "selectors": [
+                {
+                  "type":"selector",
+                  "selector":".glyphicon-chevron-right"
+                }
+              ],
+              "operator": "=",
+              "amount": "0",
+              "not": ""
+            },
+            {
+              "type":"structure",
+              "subtype":"ordering",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": "li:not(#ilLastTab)"
+                },
+                {
+                  "type": "children",
+                  "selector": "a"
+                }
+              ],
+              "items":[
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "^(.*)$",
+                    "amount": 1
+                  },
+                  "optional": true,
+                  "repetitions": -1
+                },
+                {
+                  "variant": {
+                    "type": "structure",
+                    "subtype": "amount",
+                    "selectors":[{
+                      "type":"selector",
+                      "selector":".glyphicon-chevron-right"
+                    }
+                    ],
+                    "amount": 1
+                  }
+                }
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
     }
-
   ]
 },{
   "title": "Tabs",
@@ -1862,7 +2789,7 @@
       "level": "MUST",
       "tests": [
         {
-          "selector": "#ilTab li:not(#ilLastTab)",
+          "selector": "#ilTab li:not(#ilLastTab) a",
           "not": "",
           "variants": [
             {
@@ -1882,7 +2809,7 @@
       "level": "MUST",
       "tests": [
         {
-          "selector": "#ilTab li:not(#ilLastTab)",
+          "selector": "#ilTab li:not(#ilLastTab), #ilSubTab li",
           "not": "",
           "variants": [
             {
@@ -1917,7 +2844,7 @@
       "level": "MUST",
       "tests": [
         {
-          "selector": "#ilTab li:not(#ilLastTab)",
+          "selector": "#ilTab li:not(#ilLastTab), #ilSubTab li",
           "not": "",
           "variants": [
             {
@@ -1933,7 +2860,7 @@
               "amount": "0",
               "regex":
               {
-                "term":".*(\\s|^)show|edit|do(\\s|$).*",
+                "term":".*(\\s|^)(show|edit|do|manage|sort|configure|customize|manage)(\\s|$).*",
                 "modifier": "gi"
               },
               "not": ""
@@ -1948,7 +2875,7 @@
       "level": "MUST",
       "tests": [
         {
-          "selector": "#ilTab li.active",
+          "selector": "#ilTab li.active, #ilSubTab li.active",
           "not": "",
           "variants": [
             {
@@ -1962,17 +2889,32 @@
               ],
               "selectorsB": [
                 {
-                  "type": "parent"
-                },
-                {
+                  "type": "siblings",
+                  "selector": "li"
+                },                {
                   "type": "children",
-                  "selector": "li:not(.active) a"
+                  "selector": "a:not(.active)"
                 }
               ],
               "properties":[
                 {
-                  "whichA": "padding",
-                  "whichB": "padding",
+                  "whichA": "background",
+                  "whichB": "background",
+                  "type": "isEqual"
+                },
+                {
+                  "whichA": "color",
+                  "whichB": "color",
+                  "type": "isEqual"
+                },
+                {
+                  "whichA": "border",
+                  "whichB": "border",
+                  "type": "isEqual"
+                },
+                {
+                  "whichA": "text-decoration",
+                  "whichB": "text-decoration",
                   "type": "isEqual"
                 }
               ],
@@ -1981,295 +2923,10 @@
           ]
         }
       ]
-    }
-
-  ]
-},{
-  "title": "Button",
-  "selector": ".btn",
-  "rules": [
-    {
-      "description": "Buttons MUST NOT be used inside a Textual Paragraph.",
-      "type": "Usage",
-      "level": "MUST",
-      "tests": [
-        {
-          "not": "",
-          "variants": [
-            {
-              "type": "structure",
-              "subtype": "insideText",
-              "selectors": [{"type": "self"}],
-              "not": "true"
-            }
-          ]
-        }
-      ]
     },
     {
-      "description": "The caption of a Button SHOULD contain no more than two words.",
-      "type": "Usage",
-      "level": "SHOULD",
-      "tests": [
-        {
-          "not": "",
-          "variants": [
-            {
-              "type":"wording",
-              "subtype":"amount",
-              "selectors":[{"type": "self"}],
-              "contentType": "content",
-              "operator":"<=",
-              "amount":"2",
-              "regex": "",
-              "not":""
-            }
-          ]
-        },
-        {
-          "not": "",
-          "variants": [
-            {
-              "type":"wording",
-              "subtype":"amount",
-              "selectors":[{"type": "self"}],
-              "contentType": "attribute",
-              "contentSelector": "value",
-              "operator":"<=",
-              "amount":"2",
-              "regex": "",
-              "not":""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": " Every word except articles, coordinating conjunctions and prepositions MUST be capitalized.",
-      "type": "Usage",
-      "level": "MUST",
-      "tests": [
-        {
-          "not": "",
-          "variants": [
-            {
-              "type":"wording",
-              "subtype":"amount",
-              "selectors":[{
-                "type": "self"
-              }],
-              "contentType": "attribute",
-              "contentSelector": "value",
-              "operator":"=",
-              "amount":"0",
-              "regex": "( |\\(|^)[a-z][a-zA-Z0-9]*",
-              "ignore":{
-                "list": ["&nbsp;"],
-                "ignoreConjunctions":true,
-                "ignorePrepositions":true,
-                "ignoreArticles":true
-
-              },
-              "not":""
-            }
-          ]
-        },        {
-          "not": "",
-          "variants": [
-            {
-              "type":"wording",
-              "subtype":"amount",
-              "selectors":[{
-                "type": "self"
-              }],
-              "contentType": "content",
-              "operator":"=",
-              "amount":"0",
-              "regex": "( |\\(|^)[a-z][a-zA-Z0-9]*",
-              "ignore":{
-                "list": ["&nbsp;"],
-                "ignoreConjunctions":true,
-                "ignorePrepositions":true,
-                "ignoreArticles":true
-              },
-              "not":""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": " If Text and Glyphs are used alongside as caption for a Button the Glyph MUST be displayed on the left side.",
-      "type": "Style",
-      "level": "MUST",
-      "tests": [
-        {
-          "not": "",
-          "variants": [
-            {
-              "type": "structure",
-              "subtype": "amount",
-              "selectors": [
-                {
-                  "type": "children",
-                  "selector": ".glyphicon"
-                }
-              ],
-              "amount":0,
-              "operator":"=",
-              "not": ""
-            },
-            {
-              "type":"structure",
-              "subtype":"ordering",
-              "selectors":[{
-                "type": "children"
-              }],
-              "items":[
-                {
-                  "variant": {
-                    "type": "structure",
-                    "subtype": "amount",
-                    "selectors": [
-                      {
-                        "type": "self",
-                        "selector": ".glyphicon"
-                      }
-                    ],
-                    "amount": 1,
-                    "operator": "=",
-                    "not": ""
-                  }
-                },
-                {
-                  "variant": {
-                    "type": "true"
-                  },
-                  "optional": true,
-                  "repetitions": -1
-                }
-              ],
-
-              "not":""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "If Text and a Caret are used alongside as caption for a Button the Caret MUST be displayed on the right side.",
-      "type": "Style",
-      "level": "MUST",
-      "tests": [
-        {
-          "not": "",
-          "variants": [
-            {
-              "type": "structure",
-              "subtype": "amount",
-              "selectors": [
-                {
-                  "type": "children",
-                  "selector": ".caret"
-                }
-              ],
-              "amount":0,
-              "operator":"=",
-              "not": ""
-            },
-            {
-              "type":"structure",
-              "subtype":"ordering",
-              "selectors":[{
-                "type": "children"
-              }],
-              "items":[
-                {
-                  "variant": {
-                    "type": "true"
-                  },
-                  "optional": true,
-                  "repetitions": -1
-                },
-                {
-                  "variant": {
-                    "type": "structure",
-                    "subtype": "amount",
-                    "selectors": [
-                      {
-                        "type": "self",
-                        "selector": ".caret"
-                      }
-                    ],
-                    "amount": 1,
-                    "operator": "=",
-                    "not": ""
-                  }
-                }
-              ],
-
-              "not":""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "All glyph-only buttons MUST have aria-labels.",
-      "type": "Usage",
-      "level": "MUST",
-      "tests": [
-        {
-          "not": "",
-          "variants": [
-            {
-              "type": "structure",
-              "subtype": "amount",
-              "selectors": [
-                {
-                  "type": "children",
-                  "selector": ".glyphicon"
-                }
-              ],
-              "amount":0,
-              "operator":"=",
-              "not": ""
-            },
-            {
-              "type":"wording",
-              "subtype":"amount",
-              "selectors":[{"type": "self"}],
-              "contentType": "content",
-              "operator":">",
-              "amount":"0",
-              "regex": "",
-              "not":""
-            },
-            {
-              "type":"accessibility",
-              "subtype":"ariaLabeled",
-              "selectors": [
-                {
-                  "type": "children",
-                  "selector": ".glyphicon"
-                }
-              ],
-              "not":""
-            },
-            {
-              "type":"accessibility",
-              "subtype":"ariaLabeled",
-              "selectors": [{"type": "self"}
-              ],
-              "not":""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": " Button DOM elements MUST either be of type “button” or of type “a” accompanied with the aria-role “Button”",
-      "type": "Usage",
+      "description": "The complete list of tabs MUST cary the role 'tablist'",
+      "type": "Accessability",
       "level": "MUST",
       "tests": [
         {
@@ -2283,71 +2940,7 @@
                   "type": "self"
                 }
               ],
-              "role": "button",
-              "not":""
-            },
-            {
-              "type":"structure",
-              "subtype":"amount",
-              "selectors": [
-                {
-                  "type": "self",
-                  "selector": "button, input[type='button'], input[type='submit']"
-                }
-              ],
-              "operator":"=",
-              "amount":"1"
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
-
-
-
-,{
-  "title": "Close Button",
-  "selector": ".close",
-  "rules": [
-    {
-      "description": "The Close Button MUST always be positioned in the top right of a collection.",
-      "type": "Usage",
-      "level": "MUST",
-      "tests": [
-        {
-          "not": "",
-          "variants": [
-            {
-              "type":"css",
-              "subtype":"positioning",
-
-              "selectorsA": [
-                {
-                  "type": "self"
-                }
-              ],
-              "selectorsB": [
-                {
-                  "type": "parents",
-                  "selector": ".modal-dialog"
-                }
-              ],
-              "positioning":[
-                {
-                  "type": "isContained"
-                },
-                {
-                  "type": "collideHorizontal",
-                  "stretchHorizontalB": 0.8,
-                  "not": true
-                },
-                {
-                  "type": "collideVertical",
-                  "stretchVerticalB": 0.2
-                }
-              ],
+              "role": "tablist",
               "not":""
             }
           ]
@@ -2355,81 +2948,23 @@
       ]
     },
     {
-      "description": "The functionality of the close button MUST be indicated for screen readers by an aria-label.",
-      "type": "Usage",
+      "description": "The individual Tabs MUST cary the role 'tab'",
+      "type": "Accessability",
       "level": "MUST",
       "tests": [
         {
+          "selector": "#ilTab li:not(#ilLastTab), #ilSubTab li",
           "not": "",
           "variants": [
             {
               "type":"accessibility",
-              "subtype":"ariaLabeled",
-              "selectors": [{"type": "self"}
-              ],
-              "not":""
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
-
-
-,
-{
-  "title": "Primary Button",
-  "selector": ".btn-primary",
-  "rules": [
-    {
-      "description": "There MUST only be one Primary Button per page in ILIAS.",
-      "type": "Usage",
-      "level": "MUST",
-      "tests": [
-        {
-          "not": "",
-          "variants": [
-            {
-              "type":"structure",
-              "subtype":"amount",
-              "selectors": [
-                {
-                  "type": "root"
-                },{
-                  "type": "find",
-                  "selector": ".btn-primary"
-                }
-              ],
-              "operator":"<=",
-              "amount":"1",
-              "not":""
-            }
-          ]
-        }
-      ]
-    }
-  ]
-},{
-  "title": "Trigger Element",
-  "selector": "a",
-  "rules":[
-    {
-      "description": "The interaction triggered by the Trigger Element MUST be fired if the ‘Return’-Key is clicked while the element is focused.",
-      "type": "Accessibility",
-      "level": "MUST",
-      "tests": [
-        {
-          "not": "",
-          "variants": [
-            {
-              "type":"accessibility",
-              "subtype":"focusable",
+              "subtype":"role",
               "selectors": [
                 {
                   "type": "self"
                 }
               ],
+              "role": "tab",
               "not":""
             }
           ]
@@ -2437,11 +2972,12 @@
       ]
     },
     {
-      "description": "All Trigger Elements visible in a view MUST be accessible by keyboard by using the ‘Tab’-Key.",
+      "description": "All Tabs MUST be accessible by keyboard.",
       "type": "Accessibility",
       "level": "MUST",
       "tests": [
         {
+          "selector": "#ilTab li:not(#ilLastTab) a, #ilSubTab li a",
           "not": "",
           "variants": [
             {
@@ -2457,38 +2993,149 @@
           ]
         }
       ]
-    },
+    }
+  ]
+},{
+  "title": "Toolbar",
+  "selector": ".ilToolbar",
+  "rules": [
     {
-      "description": "All active Triggers MUST indicate hovering by displaying the cursor as pointer (hand).",
+      "description": "There MUST NOT be more than one Toolbar for per screen.",
       "type": "Usage",
       "level": "MUST",
       "tests": [
         {
           "not": "",
-          "ignore": [[
-            {
-              "type": "parent",
-              "selector": "li.active"
-            }
-          ]],
           "variants": [
             {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "root"
+                },{
+                  "type": "find",
+                  "selector": ".ilToolbar .navbar-brand img"
+                }
+              ],
+              "operator":">",
+              "amount":"0",
+              "not":""
+            },
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "root"
+                },{
+                  "type": "find",
+                  "selector": ".ilToolbar"
+                }
+              ],
+              "operator":"<=",
+              "amount":"1",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": " Toolbars MUST NOT be used in the same view as forms.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "root"
+                },{
+                  "type": "find",
+                  "selector": "form .form-horizontal"
+                }
+              ],
+              "operator":"=",
+              "amount":"0",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Toolbars MUST carry the aria-label ‘Content Area Toolbar’.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "root"
+                },{
+                  "type": "find",
+                  "selector": "form .form-horizontal"
+                }
+              ],
+              "operator":"=",
+              "amount":"0",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Labels in front of input fields MUST NOT be presented above the input on mobile screens.",
+      "type": "Responsiveness",
+      "level": "MUST",
+      "tests": [
+        {
+          "selector": ".navbar-form",
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "prev",
+                  "selector": ".navbar-text"
+                }
+              ],
+              "operator":"=",
+              "amount":"0",
+              "not":""
+            },
+            {
               "type":"css",
-              "subtype":"properties",
+              "subtype":"positioning",
+
               "selectorsA": [
                 {
                   "type": "self"
                 }
               ],
-              "properties":[
+              "selectorsB": [
                 {
-                  "simulate":{
-                    "type": "hover",
-                    "point": "before"
-                  },
-                  "whichA": "cursor",
-                  "value":"pointer",
-                  "type": "isEqual"
+                  "type": "prev",
+                  "selector": ".navbar-text"
+                }
+              ],
+              "positioning":[
+                {
+                  "type": "isBellow",
+                  "not": true
                 }
               ],
               "not":""
@@ -2498,83 +3145,184 @@
       ]
     },
     {
-    "type": "style",
-    "description": " All Trigger Elements MUST slightly modify font color, underline or background color on-hovering.",
-    "level": "MUST",
-    "tests":[
-      {
-        "not": "",
-        "ignore": [[
-          {
-            "type": "parent",
-            "selector": "li.active"
-          }
-        ]],
-        "variants":
-        [
-          {
-            "type":"css",
-            "subtype":"coloring",
-            "selectorsA": [{"type": "self"}],
-            "selectorsB": [{"type": "self"}],
-            "coloring":[
-              {
-                "simulate":{
-                  "type": "hover",
-                  "point": "between"
+      "description": "Toolbars MUST form a whole Gestalt by being enclosed in a light-grey rectangle.",
+      "type": "Style",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type": "css",
+              "subtype": "coloring",
+              "selectorsA": [
+                {
+                  "type": "self"
+                }
+              ],
+              "coloring": [
+                {
+                  "whichA": "background-color",
+                  "type": "isGrey"
+                }
+              ],
+              "not": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Two Seperators MUST not enclose empty content.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": ".ilToolbarSeparator"
+                },{
+                  "type": "next",
+                  "selector": ".ilToolbarSeparator"
+                }
+              ],
+              "operator":"=",
+              "amount":"0",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Entries SHOULD be ordered according the proposed default ordering, if there are no good reasons (such importance for the workflow or frequent use of a certain action) not to. The following default ordering is recommended:  Start Object, Create super Item,     Delete super item, Create sub item,  Delete sub item, Assign, Remove, Select for Presentation, Browse Item, Shortcut, Import, Export, Download, Manipulate all at once (order might change depending of the nature of the action to be performed).",
+      "type": "Composition",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"ordering",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": ".navbar-form .btn:not([type='submit'])"
+                }
+              ],
+              "items":[
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "^Start(.*|$)",
+                    "amount": 1
+                  },
+                  "optional": true
                 },
-                "whichA": "color",
-                "whichB":"color",
-                "type": "isEqual",
-                "not": true
-              }
-            ],
-            "not":""
-          },
-          {
-            "type":"css",
-            "subtype":"coloring",
-            "selectorsA": [{"type": "self"}],
-            "selectorsB": [{"type": "self"}],
-            "coloring":[
-              {
-                "simulate":{
-                  "type": "hover",
-                  "point": "between"
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "^Add|Create(.*|$)",
+                    "amount": 1
+                  },
+                  "optional": true
                 },
-                "whichA": "background-color",
-                "whichB":"background-color",
-                "type": "isEqual",
-                "not": true
-              }
-            ],
-            "not":""
-          },
-          {
-            "type":"css",
-            "subtype":"properties",
-            "selectorsA": [
-              {
-                "type": "self"
-              }
-            ],
-            "properties":[
-              {
-                "simulate":{
-                  "type": "hover",
-                  "point": "before"
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "^Delete(.*|$)",
+                    "amount": 1
+                  },
+                  "optional": true
                 },
-                "whichA": "text-decoration",
-                "value": "underline",
-                "type": "isEqual"
-              }
-            ],
-            "not":""
-          }
-        ]
-      }
-    ]
-  }
-
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "^Add|Create(.*|$)",
+                    "amount": 1
+                  },
+                  "optional": true
+                },
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "^Delete(.*|$)",
+                    "amount": 1
+                  },
+                  "optional": true
+                },
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "^Assign(.*|$)",
+                    "amount": 1
+                  },
+                  "optional": true
+                },
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "^Remove(.*|$)",
+                    "amount": 1
+                  },
+                  "optional": true
+                },
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "^(.*)$",
+                    "amount": -1
+                  },
+                  "optional": true
+                },
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "^Import(.*|$)",
+                    "amount": 1
+                  },
+                  "optional": true
+                },
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "^Export(.*|$)",
+                    "amount": 1
+                  },
+                  "optional": true
+                },
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "^Download(.*|$)",
+                    "amount": 1
+                  },
+                  "optional": true
+                }
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    }
   ]
 }]}

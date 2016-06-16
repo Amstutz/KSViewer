@@ -1,0 +1,331 @@
+{
+  "title": "Toolbar",
+  "selector": ".ilToolbar",
+  "rules": [
+    {
+      "description": "There MUST NOT be more than one Toolbar for per screen.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "root"
+                },{
+                  "type": "find",
+                  "selector": ".ilToolbar .navbar-brand img"
+                }
+              ],
+              "operator":">",
+              "amount":"0",
+              "not":""
+            },
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "root"
+                },{
+                  "type": "find",
+                  "selector": ".ilToolbar"
+                }
+              ],
+              "operator":"<=",
+              "amount":"1",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": " Toolbars MUST NOT be used in the same view as forms.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "root"
+                },{
+                  "type": "find",
+                  "selector": "form .form-horizontal"
+                }
+              ],
+              "operator":"=",
+              "amount":"0",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Toolbars MUST carry the aria-label ‘Content Area Toolbar’.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "root"
+                },{
+                  "type": "find",
+                  "selector": "form .form-horizontal"
+                }
+              ],
+              "operator":"=",
+              "amount":"0",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Labels in front of input fields MUST NOT be presented above the input on mobile screens.",
+      "type": "Responsiveness",
+      "level": "MUST",
+      "tests": [
+        {
+          "selector": ".navbar-form",
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "prev",
+                  "selector": ".navbar-text"
+                }
+              ],
+              "operator":"=",
+              "amount":"0",
+              "not":""
+            },
+            {
+              "type":"css",
+              "subtype":"positioning",
+
+              "selectorsA": [
+                {
+                  "type": "self"
+                }
+              ],
+              "selectorsB": [
+                {
+                  "type": "prev",
+                  "selector": ".navbar-text"
+                }
+              ],
+              "positioning":[
+                {
+                  "type": "isBellow",
+                  "not": true
+                }
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Toolbars MUST form a whole Gestalt by being enclosed in a light-grey rectangle.",
+      "type": "Style",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type": "css",
+              "subtype": "coloring",
+              "selectorsA": [
+                {
+                  "type": "self"
+                }
+              ],
+              "coloring": [
+                {
+                  "whichA": "background-color",
+                  "type": "isGrey"
+                }
+              ],
+              "not": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Two Seperators MUST not enclose empty content.",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"amount",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": ".ilToolbarSeparator"
+                },{
+                  "type": "next",
+                  "selector": ".ilToolbarSeparator"
+                }
+              ],
+              "operator":"=",
+              "amount":"0",
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Entries SHOULD be ordered according the proposed default ordering, if there are no good reasons (such importance for the workflow or frequent use of a certain action) not to. The following default ordering is recommended:  Start Object, Create super Item,     Delete super item, Create sub item,  Delete sub item, Assign, Remove, Select for Presentation, Browse Item, Shortcut, Import, Export, Download, Manipulate all at once (order might change depending of the nature of the action to be performed).",
+      "type": "Composition",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type":"structure",
+              "subtype":"ordering",
+              "selectors": [
+                {
+                  "type": "selector",
+                  "selector": ".navbar-form .btn:not([type='submit'])"
+                }
+              ],
+              "items":[
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "^Start(.*|$)",
+                    "amount": 1
+                  },
+                  "optional": true
+                },
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "^Add|Create(.*|$)",
+                    "amount": 1
+                  },
+                  "optional": true
+                },
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "^Delete(.*|$)",
+                    "amount": 1
+                  },
+                  "optional": true
+                },
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "^Add|Create(.*|$)",
+                    "amount": 1
+                  },
+                  "optional": true
+                },
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "^Delete(.*|$)",
+                    "amount": 1
+                  },
+                  "optional": true
+                },
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "^Assign(.*|$)",
+                    "amount": 1
+                  },
+                  "optional": true
+                },
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "^Remove(.*|$)",
+                    "amount": 1
+                  },
+                  "optional": true
+                },
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "^(.*)$",
+                    "amount": -1
+                  },
+                  "optional": true
+                },
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "^Import(.*|$)",
+                    "amount": 1
+                  },
+                  "optional": true
+                },
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "^Export(.*|$)",
+                    "amount": 1
+                  },
+                  "optional": true
+                },
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "^Download(.*|$)",
+                    "amount": 1
+                  },
+                  "optional": true
+                }
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -134,6 +134,18 @@
               "not": ""
             },
             {
+              "type": "wording",
+              "subtype": "amount",
+              "selectors": [
+                {
+                  "type": "self"
+                }
+              ],
+              "amount":0,
+              "operator":"=",
+              "not": ""
+            },
+            {
               "type":"structure",
               "subtype":"ordering",
               "selectors":[{

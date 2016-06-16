@@ -1,0 +1,130 @@
+{
+  "title": "Content Subtabs",
+  "selector": "#ilSubTab",
+  "rules":[
+    {
+      "description": "Ordering (for Subtabs of first tab): i. View (Zeigen) tab: Displays content of First Tab. ii. Manage; Verwalten tab: To cary out actions to be performed on multiple items at once iii. Sorting: To sort items iv. Customize Page: If the page editor is activated in the administration, then page content can be added and placed above and below content lists.",
+      "type": "Composition",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type": "structure",
+              "subtype": "amount",
+              "selectors": [
+                {
+                  "type": "root"
+                },
+                {
+                  "type": "selector",
+                  "selector": "ul.ilMainMenu li.dropdown:nth-of-type(2) a.MMActive"
+                }
+              ],
+              "operator": "=",
+              "amount": "0",
+              "not": ""
+            },
+            {
+              "type": "structure",
+              "subtype": "amount",
+              "selectors": [
+                {
+                  "type": "root"
+                },
+                {
+                  "type": "selector",
+                  "selector": "#ilTab li:first.active"
+                }
+              ],
+              "operator": "=",
+              "amount": "0",
+              "not": ""
+            },
+            {
+              "type":"structure",
+              "subtype":"ordering",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": "li"
+                },
+                {
+                  "type": "children",
+                  "selector": "a"
+                }
+              ],
+              "items":[
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "^View$",
+                    "amount": 1
+                  },
+                  "optional": true
+                },
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "^Manage$",
+                    "amount": 1
+                  },
+                  "optional": true
+                },
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "^Sorting$",
+                    "amount": 1
+                  },
+                  "optional": true
+                },
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "^Customize Page$",
+                    "amount": 1
+                  },
+                  "optional": true
+                }
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Content Subtabs MUST NOT have further subtabs (3rd Level of subtabs).",
+      "type": "Usage",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type": "structure",
+              "subtype": "amount",
+              "selectors": [
+                {
+                  "type": "root"},
+                {
+                  "type":"selector",
+                  "selector":".ilSubTab"
+                }
+              ],
+              "operator": "<=",
+              "amount": "1",
+              "not": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -34,15 +34,17 @@ il.uiTests.css = function(element,selector,testVariant){
 
             if(propertyRule.simulate && propertyRule.simulate.point == "before"){
                 simulation_class = il.uiTests.simulateCssEvent(propertyRule.simulate.type);
-                elementA = $("."+simulation_class + " "+elementA.selector);
+                //elementA = $("."+simulation_class + " "+elementA.selector);
             }
 
             var propertyA = il.uiTests.getCSSProperty(elementA,propertyRule.whichA);
 
             if(propertyRule.simulate && propertyRule.simulate.point == "between"){
 
+                console.log(elementB);
                 simulation_class = il.uiTests.simulateCssEvent(propertyRule.simulate.type);
-                elementB = $("."+simulation_class + " "+il.uiTests.getSelector(elementB));
+                //elementB = $("."+simulation_class + " "+il.uiTests.getSelector(elementB));
+                console.log(simulation_class,elementB);
             }
 
             var propertyB = il.uiTests.getCSSProperty(elementB,propertyRule.whichB);
@@ -50,6 +52,7 @@ il.uiTests.css = function(element,selector,testVariant){
             if(propertyRule.simulate){
                 il.uiTests.simulateCssEvent("stop");
             }
+
 
             console.log(propertyA , propertyB);
 
@@ -82,19 +85,17 @@ il.uiTests.css = function(element,selector,testVariant){
 
             if(colorRule.simulate && colorRule.simulate.point == "before"){
                 simulation_class = il.uiTests.simulateCssEvent(colorRule.simulate.type);
-                elementA = $("."+simulation_class + " "+elementA.selector);
+                //elementA = $("."+simulation_class + " "+elementA.selector);
             }
 
             var colorsA = il.uiTests.getColor(elementA);
             var colorA = colorsA[colorRule.whichA];
-            console.log(colorA);
 
             if(colorRule.simulate && colorRule.simulate.point == "between"){
                 simulation_class = il.uiTests.simulateCssEvent(colorRule.simulate.type);
-                elementB = $("."+simulation_class + " "+il.uiTests.getSelector(elementB));
+                //elementB = $("."+simulation_class + " "+il.uiTests.getSelector(elementB));
             }
 
-            console.log(elementB);
 
             var colorsB = il.uiTests.getColor(elementB);
 
@@ -107,9 +108,7 @@ il.uiTests.css = function(element,selector,testVariant){
             if(colorsB){
                 var colorB = colorsB[colorRule.whichB];
             }
-            console.log(elementA);
-            console.log(colorA);
-            console.log(colorB);
+
             if(colorA && colorB){
                 var passed = il.uiTests.colorCheck(colorRule.type,colorA,colorB);
             }

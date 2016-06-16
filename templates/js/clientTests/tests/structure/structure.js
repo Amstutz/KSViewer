@@ -14,9 +14,10 @@ il.uiTests.structure = function(element,selector,testVariant){
         var allElementsPassed = elementList.get().every(function(orderingElement){
             var currentItem = itemsClone[orderingVariantsListIndex];
 
-            il.uiTests.log.message(["structure.ordering check element",orderingElement,currentItem],"testRule",il.uiTests.log.levels.debug);
+            il.uiTests.log.message(["structure.ordering check element",orderingElement,currentItem],"structure",il.uiTests.log.levels.debug);
 
             if(!currentItem){
+                il.uiTests.log.message(["structure.ordering returned false since no more items",orderingElement,currentItem],"structure",il.uiTests.log.levels.debug);
                 return false;
             }
 
@@ -31,25 +32,32 @@ il.uiTests.structure = function(element,selector,testVariant){
             var passed = false;
 
 
-            if(currentItem.optional){
+
+            if(itemsClone[orderingVariantsListIndex].passed){
+                il.uiTests.log.message(["Item already passed : ",itemsClone[orderingVariantsListIndex]],"structure",il.uiTests.log.levels.debug);
+                passed = true;
+            }
+            else if(currentItem.optional){
                 var nextItemIndex = orderingVariantsListIndex+1;
 
                 if(!itemsClone[nextItemIndex] && il.uiTests.testVariant(orderingElement,"",itemsClone[orderingVariantsListIndex].variant)){
                     passed = true;
                 }
                 while(itemsClone[nextItemIndex] && !passed){
-                    console.log("while stared");
+                    il.uiTests.log.message(["structure.ordering while started on: ",itemsClone[nextItemIndex]],"structure",il.uiTests.log.levels.debug);
                     if(itemsClone[nextItemIndex] && il.uiTests.testVariant(orderingElement,"",itemsClone[nextItemIndex].variant)){
-                        console.log("while next non optional passed");
+                        il.uiTests.log.message(["structure.ordering while in optional, next item passed: ",itemsClone[nextItemIndex]],"structure",il.uiTests.log.levels.debug);
                         currentItem.repetitions = 0;
                         passed = true;
                         itemsClone[nextItemIndex].passed = true;
+                        orderingVariantsListIndex = nextItemIndex;
                     }
                     else if(il.uiTests.testVariant(orderingElement,"",itemsClone[nextItemIndex-1].variant)){
                         passed = true;
                     }
                     if(!itemsClone[nextItemIndex-1].optional){
-                        console.log("break");
+                        il.uiTests.log.message(["structure.ordering Break on checking for option elements : ",itemsClone[nextItemIndex-1]],"structure",il.uiTests.log.levels.debug);
+
                         break;
                     }
                     nextItemIndex++;
@@ -61,11 +69,18 @@ il.uiTests.structure = function(element,selector,testVariant){
             }
 
             if(currentItem.repetitions > 1){
-
                 currentItem.repetitions--;
+                il.uiTests.log.message(["Reducing repetitions of item to: ",currentItem.repetitions, " item ",currentItem],"structure",il.uiTests.log.levels.debug);
                 currentItem.passed = false;
             }else{
                 orderingVariantsListIndex++;
+                il.uiTests.log.message(["Incrementing item index: ",orderingVariantsListIndex],"structure",il.uiTests.log.levels.debug);
+
+            }
+            if(!passed){
+                il.uiTests.log.message(["Pass failed on Item: ",currentItem],"structure",il.uiTests.log.levels.debug);
+                il.uiTests.log.message(["Pass failed on element: ",orderingElement],"structure",il.uiTests.log.levels.debug);
+
             }
             return passed;
         });
@@ -74,15 +89,22 @@ il.uiTests.structure = function(element,selector,testVariant){
             return false;
         }
         if(itemsClone.length > orderingVariantsListIndex){
+            il.uiTests.log.message(["structure.ordering Items left, checking of optional: ",itemsClone],"structure",il.uiTests.log.levels.debug);
+
             var itemsClone2 = JSON.parse(JSON.stringify(itemsClone));
             itemsClone2.splice(0, orderingVariantsListIndex);
-            return itemsClone2.every(function(itemsClone2){
-                if(itemsClone2.optional || itemsClone2.passed){
+            var allPassed =  itemsClone2.every(function(itemClone){
+                if(itemClone.optional || itemClone.passed){
+                    il.uiTests.log.message(["structure.ordering Item is optional or passed: ",itemClone],"structure",il.uiTests.log.levels.debug);
                     return true;
                 }
+                il.uiTests.log.message(["structure.ordering Not all mandatory items passed: ",itemClone],"structure",il.uiTests.log.levels.debug);
                 return false;
             });
+            il.uiTests.log.message(["All passed, is",allPassed],"structure",il.uiTests.log.levels.debug);
+            return allPassed;
         }
+        il.uiTests.log.message(["All passed, return true"],"structure",il.uiTests.log.levels.debug);
         return true;
     };
 

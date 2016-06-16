@@ -55,7 +55,7 @@ il.uiTests.generateIgnoredList = function(ignore){
             "with, within, without"];
     }
     if(ignore.ignoreArticles) {
-        articles = ["a", "an", "few", "some", "the", "one"]
+        articles = ["a", "an", "few", "some", "the", "one","this","that"]
     }
 
 

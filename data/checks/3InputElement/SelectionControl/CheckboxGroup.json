@@ -3,9 +3,9 @@
   "selector": "input[type=checkbox]",
   "rules": [
     {
-      "description": "If only few items are expected to be selected (<=5), the total number of items to select from SHOULD not be larger than 25. Use a Tag Input otherwise.",
+      "description": "Use if only few items are expected to be selected (<=5), the total number of items to select from SHOULD not be larger than 25. Use a Tag Input otherwise.",
       "type": "Usage",
-      "level": "Should",
+      "level": "SHOULD",
       "tests": [
         {
           "not": "",
@@ -20,24 +20,7 @@
                 },
                 {
                   "type": "selector",
-                  "selector": "input[type=checkbox]"
-                }
-              ],
-              "operator":"<=",
-              "amount":"1",
-              "not":""
-            },
-            {
-              "type":"structure",
-              "subtype":"amount",
-              "selectors": [
-                {
-                  "type": "parents",
-                  "selector": ".form-group"
-                },
-                {
-                  "type": "selector",
-                  "selector": "input[type=checkbox]"
+                  "selector": ":not(.ilSubForm) input[type=checkbox]"
                 }
               ],
               "operator":"<=",

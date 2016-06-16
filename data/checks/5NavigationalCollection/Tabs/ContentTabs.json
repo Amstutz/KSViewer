@@ -1,0 +1,231 @@
+{
+  "title": "Content Tabs",
+  "selector": "#ilTab",
+  "rules":[
+    {
+      "description": "If there are more tabs that can be displayed by the available length, the Tabs not fitting on the right MUST be moved into a Dropdown Menu labeled with “...” and a Glyph Down.",
+      "type": "Responsiveness",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type": "structure",
+              "subtype": "amount",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": "#ilLastTab"
+                }
+              ],
+              "operator": "=",
+              "amount": "1",
+              "not": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Tabs MUST be in the following order: Content-related tabs, if content is not a 'separate view', Info tab,  Settings tab ,  Member or similar user lists, Learning Progress tab,   All other tabs (not in this list),  Metadata tab,  Export tab, Permissions tab.",
+      "type": "Composition",
+      "level": "SHOULD",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type": "structure",
+              "subtype": "amount",
+              "selectors": [
+                {
+                  "type": "root"
+                },
+                {
+                  "type": "selector",
+                  "selector": "ul.ilMainMenu li.dropdown:nth-of-type(2) a.MMActive"
+                }
+              ],
+              "operator": "=",
+              "amount": "0",
+              "not": ""
+            },
+            {
+              "type":"structure",
+              "subtype":"ordering",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": "li:not(#ilLastTab)"
+                },
+                {
+                  "type": "children",
+                  "selector": "a"
+                }
+              ],
+              "items":[
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "Content(\\s.*|$)",
+                    "amount": 1
+                  }
+                },
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "Info",
+                    "amount": 1
+                  }
+                },
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "Settings",
+                    "amount": 1
+                  }
+                },
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "Members",
+                    "amount": 1
+                  },
+                  "optional": true
+                },
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "Learning Progress",
+                    "amount": 1
+                  },
+                  "optional": true
+                },
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "^(?!Metadata|Export|Permissions)(.*)$",
+                    "amount": 1
+                  },
+                  "optional": true,
+                  "repetitions": -1
+                },
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "Metadata",
+                    "amount": 1
+                  },
+                  "optional": true
+                },
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "Export",
+                    "amount": 1
+                  },
+                  "optional": true
+                },
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "Permissions",
+                    "amount": 1
+                  }
+                },
+                {
+                  "variant": {
+                    "type": "structure",
+                    "subtype": "amount",
+                    "selectors":[{
+                      "type":"selector",
+                      "selector":".glyphicon-chevron-right"
+                    }
+                    ],
+                    "amount": 1
+                  },
+                  "optional": true
+                }
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Tabs to change the Mode of the Object presented (e.g. to “Preview”) MUST be placed on the very right and be followed by a Next-Glyph.",
+      "type": "Ordering",
+      "level": "MUST",
+      "tests": [
+        {
+          "not": "",
+          "variants": [
+            {
+              "type": "structure",
+              "subtype": "amount",
+              "selectors": [
+                {
+                  "type":"selector",
+                  "selector":".glyphicon-chevron-right"
+                }
+              ],
+              "operator": "=",
+              "amount": "0",
+              "not": ""
+            },
+            {
+              "type":"structure",
+              "subtype":"ordering",
+              "selectors": [
+                {
+                  "type": "children",
+                  "selector": "li:not(#ilLastTab)"
+                },
+                {
+                  "type": "children",
+                  "selector": "a"
+                }
+              ],
+              "items":[
+                {
+                  "variant": {
+                    "type": "wording",
+                    "subtype": "amount",
+                    "regex": "^(.*)$",
+                    "amount": 1
+                  },
+                  "optional": true,
+                  "repetitions": -1
+                },
+                {
+                  "variant": {
+                    "type": "structure",
+                    "subtype": "amount",
+                    "selectors":[{
+                      "type":"selector",
+                      "selector":".glyphicon-chevron-right"
+                    }
+                    ],
+                    "amount": 1
+                  }
+                }
+              ],
+              "not":""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

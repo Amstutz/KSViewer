@@ -27,11 +27,14 @@ if(ilback){
             this.ruleIndex = -1;
             this.testIndex= -1;
             this.elementIndex = -1;
-            this.skipping = ["Counter","Status Counter","Novelty Counter",
-                "Trigger Element","Primary Button", "Close Button","Button",
-                "Input Element", "Checkbox", "Radio Group","Checkbox Group", "Select Input",
-                "Input Collection","Standard Form","Titled Form Section", "Form Settings", "Form Subsettings"
-                ];
+            this.skipping = [
+                //"Counter","Status Counter","Novelty Counter",
+                //"Trigger Element","Primary Button", "Close Button","Button",
+                //"Input Element", "Checkbox", "Radio Group","Checkbox Group", "Select Input",
+                //"Input Collectiron","Standard Form","Titled Form Section", "Form Settings", "Form Subsettings",
+                //"Navigational Collection","Tabs", "Content Tabs",
+                //"Toolbar"
+            ];
 
         }
 

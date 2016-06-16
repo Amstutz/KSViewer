@@ -12,9 +12,13 @@ il.uiTests.accessibility = function(element,selector,testVariant){
         il.uiTests.log.message(["accessibility.labeled params",element],"accessibility",il.uiTests.log.levels.debug);
         return il.uiTests.isLabeled(element);
     };
+    this.ariaLabel = function(element,label){
+        il.uiTests.log.message(["accessibility.ariaLabel params",element],"accessibility",il.uiTests.log.levels.debug);
+        return il.uiTests.checkAttribute("isEqual",element,"aria-label",label);
+    };
     this.ariaRole = function(element,role){
         il.uiTests.log.message(["accessibility.ariaRole params",element],"accessibility",il.uiTests.log.levels.debug);
-        return il.uiTests.checkAttribute("isEqual",element,"role","button");
+        return il.uiTests.checkAttribute("isEqual",element,"role",role);
     };
     var element = il.uiTests.getRelativesByChain(element, testVariant.selectors);
 
@@ -29,6 +33,8 @@ il.uiTests.accessibility = function(element,selector,testVariant){
             return this.tabbable(element);
         case "ariaLabeled":
             return this.labeled(element);
+        case "label":
+            return this.ariaLabel(element,testVariant.label);
         case "role":
             return this.ariaRole(element,testVariant.role);
     }

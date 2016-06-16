@@ -47,9 +47,11 @@ var ruleDisplay = function(element, report,uiTests){
 
         this.popover.on('hidden.bs.popover', function (e) {
             self.element.first().popover('destroy');
+            self.log.message("ruleDisplay.hide Continue with Callback","ruleDisplay",self.log.levels.info);
+
             callback();
         });
-
+        self.log.message(["ruleDisplay.hide before hide",this.element.first()],"ruleDisplay",self.log.levels.info);
         this.element.first().popover('hide');
 
     };

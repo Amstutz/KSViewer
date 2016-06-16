@@ -1,6 +1,6 @@
 {
   "title": "Trigger Element",
-  "selector": "a",
+  "selector": "btn, a:not(.ilAccAnchor)",
   "rules":[
     {
       "description": "The interaction triggered by the Trigger Element MUST be fired if the ‘Return’-Key is clicked while the element is focused.",
@@ -8,6 +8,12 @@
       "level": "MUST",
       "tests": [
         {
+          "ignore": [[
+            {
+              "type": "parent",
+              "selector": ".ilHeader"
+            }
+          ]],
           "not": "",
           "variants": [
             {
@@ -30,7 +36,12 @@
       "level": "MUST",
       "tests": [
         {
-          "not": "",
+          "ignore": [[
+            {
+              "type": "parent",
+              "selector": ".ilHeader"
+            }
+          ]],
           "variants": [
             {
               "type":"accessibility",
@@ -56,7 +67,7 @@
           "ignore": [[
             {
               "type": "parent",
-              "selector": "li.active"
+              "selector": "li.active, .ilHeader"
             }
           ]],
           "variants": [
@@ -95,7 +106,7 @@
         "ignore": [[
           {
             "type": "parent",
-            "selector": "li.active"
+            "selector": "li.active, .ilHeader"
           }
         ]],
         "variants":
