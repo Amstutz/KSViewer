@@ -15,7 +15,7 @@ il.uiTests.fixtures = function(){
         "subtype":"amount",
         "selectors": [
             {
-                "type": "self",
+                "type": "self"
             }
         ],
         "regex": {

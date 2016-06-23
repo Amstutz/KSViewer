@@ -4,7 +4,7 @@
   "rules": [
     {
       "description": "The Close Button MUST always be positioned in the top right of a collection.",
-      "type": "Usage",
+      "type": "Ordering",
       "level": "MUST",
       "tests": [
         {

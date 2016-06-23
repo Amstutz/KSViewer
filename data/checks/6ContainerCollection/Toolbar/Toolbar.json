@@ -45,7 +45,7 @@
       ]
     },
     {
-      "description": " Toolbars MUST NOT be used in the same view as forms.",
+      "description": "Toolbars MUST NOT be used in the same view as forms.",
       "type": "Usage",
       "level": "MUST",
       "tests": [
@@ -73,25 +73,21 @@
     },
     {
       "description": "Toolbars MUST carry the aria-label ‘Content Area Toolbar’.",
-      "type": "Usage",
+      "type": "Accessibility",
       "level": "MUST",
       "tests": [
         {
           "not": "",
           "variants": [
             {
-              "type":"structure",
-              "subtype":"amount",
+              "type":"accessibility",
+              "subtype":"label",
               "selectors": [
                 {
-                  "type": "root"
-                },{
-                  "type": "find",
-                  "selector": "form .form-horizontal"
+                  "type": "self"
                 }
               ],
-              "operator":"=",
-              "amount":"0",
+              "label":"Content Area Toolbar",
               "not":""
             }
           ]
@@ -177,7 +173,7 @@
     },
     {
       "description": "Two Seperators MUST not enclose empty content.",
-      "type": "Usage",
+      "type": "Style",
       "level": "MUST",
       "tests": [
         {
@@ -205,7 +201,7 @@
     },
     {
       "description": "Entries SHOULD be ordered according the proposed default ordering, if there are no good reasons (such importance for the workflow or frequent use of a certain action) not to. The following default ordering is recommended:  Start Object, Create super Item,     Delete super item, Create sub item,  Delete sub item, Assign, Remove, Select for Presentation, Browse Item, Shortcut, Import, Export, Download, Manipulate all at once (order might change depending of the nature of the action to be performed).",
-      "type": "Composition",
+      "type": "Ordering",
       "level": "SHOULD",
       "tests": [
         {

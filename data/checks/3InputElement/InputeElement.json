@@ -4,7 +4,7 @@
   "rules": [
     {
       "description": "All Input Elements visible in a view MUST be accessible by keyboard by using the ‘Tab’-Key.",
-      "type": "Usage",
+      "type": "Accessibility",
       "level": "MUST",
       "tests": [
         {
@@ -26,11 +26,12 @@
     },
     {
       "description": "If focused, the Input Elements MUST change their Input Border Color to the Input Focus Border Color.",
-      "type": "Usage",
+      "type": "Style",
       "level": "MUST",
 
       "tests": [
         {
+          "selector": "ignore",
           "not": "",
           "variants": [
             {

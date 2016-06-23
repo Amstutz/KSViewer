@@ -59,7 +59,7 @@
     },
     {
       "description": "All active Triggers MUST indicate hovering by displaying the cursor as pointer (hand).",
-      "type": "Usage",
+      "type": "Style",
       "level": "MUST",
       "tests": [
         {
@@ -97,9 +97,9 @@
       ]
     },
     {
-    "type": "style",
-    "description": " All Trigger Elements MUST slightly modify font color, underline or background color on-hovering.",
-    "level": "MUST",
+    "description": "All Trigger Elements MUST slightly modify font color, underline or background color on-hovering.",
+      "type": "Style",
+      "level": "MUST",
     "tests":[
       {
         "not": "",
@@ -173,7 +173,7 @@
         ]
       }
     ]
-  }
+    }
 
   ]
 }

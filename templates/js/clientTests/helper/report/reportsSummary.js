@@ -37,8 +37,23 @@ var reportsSummary = function(reports){
 
             self.summary.blocks[currentItemId-1].nrReports++;
 
+            if(!self.summary.types){
+                self.summary.types = [];
+
+            }
+            if(!self.summary.types[report.type]){
+                self.summary.types[report.type] = {};
+                self.summary.types[report.type].nrReports = 0;
+                self.summary.types[report.type].nrFailedReports = 0;
+
+
+            }
+            self.summary.types[report.type].nrReports++;
+            self.summary.blocks[currentItemId-1].nrReports++;
+
             if(!report.passed){
                 self.summary.nrFailedReports++;
+                self.summary.types[report.type].nrFailedReports++;
                 self.summary.blocks[currentItemId-1].nrFailedReports++;
                 self.summary.blocks[currentItemId-1].failedReports.push(report);
             }

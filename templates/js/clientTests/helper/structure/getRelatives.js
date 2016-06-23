@@ -16,7 +16,6 @@ il.uiTests.getRelatives = function(element,type,selector){
     };
 
     var getPreviousAll = function(element,selector){
-        console.log($(element).prevAll(selector));
         return $(element).prevAll(selector);
     };
 

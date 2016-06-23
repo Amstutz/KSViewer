@@ -22,7 +22,7 @@
     },
     {
       "description": "The caption of a Button SHOULD contain no more than two words.",
-      "type": "Usage",
+      "type": "Wording",
       "level": "SHOULD",
       "tests": [
         {
@@ -60,7 +60,7 @@
     },
     {
       "description": " Every word except articles, coordinating conjunctions and prepositions MUST be capitalized.",
-      "type": "Usage",
+      "type": "Wording",
       "level": "MUST",
       "tests": [
         {
@@ -242,7 +242,7 @@
     },
     {
       "description": "All glyph-only buttons MUST have aria-labels.",
-      "type": "Usage",
+      "type": "Accessibility",
       "level": "MUST",
       "tests": [
         {
@@ -294,8 +294,8 @@
       ]
     },
     {
-      "description": " Button DOM elements MUST either be of type “button” or of type “a” accompanied with the aria-role “Button”",
-      "type": "Usage",
+      "description": "Button DOM elements MUST either be of type “button” or of type “a” accompanied with the aria-role “Button”",
+      "type": "Accessibility",
       "level": "MUST",
       "tests": [
         {

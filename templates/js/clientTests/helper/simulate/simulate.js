@@ -48,7 +48,7 @@ il.uiTests.simulateCssEvent = function(type){
         $("#"+id+"1").remove();
         $("#"+id+"2").remove();
 
-        $("."+class_name).remove();
+        //$("."+class_name).remove();
 
     };
 

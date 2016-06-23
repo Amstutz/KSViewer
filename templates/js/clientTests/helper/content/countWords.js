@@ -27,6 +27,8 @@ il.uiTests.countWords = function(text, regex, ignore){
 
     regex = il.uiTests.generateRegex(regex);
 
+
+
     if(!text.match(regex)){
         return 0;
     }

@@ -50,7 +50,7 @@
     {
       "description": "The Status Counter SHOULD have an non-obtrusive background color such as grey.",
       "level": "MUST",
-      "type": "Composition",
+      "type": "Style",
       "tests": [
         {
           "not": "",

@@ -1,5 +1,8 @@
 il.uiTests.getText = function(element){
-    return $(il.uiTests.wrapElement(element)).text().trim();
+
+    var clone = $(il.uiTests.wrapElement($(il.uiTests.wrapElement(element)).clone().find(".sr-only").remove().end()));
+
+    return clone.text().trim();
 }
 
 

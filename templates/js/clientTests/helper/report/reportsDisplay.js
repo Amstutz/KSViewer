@@ -10,13 +10,28 @@ var reportsDisplay = function(reportsSummary){
         html += "<p>Total nr of Reports: "+this.summary.nrReports+"</p>";
         html += "<p>Total nr passed Reports: "+(this.summary.nrReports-this.summary.nrFailedReports) +" ("+(this.summary.nrReports-this.summary.nrFailedReports)/this.summary.nrReports*100+"%)</p>";
         html += "<p>Total nr failed Reports: "+(this.summary.nrFailedReports) +" ("+(this.summary.nrFailedReports)/this.summary.nrReports*100+"%)</p>";
+        html += "<hr>";
+
+
+        for(var index in this.summary.types){
+            var type = this.summary.types[index];
+            html += "<dl>";
+            html += "<dt>"+index+"</dt>";
+            html += "<dd>"+"Nr. of Reports: "+type.nrReports+"</dd>";
+            html += "<dd>"+"Nr. passed Reports: "+(type.nrReports-type.nrFailedReports)+"</dd>";
+            html += "<dd>"+"Nr. failed Reports: "+type.nrFailedReports+"</dd>";
+            html += "</dl>";
+        }
+
+
+        html += "<hr>";
 
         this.summary.blocks.forEach(function(block){
             html += "<dl>";
             html += "<dt>"+block.title+"</dt>";
-            if(block.failedReports.length == 0){
-                html += "<dd>"+"All rules passed"+"</dd>";
-            }
+            html += "<dd>"+"Nr. of Reports: "+block.nrReports+"</dd>";
+            html += "<dd>"+"Nr. passed Reports: "+(block.nrReports-block.nrFailedReports)+"</dd>";
+            html += "<dd>"+"Nr. failed Reports: "+block.nrFailedReports+"</dd>";
             block.failedReports.forEach(function(report){
                 html += "<dd>"+report.message+"</dd>";//: "+report.level+"</dd>";
             });

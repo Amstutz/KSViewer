@@ -29,7 +29,7 @@
     },
     {
       "description": "Tabs MUST be in the following order: Content-related tabs, if content is not a 'separate view', Info tab,  Settings tab ,  Member or similar user lists, Learning Progress tab,   All other tabs (not in this list),  Metadata tab,  Export tab, Permissions tab.",
-      "type": "Composition",
+      "type": "Ordering",
       "level": "SHOULD",
       "tests": [
         {
@@ -44,7 +44,7 @@
                 },
                 {
                   "type": "selector",
-                  "selector": "ul.ilMainMenu li.dropdown:nth-of-type(2) a.MMActive"
+                  "selector": ".ilMainMenu li.dropdown:nth-of-type(2) span.ilAccHidden"
                 }
               ],
               "operator": "=",

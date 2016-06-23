@@ -200,7 +200,7 @@
     {
       "description": "The Status Counter SHOULD have an non-obtrusive background color such as grey.",
       "level": "MUST",
-      "type": "Composition",
+      "type": "Style",
       "tests": [
         {
           "not": "",
@@ -250,7 +250,7 @@
     },
     {
       "description": "The caption of a Button SHOULD contain no more than two words.",
-      "type": "Usage",
+      "type": "Wording",
       "level": "SHOULD",
       "tests": [
         {
@@ -288,7 +288,7 @@
     },
     {
       "description": " Every word except articles, coordinating conjunctions and prepositions MUST be capitalized.",
-      "type": "Usage",
+      "type": "Wording",
       "level": "MUST",
       "tests": [
         {
@@ -470,7 +470,7 @@
     },
     {
       "description": "All glyph-only buttons MUST have aria-labels.",
-      "type": "Usage",
+      "type": "Accessibility",
       "level": "MUST",
       "tests": [
         {
@@ -522,8 +522,8 @@
       ]
     },
     {
-      "description": " Button DOM elements MUST either be of type “button” or of type “a” accompanied with the aria-role “Button”",
-      "type": "Usage",
+      "description": "Button DOM elements MUST either be of type “button” or of type “a” accompanied with the aria-role “Button”",
+      "type": "Accessibility",
       "level": "MUST",
       "tests": [
         {
@@ -567,7 +567,7 @@
   "rules": [
     {
       "description": "The Close Button MUST always be positioned in the top right of a collection.",
-      "type": "Usage",
+      "type": "Ordering",
       "level": "MUST",
       "tests": [
         {
@@ -725,7 +725,7 @@
     },
     {
       "description": "All active Triggers MUST indicate hovering by displaying the cursor as pointer (hand).",
-      "type": "Usage",
+      "type": "Style",
       "level": "MUST",
       "tests": [
         {
@@ -763,9 +763,9 @@
       ]
     },
     {
-    "type": "style",
-    "description": " All Trigger Elements MUST slightly modify font color, underline or background color on-hovering.",
-    "level": "MUST",
+    "description": "All Trigger Elements MUST slightly modify font color, underline or background color on-hovering.",
+      "type": "Style",
+      "level": "MUST",
     "tests":[
       {
         "not": "",
@@ -839,7 +839,7 @@
         ]
       }
     ]
-  }
+    }
 
   ]
 },{
@@ -848,7 +848,7 @@
   "rules": [
     {
       "description": "All Input Elements visible in a view MUST be accessible by keyboard by using the ‘Tab’-Key.",
-      "type": "Usage",
+      "type": "Accessibility",
       "level": "MUST",
       "tests": [
         {
@@ -870,11 +870,12 @@
     },
     {
       "description": "If focused, the Input Elements MUST change their Input Border Color to the Input Focus Border Color.",
-      "type": "Usage",
+      "type": "Style",
       "level": "MUST",
 
       "tests": [
         {
+          "selector": "ignore",
           "not": "",
           "variants": [
             {
@@ -993,7 +994,7 @@
     },
     {
       "description": "The checkbox’s identifier MUST always state something positive.",
-      "type": "Usage",
+      "type": "Wording",
       "level": "SHOULD",
       "tests": [
         {
@@ -1028,7 +1029,7 @@
     },
     {
       "description": "If a description is needed, it MUST be placed below the checkbox in the usual place for descriptions of form settings.",
-      "type": "Usage",
+      "type": "Composition",
       "level": "SHOULD",
       "tests": [
         {
@@ -1154,7 +1155,7 @@
   "rules": [
     {
       "description": "A radio group SHOULD contain 3 to 5 options.",
-      "type": "Usage",
+      "type": "Composition",
       "level": "SHOULD",
       "tests": [
         {
@@ -1686,7 +1687,7 @@
               "amount":"0",
               "regex":
               {
-                "term":".*(\\s|^)you|your(\\s|$).*",
+                "term":".*(\\s|^)(you|your)(\\s|$).*",
                 "modifier": "gi"
               },
               "not":""
@@ -1900,7 +1901,7 @@
               "selectors": [
                 {
                   "type": "siblings",
-                  "selector": "checkbox, .radio"
+                  "selector": "checkbox, .radio, .checkbox"
                 }
               ],
               "operator":">=",
@@ -1974,7 +1975,7 @@
     },
     {
       "description": "Each form MUST contain at least one titled form section.",
-      "type": "Usage",
+      "type": "Composition",
       "level": "MUST",
       "tests": [
         {
@@ -2226,6 +2227,7 @@
         }
       ]
     }
+
   ]
 },{
   "title": "Titled Form Section",
@@ -2308,7 +2310,7 @@
     },
     {
       "description": "The title SHOULD contain less than 30 characters.",
-      "type": "Composition",
+      "type": "Wording",
       "level": "MUST",
       "tests": [
         {
@@ -2401,7 +2403,7 @@
   "rules":[
     {
       "description": "Ordering (for Subtabs of first tab): i. View (Zeigen) tab: Displays content of First Tab. ii. Manage; Verwalten tab: To cary out actions to be performed on multiple items at once iii. Sorting: To sort items iv. Customize Page: If the page editor is activated in the administration, then page content can be added and placed above and below content lists.",
-      "type": "Composition",
+      "type": "Ordering",
       "level": "SHOULD",
       "tests": [
         {
@@ -2416,7 +2418,7 @@
                 },
                 {
                   "type": "selector",
-                  "selector": "ul.ilMainMenu li.dropdown:nth-of-type(2) a.MMActive"
+                  "selector": ".ilMainMenu li.dropdown:nth-of-type(2) span.ilAccHidden"
                 }
               ],
               "operator": "=",
@@ -2555,7 +2557,7 @@
     },
     {
       "description": "Tabs MUST be in the following order: Content-related tabs, if content is not a 'separate view', Info tab,  Settings tab ,  Member or similar user lists, Learning Progress tab,   All other tabs (not in this list),  Metadata tab,  Export tab, Permissions tab.",
-      "type": "Composition",
+      "type": "Ordering",
       "level": "SHOULD",
       "tests": [
         {
@@ -2570,7 +2572,7 @@
                 },
                 {
                   "type": "selector",
-                  "selector": "ul.ilMainMenu li.dropdown:nth-of-type(2) a.MMActive"
+                  "selector": ".ilMainMenu li.dropdown:nth-of-type(2) span.ilAccHidden"
                 }
               ],
               "operator": "=",
@@ -2789,7 +2791,7 @@
       "level": "MUST",
       "tests": [
         {
-          "selector": "#ilTab li:not(#ilLastTab) a",
+          "selector": "#ilTab li:not(#ilLastTab) a, #ilSubTab li a",
           "not": "",
           "variants": [
             {
@@ -2926,7 +2928,7 @@
     },
     {
       "description": "The complete list of tabs MUST cary the role 'tablist'",
-      "type": "Accessability",
+      "type": "Accessibility",
       "level": "MUST",
       "tests": [
         {
@@ -2949,7 +2951,7 @@
     },
     {
       "description": "The individual Tabs MUST cary the role 'tab'",
-      "type": "Accessability",
+      "type": "Accessibility",
       "level": "MUST",
       "tests": [
         {
@@ -3042,7 +3044,7 @@
       ]
     },
     {
-      "description": " Toolbars MUST NOT be used in the same view as forms.",
+      "description": "Toolbars MUST NOT be used in the same view as forms.",
       "type": "Usage",
       "level": "MUST",
       "tests": [
@@ -3070,25 +3072,21 @@
     },
     {
       "description": "Toolbars MUST carry the aria-label ‘Content Area Toolbar’.",
-      "type": "Usage",
+      "type": "Accessibility",
       "level": "MUST",
       "tests": [
         {
           "not": "",
           "variants": [
             {
-              "type":"structure",
-              "subtype":"amount",
+              "type":"accessibility",
+              "subtype":"label",
               "selectors": [
                 {
-                  "type": "root"
-                },{
-                  "type": "find",
-                  "selector": "form .form-horizontal"
+                  "type": "self"
                 }
               ],
-              "operator":"=",
-              "amount":"0",
+              "label":"Content Area Toolbar",
               "not":""
             }
           ]
@@ -3174,7 +3172,7 @@
     },
     {
       "description": "Two Seperators MUST not enclose empty content.",
-      "type": "Usage",
+      "type": "Style",
       "level": "MUST",
       "tests": [
         {
@@ -3202,7 +3200,7 @@
     },
     {
       "description": "Entries SHOULD be ordered according the proposed default ordering, if there are no good reasons (such importance for the workflow or frequent use of a certain action) not to. The following default ordering is recommended:  Start Object, Create super Item,     Delete super item, Create sub item,  Delete sub item, Assign, Remove, Select for Presentation, Browse Item, Shortcut, Import, Export, Download, Manipulate all at once (order might change depending of the nature of the action to be performed).",
-      "type": "Composition",
+      "type": "Ordering",
       "level": "SHOULD",
       "tests": [
         {

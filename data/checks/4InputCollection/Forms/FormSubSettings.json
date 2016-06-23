@@ -67,7 +67,7 @@
               "selectors": [
                 {
                   "type": "siblings",
-                  "selector": "checkbox, .radio"
+                  "selector": "checkbox, .radio, .checkbox"
                 }
               ],
               "operator":">=",

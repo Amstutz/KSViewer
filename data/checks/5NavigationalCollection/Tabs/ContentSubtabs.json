@@ -4,7 +4,7 @@
   "rules":[
     {
       "description": "Ordering (for Subtabs of first tab): i. View (Zeigen) tab: Displays content of First Tab. ii. Manage; Verwalten tab: To cary out actions to be performed on multiple items at once iii. Sorting: To sort items iv. Customize Page: If the page editor is activated in the administration, then page content can be added and placed above and below content lists.",
-      "type": "Composition",
+      "type": "Ordering",
       "level": "SHOULD",
       "tests": [
         {
@@ -19,7 +19,7 @@
                 },
                 {
                   "type": "selector",
-                  "selector": "ul.ilMainMenu li.dropdown:nth-of-type(2) a.MMActive"
+                  "selector": ".ilMainMenu li.dropdown:nth-of-type(2) span.ilAccHidden"
                 }
               ],
               "operator": "=",

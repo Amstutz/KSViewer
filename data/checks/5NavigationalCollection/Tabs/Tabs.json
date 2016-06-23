@@ -33,7 +33,7 @@
       "level": "MUST",
       "tests": [
         {
-          "selector": "#ilTab li:not(#ilLastTab) a",
+          "selector": "#ilTab li:not(#ilLastTab) a, #ilSubTab li a",
           "not": "",
           "variants": [
             {
@@ -170,7 +170,7 @@
     },
     {
       "description": "The complete list of tabs MUST cary the role 'tablist'",
-      "type": "Accessability",
+      "type": "Accessibility",
       "level": "MUST",
       "tests": [
         {
@@ -193,7 +193,7 @@
     },
     {
       "description": "The individual Tabs MUST cary the role 'tab'",
-      "type": "Accessability",
+      "type": "Accessibility",
       "level": "MUST",
       "tests": [
         {

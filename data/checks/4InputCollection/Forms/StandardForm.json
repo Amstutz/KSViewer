@@ -58,7 +58,7 @@
     },
     {
       "description": "Each form MUST contain at least one titled form section.",
-      "type": "Usage",
+      "type": "Composition",
       "level": "MUST",
       "tests": [
         {
@@ -310,5 +310,6 @@
         }
       ]
     }
+
   ]
 }

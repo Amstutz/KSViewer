@@ -4,7 +4,7 @@
   "rules": [
     {
       "description": "A radio group SHOULD contain 3 to 5 options.",
-      "type": "Usage",
+      "type": "Composition",
       "level": "SHOULD",
       "tests": [
         {

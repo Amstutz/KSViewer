@@ -7,9 +7,6 @@ il.uiTests.css = function(element,selector,testVariant){
         var rectB = il.uiTests.getRect(elementB);
 
 
-
-        console.log(rectB);
-
         return  positioning.every(function(position){
             rectA = il.uiTests.stretchRect(rectA,position.stretchHorizontalA,position.stretchVerticalA);
             rectB = il.uiTests.stretchRect(rectB,position.stretchHorizontalB,position.stretchVerticalB);
@@ -41,10 +38,8 @@ il.uiTests.css = function(element,selector,testVariant){
 
             if(propertyRule.simulate && propertyRule.simulate.point == "between"){
 
-                console.log(elementB);
                 simulation_class = il.uiTests.simulateCssEvent(propertyRule.simulate.type);
                 //elementB = $("."+simulation_class + " "+il.uiTests.getSelector(elementB));
-                console.log(simulation_class,elementB);
             }
 
             var propertyB = il.uiTests.getCSSProperty(elementB,propertyRule.whichB);
@@ -54,7 +49,6 @@ il.uiTests.css = function(element,selector,testVariant){
             }
 
 
-            console.log(propertyA , propertyB);
 
             if(propertyA && propertyB){
                 var passed = il.uiTests.propertyCheck(propertyRule.type,propertyA,propertyB);

@@ -79,7 +79,7 @@
     },
     {
       "description": "The title SHOULD contain less than 30 characters.",
-      "type": "Composition",
+      "type": "Wording",
       "level": "MUST",
       "tests": [
         {

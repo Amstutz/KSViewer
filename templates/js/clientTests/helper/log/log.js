@@ -9,31 +9,31 @@ il.uiTests.log = {
     },
     components: {
         uiTests: {
-            level: 0
+            level: 3000
         },
         testRule: {
-            level: 0
+            level: 300
         },
         testVariant: {
-            level: 0
+            level: 300
         },
         reportsDisplay: {
             level: 300
         },
         ruleDisplay: {
-            level: 0
+            level: 300
         },
         reportsSummary: {
             level: 300
         },
         wording: {
-            level:300
+            level:3000
         },
         compareValues: {
             level: 300
         },
         css: {
-            level:0
+            level:300
         },
         countWords: {
             level: 3000

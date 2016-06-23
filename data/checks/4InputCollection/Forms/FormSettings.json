@@ -276,7 +276,7 @@
               "amount":"0",
               "regex":
               {
-                "term":".*(\\s|^)you|your(\\s|$).*",
+                "term":".*(\\s|^)(you|your)(\\s|$).*",
                 "modifier": "gi"
               },
               "not":""

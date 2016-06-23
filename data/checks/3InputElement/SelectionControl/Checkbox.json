@@ -49,7 +49,7 @@
     },
     {
       "description": "The checkbox’s identifier MUST always state something positive.",
-      "type": "Usage",
+      "type": "Wording",
       "level": "SHOULD",
       "tests": [
         {
@@ -84,7 +84,7 @@
     },
     {
       "description": "If a description is needed, it MUST be placed below the checkbox in the usual place for descriptions of form settings.",
-      "type": "Usage",
+      "type": "Composition",
       "level": "SHOULD",
       "tests": [
         {

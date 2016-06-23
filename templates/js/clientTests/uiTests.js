@@ -31,8 +31,8 @@ if(ilback){
                 //"Counter","Status Counter","Novelty Counter",
                 //"Trigger Element","Primary Button", "Close Button","Button",
                 //"Input Element", "Checkbox", "Radio Group","Checkbox Group", "Select Input",
-                //"Input Collectiron","Standard Form","Titled Form Section", "Form Settings", "Form Subsettings",
-                //"Navigational Collection","Tabs", "Content Tabs",
+                //"Input Collection","Standard Form","Titled Form Section", "Form Settings",  "Form Subsettings",
+                //"Navigational Collection","Tabs", "Content Tabs","Content Subtabs",
                 //"Toolbar"
             ];
 
@@ -75,6 +75,7 @@ if(ilback){
                         return il.uiTests.countRelatives(element,selector) > 0;
                     });
                 }
+
                 if(il.uiTests.checkVisible(element) && !ignore){
                     passed = false;
                     if(self.elementIndex < elementIndex){
