@@ -94,10 +94,11 @@ il.uiTests.structure = function(element,selector,testVariant){
             var itemsClone2 = JSON.parse(JSON.stringify(itemsClone));
             itemsClone2.splice(0, orderingVariantsListIndex);
             var allPassed =  itemsClone2.every(function(itemClone){
-                if(itemClone.optional || itemClone.passed){
+                if(itemClone.optional ||itemClone.variant.optional || itemClone.passed){
                     il.uiTests.log.message(["structure.ordering Item is optional or passed: ",itemClone],"structure",il.uiTests.log.levels.debug);
                     return true;
                 }
+
                 il.uiTests.log.message(["structure.ordering Not all mandatory items passed: ",itemClone],"structure",il.uiTests.log.levels.debug);
                 return false;
             });

@@ -1,7 +1,6 @@
 <?php
 /**
 * ---
-* title: UI Component
  * description:
  *   purpose: What is to be done by this control
  *   composition: What happens if the control is operated
@@ -32,5 +31,6 @@
  *
 * ---
 * @return \ILIAS\UI\Factory
+ * public function UIComponent()
  *
  * **/

@@ -459,6 +459,22 @@
                     "operator": "=",
                     "not": ""
                   }
+                },
+                {
+                  "variant": {
+                    "type": "structure",
+                    "subtype": "amount",
+                    "selectors": [
+                      {
+                        "type": "self",
+                        "selector": ".sr-only"
+                      }
+                    ],
+                    "amount": 1,
+                    "operator": "=",
+                    "optional": true,
+                    "not": ""
+                  }
                 }
               ],
 
@@ -666,7 +682,7 @@
   ]
 },{
   "title": "Trigger Element",
-  "selector": "btn, a:not(.ilAccAnchor)",
+  "selector": "btn, a:not(.ilAccAnchor, :empty)",
   "rules":[
     {
       "description": "The interaction triggered by the Trigger Element MUST be fired if the ‘Return’-Key is clicked while the element is focused.",
@@ -2573,6 +2589,22 @@
                 {
                   "type": "selector",
                   "selector": ".ilMainMenu li.dropdown:nth-of-type(2) span.ilAccHidden"
+                }
+              ],
+              "operator": "=",
+              "amount": "0",
+              "not": ""
+            },
+            {
+              "type": "structure",
+              "subtype": "amount",
+              "selectors": [
+                {
+                  "type": "root"
+                },
+                {
+                  "type": "selector",
+                  "selector": ".glyphicon-chevron-left"
                 }
               ],
               "operator": "=",

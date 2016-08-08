@@ -42,7 +42,7 @@ il.uiTests.log = {
             level: 300
         },
         structure: {
-            level: 3000
+            level: 0
         },
         collisionCheck: {
             level: 300

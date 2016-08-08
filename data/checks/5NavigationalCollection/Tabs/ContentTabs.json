@@ -52,6 +52,22 @@
               "not": ""
             },
             {
+              "type": "structure",
+              "subtype": "amount",
+              "selectors": [
+                {
+                  "type": "root"
+                },
+                {
+                  "type": "selector",
+                  "selector": ".glyphicon-chevron-left"
+                }
+              ],
+              "operator": "=",
+              "amount": "0",
+              "not": ""
+            },
+            {
               "type":"structure",
               "subtype":"ordering",
               "selectors": [

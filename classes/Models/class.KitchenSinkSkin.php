@@ -166,6 +166,21 @@ class KitchenSinkSkin
         self::xCopy($this->getDefaultFontDir(),$this->getSkinFontDir());
     }
 
+    public function recursiveRemoveDir($dir){
+        if (is_dir($dir)) {
+            $objects = scandir($dir);
+            foreach ($objects as $object) {
+                if ($object != "." && $object != "..") {
+                    if (is_dir($dir."/".$object))
+                        $this->recursiveRemoveDir($dir."/".$object);
+                    else
+                        unlink($dir."/".$object);
+                }
+            }
+            rmdir($dir);
+        }
+    }
+
     public function createSkin(){
         if(!file_exists (  $this->getSkinDir() )) {
             if (!mkdir($this->getSkinDir(), 0775, $recursive = true)) {
@@ -247,20 +262,7 @@ class KitchenSinkSkin
         $this->getIconFolder()->findIconColorUsages($this->getIconColorSet());
     }
 
-    public function recursiveRemoveDir($dir){
-        if (is_dir($dir)) {
-            $objects = scandir($dir);
-            foreach ($objects as $object) {
-                if ($object != "." && $object != "..") {
-                    if (is_dir($dir."/".$object))
-                        $this->recursiveRemoveDir($dir."/".$object);
-                    else
-                        unlink($dir."/".$object);
-                }
-            }
-            rmdir($dir);
-        }
-    }
+
 
     public function resetIcons(){
         try{

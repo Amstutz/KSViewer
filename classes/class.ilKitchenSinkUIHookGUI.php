@@ -48,7 +48,7 @@ class ilKitchenSinkUIHookGUI extends ilUIHookPluginGUI {
             if ($hook == '/template_get' AND $a_par['tpl_id'] == 'Services/MainMenu/tpl.main_menu.html') {
 
                 $tpl->addJavaScript("Services/UIComponent/Modal/js/Modal.js",true);
-
+/**
                 $tpl->addJavaScript("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/templates/js/clientTests/uiTests.js",true);
                 $tpl->addJavaScript("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/templates/js/clientTests/helper/report/ruleReport.js",true);
                 $tpl->addJavaScript("./Customizing/global/plugins/Services/UIComponent/UserInterfaceHook/KitchenSink/templates/js/clientTests/helper/report/ruleDisplay.js",true);
@@ -107,7 +107,7 @@ class ilKitchenSinkUIHookGUI extends ilUIHookPluginGUI {
 
 
                 $this->reloadJson(true);
-                $tpl->addOnLoadCode("il.uiTests.setEntries(".json_encode(file_get_contents(self::$data_path."checks.json")).");");
+                $tpl->addOnLoadCode("il.uiTests.setEntries(".json_encode(file_get_contents(self::$data_path."checks.json")).");");**/
                 $html = "";
                 $mode = ilUIHookPluginGUI::APPEND;
 

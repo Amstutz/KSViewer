@@ -1,6 +1,6 @@
 {
   "title": "Trigger Element",
-  "selector": "btn, a:not(.ilAccAnchor)",
+  "selector": "btn, a:not(.ilAccAnchor, :empty)",
   "rules":[
     {
       "description": "The interaction triggered by the Trigger Element MUST be fired if the ‘Return’-Key is clicked while the element is focused.",

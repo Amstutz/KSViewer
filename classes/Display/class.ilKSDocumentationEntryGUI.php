@@ -125,26 +125,27 @@ class ilKSDocumentationEntryGUI
         $start_example = 0;
         $end_example = 0;
         $example_tot_time = 0;
+        $nr = 1;
 
         if($this->entry->getExamples()){
-            $nr = 1;
-            foreach($this->entry->getExamples() as $name => $path){
+            foreach($this->entry->getExamples() as $example_name => $path){
+
+
                 include_once($path);
-                $examples_snippets[] = $this->f->text()->heading("Example ".$nr.": ".ucfirst(str_replace("_"," ",$name)));
+                $examples_snippets[] = $this->f->text()->heading("Example ".$nr.": ".ucwords(str_replace("_"," ",$example_name)));
                 $nr++;
-                $start_example =  microtime (true);
-                $example = $name(); //Executes function loaded in file indicated by 'path'
-                $end_example =  microtime (true);
-                //$examples_snippets[] = $this->f->card("", $this->f->generic($example));
-                $example_tot_time = ($end_example-$start_example);
-                $examples_snippets[] = $this->f->text()->standard("Time to generate and render example: ".$example_tot_time);
+                //$start_example =  microtime (true);
+                $example_html = $example_name(); //Executes function loaded in file indicated by 'path'
+                //$end_example =  microtime (true);
+                $examples_snippets[] = $this->f->card("", $this->f->generic($example_html));
+                //$example_tot_time = ($end_example-$start_example);
+                //$examples_snippets[] = $this->f->text()->standard("Time to generate and render example: ".$example_tot_time);
                 $examples_snippets[] = $this->f->text()->code(str_replace("<?php\n","",file_get_contents ($path)));
             }
 
         }
 
         $examples = $this->f->panel()->block("Examples", $examples_snippets);
-        $this->entry->getExamples();
 
         $relations = $this->f->panel()->block("Relations",
             $this->f->listing()->descriptive(
@@ -167,9 +168,9 @@ class ilKSDocumentationEntryGUI
         $html = $this->r->render($bulletin);
         $end =  microtime (true);
 
-        return "Constructing Time: ".($mid-$start)." (without example rendering: ".(($mid-$start)-($end_example-$start_example)).")".
+        return /**"Constructing Time: ".($mid-$start)." (without example rendering: ".(($mid-$start)-($end_example-$start_example)).")".
             "</br>Rendering Time: ".($end-$mid)."</br>".
-            "</br>Total Time: ".($end-$start)."</br>".$html;
+            "</br>Total Time: ".($end-$start)."</br>".**/$html;
     }
 
 

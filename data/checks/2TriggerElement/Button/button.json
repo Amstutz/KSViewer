@@ -231,6 +231,22 @@
                     "operator": "=",
                     "not": ""
                   }
+                },
+                {
+                  "variant": {
+                    "type": "structure",
+                    "subtype": "amount",
+                    "selectors": [
+                      {
+                        "type": "self",
+                        "selector": ".sr-only"
+                      }
+                    ],
+                    "amount": 1,
+                    "operator": "=",
+                    "optional": true,
+                    "not": ""
+                  }
                 }
               ],
 

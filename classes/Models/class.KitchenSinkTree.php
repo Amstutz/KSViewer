@@ -43,7 +43,8 @@ class KitchenSinkTree
 
         $this->id_to_entry_map[$entry->getId()] = $entry;
 
-        if($entry->getId() == "root"){
+
+        if($entry->getId() == "FactoryRoot"){
             if($this->getRootEntryId() != "" && !$this->getRootEntry()->isDummy()){
                 throw new ilKitchenSinkException(ilKitchenSinkException::DUPLICATE_ROOT_ENTRY, $entry->getId());
             }
@@ -124,8 +125,8 @@ class KitchenSinkTree
     public function getParentsOfEntry($id){
         $entry = $this->getEntryById($id);
 
-        if($entry->getRelations()->isA=="root"){
-            return array("root");
+        if($entry->getRelations()->isA=="FactoryRoot"){
+            return array("FactoryRoot");
         }
         else{
 
